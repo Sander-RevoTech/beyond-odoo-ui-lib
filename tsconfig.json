@@ -18,14 +18,10 @@
     "target": "ES2022",
     "module": "ES2022",
     "paths": {
-      "@beyond/ui": ["./dist/ui"],
-      "@beyond/styles": ["./dist/styles"],
-      "@beyond/utils": [
-        "./dist/utils"
-      ],
-      "server": [
-        "./dist/server"
-      ]
+      "@beyond/ui": ["./lib/ui"],
+      "@beyond/styles": ["./lib/styles"],
+      "@beyond/utils": ["./lib/utils"],
+      "@beyond/server": ["./lib/server"]
     }
   },
   "angularCompilerOptions": {

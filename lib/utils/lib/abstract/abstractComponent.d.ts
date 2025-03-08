@@ -6,7 +6,7 @@ import { BreakpointDetection } from '../helpers/breakpoints/detection';
 import { RequestState } from '../helpers/request/state';
 import { SubscriberHandler } from '../helpers/subscriber/handler';
 import * as i0 from "@angular/core";
-export declare abstract class TaAbstractComponent implements OnDestroy {
+export declare abstract class BydAbstractComponent implements OnDestroy {
     breakpoints: BreakpointDetection;
     requestState: RequestState;
     get isMobile(): boolean;
@@ -19,6 +19,6 @@ export declare abstract class TaAbstractComponent implements OnDestroy {
     ngOnDestroy(): void;
     protected _getSnapshotQueryParams(key: string): string | null;
     protected _registerSubscription(subscription: Subscription): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TaAbstractComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TaAbstractComponent, "ng-component", never, {}, {}, never, never, true, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydAbstractComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydAbstractComponent, "ng-component", never, {}, {}, never, never, true, never>;
 }

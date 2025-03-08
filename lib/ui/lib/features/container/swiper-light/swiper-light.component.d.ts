@@ -1,7 +1,7 @@
 import { OnInit, TemplateRef } from '@angular/core';
-import { TaBaseComponent } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
 import * as i0 from "@angular/core";
-export declare class SwiperLightComponent extends TaBaseComponent implements OnInit {
+export declare class SwiperLightComponent extends BydBaseComponent implements OnInit {
     items: {
         key: string;
     }[];

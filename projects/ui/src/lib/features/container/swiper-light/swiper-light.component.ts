@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 
-import { TaBaseComponent } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
   selector: 'byd-swiper-light',
@@ -10,7 +10,7 @@ import { TaBaseComponent } from '@beyond/utils';
   standalone: true,
   imports: [NgClass]
 })
-export class SwiperLightComponent extends TaBaseComponent implements OnInit {
+export class SwiperLightComponent extends BydBaseComponent implements OnInit {
   @Input()
   items!: { key: string }[];
 

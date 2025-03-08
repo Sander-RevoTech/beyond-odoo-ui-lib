@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-import { TaSizes } from '@beyond/styles';
+import { BydSizes } from '@beyond/styles';
 import { MessageLevel, TranslatePipe } from '@beyond/utils';
 // import { MaterialIconComponent } from "@beyond/icons";
 import { TypedMessageComponent } from "../typed-message/typed-message.component";
@@ -15,7 +15,7 @@ import { TypedMessageComponent } from "../typed-message/typed-message.component"
 })
 export class PictureInfoMessageComponent {
   @Input() icon?: string;
-  @Input() iconSize?: TaSizes;
+  @Input() iconSize?: BydSizes;
   @Input() text?: string;
   @Input() type?: MessageLevel = 'info';
 

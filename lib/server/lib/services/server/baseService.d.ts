@@ -1,13 +1,13 @@
 import { OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { TaGraphService, GraphEndpoint } from '../graphql/public-api';
+import { BydGraphService, GraphEndpoint } from '../graphql/public-api';
 import { MappingApiType } from './api/requestMap';
-import { TaServerSevice } from './api/server.service';
+import { BydServerSevice } from './api/server.service';
 import * as i0 from "@angular/core";
-export declare abstract class TaBaseService implements OnDestroy {
+export declare abstract class BydBaseService implements OnDestroy {
     protected _subscriptionList: Subscription[];
-    protected _serverService: TaServerSevice;
-    protected _graphService: TaGraphService;
+    protected _serverService: BydServerSevice;
+    protected _graphService: BydGraphService;
     constructor(apiRoutes?: MappingApiType);
     registerRoutes(routes: {
         apiRoutes?: MappingApiType;
@@ -15,6 +15,6 @@ export declare abstract class TaBaseService implements OnDestroy {
     }): void;
     ngOnDestroy(): void;
     protected _registerSubscription(subscription: Subscription): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TaBaseService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<TaBaseService>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydBaseService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<BydBaseService>;
 }

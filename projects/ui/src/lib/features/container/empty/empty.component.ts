@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { TaSizes } from '@beyond/styles';
+import { BydSizes } from '@beyond/styles';
 import { MessageLevel } from '@beyond/utils';
 import { PictureInfoMessageComponent } from '../../../components/picture-info-message/picture-info-message.component';
 import { NgIf } from '@angular/common';
@@ -21,5 +21,5 @@ export class EmptyComponent {
   @Input() type?: MessageLevel = 'info';
 
   @Input() icon?: string = 'ghost';
-  @Input() iconSize?: TaSizes | 'xl';
+  @Input() iconSize?: BydSizes | 'xl';
 }

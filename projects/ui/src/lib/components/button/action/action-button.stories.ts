@@ -1,6 +1,6 @@
 import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 
-import { TaIconType, LocalIconComponent, MaterialIconComponent } from '@beyond/icons';
+import { BydIconType, LocalIconComponent, MaterialIconComponent } from '@beyond/icons';
 
 import { ActionButtonComponent } from './action-button.component';
 
@@ -20,11 +20,11 @@ export default {
     actions: [
       {
         callback: _ => console.log('test'),
-        icon: TaIconType.Play,
+        icon: BydIconType.Play,
       },
       {
         callback: _ => console.log('test'),
-        icon: TaIconType.Stop,
+        icon: BydIconType.Stop,
       },
     ],
   },

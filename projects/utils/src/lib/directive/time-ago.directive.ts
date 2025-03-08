@@ -3,11 +3,11 @@ import { Pipe, PipeTransform, inject } from '@angular/core';
 
 // import { differenceInCalendarDays } from 'date-fns';
 
-// import { TaTranslationService } from '@beyond/translation';
+// import { BydTranslationService } from '@beyond/translation';
 
 @Pipe({ name: 'appTimeAgo' })
 export class TimeAgoDirective implements PipeTransform {
-  // protected _translationService = inject(TaTranslationService);
+  // protected _translationService = inject(BydTranslationService);
 
   transform(date: string) {
     // const diffDays = differenceInCalendarDays(new Date(date), new Date());

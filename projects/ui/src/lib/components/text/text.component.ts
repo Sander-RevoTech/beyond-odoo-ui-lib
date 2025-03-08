@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-import { TaSizes } from '@beyond/styles';
+import { BydSizes } from '@beyond/styles';
 
 @Component({
   selector: 'byd-text',
@@ -10,10 +10,10 @@ import { TaSizes } from '@beyond/styles';
   standalone: true,
   imports: [NgClass]
 })
-export class TaTextComponent {
+export class BydTextComponent {
 
   @Input()
-  size: TaSizes = 'md';
+  size: BydSizes = 'md';
 
   @Input()
   isBold: boolean = false;

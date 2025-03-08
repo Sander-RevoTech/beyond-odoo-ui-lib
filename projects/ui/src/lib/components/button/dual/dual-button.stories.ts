@@ -1,8 +1,8 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 
-import { TaIconsModule } from '@beyond/icons';
-import { TaTranslationModule } from '@beyond/translation';
-import { TaDirectivePipeModule } from '@beyond/utils';
+import { BydIconsModule } from '@beyond/icons';
+import { BydTranslationModule } from '@beyond/translation';
+import { BydDirectivePipeModule } from '@beyond/utils';
 
 import { DualButtonComponent } from './dual-button.component';
 
@@ -14,7 +14,7 @@ export default {
   tags: ['autodocs'],
   decorators: [
     moduleMetadata({
-      imports: [TaIconsModule, TaTranslationModule, TaDirectivePipeModule],
+      imports: [BydIconsModule, BydTranslationModule, BydDirectivePipeModule],
     }),
   ],
   render: args => {

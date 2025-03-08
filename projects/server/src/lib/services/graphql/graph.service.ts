@@ -20,7 +20,7 @@ type WrapperData = {
 @Injectable({
   providedIn: 'root',
 })
-export class TaGraphService {
+export class BydGraphService {
   private readonly _graphConfig = inject(GRAPHQL_SERVER_CONFIG);
 
   public contactsLoaded$ = new BehaviorSubject<boolean>(false);

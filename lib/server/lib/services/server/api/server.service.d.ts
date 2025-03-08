@@ -11,7 +11,7 @@ export interface IServerConfig {
     serverUrl: string;
     apiExt?: string;
 }
-export declare class TaServerSevice {
+export declare class BydServerSevice {
     private readonly _config;
     readonly $http: HttpClient;
     get requestInProgressNumber(): number;
@@ -42,6 +42,6 @@ export declare class TaServerSevice {
     private _updateFiles;
     private _formatReponse;
     private _headers;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TaServerSevice, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<TaServerSevice>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydServerSevice, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<BydServerSevice>;
 }

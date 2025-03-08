@@ -1,4 +1,4 @@
-export const graphQlTake = (take?: number | null) => {
+export const graphQlBydke = (take?: number | null) => {
   return `take: ${take || 1000}`;
 };
 

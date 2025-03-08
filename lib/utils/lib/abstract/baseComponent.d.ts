@@ -1,7 +1,7 @@
 import { OnDestroy } from '@angular/core';
-import { TaAbstractComponent } from './abstractComponent';
+import { BydAbstractComponent } from './abstractComponent';
 import * as i0 from "@angular/core";
-export declare abstract class TaBaseComponent extends TaAbstractComponent implements OnDestroy {
+export declare abstract class BydBaseComponent extends BydAbstractComponent implements OnDestroy {
     constructor();
     trackById(_: any, item: {
         id: number | string;
@@ -9,6 +9,6 @@ export declare abstract class TaBaseComponent extends TaAbstractComponent implem
     trackByKey(_: any, item: {
         key: string;
     }): string;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TaBaseComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TaBaseComponent, "ng-component", never, {}, {}, never, never, true, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydBaseComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydBaseComponent, "ng-component", never, {}, {}, never, never, true, never>;
 }

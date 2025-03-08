@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, filter, tap } from 'rxjs';
-import { TaBaseService } from '../server/baseService';
+import { BydBaseService } from '../server/baseService';
 import { MappingApiType } from '../server/api/requestMap';
 import { Request } from '../server/request';
 import { Permissions } from './permissions';
-import { TaStrapiService } from '../strapi/strapi.service';
+import { BydStrapiService } from '../strapi/strapi.service';
 
 
 interface UserProfile {
@@ -21,7 +21,7 @@ const apiRoutes: MappingApiType = {
 @Injectable({
   providedIn: 'root',
 })
-export class TaAuthService extends TaStrapiService {
+export class BydAuthService extends BydStrapiService {
   constructor() {
     super();
     super.registerRoutes({

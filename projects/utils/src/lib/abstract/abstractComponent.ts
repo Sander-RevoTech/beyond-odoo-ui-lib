@@ -9,7 +9,7 @@ import { RequestState } from '../helpers/request/state';
 import { SubscriberHandler } from '../helpers/subscriber/handler';
 
 @Component({ template: '' })
-export abstract class TaAbstractComponent implements OnDestroy {
+export abstract class BydAbstractComponent implements OnDestroy {
   public breakpoints = new BreakpointDetection();
   public requestState = new RequestState();
 

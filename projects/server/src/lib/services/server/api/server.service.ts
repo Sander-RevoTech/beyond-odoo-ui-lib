@@ -19,7 +19,7 @@ export interface IServerConfig {
 @Injectable({
   providedIn: 'root',
 })
-export class TaServerSevice {
+export class BydServerSevice {
   private readonly _config = inject(SERVER_CONFIG_KEY)
 
   readonly $http = inject(HttpClient);

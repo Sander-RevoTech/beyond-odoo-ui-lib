@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { TaBaseComponent } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
 import { TitleComponent } from "../../../../components/title/title.component";
 import { LogoComponent } from "../../../../components/logo/logo.component";
 
@@ -11,7 +11,7 @@ import { LogoComponent } from "../../../../components/logo/logo.component";
   standalone: true,
   imports: [TitleComponent, LogoComponent]
 })
-export class LayoutHeaderDefaultComponent extends TaBaseComponent {
+export class LayoutHeaderDefaultComponent extends BydBaseComponent {
 
   public goToHome() {
     this._router.navigateByUrl('/');

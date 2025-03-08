@@ -2,18 +2,18 @@ import { Injectable, OnDestroy, inject } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
-import { TaGraphService, GraphEndpoint } from '../graphql/public-api';
+import { BydGraphService, GraphEndpoint } from '../graphql/public-api';
 import { MappingApiType } from './api/requestMap';
-import { TaServerSevice } from './api/server.service';
-import { TaStrapiService } from '../strapi/strapi.service';
+import { BydServerSevice } from './api/server.service';
+import { BydStrapiService } from '../strapi/strapi.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export abstract class TaBaseService implements OnDestroy {
+export abstract class BydBaseService implements OnDestroy {
   protected _subscriptionList: Subscription[] = [];
-  protected _serverService = inject(TaServerSevice);
-  protected _graphService = inject(TaGraphService);
+  protected _serverService = inject(BydServerSevice);
+  protected _graphService = inject(BydGraphService);
 
   constructor(apiRoutes?: MappingApiType) {
     this.registerRoutes({ apiRoutes });

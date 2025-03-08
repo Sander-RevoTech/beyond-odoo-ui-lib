@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
-import { TaState } from '@beyond/styles';
+import { BydState } from '@beyond/styles';
 import { StopPropagationDirective } from '@beyond/utils';
 
 @Component({
@@ -12,12 +12,12 @@ import { StopPropagationDirective } from '@beyond/utils';
   standalone: true,
   imports: [NgClass, StopPropagationDirective]
 })
-export class TaButtonComponent {
+export class BydButtonComponent {
   /**
    * Is button type
    */
   @Input()
-  state: TaState = 'classic';
+  state: BydState = 'classic';
 
   /**
    * Indicate the button type

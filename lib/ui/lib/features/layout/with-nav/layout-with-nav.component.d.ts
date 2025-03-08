@@ -1,6 +1,6 @@
-import { TaBaseComponent } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
 import * as i0 from "@angular/core";
-export declare class LayoutWithNavComponent extends TaBaseComponent {
+export declare class LayoutWithNavComponent extends BydBaseComponent {
     type: string;
     constructor();
     static ɵfac: i0.ɵɵFactoryDeclaration<LayoutWithNavComponent, never>;

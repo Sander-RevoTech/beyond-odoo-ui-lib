@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { GraphMutationPayload, GraphQueryPayload } from './models/graphPayload';
 import { GraphEndpoint } from './public-api';
 import * as i0 from "@angular/core";
-export declare class TaGraphService {
+export declare class BydGraphService {
     private httpLink;
     private apollo;
     private readonly _graphConfig;
@@ -25,6 +25,6 @@ export declare class TaGraphService {
     registerGraphEndpoint(graphEndpoint: GraphEndpoint): void;
     private _setupData;
     private _getWrapper;
-    static ɵfac: i0.ɵɵFactoryDeclaration<TaGraphService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<TaGraphService>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydGraphService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<BydGraphService>;
 }

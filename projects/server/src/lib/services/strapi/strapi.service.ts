@@ -5,7 +5,7 @@ import { filter, tap } from 'rxjs';
 
 import { isNonNullable } from '@beyond/utils';
 
-import { TaBaseService } from '../server/baseService';
+import { BydBaseService } from '../server/baseService';
 import { GraphMutationPayload, GraphQueryPayload } from '../graphql/models/graphPayload';
 import { Request } from '../server/request';
 import { Permissions } from '../user/permissions';
@@ -25,7 +25,7 @@ export type GraphStrapiMutateResponse<T> = T;
 @Injectable({
   providedIn: 'root',
 })
-export class TaStrapiService extends TaBaseService {
+export class BydStrapiService extends BydBaseService {
 
   private readonly _config = inject(STRAPI_SERVER_CONFIG)
 

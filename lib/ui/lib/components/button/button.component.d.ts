@@ -1,11 +1,11 @@
 import { EventEmitter } from '@angular/core';
-import { TaState } from '@beyond/styles';
+import { BydState } from '@beyond/styles';
 import * as i0 from "@angular/core";
-export declare class TaButtonComponent {
+export declare class BydButtonComponent {
     /**
      * Is button type
      */
-    state: TaState;
+    state: BydState;
     /**
      * Indicate the button type
      */
@@ -33,6 +33,6 @@ export declare class TaButtonComponent {
     getClass(): {
         [index: string]: boolean;
     };
-    static ɵfac: i0.ɵɵFactoryDeclaration<TaButtonComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TaButtonComponent, "byd-button", never, { "state": { "alias": "state"; "required": false; }; "type": { "alias": "type"; "required": false; }; "size": { "alias": "size"; "required": false; }; "icon": { "alias": "icon"; "required": false; }; "options": { "alias": "options"; "required": false; }; "stopPropagationActivation": { "alias": "stopPropagationActivation"; "required": false; }; }, { "action": "action"; }, never, ["*"], true, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydButtonComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydButtonComponent, "byd-button", never, { "state": { "alias": "state"; "required": false; }; "type": { "alias": "type"; "required": false; }; "size": { "alias": "size"; "required": false; }; "icon": { "alias": "icon"; "required": false; }; "options": { "alias": "options"; "required": false; }; "stopPropagationActivation": { "alias": "stopPropagationActivation"; "required": false; }; }, { "action": "action"; }, never, ["*"], true, never>;
 }

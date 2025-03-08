@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { TaBaseComponent } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
   selector: 'byd-layout-with-nav',
@@ -9,7 +9,7 @@ import { TaBaseComponent } from '@beyond/utils';
   standalone: true,
   imports: []
 })
-export class LayoutWithNavComponent extends TaBaseComponent {
+export class LayoutWithNavComponent extends BydBaseComponent {
   @Input()
   type!: string;
 

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-import { TaAbstractComponent } from './abstractComponent';
+import { BydAbstractComponent } from './abstractComponent';
 
 @Component({ template: '' })
-export abstract class TaBaseModal extends TaAbstractComponent {
+export abstract class BydBaseModal extends BydAbstractComponent {
   constructor() {
     super();
   }

@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: []
 })
-export class CardTagComponent {
+export class CardBydgComponent {
   constructor() {}
 }
