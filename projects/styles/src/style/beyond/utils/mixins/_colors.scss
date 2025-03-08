@@ -1,0 +1,17 @@
+@use 'sass:color';
+@use "beyond/utils/mixins/common";
+
+@function getTextOnBackground($color) {
+  @if (color.whiteness($color) > 50%) {
+    @return common.get-var(text, primary);
+  } @else {
+    @return common.get-var(text, tertiary);
+  }
+}
+
+@mixin hover-bgc() {
+  &:hover {
+    cursor: pointer;
+    background-color: common.get-var(surface, hover, secondary);
+  }
+}

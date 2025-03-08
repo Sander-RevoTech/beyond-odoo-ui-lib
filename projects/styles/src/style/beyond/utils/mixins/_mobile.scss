@@ -1,0 +1,17 @@
+@mixin mobileDevice($context: '.mobile-device') {
+  :host-context(#{$context}) {
+    @content;
+  }
+}
+
+@mixin desktopDevice($context: '.desktop-device') {
+  :host-context(#{$context}) {
+    @content;
+  }
+}
+
+@mixin menuMinimized() {
+  :host-context(.is-menu-minimized) {
+    @content;
+  }
+}

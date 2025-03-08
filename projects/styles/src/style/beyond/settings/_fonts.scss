@@ -1,0 +1,133 @@
+@use "beyond/vars";
+@use 'beyond/settings/common';
+
+@use 'beyond/utils/mixins/text';
+
+
+@mixin font($font-family, $font-folder, $font-name, $font-weight) {
+  $font-path: '/assets/fonts/' + $font-folder + $font-name;
+  @font-face {
+    font-family: $font-family;
+    src: url($font-path + '.eot');
+    src: local($font-name), url($font-path + '.eot?#iefix') format('embedded-opentype'),
+      url($font-path + '.woff') format('woff'), url($font-path + '.woff2') format('woff2'),
+      url($font-path + '.ttf') format('truetype');
+    font-weight: $font-weight;
+    font-style: normal;
+    font-display: auto;
+  }
+}
+
+@mixin fontSize($scope, $sub, $bold: false) {
+  font-size: common.get-var(font, $scope, $sub, default, size);
+  line-height: common.get-var(font, $scope, $sub, default, line);
+
+  @if ($bold) {
+    font-weight: common.get-var(font, $scope, $sub, bold, weight);
+  } @else {
+    font-weight: common.get-var(font, $scope, $sub, default, weight);
+  }
+  // @include media-breakpoint-up(mobile) {
+  //   font-size: common.get-var(font, $scope, $sub, desktop, size);
+  //   line-height: common.get-var(font, $scope, $sub, desktop, line);
+  // }
+}
+
+@mixin fontSizeHeader($scope, $bold: false) {
+  @include fontSize('', $scope, $bold);
+}
+
+@mixin fontSizeBody($scope, $bold: false) {
+  @include fontSize(body, $scope, $bold);
+}
+
+@mixin fontSizeKey($scope, $bold: false) {
+  @include fontSize(key, $scope, $bold);
+}
+
+@mixin generateFonts() {
+  @include generateFontHelper();
+
+  @include common.generateMap(
+    'font',
+    vars.$font,
+    (
+      fs: font-size,
+    )
+  );
+}
+
+@mixin generateFontHelper() {
+  // ---------------------------------------------------------
+  // @Line Height
+  // ---------------------------------------------------------
+  .lh-0 {
+    line-height: 0;
+  }
+  .lh-1 {
+    line-height: 1;
+  }
+  .lh-3\/2 {
+    line-height: 1.5;
+  }
+
+  // ---------------------------------------------------------
+  // @Font Style
+  // ---------------------------------------------------------
+
+  .fs-i {
+    font-style: italic;
+  }
+  .fs-o {
+    font-style: oblique;
+  }
+
+  // ---------------------------------------------------------
+  // @Text Transform
+  // ---------------------------------------------------------
+  .tt-n {
+    text-transform: none;
+  }
+  .tt-u {
+    text-transform: uppercase;
+  }
+  .tt-l {
+    text-transform: lowercase;
+  }
+  .tt-c {
+    text-transform: capitalize;
+  }
+
+  // ---------------------------------------------------------
+  // @Text Align
+  // ---------------------------------------------------------
+
+  .byd-c {
+    text-align: center;
+  }
+  .byd-l {
+    text-align: left;
+  }
+  .byd-r {
+    text-align: right;
+  }
+
+  // ---------------------------------------------------------
+  // @Text Overflow
+  // ---------------------------------------------------------
+
+  .tov-e {
+    @include text.text-overflow();
+  }
+
+  // ---------------------------------------------------------
+  // @Text Overflow
+  // ---------------------------------------------------------
+
+  .tll-2 {
+    @include text.text-line-limit(2);
+  }
+  .tll-3 {
+    @include text.text-line-limit(3);
+  }
+}

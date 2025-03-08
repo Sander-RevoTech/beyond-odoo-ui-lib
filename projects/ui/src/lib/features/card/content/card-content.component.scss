@@ -1,0 +1,5 @@
+@use 'beyond/utils/mixins/common';
+
+.card-content {
+  padding: common.get-var(space, xs) 0;
+}

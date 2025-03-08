@@ -1,0 +1,29 @@
+@use 'beyond/external/bootstrap';
+
+@use 'beyond/settings/colors';
+@use 'beyond/settings/borders';
+@use 'beyond/settings/shadows';
+@use 'beyond/settings/fonts';
+@use 'beyond/settings/spaces';
+@use 'beyond/settings/components';
+@use 'beyond/settings/flex';
+
+
+@mixin generate() {
+  @include colors.generateColors();
+
+  @include borders.generateBorders();
+
+  @include shadows.generateShadows();
+
+  @include fonts.generateFonts();
+
+  @include spaces.generateSpaces();
+  @include spaces.generateRadius();
+
+  @include components.generateComponents();
+
+  @include flex.generateFlex();
+}
+
+

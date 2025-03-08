@@ -1,0 +1,23 @@
+{
+	"empty": {
+		"content": "No hay datos que correspondan a su solicitud",
+		"light-message": "No disponemos de datos que correspondan a su solicitud",
+		"title": "Espacio vacío"
+	},
+	"error": {
+		"title": "¡Se ha producido un error!"
+	},
+	"guard": {
+		"content": "No tiene los permisos necesarios para ver este contenido"
+	},
+	"validation": {
+		"modal": {
+			"content": "¿Está seguro de que quieres suprimir?",
+			"cta": {
+				"cancel": "Anular",
+				"ok": "Sí"
+			},
+			"title": "Suprima el elemento"
+		}
+	}
+}

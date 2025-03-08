@@ -1,0 +1,29 @@
+@use "beyond/vars";
+@use 'beyond/settings/common';
+
+@mixin generateBorders() {
+  .bdp {
+    border: 1px solid transparent;
+  }
+
+  .bdp-t {
+    border-top: 1px solid transparent;
+  }
+  .bdp-b {
+    border-bottom: 1px solid transparent;
+  }
+  .bdp-l {
+    border-left: 1px solid transparent;
+  }
+  .bdp-r {
+    border-right: 1px solid transparent;
+  }
+
+  @include common.generateMap(
+    'border',
+    vars.$border,
+    (
+      color: border-color,
+    )
+  );
+}

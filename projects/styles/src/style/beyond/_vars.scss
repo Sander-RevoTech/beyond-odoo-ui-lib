@@ -1,0 +1,430 @@
+@use 'sass:map';
+@use 'sass:list';
+
+
+/** Vars */
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1400px,
+  xxl: 1900px,
+);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  mobile: 577px,
+  md: 768px,
+  tablette: 769px,
+  desktop: 991px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1800px,
+) !default;
+$space-base: 8px !default;
+$radius-base: 8px !default;
+
+$brand: () !default;
+$second: () !default;
+$neutral: () !default;
+$semantic: () !default;
+$icon: () !default;
+$text: () !default;
+$surface: () !default;
+$semantic-token: () !default;
+$border: () !default;
+$space: () !default;
+$radius: () !default;
+$shadow: () !default;
+$font: () !default;
+$components: () !default;
+
+/** Foundation **/
+$brand: map.merge(
+  (
+    900: #235590,
+    800: #2b75b3,
+    700: #2f85c7,
+    600: #3498db,
+    500: #38a6ea,
+    400: #45b3ee,
+    300: #5dc0f0,
+    200: #87d2f6,
+    100: #b6e4fa,
+    50: #e2f5fd,
+  ),
+  $brand
+);
+
+$second: map.merge(
+  (
+    900: #006e1e,
+    800: #008e32,
+    700: #009f3e,
+    600: #00b24b,
+    500: #00c255,
+    400: #2ecc70,
+    300: #62d68a,
+    200: #95e1ad,
+    100: #c0edcd,
+    50: #e5f8eb,
+  ),
+  $second
+);
+
+$neutral: map.merge(
+  (
+    black: #1f2245,
+    700: #262626,
+    600: #3c3c3c,
+    500: #7d7d7d,
+    400: #a9a9a9,
+    300: #dddddd,
+    200: #efefef,
+    100: #f8f8f8,
+    white: #ffffff,
+  ),
+  $neutral
+);
+
+$semantic: map.merge(
+  (
+    red: #E74C3C,
+    orange: #F39C12,
+    yellow: #F1C40F,
+    green: #15ce1e,
+  ),
+  $semantic
+);
+
+/** tokens **/
+$icon: map.merge(
+  (
+    primary: map.get($neutral, black),
+    secondary: map.get($neutral, 500),
+    tertiary: map.get($neutral, 400),
+    brand: (
+      primary: map.get($brand, 700),
+      secondary: map.get($brand, 600),
+    ),
+    invert: (
+      primary: map.get($neutral, white),
+      secondary: map.get($brand, 600),
+    ),
+    disabled: map.get($neutral, 300),
+    success: map.get($semantic, green-dark),
+    alert: map.get($semantic, red-dark),
+  ),
+  $icon
+);
+
+$text: map.merge(
+  (
+    primary: map.get($neutral, black),
+    secondary: map.get($neutral, 500),
+    tertiary: map.get($neutral, 400),
+    brand: (
+      primary: map.get($brand, 700),
+      secondary: map.get($brand, 600),
+    ),
+    invert: (
+      primary: map.get($neutral, white),
+      secondary: map.get($brand, 400),
+    ),
+    body: map.get($neutral, 600),
+    success: map.get($semantic, green-dark),
+    warning: map.get($semantic, orange-dark),
+    alert: map.get($semantic, red-dark),
+    link: map.get($brand, 700),
+  ),
+  $text
+);
+
+$surface: map.merge(
+  (
+    default: map.get($brand, 200),
+    primary: map.get($neutral, white),
+    secondary: map.get($neutral, 200),
+    tertiary: map.get($neutral, 100),
+    brand: (
+      primary: map.get($brand, 700),
+      secondary: map.get($brand, 400),
+      tertiary: map.get($brand, 100),
+    ),
+    hover: (
+      primary: map.get($brand, 800),
+      secondary: map.get($brand, 300),
+    ),
+    invert: map.get($brand, 900),
+    success: map.get($semantic, green-light),
+    warning: map.get($semantic, orange-light),
+    alert: map.get($semantic, red-light),
+  ),
+  $surface
+);
+
+$semantic-token: map.merge(
+  (
+    success: map.get($semantic, green-dark),
+    alert: map.get($semantic, red-dark),
+    warning: map.get($semantic, orange-dark),
+    link: map.get($brand, 700),
+  ),
+  $semantic-token
+);
+
+$border: map.merge(
+  (
+    primary: map.get($neutral, 300),
+    secondary: map.get($brand, 400),
+    brand: map.get($brand, 700),
+    hover: map.get($neutral, 500),
+    invert: map.get($brand, 600),
+    disabled: map.get($brand, 300),
+    success: map.get($semantic, green-dark),
+    warning: map.get($semantic, orange-dark),
+    alert: map.get($semantic, red-dark),
+  ),
+  $border
+);
+
+$space: map.merge(
+  (
+    base: $space-base,
+    xs: $space-base * 0.5,
+    sm: $space-base * 1,
+    md: $space-base * 2,
+    lg: $space-base * 3,
+    xl: $space-base * 4,
+    xxl: $space-base * 6,
+    xxxl: $space-base * 13,
+  ),
+  $space
+);
+
+$radius: map.merge(
+  (
+    minimal: $space-base * 0.5,
+    rounded: $space-base * 1,
+    label: $space-base * 2,
+    full: $space-base * 5,
+  ),
+  $radius
+);
+
+$shadow: map.merge(
+  (
+    black: (
+      sm: 0px 4px 8px 0px rgba(0, 0, 0, 0.1),
+      md: 0px 4px 16px 0px rgba(0, 0, 0, 0.15),
+      lg: 0px 8px 24px 4px rgba(0, 0, 0, 0.1),
+    ),
+    brand: (
+      sm: 0px 4px 8px 0px rgba(107, 124, 234, 0.1),
+      md: 0px 4px 16px 0px rgba(107, 124, 234, 0.15),
+      lg: 0px 8px 24px 4px rgba(107, 124, 234, 0.1),
+    ),
+  ),
+  $shadow
+);
+
+$font: map.merge(
+  (
+    family: (
+      'Inter',
+      'Diodrum Cyrillic',
+      sans-serif,
+    ),
+    h1: (
+      default: (
+        size: 30px,
+        line: 40px,
+        weight: 300,
+      ),
+      desktop: (
+        size: 42px,
+        line: 52px,
+      ),
+    ),
+    h2: (
+      default: (
+        size: 24px,
+        line: 32px,
+        weight: 300,
+      ),
+      desktop: (
+        size: 30px,
+        line: 36px,
+      ),
+      bold: (
+        weight: 600,
+      ),
+    ),
+    h3: (
+      default: (
+        size: 20px,
+        line: 28px,
+        weight: 400,
+      ),
+      desktop: (
+        size: 24px,
+        line: 32px,
+      ),
+      bold: (
+        weight: 600,
+      ),
+    ),
+    h4: (
+      default: (
+        size: 18px,
+        line: 25px,
+        weight: 400,
+      ),
+      desktop: (
+        size: 22px,
+        line: 28px,
+      ),
+      bold: (
+        weight: 600,
+      ),
+    ),
+    body: (
+      md: (
+        default: (
+          size: 15px,
+          line: 22px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 16px,
+          line: 24px,
+        ),
+        bold: (
+          weight: 600,
+        ),
+      ),
+      sm: (
+        default: (
+          size: 13px,
+          line: 16px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 13px,
+          line: 18px,
+        ),
+        bold: (
+          weight: 600,
+        ),
+      ),
+      xs: (
+        default: (
+          size: 10px,
+          line: 13px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 11px,
+          line: 14px,
+        ),
+        bold: (
+          weight: 600,
+        ),
+      ),
+    ),
+    key: (
+      xl: (
+        default: (
+          size: 36px,
+          line: 42px,
+          weight: 500,
+        ),
+        desktop: (
+          size: 42px,
+          line: 48px,
+        ),
+        bold: (
+          weight: 600,
+        ),
+      ),
+      lg: (
+        default: (
+          size: 20px,
+          line: 28px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 24px,
+          line: 32px,
+        ),
+        bold: (
+          weight: 600,
+        ),
+      ),
+      md: (
+        default: (
+          size: 18px,
+          line: 25px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 22px,
+          line: 28px,
+        ),
+        bold: (
+          weight: 600,
+        ),
+      ),
+      sm: (
+        default: (
+          size: 15px,
+          line: 22px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 16px,
+          line: 24px,
+        ),
+        bold: (
+          weight: 600,
+        ),
+      ),
+      xs: (
+        default: (
+          size: 13px,
+          line: 18px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 13px,
+          line: 18px,
+        ),
+      ),
+      xxs: (
+        default: (
+          size: 10px,
+          line: 13px,
+          weight: 400,
+        ),
+        desktop: (
+          size: 11px,
+          line: 14px,
+        ),
+      ),
+    ),
+  ),
+  $font
+);
+
+$components: map.merge(
+  (
+    header: (
+      top: $space-base * 5,
+    ),
+  ),
+  $components
+);
+
+$enable-grid-classes: false;
+$enable-cssgrid: true;

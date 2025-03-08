@@ -1,0 +1,63 @@
+@use "beyond/vars";
+@use 'beyond/settings/common';
+
+@mixin generateColors() {
+  /** Foundation **/
+  @include common.generateMap(
+    'brand',
+    vars.$brand,
+    (
+      color: color,
+      bgc: background-color,
+    )
+  );
+  @include common.generateMap(
+    'neutral',
+    vars.$neutral,
+    (
+      color: color,
+      bgc: background-color,
+    )
+  );
+  @include common.generateMap(
+    'semantic',
+    vars.$semantic,
+    (
+      color: color,
+      bgc: background-color,
+    )
+  );
+
+  /** Token **/
+  @include common.generateMap(
+    'surface',
+    vars.$surface,
+    (
+      color: color,
+      bgc: background-color,
+    )
+  );
+  @include common.generateMap(
+    'semantic-token',
+    vars.$semantic-token,
+    (
+      color: color,
+      bgc: background-color,
+    )
+  );
+
+  @include common.generateMap(
+    'icon',
+    vars.$icon,
+    (
+      icon-color: color,
+    )
+  );
+  @include common.generateMap(
+    'text',
+    vars.$text,
+    (
+      text-color: color,
+    )
+  );
+}

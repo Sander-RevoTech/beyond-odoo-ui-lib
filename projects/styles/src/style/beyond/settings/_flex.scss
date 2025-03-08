@@ -1,0 +1,40 @@
+@use "beyond/utils/mixins/flex";
+
+@mixin generateFlex() {
+  .space-between {
+    @include flex.space-between();
+  }
+  .space-around {
+    @include flex.space-around();
+  }
+  .flex-start {
+    @include flex.flex-start();
+  }
+
+  .ta.justify-center {
+    @include flex.justify-center();
+  }
+  .justify-end {
+    @include flex.justify-end();
+  }
+
+  .align-center {
+    @include flex.align-center();
+  }
+  .align-end {
+    @include flex.align-end();
+  }
+
+  .full-width {
+    @include flex.full-width();
+  }
+  .flex-row {
+    @include flex.flex-row();
+  }
+  .flex-column {
+    @include flex.flex-column();
+  }
+  .flex-full {
+    @include flex.flex-full();
+  }
+}

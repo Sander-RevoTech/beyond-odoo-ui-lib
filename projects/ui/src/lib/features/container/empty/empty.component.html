@@ -1,0 +1,23 @@
+<ng-container *ngIf="this.isEmpty">
+  <div class="empty-container">
+    <ng-container *ngIf="this.showMessage">
+      <ng-container *ngIf="this.isLight">
+        <byd-picture-info-message [type]="this.type" [text]="this.text">
+        </byd-picture-info-message>
+      </ng-container>
+      <ng-container *ngIf="!this.isLight">
+        <byd-picture-info-message
+          [icon]="this.icon"
+          [iconSize]="this.iconSize"
+          [type]="this.type"
+          [text]="this.text"
+        >
+        </byd-picture-info-message>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!this.isEmpty">
+  <ng-content></ng-content>
+</ng-container>

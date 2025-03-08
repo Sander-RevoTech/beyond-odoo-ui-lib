@@ -1,0 +1,20 @@
+<ng-container *ngIf="this.icon">
+  <div class="card">
+    <!-- <byd-material-icon
+      class="font-icon"
+      *ngIf="this.icon"
+      [type]="this.iconSize ?? 'md'"
+    >
+      {{ this.icon }}
+    </byd-material-icon> -->
+
+    <div class="pt-space-xs">{{ this.displayedText | translate }}</div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!this.icon">
+  <byd-typed-message
+    [text]="this.displayedText"
+    [type]="this.type ?? 'info'"
+  ></byd-typed-message>
+</ng-container>

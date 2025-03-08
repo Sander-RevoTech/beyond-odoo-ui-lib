@@ -1,0 +1,27 @@
+@use 'beyond/utils/mixins/common';
+@use 'beyond/utils/mixins/fonts';
+@use "beyond/utils/mixins/mediaQueriesRanges";
+
+
+.header-tag {
+  margin-bottom: common.get-var(space, md);
+}
+
+.header-title {
+  border-bottom: 1px solid common.get-var(neutral, main);
+  @include mediaQueriesRanges.in-context('.no-card-border') {
+    border-width: 0px;
+  }
+  padding-bottom: common.get-var(space, xs);
+  .title {
+    @include fonts.fontSizeBody(md, true);
+  }
+  .subtitle {
+    @include fonts.fontSizeBody(xs);
+  }
+}
+@include mediaQueriesRanges.in-context('.no-card-border') {
+  .header-title {
+    border-width: 0px;
+  }
+}

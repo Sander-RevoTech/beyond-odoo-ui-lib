@@ -1,0 +1,12 @@
+@use "beyond/vars";
+@use 'beyond/settings/common';
+
+@mixin generateShadows() {
+  @include common.generateMap(
+    'shadow',
+    vars.$shadow,
+    (
+      bxs: box-shadow,
+    )
+  );
+}

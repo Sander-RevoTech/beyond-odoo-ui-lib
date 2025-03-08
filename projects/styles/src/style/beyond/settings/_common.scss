@@ -1,0 +1,29 @@
+@use "beyond/utils/mixins/common";
+
+@mixin generateMap($name, $map, $cssKlass: false) {
+  $flat-map: common.flat-map($name, $map);
+
+  :root {
+    @each $key, $value in $flat-map {
+      --byd-#{$key}: #{$value};
+    }
+  }
+
+  @if ($cssKlass) {
+    @each $key, $value in $flat-map {
+      @each $klass, $prop in $cssKlass {
+        @if ($klass & $prop) {
+          .#{$klass}-#{$key} {
+            @if type-of($prop) == list {
+              @each $p in $prop {
+                #{$p}: #{$value};
+              }
+            } @else {
+              #{$prop}: var(--byd-#{$key});
+            }
+          }
+        }
+      }
+    }
+  }
+}

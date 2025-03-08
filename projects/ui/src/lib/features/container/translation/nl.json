@@ -1,0 +1,23 @@
+{
+	"empty": {
+		"content": "Er zijn geen gegevens die overeenkomen met uw verzoek",
+		"light-message": "Helaas hebben we geen gegevens die overeenkomen met uw verzoek.",
+		"title": "Deze plek is leeg"
+	},
+	"error": {
+		"title": "Er is een fout opgetreden !"
+	},
+	"guard": {
+		"content": "U heeft niet de benodigde rechten om deze inhoud te bekijken"
+	},
+	"validation": {
+		"modal": {
+			"content": "Weet je zeker dat je wilt verwijderen?",
+			"cta": {
+				"cancel": "Annuleren",
+				"ok": "Ja"
+			},
+			"title": "Verwijder item"
+		}
+	}
+}

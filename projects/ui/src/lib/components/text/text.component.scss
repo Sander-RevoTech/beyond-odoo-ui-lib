@@ -1,0 +1,15 @@
+@use 'beyond/utils/mixins/fonts';
+
+
+.text {
+  @include fonts.fontSizeBody(md);
+}
+.sm {
+  @include fonts.fontSizeBody(sm);
+}
+.xs {
+  @include fonts.fontSizeBody(xs);
+}
+.bold {
+  @include fonts.fontSizeBody(md, true);
+}

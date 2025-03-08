@@ -1,0 +1,15 @@
+@use "beyond/utils/mixins/flex";
+
+
+.items {
+  @include flex.flex-start();
+  position: relative;
+  width: 100%;
+
+  user-select: none;
+  cursor: pointer;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  flex-wrap: nowrap;
+}

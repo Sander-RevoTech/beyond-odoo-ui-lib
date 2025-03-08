@@ -1,0 +1,6 @@
+{
+	"clipboard": {
+		"error": "No se pudo copiar",
+		"success": "Contenido copiado al portapapeles"
+	}
+}

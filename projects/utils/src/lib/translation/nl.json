@@ -1,0 +1,6 @@
+{
+	"clipboard": {
+		"error": "Kopiëren is niet gelukt",
+		"success": "Inhoud gekopieerd naar klembord"
+	}
+}

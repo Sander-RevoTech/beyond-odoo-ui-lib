@@ -1,0 +1,13 @@
+<button
+  appStopPropagation
+  [stopPropagationActivation]="this.stopPropagationActivation"
+  type="button"
+  class="button pointer"
+  [ngClass]="this.getClass()"
+  (click)="handleClick()"
+>
+  <div class="flex-row g-space-sm ta.align-center">
+    <!-- <byd-material-icon *ngIf="this.icon">{{ this.icon }}</byd-material-icon> -->
+    <ng-content></ng-content>
+  </div>
+</button>

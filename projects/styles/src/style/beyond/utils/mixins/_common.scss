@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use 'sass:list';
+
+/** Function **/
+@function is-map($var) {
+  @return type-of($var) == 'map';
+}
+
+@function get-var-name($name, $keys) {
+  $full-name: '--byd-' + $name;
+  @each $key in $keys {
+    @if $key != '' {
+      $full-name: $full-name + '-' + $key;
+    }
+  }
+  @return $full-name;
+}
+@function get-var($name, $keys...) {
+  $params: ();
+  @each $key in $keys {
+    $params: list.append($params, $key);
+  }
+
+  @return var(#{get-var-name($name, $params)});
+}
+
+@function flat-map($name, $map) {
+  $flat-map: ();
+
+  @each $key, $value in $map {
+    $full-name: $name + '-' + $key;
+    @if is-map($value) {
+      $flat-map: map.merge($flat-map, flat-map($full-name, $value));
+    } @else {
+      $flat-map: map.set($flat-map, $full-name, $value);
+    }
+  }
+
+  @return $flat-map;
+}

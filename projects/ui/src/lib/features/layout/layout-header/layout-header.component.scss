@@ -1,0 +1,8 @@
+@use 'beyond/utils/mixins/common';
+
+.header {
+  // @include media-breakpoint-down(mobile) {
+  //   color: common.get-var(text, primary);
+  //   padding: common.get-var(space, sm);
+  // }
+}

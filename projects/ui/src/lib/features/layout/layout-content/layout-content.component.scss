@@ -1,0 +1,10 @@
+.layout-content {
+  position: relative;
+  margin: 8px;
+ // @include setHeight($isMinHeight: true, $withBottom: true);
+
+  &.auto {
+    min-height: auto;
+    margin: 0px;
+  }
+}

@@ -1,0 +1,84 @@
+@use "beyond/utils/mixins/common";
+@use "beyond/utils/mixins/fonts";
+@use "beyond/utils/mixins/flex";
+@use "beyond/utils/mixins/spaces";
+
+
+.button {
+  width: 100%;
+
+  border: none;
+
+  border-radius: common.get-var(radius, full);
+  padding: common.get-var(space, sm) common.get-var(space, md);
+
+  @include fonts.fontSizeBody(md);
+
+  @include flex.align-center;
+  @include flex.justify-center;
+
+  gap: common.get-var(space, md);
+
+  &.small {
+    @include fonts.fontSizeBody(sm);
+    padding: common.get-var(space, sm) spaces.spaceBase(2);
+  }
+  &.large {
+    padding: common.get-var(space, md) common.get-var(space, lg);
+  }
+  &.no-border {
+    border: none;
+  }
+  &.disabled,
+  &.inactive {
+    cursor: not-allowed;
+  }
+  &.primary {
+    color: common.get-var(text, invert, primary);
+    background-color: common.get-var(surface, brand, primary);
+
+    &:hover {
+      background-color: common.get-var(surface, hover, primary);
+    }
+
+    &.disabled {
+      color: common.get-var(text, brand, secondary);
+      background-color: common.get-var(surface, hover, secondary);
+    }
+    &.inactive {
+      color: common.get-var(text, primary);
+      background-color: common.get-var(surface, tertiary);
+    }
+  }
+  &.secondary {
+    color: common.get-var(text, primary);
+    background-color: common.get-var(surface, primary);
+    border: 1px solid common.get-var(border, secondary);
+    &:hover {
+      border-color: common.get-var(border, invert);
+    }
+    &.disabled {
+      color: common.get-var(text, tertiary);
+      border-color: common.get-var(border, disabled);
+    }
+    &.inactive {
+      border-color: common.get-var(border, primary);
+    }
+  }
+}
+
+.circular {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  padding: 0;
+
+  &.big {
+    height: 90px;
+    width: 90px;
+  }
+  &.small {
+    height: 40px;
+    width: 40px;
+  }
+}

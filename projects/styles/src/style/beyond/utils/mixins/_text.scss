@@ -1,0 +1,12 @@
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-line-limit($line-limit) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-limit;
+  -webkit-box-orient: vertical;
+}

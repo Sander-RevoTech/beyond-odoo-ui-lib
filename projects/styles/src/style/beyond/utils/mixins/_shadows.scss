@@ -1,0 +1,6 @@
+@use 'beyond/utils/mixins/common';
+
+@mixin shadow-mixin($scope, $key) {
+  box-shadow: common.get-var(shadow, $scope, $key);
+}
+

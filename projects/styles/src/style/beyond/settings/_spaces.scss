@@ -1,0 +1,73 @@
+@use "beyond/vars";
+@use 'beyond/settings/common';
+
+@mixin generateRadius() {
+  @include common.generateMap(
+    'radius',
+    vars.$radius,
+    (
+      bdr: border-radius,
+    )
+  );
+}
+
+@mixin generateSpaces() {
+  @include common.generateMap(
+    'space',
+    vars.$space,
+    (
+      g: gap,
+      p: padding,
+      px: (
+        padding-left,
+        padding-right,
+      ),
+      py: (
+        padding-top,
+        padding-bottom,
+      ),
+      pt: padding-top,
+      pl: padding-left,
+      pr: padding-right,
+      pb: padding-bottom,
+      m: margin,
+      mx: (
+        margin-left,
+        margin-right,
+      ),
+      my: (
+        margin-top,
+        margin-bottom,
+      ),
+      mt: margin-top,
+      ml: margin-left,
+      mr: margin-right,
+      mb: margin-bottom,
+    )
+  );
+
+  .m-a {
+    margin: auto;
+  }
+  .mx-a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .my-a {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .mt-a {
+    margin-top: auto;
+  }
+  .mr-a {
+    margin-right: auto;
+  }
+
+  .mb-a {
+    margin-bottom: auto;
+  }
+  .ml-a {
+    margin-left: auto;
+  }
+}

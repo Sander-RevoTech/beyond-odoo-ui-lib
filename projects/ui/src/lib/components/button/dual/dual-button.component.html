@@ -1,0 +1,14 @@
+<div class="dual-button row">
+  <div class="col first" (click)="this.first.callback()">
+    <div class="flex-start">
+      <byd-font-icon class="icon" [name]="this.first.icon"></byd-font-icon>
+      <span class="label">{{ this.first.label | translate }}</span>
+    </div>
+  </div>
+  <div class="col second" (click)="this.second.callback()">
+    <div class="flex-start">
+      <span class="label">{{ this.second.label | translate }}</span>
+      <byd-font-icon class="icon" [name]="this.second.icon"></byd-font-icon>
+    </div>
+  </div>
+</div>

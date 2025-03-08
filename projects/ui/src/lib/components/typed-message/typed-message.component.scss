@@ -1,0 +1,13 @@
+@use "beyond/utils/mixins/common";
+
+.alert {
+  border-radius: 8px;
+  display: inline-flex;
+  gap: common.get-var(space, xs);
+  border: none;
+  padding: common.get-var(space, xs);
+}
+
+.text {
+  margin: auto;
+}

@@ -1,0 +1,14 @@
+<byd-layout-with-nav>
+  <div class="layout-page-header">
+    <ng-content select="byd-layout-header"></ng-content>
+  </div>
+  <div class="layout-page-title">
+    <ng-content select="byd-layout-title"></ng-content>
+  </div>
+  <div class="layout-page-content">
+    <ng-content></ng-content>
+  </div>
+  <byd-layout-nav>
+    <ng-content select="byd-layout-nav"></ng-content>
+  </byd-layout-nav>
+</byd-layout-with-nav>

@@ -1,0 +1,33 @@
+@use "beyond/utils/mixins/common";
+
+.dual-button {
+  @include make-row(0);
+
+  border: 1px solid common.get-var(neutral, 400);
+
+  border-radius: 60px;
+
+  .first,
+  .second {
+    @include make-col-ready();
+
+    @include ta.fontSizeBody(md);
+    padding: common.get-var(space, sm) 0;
+
+    > div {
+      justify-content: center;
+      margin: auto;
+    }
+    .icon {
+      color: common.get-var(surface, brand, primary);
+      margin: auto common.get-var(space, sm);
+    }
+  }
+
+  .first {
+    border-right: 1px solid common.get-var(neutral, 400);
+  }
+  .second {
+    border-left: 1px solid common.get-var(neutral, 400);
+  }
+}

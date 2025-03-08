@@ -1,0 +1,28 @@
+@use "beyond/utils/mixins/shadows";
+@use "beyond/utils/mixins/common";
+@use "beyond/utils/mixins/fonts";
+
+.card {
+  @include shadows.shadow-mixin(brand, md);
+  border-radius: common.get-var(space, md);
+  overflow: hidden;
+
+  padding: common.get-var(space, lg);
+  background-color: common.get-var(surface, primary);
+  color: common.get-var(text, primary);
+
+  @include fonts.fontSizeBody(md);
+
+  &.success {
+    border: 1px solid common.get-var(semantic-token, success);
+  }
+  &.danger {
+    border: 1px solid common.get-var(semantic-token, alert);
+  }
+  &.warning {
+    border: 1px solid common.get-var(semantic-token, warning);
+  }
+  &.info {
+    border: 1px solid common.get-var(semantic-token, link);
+  }
+}

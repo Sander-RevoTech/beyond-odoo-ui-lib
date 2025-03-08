@@ -1,0 +1,11 @@
+@mixin setHeight($isMinHeight: true, $withBottom: true) {
+  @if ($isMinHeight) {
+    min-height: getHeight($withBottom);
+  } @else {
+    height: getHeight($withBottom);
+  }
+}
+
+@function getHeight($withBottom) {
+  @return calc(100vh - 60px - if($withBottom, 55px, 0px));
+}

@@ -1,0 +1,6 @@
+@use 'beyond/utils/mixins/common';
+
+.empty-container {
+  margin: common.get-var(space, sm) auto;
+  text-align: center;
+}

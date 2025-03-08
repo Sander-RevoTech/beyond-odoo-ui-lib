@@ -1,0 +1,23 @@
+{
+	"empty": {
+		"content": "Il n'y pas de données correspondant à votre demande",
+		"light-message": "Malheureusement, nous n'avons pas de données correspondant à votre demande",
+		"title": "Emplacement vide"
+	},
+	"error": {
+		"title": "Une erreur est survenue !"
+	},
+	"guard": {
+		"content": "vous n'avez pas les permissions nécessaires"
+	},
+	"validation": {
+		"modal": {
+			"content": "Êtes vous sur de vouloir supprimer?",
+			"cta": {
+				"cancel": "Annuler",
+				"ok": "Oui"
+			},
+			"title": "Supprimer l'élément"
+		}
+	}
+}

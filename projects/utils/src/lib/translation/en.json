@@ -1,0 +1,6 @@
+{
+	"clipboard": {
+		"error": "Copy failed",
+		"success": "Content copied to clipboard"
+	}
+}

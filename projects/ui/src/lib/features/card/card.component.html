@@ -1,0 +1,31 @@
+<div
+  class="card flex-column"
+  [ngClass]="{
+    'card-shadow': this.shadow,
+    highlight: this.highlight,
+    'full-height': this.fullHeight,
+    'no-card-border': this.noContent
+  }"
+  [class.hover]="this.hasHandler"
+  (click)="this.clickTrigger()"
+>
+  <!-- <byd-new [visible]="this.isNew"></byd-new> -->
+  <div class="responsive-content">
+    <div class="img-container">
+      <div class="card-img-container">
+        <ng-content select="byd-card-image"></ng-content>
+      </div>
+    </div>
+    <div class="content-container flex-column flex-full">
+      <div class="card-header-container">
+        <ng-content select="byd-card-header"></ng-content>
+      </div>
+      <div class="card-content-container flex-full">
+        <ng-content select="byd-card-content" class="flex-full"></ng-content>
+      </div>
+      <div class="card-cbyd-container">
+        <ng-content select="byd-card-cta"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

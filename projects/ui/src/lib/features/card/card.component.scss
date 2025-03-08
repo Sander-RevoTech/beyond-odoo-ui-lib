@@ -1,0 +1,57 @@
+@use "beyond/utils/mixins/common";
+@use "beyond/utils/mixins/shadows";
+@use "beyond/utils/mixins/flex";
+@use "beyond/utils/mixins/mediaQueriesRanges";
+@use "beyond/utils/mixins/colors";
+@use "beyond/utils/mixins/fonts";
+
+
+$spacing: common.get-var(space, md);
+
+.card {
+  &.hover {
+    @include colors.hover-bgc();
+  }
+  border-radius: common.get-var(space, md);
+
+  position: relative;
+
+  padding: $spacing;
+
+  background-color: common.get-var(surface, default);
+  color: common.get-var(text, primary);
+
+  @include fonts.fontSizeBody(md);
+
+  &.full-height {
+    height: calc(100% - $spacing * 2);
+  }
+  &.highlight {
+    background-color: common.get-var(surface, hover, secondary);
+    border-color: 1px solid common.get-var(border, secondary);
+  }
+  &.card-shadow {
+    @include shadows.shadow-mixin(black, md);
+  }
+
+  .responsive-content {
+   @include flex.flex-column();
+    // @include media-breakpoint-up(tablette) {
+    //   @include flex.flex-row();
+    //   .img-container {
+    //     order: 2;
+    //   }
+    // }
+  }
+}
+
+@include mediaQueriesRanges.in-context('.card-force-mobile') {
+  .card {
+    .responsive-content {
+      @include flex.flex-column();
+      .img-container {
+        order: 0;
+      }
+    }
+  }
+}

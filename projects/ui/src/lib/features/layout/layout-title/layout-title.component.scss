@@ -1,0 +1,5 @@
+@use 'beyond/utils/mixins/common';
+
+.title {
+  padding: 0 common.get-var(space, sm);
+}

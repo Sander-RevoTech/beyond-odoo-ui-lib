@@ -1,0 +1,33 @@
+@use "beyond/vars";
+@use 'beyond/settings/common';
+
+@use 'beyond/utils/mixins/common' as utils-common;
+@use 'beyond/utils/mixins/shadows';
+
+@mixin generateComponents() {
+  @include common.generateMap('components', vars.$components);
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: utils-common.get-var(space, xs);
+    height: utils-common.get-var(space, xs);
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @include shadows.shadow-mixin(black, sm);
+    border-radius: utils-common.get-var(radius, rounded);
+    background: utils-common.get-var(surface, secondary);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: utils-common.get-var(surface, brand, primary);
+    border-radius: utils-common.get-var(radius, rounded);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: utils-common.get-var(surface, invert);
+  }
+}

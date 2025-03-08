@@ -1,0 +1,7 @@
+<div class="swiper-container" [ngClass]="this.classes">
+  @for(item of this.items; track item.key) {
+  <ng-container
+    *ngTemplateOutlet="this.template; context: { element: item }"
+  ></ng-container>
+  }
+</div>

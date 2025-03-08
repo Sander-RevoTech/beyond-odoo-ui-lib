@@ -1,0 +1,72 @@
+<!-- <div class="placeholder-container">
+  <ng-template [ngTemplateOutlet]="Item" [ngTemplateOutletContext]="{ placeholder: this.placeholder }"></ng-template>
+</div>
+
+<ng-template #Item let-placeholderItem="placeholder">
+  <ng-container *ngFor="let index of this.getFakeArray(placeholderItem.repeat)">
+    <ng-container [ngSwitch]="placeholderItem.type">
+      <ng-container *ngSwitchCase="'container'">
+        <ng-template
+          [ngTemplateOutlet]="Children"
+          [ngTemplateOutletContext]="{
+            children: placeholderItem.children
+          }"
+        ></ng-template>
+      </ng-container>
+      <ng-container *ngSwitchCase="'row'">
+        <div class="ph-row" [ngClass]="this.getAttributesClass(placeholderItem.attributes)">
+          <ng-template
+            [ngTemplateOutlet]="Children"
+            [ngTemplateOutletContext]="{
+              children: placeholderItem.children
+            }"
+          ></ng-template>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'item'">
+        <div class="ph-item" [ngClass]="this.getAttributesClass(placeholderItem.attributes)">
+          <ng-template
+            [ngTemplateOutlet]="Children"
+            [ngTemplateOutletContext]="{
+              children: placeholderItem.children
+            }"
+          ></ng-template>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'col'">
+        <div
+          [ngClass]="
+            this.getColClass(placeholderItem.gridSize) + ' ' + this.getAttributesClass(placeholderItem.attributes)
+          "
+        >
+          <ng-template
+            [ngTemplateOutlet]="Children"
+            [ngTemplateOutletContext]="{
+              children: placeholderItem.children
+            }"
+          ></ng-template>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'picture'">
+        <div class="ph-picture" [ngClass]="this.getColClass(placeholderItem.gridSize)"></div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'avatar'">
+        <div class="ph-avatar" [ngClass]="this.getColClass(placeholderItem.gridSize)"></div>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <ng-template
+          [ngTemplateOutlet]="Children"
+          [ngTemplateOutletContext]="{
+            children: placeholderItem.children
+          }"
+        ></ng-template>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+</ng-template>
+
+<ng-template #Children let-children="children">
+  <ng-container *ngFor="let child of children">
+    <ng-template [ngTemplateOutlet]="Item" [ngTemplateOutletContext]="{ placeholder: child }"></ng-template>
+  </ng-container>
+</ng-template> -->

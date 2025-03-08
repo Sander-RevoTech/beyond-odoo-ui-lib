@@ -1,0 +1,97 @@
+@use "beyond/utils/mixins/common";
+
+$size: 50px;
+$thickness: 0.25em;
+
+.container {
+  position: relative;
+
+  .bullet {
+    cursor: pointer;
+    position: absolute;
+    background-color: common.get-var(surface, invert);
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+    z-index: 2;
+    right: 0;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      background-color: common.get-var(neutral, 100);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 0.5em;
+      transition: all 0.25s;
+    }
+
+    &:before {
+      height: calc($size / 2);
+      width: $thickness;
+    }
+
+    &:after {
+      width: calc($size / 2);
+      height: $thickness;
+    }
+
+    &.open {
+      &:before {
+        transform: rotatez(-45deg);
+      }
+
+      &:after {
+        transform: rotatez(-45deg);
+      }
+    }
+  }
+
+  .item {
+    cursor: pointer;
+    position: absolute;
+
+    right: 0;
+    width: $size;
+    height: $size;
+    line-height: 62px;
+
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+
+    color: common.get-var(neutral, 100);
+    text-align: center;
+
+    transform: rotateZ(90deg);
+
+    transition-property: all;
+    transition-duration: 0.35s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &.show {
+      opacity: 1;
+    }
+
+    &:nth-of-type(1) {
+      background-color: purple;
+      transform: translateX(-5em);
+      transition-delay: 0.2s;
+    }
+
+    &:nth-of-type(2) {
+      background-color: slateblue;
+      transform: translateX(-3.5em) translateY(-3.5em);
+      transition-delay: 0.1s;
+    }
+
+    &:nth-of-type(3) {
+      background-color: mediumorchid;
+      transform: translateY(-5em);
+    }
+  }
+}

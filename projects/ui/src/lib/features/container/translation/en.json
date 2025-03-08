@@ -1,0 +1,23 @@
+{
+	"empty": {
+		"content": "No data corresponding to your request",
+		"light-message": "Unfortunately, we have no data corresponding to your request",
+		"title": "Empty location"
+	},
+	"error": {
+		"title": "An error has occurred!"
+	},
+	"guard": {
+		"content": "You do not have the necessary permissions"
+	},
+	"validation": {
+		"modal": {
+			"content": "Are you sure you want to delete?",
+			"cta": {
+				"cancel": "Cancel",
+				"ok": "Yes"
+			},
+			"title": "Delete item"
+		}
+	}
+}

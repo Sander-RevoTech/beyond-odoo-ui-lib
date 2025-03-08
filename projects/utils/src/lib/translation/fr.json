@@ -1,0 +1,6 @@
+{
+	"clipboard": {
+		"error": "Échec de la copie",
+		"success": "Contenu copié dans le presse-papiers"
+	}
+}

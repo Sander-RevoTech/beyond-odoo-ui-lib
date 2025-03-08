@@ -1,0 +1,14 @@
+@use "beyond/utils/mixins/common";
+
+.card {
+  padding: common.get-var(space, sm);
+  text-align: center;
+}
+
+p {
+  padding-top: common.get-var(space, sm);
+}
+
+byd-font-icon {
+  color: common.get-var(brand, 400);
+}
