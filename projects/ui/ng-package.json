@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ui",
+  "dest": "../../lib/ui",
   "lib": {
     "entryFile": "src/public-api.ts",
     "styleIncludePaths": ["../styles/src/style"]

@@ -1,0 +1,46 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
+export declare const Breakpoints: {
+    XSmall: string;
+    Small: string;
+    Medium: string;
+    Large: string;
+    XLarge: string;
+    XXLarge: string;
+    Handset: string;
+    Tablet: string;
+    Web: string;
+    HandsetPortrait: string;
+    TabletPortrait: string;
+    WebPortrait: string;
+    HandsetLandscape: string;
+    TabletLandscape: string;
+    WebLandscape: string;
+};
+export declare class BreakpointDetection {
+    breakpointObserver: BreakpointObserver;
+    isLessThanXS: boolean;
+    isLessThanSM: boolean;
+    isLessThanMD: boolean;
+    isLessThanLG: boolean;
+    isMoreThanXS: boolean;
+    isMoreThanSM: boolean;
+    isMoreThanMD: boolean;
+    isMoreThanLG: boolean;
+    isLessThanXS$: import("rxjs").Observable<boolean>;
+    isLessThanSM$: import("rxjs").Observable<boolean>;
+    isLessThanMD$: import("rxjs").Observable<boolean>;
+    isLessThanLG$: import("rxjs").Observable<boolean>;
+    isMoreThanXS$: import("rxjs").Observable<boolean>;
+    isMoreThanSM$: import("rxjs").Observable<boolean>;
+    isMoreThanMD$: import("rxjs").Observable<boolean>;
+    isMoreThanLG$: import("rxjs").Observable<boolean>;
+    isMobile: boolean;
+    isMobile$: import("rxjs").Observable<boolean>;
+    isTablette: boolean;
+    isTablette$: import("rxjs").Observable<boolean>;
+    isDesktop: boolean;
+    isDesktop$: import("rxjs").Observable<boolean>;
+    constructor();
+    private _isMatched$;
+    private _isMatched;
+}
