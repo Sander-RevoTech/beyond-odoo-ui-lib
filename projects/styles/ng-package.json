@@ -3,5 +3,6 @@
   "dest": "../../lib/styles",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["@angular", "@beyond", "bootstrap"]
 }
