@@ -5,7 +5,7 @@ import { LoginCardComponent } from '../../components/public-api';
   selector: '',
   imports: [LoginCardComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrl: './login.component.scss',
   standalone: true,
 })
 export class BydLoginPage {
