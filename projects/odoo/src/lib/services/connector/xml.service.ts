@@ -3,6 +3,7 @@ import { Injectable, NgZone, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 import * as xmlrpc from 'xmlrpc';
 import { ODOO_SERVER_CONFIG_KEY } from '../../injectionToken';
+import { BydPermissionsServices } from '@beyond/server';
 
 // import { AppNotificationService } from 'src/app/services/notification/notification.service';
 // import { Permissions } from 'src/app/services/user/permissions';
@@ -24,6 +25,7 @@ type pendingRequest = Array<{ subject$: Subject<any>; request: () => void }>;
   providedIn: 'root',
 })
 export class OdooXmlConnector {
+
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
 
   get proxyUrl() {
@@ -37,6 +39,8 @@ export class OdooXmlConnector {
     return "";
     //return Permissions.pass;
   }
+
+  private readonly _permissionsService = inject(BydPermissionsServices);
 
  // private _notificationService: AppNotificationService;
   private _tempAuthRequest: pendingRequest = [];
@@ -95,7 +99,7 @@ export class OdooXmlConnector {
           } else {
             setTimeout(() => {
               console.log('UID:', value);
-              Permissions.set(value, pass);
+              this._permissionsService.set(value, pass);
 
               subject$.next(value);
               subject$.complete();
@@ -307,7 +311,7 @@ export class OdooXmlConnector {
       .toString()
       .replace('Error: Invalid XML-RPC', '')
       .replace('Error: XML-RPC fault:', '');
-    this._notificationService.addErrorNotification(formattedMessage);
+   // this._notificationService.addErrorNotification(formattedMessage);
   }
 
   private _headers(): { [header: string]: string } {

@@ -3,5 +3,6 @@
   "dest": "../../dist/odoo",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["@beyond", "angular-odoo-jsonrpc", "@types/xmlrpc", "xmlrpc"]
 }

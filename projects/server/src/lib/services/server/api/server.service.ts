@@ -8,7 +8,7 @@ import { Correlation, TempRequest } from '../interface';
 import { Request } from '../request';
 import { IBackResponse, IBaseResponse, IResponse, StatusReponse } from '../response';
 import { MappingApiType, RequestMap } from './requestMap';
-import { Permissions } from '../../user/permissions.services.';
+import { BydPermissionsServices } from '../../user/permissions.services.';
 
 export const SERVER_CONFIG_KEY = new InjectionToken<IServerConfig>('config_server');
 export interface IServerConfig {

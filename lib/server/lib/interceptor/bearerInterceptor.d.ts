@@ -2,6 +2,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class BearerInterceptor implements HttpInterceptor {
+    private readonly _permissionsServices;
     constructor();
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<BearerInterceptor, never>;

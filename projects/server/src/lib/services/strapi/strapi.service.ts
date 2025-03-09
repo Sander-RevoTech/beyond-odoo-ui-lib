@@ -8,7 +8,7 @@ import { isNonNullable } from '@beyond/utils';
 import { BydBaseService } from '../server/baseService';
 import { GraphMutationPayload, GraphQueryPayload } from '../graphql/models/graphPayload';
 import { Request } from '../server/request';
-import { Permissions } from '../user/permissions.services.';
+import { BydPermissionsServices } from '../user/permissions.services.';
 
 export const STRAPI_SERVER_CONFIG = new InjectionToken<IStrapiConfig>('config_strapi_server');
 export interface IStrapiConfig {
@@ -27,6 +27,7 @@ export type GraphStrapiMutateResponse<T> = T;
 })
 export class BydStrapiService extends BydBaseService {
 
+  private readonly _permissionsServices = inject(BydPermissionsServices);
   private readonly _config = inject(STRAPI_SERVER_CONFIG)
 
   constructor() {
@@ -47,8 +48,8 @@ export class BydStrapiService extends BydBaseService {
   public authentification$(data: { identifier: string, password: string}) {
     return this._serverService.request<{ jwt: string }>(new Request({ type: 'Login', cacheTime: -1, content: data, loginRequired: false })).pipe(
       tap(data => {
-        Permissions.token = data.jwt;
-        Permissions.setAuthenticated(true)
+        this._permissionsServices.token = data.jwt;
+        this._permissionsServices.setAuthenticated(true)
       })
     );
   }

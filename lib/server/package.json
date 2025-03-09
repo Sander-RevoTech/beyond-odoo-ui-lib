@@ -9,6 +9,7 @@
     "@beyond/utils": "^0.0.1",
     "@apollo/client": "^3.12.4",
     "apollo-angular": "^8.0.0",
+    "storage-manager-js": "^4.2.0",
     "graphql": "^16.10.0",
     "tslib": "^2.3.0"
   },

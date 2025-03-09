@@ -38,28 +38,16 @@ export class BydPermissionsServices {
     }
   }
 
-  public set(permissions: { permission_name: string }[], roles: string[], isAuthenticated: boolean) {
-    Logger.LogInfo('[PERMISSIONS] List brut:', permissions);
+  public set(uid: number | null, pass: string) {
+    Logger.LogInfo('[PERMISSIONS] user Uid:', uid);
+
+    this.uid = uid;
+    this.pass = pass;
+    SessionStorage.set('token', [this.uid, this.pass].join(this._sep));
 
     this.guards = {};
 
-    if (permissions) {
-      for (let perm of permissions) {
-        const access = perm.permission_name.split(':');
-
-        if (!this.guards[access[1]]) {
-          this.guards[access[1]] = [];
-        }
-        this.guards[access[1]].push(access[0]);
-      }
-    }
-
-    this.roles = roles || [];
-
-    this.setAuthenticated(isAuthenticated);
-
     this._updated$.next(Date.now());
-    Logger.LogInfo('[PERMISSIONS] List:', this.guards, this.roles);
   }
 
   public reset() {

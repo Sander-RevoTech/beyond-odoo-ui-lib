@@ -11,6 +11,7 @@ export type GraphStrapiResponse<T> = T;
 export type GraphStrapiListResponse<T> = T[];
 export type GraphStrapiMutateResponse<T> = T;
 export declare class BydStrapiService extends BydBaseService {
+    private readonly _permissionsServices;
     private readonly _config;
     constructor();
     authentification$(data: {

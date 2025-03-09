@@ -1,8 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 
-import { MappingApiType } from '@beyond/server';
+import { MappingApiType, BydPermissionsServices } from '@beyond/server';
 import { BydBaseOdooService } from './baseService';
-import { BydPermissionsServices } from '../../../../server/src/public-api';
 
 
 interface UserProfile {
