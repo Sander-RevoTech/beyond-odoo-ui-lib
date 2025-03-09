@@ -1,6 +1,5 @@
 import { map } from 'rxjs/operators';
 
-import { SessionStorage } from 'storage-manager-js';
 
 import { BehaviorSubject, Observable, filter, of } from 'rxjs';
 import { Logger } from '../logger';
@@ -31,8 +30,8 @@ export class BydPermissionsServices {
   }
 
   constructor() {
-    if (SessionStorage.has('token')) {
-      const token = (<string>SessionStorage.get('token')).split(this._sep);
+    if (sessionStorage.getItem('token')) {
+      const token = (<string>sessionStorage.getItem('token')).split(this._sep);
       this.uid = Number(token[0]);
       this.pass = token[1];
 
@@ -45,7 +44,7 @@ export class BydPermissionsServices {
 
     this.uid = uid;
     this.pass = pass;
-    SessionStorage.set('token', [this.uid, this.pass].join(this._sep));
+    sessionStorage.setItem('token', [this.uid, this.pass].join(this._sep));
 
     this.guards = {};
 
@@ -54,7 +53,7 @@ export class BydPermissionsServices {
 
   public reset() {
     this.uid = null;
-    SessionStorage.delete('token');
+    sessionStorage.removeItem('token');
 
     this.guards = {};
 
