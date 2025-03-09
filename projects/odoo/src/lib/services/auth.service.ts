@@ -17,7 +17,7 @@ const apiRoutes: MappingApiType = {
 @Injectable({
   providedIn: 'root',
 })
-export class BydAuthService extends BydBaseOdooService {
+export class BydAuthOdooService extends BydBaseOdooService {
   readonly permissionsServices = inject(BydPermissionsServices);
   constructor() {
     super();

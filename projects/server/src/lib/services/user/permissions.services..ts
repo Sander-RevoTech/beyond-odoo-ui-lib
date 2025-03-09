@@ -6,6 +6,8 @@ import { BehaviorSubject, Observable, filter, of } from 'rxjs';
 import { Logger } from '../logger';
 import { Injectable } from '@angular/core';
 
+export type BydPermissionLevel = string | 'authenticated' | 'authorize';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -68,7 +70,7 @@ export class BydPermissionsServices {
     return this.roles.some(x => x === role);
   }
 
-  public canDirectAccess(feature: string, level: string | 'authenticated'): boolean {
+  public canDirectAccess(feature: string, level: BydPermissionLevel): boolean {
     if (level === 'authenticated') {
       return this.isAuthenticated;
     }
@@ -93,7 +95,7 @@ export class BydPermissionsServices {
     return true;
   }
 
-  public canAccess(feature: string, level: string | 'authenticated'): Observable<boolean> {
+  public canAccess(feature: string, level: BydPermissionLevel): Observable<boolean> {
     if (this.received) return of(this.canDirectAccess(feature, level));
 
     return this._updated$.pipe(map(() => this.canDirectAccess(feature, level)));

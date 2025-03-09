@@ -1,8 +1,8 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../lib/odoo",
+  "dest": "../../dist/user",
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": ["@beyond", "angular-odoo-jsonrpc", "@types/xmlrpc", "xmlrpc"]
+  "allowedNonPeerDependencies": ["@beyond"]
 }

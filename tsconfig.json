@@ -21,12 +21,10 @@
       "@beyond/ui": ["./lib/ui"],
       "@beyond/styles": ["./lib/styles"],
       "@beyond/utils": ["./lib/utils"],
-      "@beyond/server": [
-        "./lib/server"
-      ],
-      "odoo": [
-        "./dist/odoo"
-      ]
+      "@beyond/server": ["./lib/server"],
+      "@beyond/menu": ["./lib/menu"],
+      "@beyond/odoo": ["./lib/odoo"],
+      "@beyond/user": ["./lib/user"]
     }
   },
   "angularCompilerOptions": {

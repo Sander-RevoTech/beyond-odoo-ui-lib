@@ -1,0 +1,17 @@
+{
+  "name": "@beyond/user",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "ng build @beyond/user"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0"
+  },
+  "dependencies": {
+    "@beyond/odoo": "0.0.1",
+    "@beyond/menu": "0.0.1",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

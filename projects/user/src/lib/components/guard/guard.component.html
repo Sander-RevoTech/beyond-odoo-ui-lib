@@ -1,0 +1,19 @@
+<div class="guard">
+  <div class="guard-valid" *ngIf="this.isGuardValid()">
+    <ng-content></ng-content>
+  </div>
+  <div
+    class="guard-no-valid ta-c"
+    *ngIf="!this.isGuardValid() && this.canDisplayErrorMessage"
+  >
+    <!-- <cam-font-icon name="close-tool" size="md"></cam-font-icon> -->
+    {{ "container.guard.content" }}
+
+    <byd-button
+      (action)="this.goToLogin()"
+      *ngIf="this.level === 'authenticated'"
+    >
+      Me connecter
+    </byd-button>
+  </div>
+</div>
