@@ -1,5 +1,7 @@
 export declare const getUniqueValues: <T>(inputArray: T[], propName: (x: T) => any) => T[];
 export declare const getUniqueArray: <T>(array: T[]) => T[];
+export declare const getFirstString: (array: Array<number | string>) => string | null;
+export declare const getFirstNumber: (array: Array<number | string>) => number | null;
 export declare const isNonNullable: <T>(value: T) => value is NonNullable<T>;
 export declare const toArray: <T>(value: T | T[]) => T[];
 export declare const keepUniqueObjectByProperty: <T>(list: T[], property: (item: T) => any) => T[];

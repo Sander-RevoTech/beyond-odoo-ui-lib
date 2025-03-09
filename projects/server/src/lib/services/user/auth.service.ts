@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, filter, tap } from 'rxjs';
-import { BydBaseService } from '../server/baseService';
 import { MappingApiType } from '../server/api/requestMap';
-import { Request } from '../server/request';
-import { Permissions } from './permissions';
 import { BydStrapiService } from '../strapi/strapi.service';
 
 

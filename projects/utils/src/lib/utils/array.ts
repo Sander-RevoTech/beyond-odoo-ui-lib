@@ -6,6 +6,14 @@ export const getUniqueArray = <T>(array: T[]): T[] => {
   return [...new Set(array)].filter(isNonNullable);
 };
 
+export const getFirstString = (array: Array<number | string>): string | null => {
+  return array ? (array.find(data => typeof data === 'string') as string) || null : null;
+};
+
+export const getFirstNumber = (array: Array<number | string>): number | null => {
+  return array ? (array.find(data => typeof data === 'number') as number) || null : null;
+};
+
 export const isNonNullable = <T>(value: T): value is NonNullable<T> => {
   return value !== null && value !== undefined;
 };

@@ -8,7 +8,7 @@ import { isNonNullable } from '@beyond/utils';
 import { BydBaseService } from '../server/baseService';
 import { GraphMutationPayload, GraphQueryPayload } from '../graphql/models/graphPayload';
 import { Request } from '../server/request';
-import { Permissions } from '../user/permissions';
+import { Permissions } from '../user/permissions.services.';
 
 export const STRAPI_SERVER_CONFIG = new InjectionToken<IStrapiConfig>('config_strapi_server');
 export interface IStrapiConfig {

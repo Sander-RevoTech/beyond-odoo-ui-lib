@@ -1,11 +1,19 @@
 import { map } from 'rxjs/operators';
 
+import { SessionStorage } from 'storage-manager-js';
+
 import { BehaviorSubject, Observable, filter, of } from 'rxjs';
 import { Logger } from '../logger';
+import { Injectable } from '@angular/core';
 
-
-export class PermissionsCore {
+@Injectable({
+  providedIn: 'root',
+})
+export class BydPermissionsServices {
   private _updated$ = new BehaviorSubject<number | null>(null);
+
+  public uid: number | null = null;
+  public pass: string | null = null;
 
   public token: string | null = null;
   public guards: { [index: string]: string[] } = {};
@@ -14,11 +22,21 @@ export class PermissionsCore {
 
   public updated$ = this._updated$.pipe(filter(data => !!data));
 
+  private _sep = '##--##';
+
   get received() {
     return this._updated$.value !== null;
   }
 
-  constructor() {}
+  constructor() {
+    if (SessionStorage.has('token')) {
+      const token = (<string>SessionStorage.get('token')).split(this._sep);
+      this.uid = Number(token[0]);
+      this.pass = token[1];
+
+      this._updated$.next(Date.now());
+    }
+  }
 
   public set(permissions: { permission_name: string }[], roles: string[], isAuthenticated: boolean) {
     Logger.LogInfo('[PERMISSIONS] List brut:', permissions);
@@ -42,6 +60,15 @@ export class PermissionsCore {
 
     this._updated$.next(Date.now());
     Logger.LogInfo('[PERMISSIONS] List:', this.guards, this.roles);
+  }
+
+  public reset() {
+    this.uid = null;
+    SessionStorage.delete('token');
+
+    this.guards = {};
+
+    this._updated$.next(Date.now());
   }
 
   public setAuthenticated(isAuthenticated: boolean) {
@@ -85,4 +112,3 @@ export class PermissionsCore {
   }
 }
 
-export const Permissions = new PermissionsCore();
