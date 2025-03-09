@@ -1,8 +1,9 @@
 <div class="guard">
-  <div class="guard-valid" *ngIf="this.isGuardValid()">
+  @if(this.isGuardValid()) {
+  <div class="guard-valid">
     <ng-content></ng-content>
   </div>
-  @if(!this.isGuardValid() && this.canDisplayErrorMessage) {
+  } @else if(!this.isGuardValid() && this.canDisplayErrorMessage) {
   <div class="guard-no-valid ta-c">
     <!-- <cam-font-icon name="close-tool" size="md"></cam-font-icon> -->
     {{ "container.guard.content" }}
