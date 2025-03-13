@@ -1,0 +1,25 @@
+@use "beyond/utils/mixins/common";
+
+.with-separator {
+  border-bottom: 1px solid #a9a9a9;
+  padding-bottom: 2em;
+}
+
+.highlight-title {
+  .panel-title {
+    color: common.get-var(surface, brand, primary);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-top: 2em;
+  }
+}
+
+.no-title-space {
+  .panel-title {
+    padding-top: 0;
+  }
+}

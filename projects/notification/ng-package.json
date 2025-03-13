@@ -1,0 +1,9 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../lib/notification",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": ["../styles/src/style"]
+  },
+  "allowedNonPeerDependencies": ["@angular", "@beyond"]
+}

@@ -1,0 +1,14 @@
+.textbox-container {
+  width: 100%;
+}
+
+.input-group {
+  position: relative;
+
+  .action {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    bottom: 0;
+  }
+}

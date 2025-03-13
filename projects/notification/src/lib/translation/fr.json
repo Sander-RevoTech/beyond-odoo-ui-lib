@@ -1,0 +1,47 @@
+{
+  "common": {
+    "error": "Une erreur est survenue !",
+    "success": "Opération effectuée avec succès !"
+  },
+  "empty": "Il n'y a pas de notifications pour le moment",
+  "inline": {
+    "label": {
+      "error": "Erreur !",
+      "info": "Information",
+      "success": "Réussi !",
+      "warning": "Attention !"
+    }
+  },
+  "items": {
+    "invoice-payment-status-changed": {
+      "title": "Votre facture {{ InvoiceRef }} à changé de statut"
+    },
+    "new-invoice": {
+      "title": "Nouvelle facture: {{ InvoiceRef }}"
+    },
+    "new-quotation-version": {
+      "title": "Nouveau devis: version {{ VersionNumber }}"
+    },
+    "project-status-changed": {
+      "title": "Votre projet à changé de statut"
+    },
+    "task-assigned": {
+      "title": "Vous avez été assigné au ticket : {{Title}}"
+    },
+    "task-due-today": {
+      "title": "Le ticket: {{Title}} arrive à échéance aujourd'hui"
+    },
+    "task-new-activity": {
+      "title": "{{Title}} a été modifié par le client"
+    },
+    "to-do-assigned": {
+      "title": "Vous avez été assigné au ToDo : {{Title}}"
+    },
+    "to-do-due-today": {
+      "title": "Le ToDo: {{Title}} arrive à échéance aujourd'hui"
+    },
+    "user-tagged-in-conversation": {
+      "title": "Vous avez été taggé dans une conversation: {{Title}}"
+    }
+  }
+}

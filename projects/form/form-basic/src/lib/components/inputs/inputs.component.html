@@ -1,0 +1,50 @@
+<ng-container
+  [ngTemplateOutlet]="inputsTemplate"
+  [ngTemplateOutletContext]="{
+    input: this.input,
+    matcher: this.matcher
+  }"
+></ng-container>
+
+<ng-template #inputsTemplate let-input="input" let-matcher="matcher">
+  <ng-container [ngSwitch]="input.controlType">
+    <ng-container *ngSwitchCase="'textbox'">
+      <byd-input-textbox
+        [input]="input"
+        [matcher]="matcher"
+        [space]="this.space"
+      ></byd-input-textbox>
+    </ng-container>
+    <ng-container *ngSwitchCase="'textarea'">
+      <byd-input-textarea
+        [input]="input"
+        [matcher]="matcher"
+      ></byd-input-textarea>
+    </ng-container>
+    <ng-container *ngSwitchCase="'dropdown'">
+      <byd-input-dropdown
+        [input]="input"
+        [matcher]="matcher"
+        [space]="this.space"
+      ></byd-input-dropdown>
+    </ng-container>
+    <ng-container *ngSwitchCase="'radio'">
+      <byd-input-radio [input]="input"></byd-input-radio>
+    </ng-container>
+    <ng-container *ngSwitchCase="'checkbox'">
+      <byd-input-checkbox [input]="input"></byd-input-checkbox>
+    </ng-container>
+    <ng-container *ngSwitchCase="'toggle'">
+      <byd-input-toggle [input]="input"></byd-input-toggle>
+    </ng-container>
+    <ng-container *ngSwitchCase="'panel'">
+      <byd-form-panel
+        [panel]="input"
+        [inputsTemplate]="inputsTemplate"
+      ></byd-form-panel>
+    </ng-container>
+    <ng-container *ngSwitchCase="'label'">
+      <byd-input-label [input]="input"></byd-input-label>
+    </ng-container>
+  </ng-container>
+</ng-template>

@@ -1,0 +1,21 @@
+<!-- <quill-editor [beforeRender]="beforeRender"></quill-editor> -->
+
+<byd-form-label [input]="this.input"></byd-form-label>
+
+<mat-form-field
+  [floatLabel]="'auto'"
+  class="textarea-container"
+  appearance="fill"
+>
+  <!-- IMPROVE: remove $any -->
+  <textarea
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="1"
+    cdkAutosizeMaxRows="5"
+    class="form-control"
+    [value]="this.input.value"
+    [formControl]="$any(this.input.formControl)"
+    [errorStateMatcher]="this.matcher"
+  ></textarea>
+</mat-form-field>

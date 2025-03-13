@@ -1,0 +1,11 @@
+{
+  "dynamic": {
+    "add": "Añadir",
+    "remove": "Suprimir"
+  },
+  "images": {
+    "add": "Añadir",
+    "pick": "Elegir"
+  },
+  "save": "Almacenar"
+}

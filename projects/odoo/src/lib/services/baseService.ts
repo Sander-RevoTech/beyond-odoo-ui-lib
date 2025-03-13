@@ -1,19 +1,15 @@
-import { Injectable, OnDestroy, inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { getFirstString } from '@beyond/utils';
 import { OdooJsonConnector } from './connector/json.service';
-import { OdooXmlConnector } from './connector/xml.service';
-import { BydBaseService } from '@beyond/server';
 
 @Injectable({
   providedIn: 'root',
 })
-export abstract class BydBaseOdooService extends BydBaseService implements OnDestroy {
-  protected _odooService = inject(OdooXmlConnector);
-  protected _odooJsonService = inject(OdooJsonConnector);
+export abstract class BydBaseOdooService {
+  protected _odooService = inject(OdooJsonConnector);
 
   constructor() {
-    super();
   }
 
   protected _handleJoinData<T>(

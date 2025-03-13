@@ -1,0 +1,63 @@
+@use "beyond/utils/mixins/flex";
+@use "beyond/utils/mixins/common";
+@use "beyond/utils/mixins/fonts";
+
+.radio-label {
+  display: block;
+  padding-bottom: 0.5em;
+}
+
+.button-with-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.only-icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.radio-container {
+  display: flex !important;
+  flex-direction: row;
+  @include flex.space-between();
+
+  .radio-element {
+    display: flex;
+    height: 50px;
+    width: 45%;
+    border: 2px solid common.get-var(neutral, 400);
+    border-radius: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    color: common.get-var(neutral, 600);
+    @include fonts.fontSizeBody(md);
+    line-height: 28px;
+    font-weight: 500;
+
+    app-local-icon {
+      opacity: 0.4;
+    }
+
+    &.validated {
+      border: 2px solid common.get-var(surface, brand, primary);
+
+      app-local-icon {
+        opacity: 1;
+      }
+
+      span {
+        color: common.get-var(neutral, 900);
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+  }
+}

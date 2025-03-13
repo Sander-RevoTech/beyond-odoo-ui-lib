@@ -1,5 +1,3 @@
-<byd-card (click)="this.login()">
-  <byd-card-content>
-    <byd-button (action)="this.login()">{{ "user.login" }}</byd-button>
-  </byd-card-content>
-</byd-card>
+<byd-loader [isLoading]="this.requestState.isLoading()">
+  <byd-form [inputs]="this.form()" (valid)="this.login($event)"></byd-form>
+</byd-loader>

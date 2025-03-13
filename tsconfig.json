@@ -24,7 +24,11 @@
       "@beyond/server": ["./lib/server"],
       "@beyond/menu": ["./lib/menu"],
       "@beyond/odoo": ["./lib/odoo"],
-      "@beyond/user": ["./lib/user"]
+      "@beyond/user": ["./lib/user"],
+      "@beyond/form-basic": ["./lib/form/form-basic"],
+      "@beyond/form-input": ["./lib/form/form-input"],
+      "@beyond/form-model": ["./lib/form/form-model"],
+      "@beyond/notification": ["./lib/notification"]
     }
   },
   "angularCompilerOptions": {

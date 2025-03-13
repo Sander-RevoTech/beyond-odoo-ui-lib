@@ -1,0 +1,58 @@
+<div class="radio-label">
+  <byd-form-label [input]="this.input"></byd-form-label>
+</div>
+
+<div class="radio-container" *ngIf="!this.input.useMaterialTheme">
+  <div
+    class="radio-element"
+    [ngClass]="{
+      validated: this.input.value === option.id,
+      disabled: this.input.disabled
+    }"
+    *ngFor="let option of this.input.options | async"
+    (click)="this.onOptionClicked(option.id)"
+  >
+    <div
+      [ngClass]="{
+        'button-with-icon': this.hasLabel(option),
+        'only-icon': !this.hasLabel(option)
+      }"
+    >
+      <!-- <byd-local-icon
+        *ngIf="option.icon"
+        [type]="option.icon"
+        [size]="this.iconSize(option)"
+      >
+      </byd-local-icon> -->
+
+      <span *ngIf="option.name">
+        {{ option.name | translate }}
+      </span>
+    </div>
+  </div>
+</div>
+
+<mat-radio-group
+  *ngIf="this.input.useMaterialTheme"
+  [id]="this.input.key"
+  [formControl]="$any(this.input.formControl)"
+>
+  <mat-radio-button
+    [ngClass]="{ validated: this.input.value === option.id }"
+    *ngFor="let option of this.input.options | async"
+    [value]="option.id"
+  >
+    <div class="button-with-icon">
+      <!-- <byd-local-icon
+        *ngIf="this.option.icon"
+        [type]="this.option.icon"
+        [size]="this.iconSize(option)"
+      >
+      </byd-local-icon> -->
+
+      <span *ngIf="option.name">
+        {{ option.name | translate }}
+      </span>
+    </div>
+  </mat-radio-button>
+</mat-radio-group>

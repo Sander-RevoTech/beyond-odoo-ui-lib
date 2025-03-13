@@ -1,0 +1,33 @@
+<ng-container *ngIf="this.showMessage">
+  <div class="notification-container">
+    <div class="text">
+      <div class="label" [ngClass]="this.getTypeClass()">
+        <mat-icon class="mr-space-xs">{{ this.getIcon() }}</mat-icon>
+        <ng-container [ngSwitch]="true" *ngIf="!this.message">
+          <ng-container *ngSwitchCase="this.isError">
+            {{ "notification.inline.label.error" | translate }}
+          </ng-container>
+          <ng-container *ngSwitchCase="this.isWarning">
+            {{ "notification.inline.label.warning" | translate }}
+          </ng-container>
+          <ng-container *ngSwitchCase="this.isInformation">
+            {{ "notification.inline.label.info" | translate }}
+          </ng-container>
+          <ng-container *ngSwitchCase="this.isSuccess">
+            {{ "notification.inline.label.success" | translate }}
+          </ng-container>
+        </ng-container>
+        <ng-container [ngSwitch]="true" *ngIf="this.message">
+          {{ this.message | translate }}
+        </ng-container>
+      </div>
+    </div>
+    <span class="close" (click)="this.close()" *ngIf="this.showClose">
+      <mat-icon>close</mat-icon>
+    </span>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!this.showMessage">
+  <ng-content></ng-content>
+</ng-container>

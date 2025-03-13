@@ -1,0 +1,42 @@
+@use "beyond/utils/mixins/common";
+@use "beyond/utils/mixins/flex";
+@use "beyond/utils/mixins/fonts";
+
+.notification-container {
+  position: relative;
+  @include fonts.fontSizeBody(md);
+}
+
+.wrapper {
+  padding: common.get-var(space, sm);
+}
+
+.icon {
+  @include flex.align-center;
+}
+.text {
+  .label {
+    @include flex.flex-start;
+    &.success {
+      color: common.get-var(semantic-token, success);
+    }
+    &.danger {
+      color: common.get-var(semantic-token, alert);
+    }
+    &.warning {
+      color: common.get-var(semantic-token, warning);
+    }
+    &.info {
+      color: common.get-var(semantic-token, link);
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  padding: 5px;
+  cursor: pointer;
+}

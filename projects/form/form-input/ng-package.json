@@ -1,0 +1,9 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../lib/form/form-input",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": ["../../styles/src/style"]
+  },
+  "allowedNonPeerDependencies": ["@angular", "@beyond"]
+}

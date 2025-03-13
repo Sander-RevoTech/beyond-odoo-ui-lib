@@ -1,0 +1,28 @@
+<byd-loader [isLoading]="this.isLoading">
+  <ng-container *ngIf="!this.editMode">
+    <div
+      class="value-container"
+      [ngStyle]="{ height: height }"
+      [ngClass]="{ 'no-border': !this.withBorder }"
+      (click)="this.toggleEditMode()"
+    >
+      <ng-content></ng-content>
+      <!-- <byd-font-icon class="hidden-icon" name="modify" type="sm"></byd-font-icon> -->
+    </div>
+  </ng-container>
+  <ng-container *ngIf="this.editMode">
+    <div class="align-center g-space-sm" [ngClass]="'flex-' + this.layout">
+      <byd-form
+        class="flex-fill"
+        [inputs]="[this.input]"
+        [canDisplayButton]="false"
+      ></byd-form>
+
+      <!-- <byd-font-icon
+        name="check-line"
+        type="sm"
+        (click)="this.validation()"
+      ></byd-font-icon> -->
+    </div>
+  </ng-container>
+</byd-loader>

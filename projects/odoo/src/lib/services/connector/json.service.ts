@@ -14,6 +14,9 @@ export class OdooJsonConnector {
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
   readonly odooRPC = inject(OdooRPCService);
 
+  get proxyUrl() {
+    return this.server.proxyUrl + '/jsonrpc/';
+  }
   get uid() {
     return "";
    // return Permissions.uid;

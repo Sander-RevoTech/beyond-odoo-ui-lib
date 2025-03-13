@@ -15,11 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/beyond-odoo-ui-lib",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -34,6 +34,9 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src", "sass", "projects/styles/src/style"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -328,9 +331,144 @@
           }
         }
       }
+    },
+    "@beyond/form-basic": {
+      "projectType": "library",
+      "root": "projects/form/form-basic",
+      "sourceRoot": "projects/form/form-basic/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/form/form-basic/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/form/form-basic/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/form/form-basic/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/form/form-basic/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "@beyond/form-input": {
+      "projectType": "library",
+      "root": "projects/form/form-input",
+      "sourceRoot": "projects/form/form-input/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/form/form-input/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/form/form-input/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/form/form-input/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/form/form-input/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "@beyond/form-model": {
+      "projectType": "library",
+      "root": "projects/form/form-model",
+      "sourceRoot": "projects/form/form-model/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/form/form-model/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/form/form-model/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/form/form-model/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/form-model/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "@beyond/notification": {
+      "projectType": "library",
+      "root": "projects/notification",
+      "sourceRoot": "projects/notification/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/notification/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/notification/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/notification/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/notification/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "cache": {
+      "enabled": false
+    }
   }
 }

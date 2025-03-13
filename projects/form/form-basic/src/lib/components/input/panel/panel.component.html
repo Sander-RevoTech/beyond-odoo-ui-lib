@@ -1,0 +1,24 @@
+<div [ngClass]="this.panel.containerClass">
+  <ng-container *ngIf="this.panel.label">
+    <h2 class="panel-title">{{ this.panel.label | translate }}</h2>
+  </ng-container>
+
+  <div [ngClass]="this.panel.contentClass">
+    <ng-container *ngFor="let input of this.panel.children; trackBy: this.trackByKey">
+      <div
+        [ngClass]="input.class"
+        [style.display]="(input.visible$ | async) ? 'block' : 'none'"
+        *ngIf="input"
+        class="mb-space-sm"
+      >
+        <ng-container
+          [ngTemplateOutlet]="this.inputsTemplate"
+          [ngTemplateOutletContext]="{
+            input: input
+          }"
+        >
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>

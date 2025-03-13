@@ -1,0 +1,29 @@
+{
+  "common": {
+    "error": "An error has occurred!",
+    "success": "Success!"
+  },
+  "empty": "No notifications for the moment",
+  "inline": {
+    "label": {
+      "error": "Error!",
+      "info": "Information",
+      "success": "Success!",
+      "warning": "Warning!"
+    }
+  },
+  "items": {
+    "invoice-payment-status-changed": {
+      "title": "Your invoice {{InvoiceRef}} has changed status"
+    },
+    "new-invoice": {
+      "title": "New invoice: {{InvoiceRef}}"
+    },
+    "new-quotation-version": {
+      "title": "New quote: version {{VersionNumber}}"
+    },
+    "project-status-changed": {
+      "title": "Your project has changed status"
+    }
+  }
+}

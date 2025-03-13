@@ -1,0 +1,23 @@
+{
+  "dropdown": {
+    "novalue": ""
+  },
+  "images": {
+    "add": "Ajouter",
+    "pick": "Valider"
+  },
+  "required": "Ce champ est requis!",
+  "text-box": {
+    "error-occured": "Une erreur est survenue",
+    "is-mandatory": "{{field}} est obligatoire",
+    "is-slug": "Le slug est invalide. Utilisez uniquement des lettres minuscules, chiffres, et tirets.",
+    "minimum-length": "Minimum de {{length}} caractères",
+    "this-field": "Ce champs"
+  },
+  "upload": {
+    "add": "Ajouter un fichier",
+    "confirm": "Confirmer",
+    "dragndrop": "Glissez ou déposez vos fichiers ici"
+  },
+  "validate": "Valider"
+}

@@ -1,0 +1,43 @@
+<ng-container *ngIf="this.input">
+  <byd-form-label [input]="this.input"></byd-form-label>
+
+  <mat-form-field [floatLabel]="'auto'">
+    <mat-select
+      #box
+      panelClass="dropdown-panel"
+      [disabled]="this.input.disabled"
+      [id]="this.input.key"
+      [formControl]="$any(this.input.formControl)"
+      [multiple]="this.input.multiple"
+      (selectionChange)="this.onChange($event)"
+    >
+      <mat-option
+        *ngIf="this.input.showNothingOption"
+        [value]="null"
+      ></mat-option>
+      <mat-option
+        *ngFor="let opt of this.input.options | async"
+        [value]="opt.id"
+        [disabled]="opt.disabled || false"
+      >
+        {{ opt.name | translate }}
+      </mat-option>
+    </mat-select>
+
+    <mat-hint>
+      <div *ngIf="this.input.message" class="message">
+        <span> {{ this.input.message }} </span>
+      </div>
+    </mat-hint>
+    <mat-error *ngIf="this.input.formControl?.hasError('message')">
+      <div class="alert alert-danger" role="alert">
+        {{ this.input.formControl?.getError("message") }}
+      </div>
+    </mat-error>
+    <mat-error *ngIf="this.input.formControl?.hasError('required')">
+      <div class="alert alert-danger" role="alert">
+        {{ this.input.label | translate }} est <strong>obligatoire</strong>
+      </div>
+    </mat-error>
+  </mat-form-field>
+</ng-container>

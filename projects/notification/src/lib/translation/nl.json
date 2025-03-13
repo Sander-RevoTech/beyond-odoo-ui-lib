@@ -1,0 +1,29 @@
+{
+  "common": {
+    "error": "",
+    "success": ""
+  },
+  "empty": "",
+  "inline": {
+    "label": {
+      "error": "Fout !",
+      "info": "Informatie",
+      "success": "Geslaagd !",
+      "warning": "Wees voorzichtig!"
+    }
+  },
+  "items": {
+    "invoice-payment-status-changed": {
+      "title": ""
+    },
+    "new-invoice": {
+      "title": ""
+    },
+    "new-quotation-version": {
+      "title": ""
+    },
+    "project-status-changed": {
+      "title": ""
+    }
+  }
+}

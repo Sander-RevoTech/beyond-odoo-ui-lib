@@ -1,0 +1,8 @@
+<div *ngIf="this.input.label">
+  <mat-label>
+    {{ this.input.label | translate }}
+    <span *ngFor="let validator of this.input.validators">
+      <span *ngIf="validator === validators.required"> * </span>
+    </span>
+  </mat-label>
+</div>

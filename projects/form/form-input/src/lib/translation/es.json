@@ -1,0 +1,22 @@
+{
+  "dropdown": {
+    "novalue": ""
+  },
+  "images": {
+    "add": "Añadir",
+    "pick": "Validar"
+  },
+  "required": "¡Este campo es obligatorio!",
+  "text-box": {
+    "error-occured": "¡Se ha producido un error!",
+    "is-mandatory": "{{field}} es obligatorio",
+    "minimum-length": "Mínimo de {{length}} caracteres",
+    "this-field": "Este campo"
+  },
+  "upload": {
+    "add": "",
+    "confirm": "",
+    "dragndrop": ""
+  },
+  "validate": ""
+}

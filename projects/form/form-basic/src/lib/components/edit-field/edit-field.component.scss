@@ -1,0 +1,29 @@
+@use "beyond/utils/mixins/flex";
+@use "beyond/utils/mixins/common";
+
+.value-container {
+  @include flex.space-between();
+  @include flex.align-center();
+
+  border: 1px solid;
+  border-radius: 4px;
+  border-color: common.get-var(neutral, 300);
+  display: flex;
+  padding: common.get-var(space, sm);
+
+  &:hover {
+    border-color: common.get-var(neutral, 500);
+  }
+
+  &.no-border {
+    border: none;
+  }
+}
+
+.hidden-icon {
+  visibility: hidden;
+}
+
+.value-container:hover .hidden-icon {
+  visibility: visible;
+}

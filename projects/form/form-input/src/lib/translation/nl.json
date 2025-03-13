@@ -1,0 +1,22 @@
+{
+  "dropdown": {
+    "novalue": ""
+  },
+  "images": {
+    "add": "Toevoegen",
+    "pick": "Bevestigen"
+  },
+  "required": "Dit veld is verplicht!",
+  "text-box": {
+    "error-occured": "Error",
+    "is-mandatory": "Verplicht veld",
+    "minimum-length": "Minimum aantal karakters",
+    "this-field": "Dit veld"
+  },
+  "upload": {
+    "add": "",
+    "confirm": "",
+    "dragndrop": ""
+  },
+  "validate": ""
+}

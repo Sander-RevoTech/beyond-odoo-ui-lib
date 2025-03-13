@@ -4,10 +4,10 @@ import * as i0 from "@angular/core";
 export declare class BydAuthOdooService extends BydBaseOdooService {
     readonly permissionsServices: BydPermissionsServices;
     constructor();
-    login(data: {
+    login$(data: {
         identifier: string;
         password: string;
-    }): import("rxjs").Subject<unknown>;
+    }): import("rxjs").Observable<any>;
     logout(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydAuthOdooService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<BydAuthOdooService>;

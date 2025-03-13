@@ -1,0 +1,17 @@
+{
+  "name": "@beyond/form-basic",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "ng build @beyond/form-basic"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0"
+  },
+  "dependencies": {
+    "@beyond/form-input": "^0.0.1",
+    "@beyond/form-model": "^0.0.1",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

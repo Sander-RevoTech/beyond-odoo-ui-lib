@@ -4,6 +4,7 @@ export declare class OdooJsonConnector {
     private _odooRPC;
     readonly server: import("@beyond/odoo").IOdooServerConfig;
     readonly odooRPC: OdooRPCService;
+    get proxyUrl(): string;
     get uid(): string;
     get pass(): string;
     private _passTemp;
