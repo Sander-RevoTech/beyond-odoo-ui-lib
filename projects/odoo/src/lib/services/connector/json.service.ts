@@ -1,16 +1,21 @@
 import { inject, Injectable } from '@angular/core';
 
 import { OdooRPCService } from 'angular-odoo-jsonrpc';
-import { catchError, map, tap } from 'rxjs';
+import { catchError, map, Observable, Subject, take, tap } from 'rxjs';
 
-// import { Permissions } from 'src/app/services/user/permissions';
-// import { environment } from 'src/environments/environment';
 import { ODOO_SERVER_CONFIG_KEY } from '../../injectionToken';
+import { BydPermissionsServices } from '@beyond/server';
+import { BydNotificationService, ENotificationCode } from '@beyond/notification';
+
+type pendingRequest = Array<{ subject$: Subject<any>; request$: Observable<unknown> }>;
 
 @Injectable({
   providedIn: 'root',
 })
 export class OdooJsonConnector {
+  readonly notificationService = inject(BydNotificationService);
+  readonly permissionsServices = inject(BydPermissionsServices);
+
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
   readonly odooRPC = inject(OdooRPCService);
 
@@ -18,16 +23,14 @@ export class OdooJsonConnector {
     return this.server.proxyUrl + '/jsonrpc/';
   }
   get uid() {
-    return "";
-   // return Permissions.uid;
+   return this.permissionsServices.uid;
   }
   get pass() {
-    return "";
-
-    //return Permissions.pass;
+    return this.permissionsServices.pass;
   }
 
-  private _passTemp: string | null = null;
+  private _tempAuthRequest: pendingRequest = [];
+
 
   constructor(private _odooRPC: OdooRPCService) {
 
@@ -42,9 +45,7 @@ export class OdooJsonConnector {
     return this._odooRPC.sendRequest('/web/session/authenticate', { db: this.server.db, login, password }).pipe(
       map((data: any) => {
         if (data.uid) {
-         // Permissions.set(data.uid ?? null, password);
-        } else {
-          this._passTemp = password;
+         this.permissionsServices.set(data.uid ?? null, password);
         }
 
         return data.uid;
@@ -56,15 +57,51 @@ export class OdooJsonConnector {
     );
   }
 
-  public totp$(totp_token: string) {
-    console.info('Getting UID');
+  public searchCount$(model: string, param?: any) {
+    console.info('Search & Count:', model);
 
-    return this._odooRPC.sendRequest('/web/session/totp', { totp_token }).pipe(
-      tap((uid: any) => {
-        console.log('totp uid:', uid);
-       // Permissions.set(uid, this._passTemp ?? '');
-      }),
-      catchError(async err => console.error('login failed', err))
-    );
+    const subject$ = new Subject<number>();
+
+    return this._handleRequest<number>(subject$, this._odooRPC.call<number>(
+        model,
+        'search_count',
+        [this.server.db, this.uid, this.pass],
+        [param]).pipe(tap((value: number) => {
+              console.log('response Search & Count, ', value);
+              subject$.next(value);
+              subject$.complete();
+              subject$.unsubscribe();
+            }
+        ),
+        catchError(async error => {
+            console.error(error);
+              subject$.error(error);
+              subject$.complete();
+              subject$.unsubscribe();
+              this._handleErrorMessage(error);
+        })
+      ));
+
+
+  }
+
+
+  private _handleRequest<T>(subject$: Subject<T>, request$: Observable<unknown>): Subject<T> {
+    if (this.uid) {
+      request$.pipe(take(1)).subscribe();
+    } else {
+      console.log('Wait for Authuser');
+      this._tempAuthRequest.push({ subject$: subject$, request$: request$ });
+    }
+
+    return subject$;
+  }
+
+  private _handleErrorMessage(message: any) {
+    const formattedMessage = message
+      .toString()
+      .replace('Error: Invalid XML-RPC', '')
+      .replace('Error: XML-RPC fault:', '');
+    this.notificationService.addNotification(formattedMessage, ENotificationCode.error);
   }
 }
