@@ -26,5 +26,4 @@ export class BydAuthOdooService extends BydBaseOdooService {
     location.reload();
   }
 
-
 }

@@ -1,22 +1,27 @@
-import { OdooRPCService } from 'angular-odoo-jsonrpc';
-import { Observable, Subject } from 'rxjs';
 import { BydPermissionsServices } from '@beyond/server';
+import { Subject } from 'rxjs';
 import { BydNotificationService } from '@beyond/notification';
 import * as i0 from "@angular/core";
+export interface OdooAuthenticateResponse {
+    uid: number;
+}
 export declare class OdooJsonConnector {
-    private _odooRPC;
     readonly notificationService: BydNotificationService;
     readonly permissionsServices: BydPermissionsServices;
     readonly server: import("@beyond/odoo").IOdooServerConfig;
-    readonly odooRPC: OdooRPCService;
-    get proxyUrl(): string;
+    is_connected: boolean;
     get uid(): number | null;
     get pass(): string | null;
-    private _tempAuthRequest;
-    constructor(_odooRPC: OdooRPCService);
-    login$(login: string, password: string): Observable<any>;
-    searchCount$(model: string, param?: any): Subject<number>;
-    private _handleRequest;
+    get url(): string;
+    get db(): string;
+    constructor();
+    login$(user: string, password: string): import("rxjs").Observable<number>;
+    private _connectWithCredentials$;
+    searchRead$<T>(model: string, domain: any[], fields?: Array<keyof T>, opts?: Record<string, any>): Subject<T[]>;
+    private _call_kw;
+    private _callWithUid;
+    private _call$;
+    private _extractResult;
     private _handleErrorMessage;
     static ɵfac: i0.ɵɵFactoryDeclaration<OdooJsonConnector, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<OdooJsonConnector>;

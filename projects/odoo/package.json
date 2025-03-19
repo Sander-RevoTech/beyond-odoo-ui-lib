@@ -12,6 +12,7 @@
     "@beyond/notification": "0.0.1",
     "@beyond/server": "0.0.1",
     "angular-odoo-jsonrpc": "^2.0.9",
+    "@fernandoslim/odoo-jsonrpc": "2.0.2",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

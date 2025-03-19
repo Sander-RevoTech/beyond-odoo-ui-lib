@@ -7,7 +7,7 @@ import { OdooJsonConnector } from './connector/json.service';
   providedIn: 'root',
 })
 export abstract class BydBaseOdooService {
-  protected _odooService = inject(OdooJsonConnector);
+  public _odooService = inject(OdooJsonConnector);
 
   constructor() {
   }

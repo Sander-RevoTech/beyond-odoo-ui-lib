@@ -17,6 +17,5 @@ export class TargetUrlInterceptor implements HttpInterceptor {
     return next.handle(req.clone({
       headers: req.headers.set('target-url', this.server.odooUrl)
     }));
-
   }
 }
