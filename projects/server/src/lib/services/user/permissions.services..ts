@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable, filter, of } from 'rxjs';
 import { Logger } from '../logger';
 import { Injectable } from '@angular/core';
 
-export type BydPermissionLevel = string | 'authenticated' | 'authorize';
+export type BydPermissionLevel = string | 'authenticated' | 'unauthenticated';
 
 @Injectable({
   providedIn: 'root',
@@ -70,6 +70,9 @@ export class BydPermissionsServices {
   }
 
   public canDirectAccess(feature: string, level: BydPermissionLevel): boolean {
+    if (level === 'unauthenticated') {
+      return !this.isAuthenticated;
+    }
     if (level === 'authenticated') {
       return this.isAuthenticated;
     }

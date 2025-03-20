@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
-export type BydPermissionLevel = string | 'authenticated' | 'authorize';
+export type BydPermissionLevel = string | 'authenticated' | 'unauthenticated';
 export declare class BydPermissionsServices {
     private _updated$;
     uid: number | null;
