@@ -2,7 +2,7 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { ODOO_SERVER_CONFIG_KEY, provideOdoo } from '@beyond/odoo';
+import { ODOO_SERVER_CONFIG_KEY } from '@beyond/odoo';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
@@ -14,5 +14,5 @@ export const appConfig: ApplicationConfig = {
           db: 'testing',
           odooUrl: 'http://localhost:8069',
         }
-    }, provideOdoo()]
+    }]
 };
