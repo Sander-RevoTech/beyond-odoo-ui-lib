@@ -1,7 +1,7 @@
 
 import { Provider } from "@angular/core";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
-import { TargetUrlInterceptor } from "./interceptor/TargetUrlInterceptor";
+import { TargetUrlInterceptor } from "./interceptor/targetUrlInterceptor";
 
 export const provideOdoo = (): Provider => [
     {

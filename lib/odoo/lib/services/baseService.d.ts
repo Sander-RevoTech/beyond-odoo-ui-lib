@@ -1,7 +1,7 @@
 import { OdooJsonConnector } from './connector/json.service';
 import * as i0 from "@angular/core";
 export declare abstract class BydBaseOdooService {
-    protected _odooService: OdooJsonConnector;
+    _odooService: OdooJsonConnector;
     constructor();
     protected _handleJoinData<T>(entity: T, props: Array<{
         from?: keyof T;

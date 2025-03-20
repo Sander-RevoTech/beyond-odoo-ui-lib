@@ -1216,6 +1216,11 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.25.0.tgz"
   integrity sha512-ZENoHJBxA20C2zFzh6AI4fT6RraMzjYw4xKWemRTRmRVtN9c5DcH9r/f2ihEkMjOW5eGgrwCslG/+Y/3bL+DHQ==
 
+"@fernandoslim/odoo-jsonrpc@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@fernandoslim/odoo-jsonrpc/-/odoo-jsonrpc-2.0.2.tgz#14542dd262bfffe351fac9b963ed5fe822d98d75"
+  integrity sha512-wWcr0LxcEOAt4Evx1aBVS6S9+p5D2yhRCnVxPANHuHmoOCzkw0LCgQ7G+8RaefE+reUbfu05ISfqoADq+88GFQ==
+
 "@graphql-typed-document-node/core@^3.1.1":
   version "3.2.0"
   resolved "https://registry.npmjs.org/@graphql-typed-document-node/core/-/core-3.2.0.tgz"

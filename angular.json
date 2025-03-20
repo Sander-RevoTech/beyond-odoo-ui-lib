@@ -37,7 +37,10 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src", "sass", "projects/styles/src/style"]
             },
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "@fernandoslim/odoo-jsonrpc"
+            ]
           },
           "configurations": {
             "production": {
