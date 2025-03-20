@@ -20,7 +20,6 @@ export class LoginCardComponent extends BydBaseComponent {
   private readonly _formService = inject(AppUserFormService);
   private readonly _odooService = inject(BydBaseOdooService);
 
-
   public readonly form = signal(this._formService.getLoginForm())
   constructor() {
     super();

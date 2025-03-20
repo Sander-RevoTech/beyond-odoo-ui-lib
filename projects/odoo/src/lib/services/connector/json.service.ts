@@ -17,8 +17,6 @@ export class OdooJsonConnector {
   readonly permissionsServices = inject(BydPermissionsServices);
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
 
-  public is_connected = false;
-
   get uid() {
     return this.permissionsServices.uid;
   }
@@ -41,7 +39,7 @@ export class OdooJsonConnector {
       tap((result) => {
         this.permissionsServices.set(result.uid, password);
 
-        this.is_connected = true;
+        this.permissionsServices.setAuthenticated(true);
       }),
       map((result) => result.uid),
     );

@@ -7,7 +7,7 @@ import { BydAbstractComponent } from '@beyond/utils';
 
 
 @Component({
-  selector: 'cam-guard',
+  selector: 'byd-guard',
   templateUrl: './guard.component.html',
   styleUrls: ['./guard.component.scss'],
   imports: [BydButtonComponent],
