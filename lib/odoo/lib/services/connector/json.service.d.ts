@@ -16,7 +16,7 @@ export declare class OdooJsonConnector {
     constructor();
     login$(user: string, password: string): import("rxjs").Observable<number>;
     private _connectWithCredentials$;
-    searchCount$<T>(model: string, domain: any[], fields?: Array<keyof T>, opts?: Record<string, any>): Subject<T[]>;
+    searchCount$(model: string, domain: any[], opts?: Record<string, any>): Subject<number>;
     searchRead$<T>(model: string, domain: any[], fields?: Array<keyof T>, opts?: Record<string, any>): Subject<T[]>;
     private _call_kw;
     private _callWithUid;

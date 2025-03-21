@@ -64,14 +64,13 @@ export class OdooJsonConnector {
 
   }
 
-  public searchCount$<T>(
+  public searchCount$(
     model: string,
     domain: any[],
-    fields: Array<keyof T> = [],
     opts: Record<string, any> = {}
   ) {
     console.info('Search & Count:', model);
-    return this._call_kw<T[]>(model, 'search_count', [domain, fields], opts);
+    return this._call_kw<number>(model, 'search_count', [domain], opts);
   }
   public searchRead$<T>(
     model: string,
