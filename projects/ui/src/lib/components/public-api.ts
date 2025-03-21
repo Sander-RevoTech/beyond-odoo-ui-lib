@@ -7,6 +7,8 @@ export * from './button/button.component';
 export * from './toast/toast.component';
 export * from './navigation/date/day/day.component';
 export * from './navigation/date/week/week.component';
+export * from './badge/badge.component';
+
 
 
 
