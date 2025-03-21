@@ -5,5 +5,8 @@ export * from './title/title.component';
 export * from './text/text.component';
 export * from './button/button.component';
 export * from './toast/toast.component';
+export * from './navigation/date/day/day.component';
+export * from './navigation/date/week/week.component';
+
 
 

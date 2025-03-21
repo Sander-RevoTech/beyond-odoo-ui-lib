@@ -1,0 +1,17 @@
+<div class="row pb-3 justify-content-center">
+  <div class="col-auto align-items-center">
+    <byd-button (action)="this.previous()" type="primary">
+      <mat-icon>chevron_left</mat-icon>
+    </byd-button>
+  </div>
+
+  <div class="col-6 align-items-center">
+    <byd-title> {{ this.viewDate | date : "fullDate" }} </byd-title>
+  </div>
+
+  <div class="col-auto align-items-center">
+    <byd-button (action)="this.next()" type="primary">
+      <mat-icon>chevron_right</mat-icon>
+    </byd-button>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import * as i0 from "@angular/core";
-export declare class TitleComponent {
+export declare class BydTitleComponent {
     /**
      * Title level
      * Higher value means lower title size
@@ -12,6 +12,6 @@ export declare class TitleComponent {
     isTheme: boolean;
     isBold: boolean;
     constructor();
-    static ɵfac: i0.ɵɵFactoryDeclaration<TitleComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<TitleComponent, "byd-title", never, { "level": { "alias": "level"; "required": false; }; "isTheme": { "alias": "isTheme"; "required": false; }; "isBold": { "alias": "isBold"; "required": false; }; }, {}, never, ["*"], true, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydTitleComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydTitleComponent, "byd-title", never, { "level": { "alias": "level"; "required": false; }; "isTheme": { "alias": "isTheme"; "required": false; }; "isBold": { "alias": "isBold"; "required": false; }; }, {}, never, ["*"], true, never>;
 }

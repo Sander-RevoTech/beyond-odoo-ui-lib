@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { BydBaseComponent } from '@beyond/utils';
-import { TitleComponent } from "../../../../components/title/title.component";
+import { BydTitleComponent } from "../../../../components/title/title.component";
 import { LogoComponent } from "../../../../components/logo/logo.component";
 
 @Component({
@@ -9,7 +9,7 @@ import { LogoComponent } from "../../../../components/logo/logo.component";
   templateUrl: './layout-header-default.component.html',
   styleUrls: ['./layout-header-default.component.scss'],
   standalone: true,
-  imports: [TitleComponent, LogoComponent]
+  imports: [BydTitleComponent, LogoComponent]
 })
 export class LayoutHeaderDefaultComponent extends BydBaseComponent {
 

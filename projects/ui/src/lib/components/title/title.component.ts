@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [NgClass, NgTemplateOutlet]
 })
-export class TitleComponent {
+export class BydTitleComponent {
   /**
    * Title level
    * Higher value means lower title size
