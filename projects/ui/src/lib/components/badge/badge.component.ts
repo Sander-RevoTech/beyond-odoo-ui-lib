@@ -2,13 +2,13 @@ import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-badge',
+  selector: 'byd-badge',
   templateUrl: './badge.component.html',
   styleUrls: ['./badge.component.scss'],
   standalone: true,
   imports: [NgClass]
 })
-export class BadgeComponent {
+export class BydBadgeComponent {
   /**
    * Text to display in badge
    */

@@ -1,5 +1,5 @@
 import * as i0 from "@angular/core";
-export declare class BadgeComponent {
+export declare class BydBadgeComponent {
     /**
      * Text to display in badge
      */
@@ -10,6 +10,6 @@ export declare class BadgeComponent {
     type: 'danger' | 'warning' | 'success' | 'primary' | 'secondary';
     constructor();
     getClass(): string;
-    static ɵfac: i0.ɵɵFactoryDeclaration<BadgeComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BadgeComponent, "app-badge", never, { "value": { "alias": "value"; "required": false; }; "type": { "alias": "type"; "required": false; }; }, {}, never, never, true, never>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydBadgeComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydBadgeComponent, "byd-badge", never, { "value": { "alias": "value"; "required": false; }; "type": { "alias": "type"; "required": false; }; }, {}, never, never, true, never>;
 }
