@@ -3,7 +3,7 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 
-@use "beyond/vars";
+@import "beyond/vars";
 @use 'beyond/utils/mixins/common';
 
 
