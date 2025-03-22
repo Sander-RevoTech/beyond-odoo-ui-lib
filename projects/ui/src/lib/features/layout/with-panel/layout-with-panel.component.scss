@@ -1,0 +1,7 @@
+@use 'beyond/utils/mixins/screen';
+
+.isOpen {
+  .app-layout-content-container {
+    @include screen.setHeight($isMinHeight: false, $withBottom: false);
+  }
+}

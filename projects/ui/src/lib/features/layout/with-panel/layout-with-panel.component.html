@@ -1,0 +1,19 @@
+<mat-drawer-container hasBackdrop [ngClass]="{ isOpen: this.open }">
+  <mat-drawer
+    #drawer
+    [position]="'end'"
+    class="drawer"
+    [style.width]="this.width"
+  >
+    <div class="close-dialog" (click)="drawer.close()">
+      <mat-icon> close </mat-icon>
+    </div>
+    <div class="pT-35">
+      <ng-content select="app-layout-panel"></ng-content>
+    </div>
+  </mat-drawer>
+
+  <div class="app-layout-content-container">
+    <ng-content select="app-layout-content"></ng-content>
+  </div>
+</mat-drawer-container>
