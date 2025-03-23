@@ -82,8 +82,8 @@ export class OdooJsonConnector {
     return this._call_kw$<T[]>(model, 'search_read', [domain, fields], opts);
   }
 
-  public create$(model: string, values: Record<string, any>) {
-    return this._call_kw$(model, 'create', [values]);
+  public create$<T>(model: string, values: Record<string, any>) {
+    return this._call_kw$<T>(model, 'create', [values]);
   }
 
   public write$<T>(model: string, id: number, values: Record<string, any>) {
@@ -91,11 +91,11 @@ export class OdooJsonConnector {
   }
 
   public delete$(model: string, id: number) {
-    return this._call_kw$(model, 'unlink', [[id]]);
+    return this._call_kw$<boolean>(model, 'unlink', [[id]]);
   }
 
-  public action$(model: string, action: string, ids: number[]) {
-    return this._call_kw$(model, action, ids);
+  public action$<T>(model: string, action: string, ids: number[]) {
+    return this._call_kw$<T>(model, action, ids);
   }
 
   private _call_kw$<T>(model: string, method: string, args: any[], kwargs: Record<string, any> = {}) {
