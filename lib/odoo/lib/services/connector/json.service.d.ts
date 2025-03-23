@@ -18,7 +18,9 @@ export declare class OdooJsonConnector {
     private _connectWithCredentials$;
     searchCount$(model: string, domain: any[], opts?: Record<string, any>): Subject<number>;
     searchRead$<T>(model: string, domain: any[], fields?: Array<keyof T>, opts?: Record<string, any>): Subject<T[]>;
-    private _call_kw;
+    write$<T>(model: string, id: number, values: Record<string, any>): Subject<T>;
+    action$(model: string, action: string, ids: number[]): Subject<unknown>;
+    private _call_kw$;
     private _callWithUid;
     private _call$;
     private _extractResult;

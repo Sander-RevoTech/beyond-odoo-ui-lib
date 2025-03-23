@@ -70,7 +70,7 @@ export class OdooJsonConnector {
     opts: Record<string, any> = {}
   ) {
     console.info('Search & Count:', model);
-    return this._call_kw<number>(model, 'search_count', [domain], opts);
+    return this._call_kw$<number>(model, 'search_count', [domain], opts);
   }
   public searchRead$<T>(
     model: string,
@@ -79,10 +79,17 @@ export class OdooJsonConnector {
     opts: Record<string, any> = {}
   ) {
     console.info('Search & Read:', model);
-    return this._call_kw<T[]>(model, 'search_read', [domain, fields], opts);
+    return this._call_kw$<T[]>(model, 'search_read', [domain, fields], opts);
+  }
+  public write$<T>(model: string, id: number, values: Record<string, any>) {
+    return this._call_kw$<T>(model, 'write', [[id], values]);
   }
 
-  private _call_kw<T>(model: string, method: string, args: any[], kwargs: Record<string, any> = {}) {
+  public action$(model: string, action: string, ids: number[]) {
+    return this._call_kw$(model, action, ids);
+  }
+
+  private _call_kw$<T>(model: string, method: string, args: any[], kwargs: Record<string, any> = {}) {
     return this._callWithUid<T>(model, method, args, kwargs);
   }
 
@@ -165,10 +172,6 @@ export class OdooJsonConnector {
   //   return this.call_kw(model, 'read', [id, fields]);
   // }
 
-  // async update(model: string, id: number, values: Record<string, any>): Promise<boolean> {
-  //   return this.call_kw(model, 'write', [[id], values]);
-  // }
-
   // async delete(model: string, id: number): Promise<boolean> {
   //   return this.call_kw(model, 'unlink', [[id]]);
   // }
@@ -179,9 +182,6 @@ export class OdooJsonConnector {
   //   return (await this.call_kw(model, 'search', [domain])) || [];
   // }
 
-  // async action(model: string, action: string, ids: number[]): Promise<any> {
-  //   return this.call_kw(model, action, ids);
-  // }
 
   // async disconnect(): Promise<boolean> {
   //   if (!this.is_connected) {
