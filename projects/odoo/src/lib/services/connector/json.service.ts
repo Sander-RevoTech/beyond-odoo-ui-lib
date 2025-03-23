@@ -81,8 +81,17 @@ export class OdooJsonConnector {
     console.info('Search & Read:', model);
     return this._call_kw$<T[]>(model, 'search_read', [domain, fields], opts);
   }
+
+  public create$(model: string, values: Record<string, any>) {
+    return this._call_kw$(model, 'create', [values]);
+  }
+
   public write$<T>(model: string, id: number, values: Record<string, any>) {
     return this._call_kw$<T>(model, 'write', [[id], values]);
+  }
+
+  public delete$(model: string, id: number) {
+    return this._call_kw$(model, 'unlink', [[id]]);
   }
 
   public action$(model: string, action: string, ids: number[]) {
@@ -164,19 +173,11 @@ export class OdooJsonConnector {
 
 
   // // Méthodes pratiques pour les opérations CRUD
-  // async create(model: string, values: Record<string, any>): Promise<number> {
-  //   return this.call_kw(model, 'create', [values]);
-  // }
+
 
   // async read(model: string, id: number | number[], fields: string[] = []): Promise<any> {
   //   return this.call_kw(model, 'read', [id, fields]);
   // }
-
-  // async delete(model: string, id: number): Promise<boolean> {
-  //   return this.call_kw(model, 'unlink', [[id]]);
-  // }
-
-
 
   // async search(model: string, domain: any[]): Promise<number[]> {
   //   return (await this.call_kw(model, 'search', [domain])) || [];
