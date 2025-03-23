@@ -24,6 +24,7 @@ export interface IInputBase<T> {
   class?: string;
   children?: (InputBase<any> | InputLabel)[];
   disabled?: boolean;
+  readonly?: boolean;
   visible$?: Observable<boolean>;
   bindStatusToVisible?: boolean;
 }
@@ -39,6 +40,7 @@ export class InputBase<T> implements IInputBase<T> {
   class: string;
   children: (InputBase<any> | InputLabel)[];
   disabled: boolean;
+  readonly: boolean;
   visible$: Observable<boolean>;
   changeValue$ = new Subject<T>();
 
@@ -78,6 +80,7 @@ export class InputBase<T> implements IInputBase<T> {
     this.class = options.class || 'col';
     this.children = [];
     this.disabled = options.disabled === true;
+    this.readonly = options.readonly === true;
 
     this.visible$ = options.visible$ || of(true);
 

@@ -2,7 +2,7 @@
 
 <ng-container *ngIf="this.input.type === 'textarea'">
   <byd-input-textarea
-    [input]="this.input"
+    [input]="$any(this.input)"
     [matcher]="this.matcher"
   ></byd-input-textarea>
 </ng-container>

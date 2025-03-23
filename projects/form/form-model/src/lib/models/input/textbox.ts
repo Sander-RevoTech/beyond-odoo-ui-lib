@@ -6,7 +6,7 @@ export interface IInputTextBox<T> extends IInputBase<T> {
   iconClicked?: () => void;
 }
 
-export class InputTextBox extends InputBase<string> {
+export class InputTextBox<T = string> extends InputBase<T> {
   override controlType = 'textbox';
   icon?: string | null;
   iconClicked?: () => void;
