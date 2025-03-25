@@ -153,8 +153,11 @@ export class OdooJsonConnector {
       throw new Error(response?.statusText || 'Connection Error');
     }
 
-    const body = <{result: T}>await response.json();
+    const body = <{result: T, error: { data: { message: string}}}>await response.json();
 
+    if(body.error) {
+      throw new Error(body.error.data.message);
+    }
     return body.result;
   }
 
