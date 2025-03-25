@@ -1,0 +1,21 @@
+<div class="container">
+  <h5>{{ this.data?.title ?? "core.container.validation.dialog.title" }}</h5>
+
+  <div>
+    <p>
+      {{ this.data?.content ?? "core.container.validation.dialog.content" }}
+    </p>
+  </div>
+  <div class="row">
+    <div class="col">
+      <byd-button [style]="'danger'" (action)="this.onNoClick()">
+        {{ this.data?.ctaNo ?? "core.container.validation.dialog.cta.cancel" }}
+      </byd-button>
+    </div>
+    <div class="col">
+      <byd-button (action)="this.onYesClick()">
+        {{ this.data?.ctaYes ?? "core.container.validation.dialog.cta.ok" }}
+      </byd-button>
+    </div>
+  </div>
+</div>
