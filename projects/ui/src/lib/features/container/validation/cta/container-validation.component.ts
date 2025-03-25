@@ -6,12 +6,12 @@ import { TranslationData, openDialog } from '../common-dialog';
 import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
-  selector: 'app-container-validation',
+  selector: 'byd-container-validation',
   templateUrl: './container-validation.component.html',
   standalone: true,
   imports: []
 })
-export class ContainerValidationComponent extends BydBaseComponent {
+export class BydContainerValidationComponent extends BydBaseComponent {
   @Input()
   disabled = false;
 
