@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { IInputBase, InputBase } from './base';
 export interface IInputDropdown<T> extends IInputBase<T> {
     options?: Observable<{
@@ -22,5 +22,6 @@ export declare class InputDropdown<T = string | string[]> extends InputBase<T> {
     showNothingOption: boolean;
     withSearch: boolean;
     width?: string;
+    searchChangeValue$: Subject<string>;
     constructor(options?: IInputDropdown<T>);
 }
