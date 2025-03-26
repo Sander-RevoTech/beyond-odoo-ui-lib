@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   standalone: true,
-  imports: [NgClass]
+  imports: [NgClass],
 })
 export class CardComponent {
   @Input()

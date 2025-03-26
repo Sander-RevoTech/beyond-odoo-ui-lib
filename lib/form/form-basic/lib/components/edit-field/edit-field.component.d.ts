@@ -1,7 +1,7 @@
 import { EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Observable } from 'rxjs';
 import { InputBase } from '@beyond/form-model';
 import { BydBaseComponent } from '@beyond/utils';
+import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export type Layout = 'row' | 'column';
 export declare class EditFieldComponent extends BydBaseComponent implements OnInit, OnChanges {

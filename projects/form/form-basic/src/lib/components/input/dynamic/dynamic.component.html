@@ -5,31 +5,22 @@
 
   <div *ngFor="let key of getKeys(); trackBy: trackByFn">
     <div *ngIf="this.canRemove(key)" class="remove-action">
-      <byd-button
-        class="remove-action"
-        [style]="'danger'"
-        (action)="remove(key)"
-      >
-        <byd-local-icon
-          [type]="this.icon.DeleteLight"
-          size="xs"
-        ></byd-local-icon>
+      <byd-button class="remove-action" [style]="'danger'" (action)="remove(key)">
+        <byd-local-icon [type]="this.icon.DeleteLight" size="xs"></byd-local-icon>
       </byd-button>
     </div>
 
-    <ng-container
-      *ngFor="let input of this.getInputs(key); trackBy: trackInputByFn"
-    >
+    <ng-container *ngFor="let input of this.getInputs(key); trackBy: trackInputByFn">
       <div [ngClass]="input.class" *ngIf="input">
         <ng-container
           [ngTemplateOutlet]="this.inputsTemplate"
           [ngTemplateOutletContext]="{
-            input: input
+            input: input,
           }"
         >
         </ng-container>
       </div>
     </ng-container>
   </div>
-  <byd-button (action)="add()">{{ "form.dynamic.add" | translate }}</byd-button>
+  <byd-button (action)="add()">{{ 'form.dynamic.add' | translate }}</byd-button>
 </div>

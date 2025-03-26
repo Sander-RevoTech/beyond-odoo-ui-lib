@@ -1,10 +1,9 @@
-@use "beyond/utils/mixins/common";
-@use "beyond/utils/mixins/shadows";
-@use "beyond/utils/mixins/flex";
-@use "beyond/utils/mixins/mediaQueriesRanges";
-@use "beyond/utils/mixins/colors";
-@use "beyond/utils/mixins/fonts";
-
+@use 'beyond/utils/mixins/common';
+@use 'beyond/utils/mixins/shadows';
+@use 'beyond/utils/mixins/flex';
+@use 'beyond/utils/mixins/mediaQueriesRanges';
+@use 'beyond/utils/mixins/colors';
+@use 'beyond/utils/mixins/fonts';
 
 $spacing: common.get-var(space, md);
 
@@ -35,7 +34,7 @@ $spacing: common.get-var(space, md);
   }
 
   .responsive-content {
-   @include flex.flex-column();
+    @include flex.flex-column();
     // @include media-breakpoint-up(tablette) {
     //   @include flex.flex-row();
     //   .img-container {

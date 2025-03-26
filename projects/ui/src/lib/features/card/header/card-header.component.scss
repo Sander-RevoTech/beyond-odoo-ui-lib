@@ -1,7 +1,6 @@
 @use 'beyond/utils/mixins/common';
 @use 'beyond/utils/mixins/fonts';
-@use "beyond/utils/mixins/mediaQueriesRanges";
-
+@use 'beyond/utils/mixins/mediaQueriesRanges';
 
 .header-tag {
   margin-bottom: common.get-var(space, md);

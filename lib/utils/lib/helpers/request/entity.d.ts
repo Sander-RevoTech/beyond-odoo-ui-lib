@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 export declare class HandleEntity<T> {
     entity$: Observable<T> | null;
     constructor();

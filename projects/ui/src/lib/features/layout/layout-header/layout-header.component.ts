@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './layout-header.component.html',
   styleUrls: ['./layout-header.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class LayoutHeaderComponent {
   constructor() {}

@@ -1,2 +1,2 @@
-import { Provider } from "@angular/core";
+import { Provider } from '@angular/core';
 export declare const provideOdoo: () => Provider;

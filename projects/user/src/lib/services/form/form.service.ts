@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Validators } from '@angular/forms';
+
 import { InputBase, InputEmail, InputPanel, InputPassword } from '@beyond/form-model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppUserFormService {
-  constructor() { }
+  constructor() {}
 
   public getLoginForm(): InputBase<any>[] {
     const form: InputBase<any>[] = [
@@ -35,5 +36,4 @@ export class AppUserFormService {
       pass: data.password,
     };
   }
-
 }

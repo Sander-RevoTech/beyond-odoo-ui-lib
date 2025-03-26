@@ -1,8 +1,8 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "allowedNonPeerDependencies": ["@angular", "@beyond", "apollo-angular", "@apollo/client", "graphql"],
   "dest": "../../lib/server",
   "lib": {
     "entryFile": "src/public-api.ts"
-  },
-  "allowedNonPeerDependencies": ["@angular", "@beyond", "apollo-angular", "@apollo/client", "graphql"]
+  }
 }

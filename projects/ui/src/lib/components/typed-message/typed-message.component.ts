@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { MessageLevel, TranslatePipe } from '@beyond/utils';
+
 // import { MaterialIconComponent } from "@beyond/icons";
 
 @Component({
@@ -8,7 +9,7 @@ import { MessageLevel, TranslatePipe } from '@beyond/utils';
   templateUrl: './typed-message.component.html',
   styleUrls: ['./typed-message.component.scss'],
   standalone: true,
-  imports: [TranslatePipe]
+  imports: [TranslatePipe],
 })
 export class TypedMessageComponent {
   @Input() text!: string;

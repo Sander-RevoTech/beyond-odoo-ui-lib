@@ -1,4 +1,4 @@
-import { Observable, of, Subject } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 
 import { IInputBase, InputBase } from './base';
 

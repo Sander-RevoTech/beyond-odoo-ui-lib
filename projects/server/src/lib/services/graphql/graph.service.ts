@@ -1,11 +1,10 @@
 import { Inject, Injectable, Optional, inject } from '@angular/core';
 
 import { ApolloClient, ApolloLink, InMemoryCache } from '@apollo/client/core';
+import { isURL } from '@beyond/utils';
 import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { BehaviorSubject, filter, map, switchMap, take, tap } from 'rxjs';
-
-import { isURL } from '@beyond/utils';
 
 import { Logger } from '../logger';
 import { GraphMutationPayload, GraphQueryPayload } from './models/graphPayload';
@@ -108,9 +107,7 @@ export class BydGraphService {
   }
 
   public registerGraphEndpoint(graphEndpoint: GraphEndpoint) {
-    let uri = isURL(graphEndpoint.endpoint)
-      ? graphEndpoint.endpoint
-      : this._graphConfig.url + graphEndpoint.endpoint;
+    let uri = isURL(graphEndpoint.endpoint) ? graphEndpoint.endpoint : this._graphConfig.url + graphEndpoint.endpoint;
 
     const newHttpLink = this.httpLink.create({
       headers: graphEndpoint.headers,

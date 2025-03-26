@@ -2,9 +2,9 @@
   class="card flex-column"
   [ngClass]="{
     'card-shadow': this.shadow,
-    highlight: this.highlight,
+    'highlight': this.highlight,
     'full-height': this.fullHeight,
-    'no-card-border': this.noContent
+    'no-card-border': this.noContent,
   }"
   [class.hover]="this.hasHandler"
   (click)="this.clickTrigger()"

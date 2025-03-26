@@ -1,10 +1,10 @@
+import { NgClass, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 
 import { BydBaseComponent, TranslatePipe } from '@beyond/utils';
 
 import { ENotificationCode } from '../../../enum';
-import { NgClass, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
-import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'byd-notification-inline',

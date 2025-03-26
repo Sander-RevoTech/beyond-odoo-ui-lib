@@ -1,1 +1,6 @@
-<app-button (action)="this.input.callback()" [disabled]="(this.input.disabled$ | async) ?? false" [style]="this.input.style">{{ this.input.label }}</app-button>
+<app-button
+  (action)="this.input.callback()"
+  [disabled]="(this.input.disabled$ | async) ?? false"
+  [style]="this.input.style"
+  >{{ this.input.label }}</app-button
+>

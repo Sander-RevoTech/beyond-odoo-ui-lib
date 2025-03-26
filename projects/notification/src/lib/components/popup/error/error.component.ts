@@ -1,11 +1,12 @@
-import { Component, inject, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
+import { TranslatePipe } from '@beyond/translation';
+import { BydButtonComponent, BydTitleComponent } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
+
 import { ENotificationCode } from '../../../enum';
 import { BydNotificationService } from '../../../services/notification.service';
-import { BydButtonComponent, BydTitleComponent } from '@beyond/ui';
-import { TranslatePipe } from '@beyond/translation';
 
 export interface ErrorParams {
   message: string;
@@ -15,12 +16,15 @@ export interface ErrorParams {
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss'],
   standalone: true,
-  imports: [BydTitleComponent, BydButtonComponent, TranslatePipe]
+  imports: [BydTitleComponent, BydButtonComponent, TranslatePipe],
 })
 export class ErrorDialog extends BydBaseComponent {
   private readonly _notificationService = inject(BydNotificationService);
 
-  constructor(public dialogRef: MatDialogRef<ErrorDialog>, @Inject(MAT_DIALOG_DATA) public data?: ErrorParams) {
+  constructor(
+    public dialogRef: MatDialogRef<ErrorDialog>,
+    @Inject(MAT_DIALOG_DATA) public data?: ErrorParams
+  ) {
     super();
   }
 

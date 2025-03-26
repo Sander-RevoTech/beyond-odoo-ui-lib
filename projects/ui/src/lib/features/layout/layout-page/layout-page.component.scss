@@ -1,5 +1,6 @@
 @use 'beyond/utils/mixins/common';
 
-.layout-page-title, .layout-page-content {
+.layout-page-title,
+.layout-page-content {
   padding: common.get-var(space, sm);
 }

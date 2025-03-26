@@ -10,5 +10,3 @@ export * from './with-nav/layout-with-nav.component';
 export * from './layout-page/layout-page.component';
 export * from './layout-panel/layout-panel.component';
 export * from './with-panel/layout-with-panel.component';
-
-

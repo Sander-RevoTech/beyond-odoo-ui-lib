@@ -1,7 +1,6 @@
 @use 'beyond/external/bootstrap';
 @use 'beyond/external/material';
 
-
 @use 'beyond/settings/colors';
 @use 'beyond/settings/borders';
 @use 'beyond/settings/shadows';
@@ -9,7 +8,6 @@
 @use 'beyond/settings/spaces';
 @use 'beyond/settings/components';
 @use 'beyond/settings/flex';
-
 
 @mixin generate() {
   @include colors.generateColors();
@@ -27,5 +25,3 @@
 
   @include flex.generateFlex();
 }
-
-

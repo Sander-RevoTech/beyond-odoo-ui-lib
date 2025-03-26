@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './layout-title.component.html',
   styleUrls: ['./layout-title.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class LayoutTitleComponent {}

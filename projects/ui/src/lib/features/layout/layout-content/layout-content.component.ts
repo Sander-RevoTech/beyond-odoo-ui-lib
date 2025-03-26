@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './layout-content.component.html',
   styleUrls: ['./layout-content.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class LayoutContentComponent {
   @Input()

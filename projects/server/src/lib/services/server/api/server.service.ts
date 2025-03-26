@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { inject, Inject, Injectable, InjectionToken, Optional } from '@angular/core';
+import { Inject, Injectable, InjectionToken, Optional, inject } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
 import { Logger } from '../../logger';
+import { BydPermissionsServices } from '../../user/permissions.services.';
 import { Correlation, TempRequest } from '../interface';
 import { Request } from '../request';
 import { IBackResponse, IBaseResponse, IResponse, StatusReponse } from '../response';
 import { MappingApiType, RequestMap } from './requestMap';
-import { BydPermissionsServices } from '../../user/permissions.services.';
 
 export const SERVER_CONFIG_KEY = new InjectionToken<IServerConfig>('config_server');
 export interface IServerConfig {
@@ -20,7 +20,7 @@ export interface IServerConfig {
   providedIn: 'root',
 })
 export class BydServerSevice {
-  private readonly _config = inject(SERVER_CONFIG_KEY)
+  private readonly _config = inject(SERVER_CONFIG_KEY);
 
   readonly $http = inject(HttpClient);
 

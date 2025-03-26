@@ -1,4 +1,4 @@
-@use "beyond/utils/mixins/common";
+@use 'beyond/utils/mixins/common';
 
 .card {
   padding: common.get-var(space, sm);

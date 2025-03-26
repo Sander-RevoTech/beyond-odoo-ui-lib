@@ -7,7 +7,7 @@ import { BydBaseComponent } from '@beyond/utils';
   templateUrl: './layout-with-nav.component.html',
   styleUrls: ['./layout-with-nav.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class LayoutWithNavComponent extends BydBaseComponent {
   @Input()

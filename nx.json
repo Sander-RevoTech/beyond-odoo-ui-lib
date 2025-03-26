@@ -1,0 +1,18 @@
+{
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "postpublish": {
+      "dependsOn": ["^postpublish"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "postpublish"]
+      }
+    }
+  }
+}

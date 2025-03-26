@@ -3,17 +3,18 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
-import { InputBase } from '@beyond/form-model';
-import { BydBaseComponent } from '@beyond/utils';
 import {
+  CheckboxComponent,
+  DropdownComponent,
+  LabelComponent,
+  RadioComponent,
   TextBoxComponent,
   TextareaComponent,
-  DropdownComponent,
-  RadioComponent,
-  CheckboxComponent,
   ToggleComponent,
-  LabelComponent,
-  } from '@beyond/form-input';
+} from '@beyond/form-input';
+import { InputBase } from '@beyond/form-model';
+import { BydBaseComponent } from '@beyond/utils';
+
 import { PanelComponent } from '../input/panel/panel.component';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -28,7 +29,19 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.scss'],
   standalone: true,
-  imports: [NgTemplateOutlet, NgSwitch, NgSwitchCase, TextBoxComponent, TextareaComponent, DropdownComponent, RadioComponent, CheckboxComponent, ToggleComponent, PanelComponent, LabelComponent],
+  imports: [
+    NgTemplateOutlet,
+    NgSwitch,
+    NgSwitchCase,
+    TextBoxComponent,
+    TextareaComponent,
+    DropdownComponent,
+    RadioComponent,
+    CheckboxComponent,
+    ToggleComponent,
+    PanelComponent,
+    LabelComponent,
+  ],
 })
 export class InputsComponent extends BydBaseComponent {
   @Input()

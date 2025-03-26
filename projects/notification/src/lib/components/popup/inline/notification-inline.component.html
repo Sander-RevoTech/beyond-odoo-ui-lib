@@ -5,16 +5,16 @@
         <mat-icon class="mr-space-xs">{{ this.getIcon() }}</mat-icon>
         <ng-container [ngSwitch]="true" *ngIf="!this.message">
           <ng-container *ngSwitchCase="this.isError">
-            {{ "notification.inline.label.error" | translate }}
+            {{ 'notification.inline.label.error' | translate }}
           </ng-container>
           <ng-container *ngSwitchCase="this.isWarning">
-            {{ "notification.inline.label.warning" | translate }}
+            {{ 'notification.inline.label.warning' | translate }}
           </ng-container>
           <ng-container *ngSwitchCase="this.isInformation">
-            {{ "notification.inline.label.info" | translate }}
+            {{ 'notification.inline.label.info' | translate }}
           </ng-container>
           <ng-container *ngSwitchCase="this.isSuccess">
-            {{ "notification.inline.label.success" | translate }}
+            {{ 'notification.inline.label.success' | translate }}
           </ng-container>
         </ng-container>
         <ng-container [ngSwitch]="true" *ngIf="this.message">

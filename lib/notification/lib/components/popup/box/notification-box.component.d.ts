@@ -1,7 +1,7 @@
+import { MatDialog } from '@angular/material/dialog';
+import { EToast } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
 import { ENotificationCode } from '../../../enum';
-import { EToast } from '@beyond/ui';
-import { MatDialog } from '@angular/material/dialog';
 import * as i0 from "@angular/core";
 export declare class NotificationBoxComponent extends BydBaseComponent {
     private _dialog;

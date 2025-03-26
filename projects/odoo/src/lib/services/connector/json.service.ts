@@ -1,13 +1,14 @@
-import { inject, Injectable } from '@angular/core';
-import { BydPermissionsServices } from '@beyond/server';
-import { BehaviorSubject, map, Subject, tap } from 'rxjs';
-import { ODOO_SERVER_CONFIG_KEY } from '../../injectionToken';
+import { Injectable, inject } from '@angular/core';
+
 import { BydNotificationService, ENotificationCode } from '@beyond/notification';
+import { BydPermissionsServices } from '@beyond/server';
+import { BehaviorSubject, Subject, map, tap } from 'rxjs';
+
+import { ODOO_SERVER_CONFIG_KEY } from '../../injectionToken';
 
 export interface OdooAuthenticateResponse {
   uid: number;
 }
-
 
 @Injectable({
   providedIn: 'root',
@@ -31,20 +32,19 @@ export class OdooJsonConnector {
     return this.server.db;
   }
 
-  constructor() { }
+  constructor() {}
 
   public login$(user: string, password: string) {
     console.info('Getting UID');
     return this._connectWithCredentials$(user, password).pipe(
-      tap((result) => {
+      tap(result => {
         this.permissionsServices.set(result.uid, password);
 
         this.permissionsServices.setAuthenticated(true);
       }),
-      map((result) => result.uid),
+      map(result => result.uid)
     );
   }
-
 
   // Connexion avec identifiants
   private _connectWithCredentials$(user: string, password: string) {
@@ -61,23 +61,13 @@ export class OdooJsonConnector {
     };
 
     return this._call$<OdooAuthenticateResponse>(endpoint, params);
-
   }
 
-  public searchCount$(
-    model: string,
-    domain: any[],
-    opts: Record<string, any> = {}
-  ) {
+  public searchCount$(model: string, domain: any[], opts: Record<string, any> = {}) {
     console.info('Search & Count:', model);
     return this._call_kw$<number>(model, 'search_count', [domain], opts);
   }
-  public searchRead$<T>(
-    model: string,
-    domain: any[],
-    fields: Array<keyof T> = [],
-    opts: Record<string, any> = {}
-  ) {
+  public searchRead$<T>(model: string, domain: any[], fields: Array<keyof T> = [], opts: Record<string, any> = {}) {
     console.info('Search & Read:', model);
     return this._call_kw$<T[]>(model, 'search_read', [domain, fields], opts);
   }
@@ -102,12 +92,7 @@ export class OdooJsonConnector {
     return this._callWithUid<T>(model, method, args, kwargs);
   }
 
-  private _callWithUid<T>(
-    model: string,
-    method: string,
-    args: any[],
-    kwargs: Record<string, any> = {}
-  ) {
+  private _callWithUid<T>(model: string, method: string, args: any[], kwargs: Record<string, any> = {}) {
     const endpoint = `${this.url}/jsonrpc`;
     const params = {
       jsonrpc: '2.0',
@@ -131,18 +116,20 @@ export class OdooJsonConnector {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(params),
-    }).then((response) => {
-      this._extractResult<T>(response).then((result) => {
-        console.log('response, ', result);
-        subject$.next(result);
-        subject$.complete();
-        subject$.unsubscribe();
-      }).catch((error) => {
-        subject$.error(error);
-        subject$.complete();
-        subject$.unsubscribe();
-        this._handleErrorMessage(error);
-      })
+    }).then(response => {
+      this._extractResult<T>(response)
+        .then(result => {
+          console.log('response, ', result);
+          subject$.next(result);
+          subject$.complete();
+          subject$.unsubscribe();
+        })
+        .catch(error => {
+          subject$.error(error);
+          subject$.complete();
+          subject$.unsubscribe();
+          this._handleErrorMessage(error);
+        });
     });
 
     return subject$;
@@ -153,31 +140,29 @@ export class OdooJsonConnector {
       throw new Error(response?.statusText || 'Connection Error');
     }
 
-    const body = <{result: T, error: { data: { message: string}}}>await response.json();
+    const body = <{ result: T; error: { data: { message: string } } }>await response.json();
 
-    if(body.error) {
+    if (body.error) {
       this._handleErrorMessage(body.error.data.message);
       throw new Error(body.error.data.message);
     }
     return body.result;
   }
 
-    private _handleErrorMessage(message: any) {
-      const formattedMessage = message
-        .toString()
-        .replace('Error: Invalid XML-RPC', '')
-        .replace('Error: XML-RPC fault:', '');
-      this.notificationService.addErrorNotification(formattedMessage);
-    }
+  private _handleErrorMessage(message: any) {
+    const formattedMessage = message
+      .toString()
+      .replace('Error: Invalid XML-RPC', '')
+      .replace('Error: XML-RPC fault:', '');
+    this.notificationService.addErrorNotification(formattedMessage);
+  }
 
   /**
    *
    * out
    */
 
-
   // // Méthodes pratiques pour les opérations CRUD
-
 
   // async read(model: string, id: number | number[], fields: string[] = []): Promise<any> {
   //   return this.call_kw(model, 'read', [id, fields]);
@@ -186,7 +171,6 @@ export class OdooJsonConnector {
   // async search(model: string, domain: any[]): Promise<number[]> {
   //   return (await this.call_kw(model, 'search', [domain])) || [];
   // }
-
 
   // async disconnect(): Promise<boolean> {
   //   if (!this.is_connected) {

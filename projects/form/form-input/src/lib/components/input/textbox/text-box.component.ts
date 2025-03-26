@@ -1,22 +1,34 @@
+import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { InputNumber, InputTextBox } from '@beyond/form-model';
 import { TranslatePipe } from '@beyond/utils';
+
 import { FormLabelComponent } from '../../label/label.component';
-import { MatIconModule } from '@angular/material/icon';
-import { TextareaComponent } from "../textarea/textarea.component";
-import { NgClass, NgIf } from '@angular/common';
+import { TextareaComponent } from '../textarea/textarea.component';
 
 @Component({
   selector: 'byd-input-textbox',
   templateUrl: './text-box.component.html',
   styleUrls: ['./text-box.component.scss'],
   standalone: true,
-  imports: [NgIf, NgClass, MatFormFieldModule, MatIconModule, MatInputModule, FormsModule, ReactiveFormsModule, TranslatePipe, FormLabelComponent, TextareaComponent],
+  imports: [
+    NgIf,
+    NgClass,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslatePipe,
+    FormLabelComponent,
+    TextareaComponent,
+  ],
 })
 export class TextBoxComponent implements OnInit {
   @Input()

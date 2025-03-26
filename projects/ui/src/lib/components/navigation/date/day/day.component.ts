@@ -3,16 +3,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
 import { addDays } from 'date-fns';
+
 import { BydButtonComponent } from '../../../button/button.component';
 import { BydTitleComponent } from '../../../title/title.component';
-
 
 @Component({
   selector: 'byd-navigation-date-day',
   templateUrl: './day.component.html',
   styleUrls: ['./day.component.scss'],
   standalone: true,
-  imports: [BydButtonComponent, BydTitleComponent, DatePipe, MatIcon]
+  imports: [BydButtonComponent, BydTitleComponent, DatePipe, MatIcon],
 })
 export class BydNavigationDateDayComponent {
   @Input()

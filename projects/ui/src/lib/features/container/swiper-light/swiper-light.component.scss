@@ -1,5 +1,4 @@
-@use "beyond/utils/mixins/flex";
-
+@use 'beyond/utils/mixins/flex';
 
 .items {
   @include flex.flex-start();

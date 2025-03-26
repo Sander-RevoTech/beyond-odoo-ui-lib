@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss'],
   standalone: true,
-  imports: [NgClass, NgTemplateOutlet]
+  imports: [NgClass, NgTemplateOutlet],
 })
 export class BydTitleComponent {
   /**

@@ -1,29 +1,20 @@
-import { inject, Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  Router,
-  RouterStateSnapshot,
-} from '@angular/router';
+import { Injectable, inject } from '@angular/core';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 
 import { map } from 'rxjs/operators';
 
-import { Observable } from 'rxjs';
-
 import { BydRoutes } from '@beyond/menu';
 import { BydPermissionsServices } from '@beyond/server';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard {
-    private readonly _permissionsServices = inject(BydPermissionsServices);
+  private readonly _permissionsServices = inject(BydPermissionsServices);
 
   constructor(private router: Router) {}
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean> | boolean {
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
     if (!this._permissionsServices.received) {
       return this._permissionsServices.updated$.pipe(
         map(() => {

@@ -3,9 +3,9 @@ import { Injectable, OnDestroy, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { BydGraphService, GraphEndpoint } from '../graphql/public-api';
+import { BydStrapiService } from '../strapi/strapi.service';
 import { MappingApiType } from './api/requestMap';
 import { BydServerSevice } from './api/server.service';
-import { BydStrapiService } from '../strapi/strapi.service';
 
 @Injectable({
   providedIn: 'root',

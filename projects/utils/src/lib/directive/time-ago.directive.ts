@@ -14,7 +14,7 @@ export class TimeAgoDirective implements PipeTransform {
 
     // const key = this._getTranslationKey(diffDays);
 
-    return date
+    return date;
     // return this._translationService.get(key, {
     //   date: formatDate(date, 'mediumDate', this._translationService.getLanguage()),
     //   days: Math.abs(diffDays),

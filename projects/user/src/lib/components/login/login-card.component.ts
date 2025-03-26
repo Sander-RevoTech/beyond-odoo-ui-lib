@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 
+import { BydFormComponent } from '@beyond/form-basic';
+import { BydNotificationService, ENotificationCode } from '@beyond/notification';
 import { BydAuthOdooService, BydBaseOdooService } from '@beyond/odoo';
 import { LoaderComponent } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
-import { BydFormComponent } from '@beyond/form-basic';
-import { ENotificationCode, BydNotificationService } from '@beyond/notification';
+
 import { AppUserFormService } from '../../services/form/form.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { AppUserFormService } from '../../services/form/form.service';
   templateUrl: './login-card.component.html',
   styleUrls: ['./login-card.component.scss'],
   imports: [LoaderComponent, BydFormComponent],
-  standalone: true
+  standalone: true,
 })
 export class LoginCardComponent extends BydBaseComponent {
   private readonly _authService = inject(BydAuthOdooService);
@@ -20,7 +21,7 @@ export class LoginCardComponent extends BydBaseComponent {
   private readonly _formService = inject(AppUserFormService);
   private readonly _odooService = inject(BydBaseOdooService);
 
-  public readonly form = signal(this._formService.getLoginForm())
+  public readonly form = signal(this._formService.getLoginForm());
   constructor() {
     super();
   }
@@ -29,7 +30,7 @@ export class LoginCardComponent extends BydBaseComponent {
     this.requestState.asked();
     const loginData = this._formService.formatLoginForm(data);
 
-    this._authService.login$({identifier: loginData.user, password: loginData.pass}).subscribe({
+    this._authService.login$({ identifier: loginData.user, password: loginData.pass }).subscribe({
       next: uid => {
         this.requestState.completed();
 
@@ -38,7 +39,7 @@ export class LoginCardComponent extends BydBaseComponent {
         } else {
           this._errorMessage('notification.success');
         }
-        this._odooService._odooService.searchRead$('res.partner', [])
+        this._odooService._odooService.searchRead$('res.partner', []);
       },
       error: (message: string) => {
         this.requestState.completed();

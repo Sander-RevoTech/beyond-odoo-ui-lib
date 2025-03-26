@@ -1,18 +1,11 @@
 <byd-form-label [input]="this.input"></byd-form-label>
 
 <ng-container *ngIf="this.input.type === 'textarea'">
-  <byd-input-textarea
-    [input]="$any(this.input)"
-    [matcher]="this.matcher"
-  ></byd-input-textarea>
+  <byd-input-textarea [input]="$any(this.input)" [matcher]="this.matcher"></byd-input-textarea>
 </ng-container>
 
 <div class="input-group" *ngIf="this.input.type !== 'textarea'">
-  <mat-form-field
-    class="textbox-container"
-    [floatLabel]="'auto'"
-    [ngClass]="{ noSpace: !this.space }"
-  >
+  <mat-form-field class="textbox-container" [floatLabel]="'auto'" [ngClass]="{ noSpace: !this.space }">
     <!-- IMPROVE: remove $any -->
     <input
       #box
@@ -25,15 +18,9 @@
       [type]="this.isPassword && !this.hide ? 'text' : this.input.type"
       (keyup)="this.onChange(box.value)"
     />
-    <span
-      matSuffix
-      mat-icon-button
-      aria-label="Hide/Show"
-      (click)="this.hide = !this.hide"
-      *ngIf="this.isPassword"
-    >
+    <span matSuffix mat-icon-button aria-label="Hide/Show" (click)="this.hide = !this.hide" *ngIf="this.isPassword">
       <mat-icon>
-        {{ this.hide ? "Visibility" : "Visibility Off" }}
+        {{ this.hide ? 'Visibility' : 'Visibility Off' }}
       </mat-icon>
     </span>
 
@@ -46,38 +33,33 @@
     </mat-hint>
     <mat-error *ngIf="this.input.formControl?.hasError('message')">
       <small class="form-text text-danger">
-        {{ this.input.formControl?.getError("message") }}
+        {{ this.input.formControl?.getError('message') }}
       </small>
     </mat-error>
     <mat-error *ngIf="this.input.formControl?.getError('invalidSlug')">
-      {{ "input.text-box.is-slug" }}
+      {{ 'input.text-box.is-slug' }}
     </mat-error>
     <mat-error *ngIf="this.input.formControl?.hasError('minlength')">
       <small class="form-text text-danger">
         {{
-          "input.text-box.minimum-length"
+          'input.text-box.minimum-length'
             | translate
               : {
-                  length:
-                    this.input.formControl?.getError("minlength").requiredLength
+                  length: this.input.formControl?.getError('minlength').requiredLength,
                 }
         }}
       </small>
     </mat-error>
     <mat-error *ngIf="this.input.formControl?.hasError(this.input.type)">
-      <small class="form-text text-danger">{{
-        "input.text-box.error-occured" | translate
-      }}</small>
+      <small class="form-text text-danger">{{ 'input.text-box.error-occured' | translate }}</small>
     </mat-error>
     <mat-error *ngIf="this.input.formControl?.hasError('required')">
       <small class="form-text text-danger">
         {{
-          "input.text-box.is-mandatory"
+          'input.text-box.is-mandatory'
             | translate
               : {
-                  field:
-                    (this.input.label | translate) ||
-                      "input.text-box.this-field" | translate
+                  field: (this.input.label | translate) || 'input.text-box.this-field' | translate,
                 }
         }}
       </small>

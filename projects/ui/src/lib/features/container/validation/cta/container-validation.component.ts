@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
+import { BydBaseComponent } from '@beyond/utils';
 
 import { TranslationData, openDialog } from '../common-dialog';
-import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
   selector: 'byd-container-validation',
   templateUrl: './container-validation.component.html',
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class BydContainerValidationComponent extends BydBaseComponent {
   @Input()

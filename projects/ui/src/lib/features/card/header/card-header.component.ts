@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './card-header.component.html',
   styleUrls: ['./card-header.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class CardHeaderComponent {
   constructor() {}

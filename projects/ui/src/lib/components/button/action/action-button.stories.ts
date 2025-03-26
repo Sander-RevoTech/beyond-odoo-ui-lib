@@ -1,6 +1,5 @@
-import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
-
 import { BydIconType, LocalIconComponent, MaterialIconComponent } from '@beyond/icons';
+import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 
 import { ActionButtonComponent } from './action-button.component';
 

@@ -1,5 +1,5 @@
 @use 'beyond';
-@use "beyond/utils/mixins/fonts";
+@use 'beyond/utils/mixins/fonts';
 
 @include fonts.font('Roboto', 'roboto/', 'Roboto-Light', 300);
 

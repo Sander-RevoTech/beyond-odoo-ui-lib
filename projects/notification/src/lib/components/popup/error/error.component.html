@@ -1,14 +1,14 @@
 <div class="container">
-  <byd-title>{{ "core.notification.error.title" | translate }}</byd-title>
+  <byd-title>{{ 'core.notification.error.title' | translate }}</byd-title>
   <p>
     {{ this.data?.message }}
   </p>
   <div class="row mB-10">
     <byd-button class="col" (action)="this.copyContent()">
-      {{ "core.notification.error.copy" | translate }}
+      {{ 'core.notification.error.copy' | translate }}
     </byd-button>
     <byd-button class="col" (action)="this.close()">
-      {{ "core.notification.error.close" | translate }}
+      {{ 'core.notification.error.close' | translate }}
     </byd-button>
   </div>
 </div>

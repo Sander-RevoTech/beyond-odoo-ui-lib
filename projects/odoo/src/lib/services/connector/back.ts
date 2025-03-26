@@ -1,12 +1,12 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
+import { BydNotificationService, ENotificationCode } from '@beyond/notification';
+import { BydPermissionsServices } from '@beyond/server';
+import odoo from '@fernandoslim/odoo-jsonrpc';
 import { OdooRPCService } from 'angular-odoo-jsonrpc';
-import odoo from "@fernandoslim/odoo-jsonrpc";
-import { catchError, map, Observable, Subject, take, tap } from 'rxjs';
+import { Observable, Subject, catchError, map, take, tap } from 'rxjs';
 
 import { ODOO_SERVER_CONFIG_KEY } from '../../injectionToken';
-import { BydPermissionsServices } from '@beyond/server';
-import { BydNotificationService, ENotificationCode } from '@beyond/notification';
 
 type pendingRequest = Array<{ subject$: Subject<any>; request$: Observable<unknown> }>;
 
@@ -26,7 +26,7 @@ export class OdooJsonConnector {
   // });
 
   get uid() {
-   return this.permissionsServices.uid;
+    return this.permissionsServices.uid;
   }
   get pass() {
     return this.permissionsServices.pass;
@@ -34,9 +34,7 @@ export class OdooJsonConnector {
 
   private _tempAuthRequest: pendingRequest = [];
 
-
   constructor() {
-
     const odoo2 = new odoo();
     this.odooRPC.init({
       odoo_server: this.server.proxyUrl,
@@ -46,11 +44,10 @@ export class OdooJsonConnector {
   public login$(login: string, password: string) {
     console.info('Getting UID');
 
-
     return this.odooRPC.login(this.server.db, login, password).pipe(
-      map((data) => {
+      map(data => {
         if (data.uid) {
-         this.permissionsServices.set(data.uid, password, data.session_id);
+          this.permissionsServices.set(data.uid, password, data.session_id);
         }
         this.odooRPC.setHttpAuth(`${login}:${password}`);
         return data.uid;
@@ -67,24 +64,24 @@ export class OdooJsonConnector {
 
     const subject$ = new Subject<number>();
 
-    return this._handleRequest<number>(subject$, this.odooRPC.call<number>(
-        model,
-        'search_count',
-        [], {}).pipe(tap((value: number) => {
-              console.log('response Search & Count, ', value);
-              subject$.next(value);
-              subject$.complete();
-              subject$.unsubscribe();
-            }
-        ),
+    return this._handleRequest<number>(
+      subject$,
+      this.odooRPC.call<number>(model, 'search_count', [], {}).pipe(
+        tap((value: number) => {
+          console.log('response Search & Count, ', value);
+          subject$.next(value);
+          subject$.complete();
+          subject$.unsubscribe();
+        }),
         catchError(async error => {
-            console.error(error);
-              subject$.error(error);
-              subject$.complete();
-              subject$.unsubscribe();
-              this._handleErrorMessage(error);
+          console.error(error);
+          subject$.error(error);
+          subject$.complete();
+          subject$.unsubscribe();
+          this._handleErrorMessage(error);
         })
-      ));
+      )
+    );
   }
 
   public searchRead$<T, K = T>(model: string, param?: any, keyword?: { fields: Array<keyof K>; limit?: any }) {
@@ -92,24 +89,25 @@ export class OdooJsonConnector {
 
     const subject$ = new Subject<T[]>();
 
-    return this._handleRequest<T[]>(subject$, this.odooRPC.searchRead<T>(model)
-    .pipe(tap((value) => {
-              console.log('response Search & Count, ', value);
-              subject$.next(value.records);
-              subject$.complete();
-              subject$.unsubscribe();
-            }
-        ),
+    return this._handleRequest<T[]>(
+      subject$,
+      this.odooRPC.searchRead<T>(model).pipe(
+        tap(value => {
+          console.log('response Search & Count, ', value);
+          subject$.next(value.records);
+          subject$.complete();
+          subject$.unsubscribe();
+        }),
         catchError(async error => {
-            console.error(error);
-              subject$.error(error);
-              subject$.complete();
-              subject$.unsubscribe();
-              this._handleErrorMessage(error);
+          console.error(error);
+          subject$.error(error);
+          subject$.complete();
+          subject$.unsubscribe();
+          this._handleErrorMessage(error);
         })
-      ));
+      )
+    );
   }
-
 
   private _handleRequest<T>(subject$: Subject<T>, request$: Observable<unknown>): Subject<T> {
     if (this.uid) {

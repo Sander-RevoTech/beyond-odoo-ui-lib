@@ -1,25 +1,10 @@
 <div class="container">
-  <div
-    class="bullet"
-    (click)="this.openBullet()"
-    [ngClass]="{ open: this.isOpen }"
-  ></div>
+  <div class="bullet" (click)="this.openBullet()" [ngClass]="{ open: this.isOpen }"></div>
 
   <div class="items">
-    <div
-      *ngFor="let action of actions"
-      class="item"
-      (click)="this.action.callback()"
-      [ngClass]="{ show: this.isOpen }"
-    >
-      <byd-font-icon
-        *ngIf="this.isFontIcon(action)"
-        [name]="getFontIcon(action)"
-      ></byd-font-icon>
-      <byd-local-icon
-        *ngIf="this.isLocalIcon(action)"
-        [type]="action.icon"
-      ></byd-local-icon>
+    <div *ngFor="let action of actions" class="item" (click)="this.action.callback()" [ngClass]="{ show: this.isOpen }">
+      <byd-font-icon *ngIf="this.isFontIcon(action)" [name]="getFontIcon(action)"></byd-font-icon>
+      <byd-local-icon *ngIf="this.isLocalIcon(action)" [type]="action.icon"></byd-local-icon>
     </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './badge.component.html',
   styleUrls: ['./badge.component.scss'],
   standalone: true,
-  imports: [NgClass]
+  imports: [NgClass],
 })
 export class BydBadgeComponent {
   /**

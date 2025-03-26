@@ -1,5 +1,5 @@
-@use "beyond/utils/mixins/flex";
-@use "beyond/utils/mixins/common";
+@use 'beyond/utils/mixins/flex';
+@use 'beyond/utils/mixins/common';
 
 .value-container {
   @include flex.space-between();

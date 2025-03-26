@@ -1,20 +1,30 @@
+import { NgClass, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { InputRadio } from '@beyond/form-model';
 import { BydSizes } from '@beyond/styles';
 import { BydBaseComponent, TranslatePipe } from '@beyond/utils';
+
 import { FormLabelComponent } from '../../label/label.component';
-import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'byd-input-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss'],
   standalone: true,
-  imports: [NgClass, NgIf, MatFormFieldModule, MatRadioModule, FormsModule, ReactiveFormsModule, TranslatePipe, FormLabelComponent],
+  imports: [
+    NgClass,
+    NgIf,
+    MatFormFieldModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslatePipe,
+    FormLabelComponent,
+  ],
 })
 export class RadioComponent extends BydBaseComponent {
   @Input() input!: InputRadio<any>;

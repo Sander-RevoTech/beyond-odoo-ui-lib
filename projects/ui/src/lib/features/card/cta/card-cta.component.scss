@@ -1,6 +1,5 @@
 @use 'beyond/utils/mixins/common';
-@use "beyond/utils/mixins/mediaQueriesRanges";
-
+@use 'beyond/utils/mixins/mediaQueriesRanges';
 
 .cta {
   border-top: 1px solid common.get-var(neutral, main);

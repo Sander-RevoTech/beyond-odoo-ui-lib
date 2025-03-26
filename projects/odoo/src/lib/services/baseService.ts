@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 
 import { getFirstString } from '@beyond/utils';
+
 import { OdooJsonConnector } from './connector/json.service';
 
 @Injectable({
@@ -9,8 +10,7 @@ import { OdooJsonConnector } from './connector/json.service';
 export abstract class BydBaseOdooService {
   public _odooService = inject(OdooJsonConnector);
 
-  constructor() {
-  }
+  constructor() {}
 
   protected _handleJoinData<T>(
     entity: T,

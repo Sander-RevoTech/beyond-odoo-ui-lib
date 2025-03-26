@@ -2,7 +2,7 @@ import { Directive, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appStopPropagation]',
-  standalone: true
+  standalone: true,
 })
 export class StopPropagationDirective {
   @Input() stopPropagationActivation = true;

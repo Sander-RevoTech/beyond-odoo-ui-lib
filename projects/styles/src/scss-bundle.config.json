@@ -1,4 +1,4 @@
 {
-  "entry": "./index.scss",
-  "dest": "./dist/beyond-index.scss"
+  "dest": "./dist/beyond-index.scss",
+  "entry": "./index.scss"
 }

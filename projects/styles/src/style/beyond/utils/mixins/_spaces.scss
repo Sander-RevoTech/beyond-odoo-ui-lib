@@ -1,6 +1,5 @@
-@use "beyond/vars";
+@use 'beyond/vars';
 @use 'beyond/utils/mixins/common';
-
 
 @function spaceBase($multiple) {
   @return calc(common.get-var(space, base) * $multiple);

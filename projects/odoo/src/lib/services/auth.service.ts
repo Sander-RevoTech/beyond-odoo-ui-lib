@@ -1,12 +1,10 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { BydPermissionsServices } from '@beyond/server';
+
 import { BydBaseOdooService } from './baseService';
 
-
-interface UserProfile {
-
-}
+interface UserProfile {}
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +15,7 @@ export class BydAuthOdooService extends BydBaseOdooService {
     super();
   }
 
-  public login$(data: { identifier: string, password: string}) {
+  public login$(data: { identifier: string; password: string }) {
     return this._odooService.login$(data.identifier, data.password);
   }
 
@@ -25,5 +23,4 @@ export class BydAuthOdooService extends BydBaseOdooService {
     this.permissionsServices.reset();
     location.reload();
   }
-
 }

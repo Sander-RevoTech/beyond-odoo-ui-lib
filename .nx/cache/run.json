@@ -1,0 +1,142 @@
+{
+  "run": {
+    "command": "cli run build",
+    "startTime": "2025-03-26T21:09:49.827Z",
+    "endTime": "2025-03-26T21:10:42.594Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "@beyond/styles:build",
+      "target": "build",
+      "projectName": "@beyond/styles",
+      "hash": "16601420530904338114",
+      "startTime": "2025-03-26T21:09:49.863Z",
+      "endTime": "2025-03-26T21:09:57.080Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/menu:build",
+      "target": "build",
+      "projectName": "@beyond/menu",
+      "hash": "7579942417435979690",
+      "startTime": "2025-03-26T21:09:49.863Z",
+      "endTime": "2025-03-26T21:09:58.522Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/translation:build",
+      "target": "build",
+      "projectName": "@beyond/translation",
+      "hash": "12157502235917326567",
+      "startTime": "2025-03-26T21:09:49.863Z",
+      "endTime": "2025-03-26T21:09:59.241Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/utils:build",
+      "target": "build",
+      "projectName": "@beyond/utils",
+      "hash": "6688908256434154006",
+      "startTime": "2025-03-26T21:09:49.863Z",
+      "endTime": "2025-03-26T21:10:00.585Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/form-model:build",
+      "target": "build",
+      "projectName": "@beyond/form-model",
+      "hash": "10977627039012076246",
+      "startTime": "2025-03-26T21:10:00.669Z",
+      "endTime": "2025-03-26T21:10:12.028Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/server:build",
+      "target": "build",
+      "projectName": "@beyond/server",
+      "hash": "7397412362140194139",
+      "startTime": "2025-03-26T21:10:00.669Z",
+      "endTime": "2025-03-26T21:10:13.877Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/ui:build",
+      "target": "build",
+      "projectName": "@beyond/ui",
+      "hash": "12807123954656377988",
+      "startTime": "2025-03-26T21:10:00.669Z",
+      "endTime": "2025-03-26T21:10:15.655Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/form-input:build",
+      "target": "build",
+      "projectName": "@beyond/form-input",
+      "hash": "6346879637112007948",
+      "startTime": "2025-03-26T21:10:12.600Z",
+      "endTime": "2025-03-26T21:10:25.324Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/notification:build",
+      "target": "build",
+      "projectName": "@beyond/notification",
+      "hash": "5300818161486771717",
+      "startTime": "2025-03-26T21:10:15.680Z",
+      "endTime": "2025-03-26T21:10:26.617Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/form-basic:build",
+      "target": "build",
+      "projectName": "@beyond/form-basic",
+      "hash": "2300939286743412458",
+      "startTime": "2025-03-26T21:10:25.349Z",
+      "endTime": "2025-03-26T21:10:34.544Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/odoo:build",
+      "target": "build",
+      "projectName": "@beyond/odoo",
+      "hash": "15773484201042058987",
+      "startTime": "2025-03-26T21:10:26.679Z",
+      "endTime": "2025-03-26T21:10:35.169Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/user:build",
+      "target": "build",
+      "projectName": "@beyond/user",
+      "hash": "2216886542664705684",
+      "startTime": "2025-03-26T21:10:35.194Z",
+      "endTime": "2025-03-26T21:10:42.576Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    }
+  ]
+}

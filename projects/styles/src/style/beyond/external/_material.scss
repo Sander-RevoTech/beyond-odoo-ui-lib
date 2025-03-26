@@ -4,7 +4,7 @@
 @use 'sass:map';
 @use 'beyond/utils/mixins/common';
 
-@import "beyond/vars";
+@import 'beyond/vars';
 @include mat.core();
 
 $byd-colours: (

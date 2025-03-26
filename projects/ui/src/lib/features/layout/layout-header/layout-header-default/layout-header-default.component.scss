@@ -1,11 +1,8 @@
 @use 'beyond/utils/mixins/common';
 @use 'beyond/utils/mixins/flex';
 
-
-
 .layout-header-default-container {
   color: common.get-var(text, invert, primary);
   background-color: common.get-var(surface, brand, primary);
   padding: common.get-var(space, sm);
-
 }

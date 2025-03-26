@@ -1,4 +1,4 @@
-import { inject, LOCALE_ID, provideAppInitializer, Provider } from '@angular/core';
+import { LOCALE_ID, Provider, inject, provideAppInitializer } from '@angular/core';
 
 import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
 

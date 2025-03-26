@@ -1,6 +1,6 @@
-@use "beyond/utils/mixins/shadows";
-@use "beyond/utils/mixins/common";
-@use "beyond/utils/mixins/fonts";
+@use 'beyond/utils/mixins/shadows';
+@use 'beyond/utils/mixins/common';
+@use 'beyond/utils/mixins/fonts';
 
 .card {
   @include shadows.shadow-mixin(brand, md);

@@ -1,17 +1,16 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 
 import { BydMainRoute, BydRoutes } from '@beyond/menu';
-import { BydPermissionsServices, BydPermissionLevel } from '@beyond/server';
+import { BydPermissionLevel, BydPermissionsServices } from '@beyond/server';
 import { BydButtonComponent } from '@beyond/ui';
 import { BydAbstractComponent } from '@beyond/utils';
-
 
 @Component({
   selector: 'byd-guard',
   templateUrl: './guard.component.html',
   styleUrls: ['./guard.component.scss'],
   imports: [BydButtonComponent],
-  standalone: true
+  standalone: true,
 })
 export class GuardComponent extends BydAbstractComponent {
   @Input()
