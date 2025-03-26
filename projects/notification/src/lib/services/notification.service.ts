@@ -17,9 +17,17 @@ export class BydNotificationService {
     code: ENotificationCode;
   }>();
 
+  public errorNotification$ = new Subject<{
+    message: string;
+  }>();
+
   constructor() {}
 
   public addNotification(message: string, code: ENotificationCode) {
     this.newNotification$.next({ message, code });
+  }
+
+  public addErrorNotification(message: string) {
+    this.errorNotification$.next({ message });
   }
 }

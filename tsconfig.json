@@ -28,7 +28,8 @@
       "@beyond/form-basic": ["./lib/form/form-basic"],
       "@beyond/form-input": ["./lib/form/form-input"],
       "@beyond/form-model": ["./lib/form/form-model"],
-      "@beyond/notification": ["./lib/notification"]
+      "@beyond/notification": ["./lib/notification"],
+      "@beyond/translation": ["./dist/translation"]
     }
   },
   "angularCompilerOptions": {

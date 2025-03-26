@@ -6,6 +6,7 @@
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
+    "@beyond/translation": "^0.0.1",
     "@beyond/utils": "^0.0.1",
     "@beyond/ui": "^0.0.1",
     "@beyond/styles": "^0.0.1",

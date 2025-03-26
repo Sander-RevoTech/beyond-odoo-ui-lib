@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { tap } from 'rxjs/operators';
 
@@ -9,6 +9,8 @@ import { BydNotificationService } from '../../../services/notification.service';
 import { NotificationInlineComponent } from "../inline/notification-inline.component";
 import { NgFor } from '@angular/common';
 import { EToast, ToastComponent } from '@beyond/ui';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialog, ErrorParams } from '../error/error.component';
 
 @Component({
   selector: 'byd-notification-box',
@@ -18,9 +20,11 @@ import { EToast, ToastComponent } from '@beyond/ui';
   imports: [NotificationInlineComponent, NgFor, ToastComponent],
 })
 export class NotificationBoxComponent extends BydBaseComponent {
+  private readonly _notificationService = inject(BydNotificationService);
+
   public list: { message: string; code: ENotificationCode }[] = [];
 
-  constructor(private _notificationService: BydNotificationService) {
+  constructor(private _dialog: MatDialog) {
     super();
 
     this._registerSubscription(
@@ -33,6 +37,16 @@ export class NotificationBoxComponent extends BydBaseComponent {
             setTimeout(() => {
               this.list = this.list.filter(item => item !== notification);
             }, 3000);
+          })
+        )
+        .subscribe()
+    );
+
+    this._registerSubscription(
+      this._notificationService.errorNotification$
+        .pipe(
+          tap(notification => {
+            this._dialog.open<ErrorDialog, ErrorParams>(ErrorDialog, { data: { message: notification.message } });
           })
         )
         .subscribe()

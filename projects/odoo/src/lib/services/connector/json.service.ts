@@ -156,6 +156,7 @@ export class OdooJsonConnector {
     const body = <{result: T, error: { data: { message: string}}}>await response.json();
 
     if(body.error) {
+      this._handleErrorMessage(body.error.data.message);
       throw new Error(body.error.data.message);
     }
     return body.result;
@@ -166,7 +167,7 @@ export class OdooJsonConnector {
         .toString()
         .replace('Error: Invalid XML-RPC', '')
         .replace('Error: XML-RPC fault:', '');
-      this.notificationService.addNotification(formattedMessage, ENotificationCode.error);
+      this.notificationService.addErrorNotification(formattedMessage);
     }
 
   /**
