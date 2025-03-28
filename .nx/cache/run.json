@@ -1,8 +1,8 @@
 {
   "run": {
     "command": "cli run build",
-    "startTime": "2025-03-28T13:25:18.462Z",
-    "endTime": "2025-03-28T13:25:18.738Z",
+    "startTime": "2025-03-28T13:26:30.107Z",
+    "endTime": "2025-03-28T13:27:07.887Z",
     "inner": false
   },
   "tasks": [
@@ -11,8 +11,8 @@
       "target": "build",
       "projectName": "@beyond/utils",
       "hash": "6688908256434154006",
-      "startTime": "2025-03-28T13:25:18.508Z",
-      "endTime": "2025-03-28T13:25:18.534Z",
+      "startTime": "2025-03-28T13:26:30.145Z",
+      "endTime": "2025-03-28T13:26:30.173Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -22,8 +22,8 @@
       "target": "build",
       "projectName": "@beyond/styles",
       "hash": "16601420530904338114",
-      "startTime": "2025-03-28T13:25:18.508Z",
-      "endTime": "2025-03-28T13:25:18.537Z",
+      "startTime": "2025-03-28T13:26:30.145Z",
+      "endTime": "2025-03-28T13:26:30.176Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -33,8 +33,8 @@
       "target": "build",
       "projectName": "@beyond/translation",
       "hash": "12157502235917326567",
-      "startTime": "2025-03-28T13:25:18.508Z",
-      "endTime": "2025-03-28T13:25:18.539Z",
+      "startTime": "2025-03-28T13:26:30.145Z",
+      "endTime": "2025-03-28T13:26:30.179Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -44,8 +44,8 @@
       "target": "build",
       "projectName": "@beyond/menu",
       "hash": "7579942417435979690",
-      "startTime": "2025-03-28T13:25:18.508Z",
-      "endTime": "2025-03-28T13:25:18.542Z",
+      "startTime": "2025-03-28T13:26:30.145Z",
+      "endTime": "2025-03-28T13:26:30.181Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -55,8 +55,8 @@
       "target": "build",
       "projectName": "@beyond/form-model",
       "hash": "10977627039012076246",
-      "startTime": "2025-03-28T13:25:18.562Z",
-      "endTime": "2025-03-28T13:25:18.616Z",
+      "startTime": "2025-03-28T13:26:30.205Z",
+      "endTime": "2025-03-28T13:26:30.276Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -66,19 +66,8 @@
       "target": "build",
       "projectName": "@beyond/server",
       "hash": "7397412362140194139",
-      "startTime": "2025-03-28T13:25:18.562Z",
-      "endTime": "2025-03-28T13:25:18.618Z",
-      "params": "",
-      "cacheStatus": "local-cache-hit",
-      "status": 0
-    },
-    {
-      "taskId": "@beyond/ui:build",
-      "target": "build",
-      "projectName": "@beyond/ui",
-      "hash": "12807123954656377988",
-      "startTime": "2025-03-28T13:25:18.585Z",
-      "endTime": "2025-03-28T13:25:18.620Z",
+      "startTime": "2025-03-28T13:26:30.205Z",
+      "endTime": "2025-03-28T13:26:30.278Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -88,19 +77,8 @@
       "target": "build",
       "projectName": "@beyond/form-input",
       "hash": "6346879637112007948",
-      "startTime": "2025-03-28T13:25:18.631Z",
-      "endTime": "2025-03-28T13:25:18.660Z",
-      "params": "",
-      "cacheStatus": "local-cache-hit",
-      "status": 0
-    },
-    {
-      "taskId": "@beyond/notification:build",
-      "target": "build",
-      "projectName": "@beyond/notification",
-      "hash": "5300818161486771717",
-      "startTime": "2025-03-28T13:25:18.653Z",
-      "endTime": "2025-03-28T13:25:18.663Z",
+      "startTime": "2025-03-28T13:26:30.299Z",
+      "endTime": "2025-03-28T13:26:30.324Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
       "status": 0
@@ -110,32 +88,54 @@
       "target": "build",
       "projectName": "@beyond/form-basic",
       "hash": "2300939286743412458",
-      "startTime": "2025-03-28T13:25:18.672Z",
-      "endTime": "2025-03-28T13:25:18.696Z",
+      "startTime": "2025-03-28T13:26:30.337Z",
+      "endTime": "2025-03-28T13:26:30.347Z",
       "params": "",
       "cacheStatus": "local-cache-hit",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/ui:build",
+      "target": "build",
+      "projectName": "@beyond/ui",
+      "hash": "2186101259171620793",
+      "startTime": "2025-03-28T13:26:30.231Z",
+      "endTime": "2025-03-28T13:26:42.273Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 0
+    },
+    {
+      "taskId": "@beyond/notification:build",
+      "target": "build",
+      "projectName": "@beyond/notification",
+      "hash": "13828312422663085171",
+      "startTime": "2025-03-28T13:26:42.307Z",
+      "endTime": "2025-03-28T13:26:50.461Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
       "status": 0
     },
     {
       "taskId": "@beyond/odoo:build",
       "target": "build",
       "projectName": "@beyond/odoo",
-      "hash": "15773484201042058987",
-      "startTime": "2025-03-28T13:25:18.688Z",
-      "endTime": "2025-03-28T13:25:18.700Z",
+      "hash": "4750020659445752372",
+      "startTime": "2025-03-28T13:26:50.482Z",
+      "endTime": "2025-03-28T13:26:58.586Z",
       "params": "",
-      "cacheStatus": "local-cache-hit",
+      "cacheStatus": "cache-miss",
       "status": 0
     },
     {
       "taskId": "@beyond/user:build",
       "target": "build",
       "projectName": "@beyond/user",
-      "hash": "2216886542664705684",
-      "startTime": "2025-03-28T13:25:18.722Z",
-      "endTime": "2025-03-28T13:25:18.730Z",
+      "hash": "3373624348292436838",
+      "startTime": "2025-03-28T13:26:58.603Z",
+      "endTime": "2025-03-28T13:27:07.871Z",
       "params": "",
-      "cacheStatus": "local-cache-hit",
+      "cacheStatus": "cache-miss",
       "status": 0
     }
   ]
