@@ -40,8 +40,8 @@ export class InputFactory {
         return new InputColorPicker(options);
       case 'InputDropdown':
         return new InputDropdown(options);
-     // case 'InputImages':
-       // return new InputImages(options);
+      // case 'InputImages':
+      // return new InputImages(options);
       case 'InputLabel':
         return new InputLabel(options);
       case 'InputNumber':

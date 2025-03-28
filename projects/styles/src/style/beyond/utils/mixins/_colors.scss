@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use "beyond/utils/mixins/common";
+@use 'beyond/utils/mixins/common';
 
 @function getTextOnBackground($color) {
   @if (color.whiteness($color) > 50%) {

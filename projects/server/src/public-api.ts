@@ -27,5 +27,3 @@ export * from './lib/services/strapi/public-api';
 export * from './lib/services/user/public-api';
 
 export * from './lib/provider';
-
-

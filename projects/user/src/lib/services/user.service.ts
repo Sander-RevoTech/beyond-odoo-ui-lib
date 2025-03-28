@@ -1,10 +1,10 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+
 import { BydBaseOdooService } from '@beyond/odoo';
-
-import { BehaviorSubject, filter, tap } from 'rxjs';
-import { Profile } from './dto/profile';
 import { BydPermissionsServices } from '@beyond/server';
+import { BehaviorSubject, filter, tap } from 'rxjs';
 
+import { Profile } from './dto/profile';
 
 @Injectable({
   providedIn: 'root',

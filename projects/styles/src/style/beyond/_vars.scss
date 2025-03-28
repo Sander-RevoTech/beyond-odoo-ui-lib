@@ -1,7 +1,6 @@
 @use 'sass:map';
 @use 'sass:list';
 
-
 /** Vars */
 $container-max-widths: (
   sm: 540px,
@@ -90,9 +89,9 @@ $neutral: map.merge(
 
 $semantic: map.merge(
   (
-    red: #E74C3C,
-    orange: #F39C12,
-    yellow: #F1C40F,
+    red: #e74c3c,
+    orange: #f39c12,
+    yellow: #f1c40f,
     green: #15ce1e,
   ),
   $semantic

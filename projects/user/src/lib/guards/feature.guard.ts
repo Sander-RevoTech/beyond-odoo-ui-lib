@@ -1,13 +1,11 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
 import { map } from 'rxjs/operators';
 
-import { Observable } from 'rxjs';
-
 import { BydRoutes } from '@beyond/menu';
 import { BydPermissionsServices } from '@beyond/server';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

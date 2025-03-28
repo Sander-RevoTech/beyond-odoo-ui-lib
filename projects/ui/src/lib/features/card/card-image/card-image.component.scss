@@ -1,12 +1,11 @@
 @use 'beyond/utils/mixins/common';
 
-
 .img-container {
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: common.get-var(radius, rounded);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: common.get-var(radius, rounded);
 
-    .img {
-        width: 100%;
-    }
+  .img {
+    width: 100%;
+  }
 }

@@ -1,23 +1,33 @@
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { distinctUntilChanged, Observable } from 'rxjs';
-
 import { IInputsError, InputBase } from '@beyond/form-model';
+import { NotificationInlineComponent } from '@beyond/notification';
+import { BydButtonComponent, LoaderComponent } from '@beyond/ui';
 import { BydBaseComponent, TranslatePipe } from '@beyond/utils';
-import { InputsComponent } from "./inputs/inputs.component";
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { LoaderComponent, BydButtonComponent } from '@beyond/ui';
-
 import deepEqual from 'fast-deep-equal';
-import { NotificationInlineComponent } from "@beyond/notification";
+import { Observable, distinctUntilChanged } from 'rxjs';
+
+import { InputsComponent } from './inputs/inputs.component';
 
 @Component({
   selector: 'byd-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
   standalone: true,
-  imports: [InputsComponent, NgFor, NgIf, AsyncPipe, FormsModule, ReactiveFormsModule, LoaderComponent, BydButtonComponent, TranslatePipe, NotificationInlineComponent]
+  imports: [
+    InputsComponent,
+    NgFor,
+    NgIf,
+    AsyncPipe,
+    FormsModule,
+    ReactiveFormsModule,
+    LoaderComponent,
+    BydButtonComponent,
+    TranslatePipe,
+    NotificationInlineComponent,
+  ],
 })
 export class BydFormComponent extends BydBaseComponent implements OnInit, OnChanges, OnDestroy {
   @Input()
@@ -62,8 +72,12 @@ export class BydFormComponent extends BydBaseComponent implements OnInit, OnChan
 
     this._registerSubscription(this.form.statusChanges.subscribe(() => this.isFormValid.emit(this.isValid())));
 
-    if(this.onLive) {
-      this._registerSubscription(this.form.valueChanges.pipe(distinctUntilChanged((prev, curr) => deepEqual(prev, curr))).subscribe(() => this.onSubmit()));
+    if (this.onLive) {
+      this._registerSubscription(
+        this.form.valueChanges
+          .pipe(distinctUntilChanged((prev, curr) => deepEqual(prev, curr)))
+          .subscribe(() => this.onSubmit())
+      );
     }
 
     if (this.askValidation$) {

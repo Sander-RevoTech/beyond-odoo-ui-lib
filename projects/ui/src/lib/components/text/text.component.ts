@@ -8,10 +8,9 @@ import { BydSizes } from '@beyond/styles';
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss'],
   standalone: true,
-  imports: [NgClass]
+  imports: [NgClass],
 })
 export class BydTextComponent {
-
   @Input()
   size: BydSizes = 'md';
 

@@ -1,8 +1,8 @@
 import { EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { IInputsError, InputBase } from '@beyond/form-model';
 import { BydBaseComponent } from '@beyond/utils';
+import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class BydFormComponent extends BydBaseComponent implements OnInit, OnChanges, OnDestroy {
     inputs: InputBase<any>[];

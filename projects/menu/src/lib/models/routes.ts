@@ -49,7 +49,12 @@ export class BydRoutesCore {
     const url = this._replaceParams(this._getUrl(eNums), params);
     return strict ? this._removeParams(url) : url;
   }
-  public getAbsoluteUrl<T>(eNums: string[], params: T = {} as T, queryParams: {[index: string]: string} | null = null, strict = false): string {
+  public getAbsoluteUrl<T>(
+    eNums: string[],
+    params: T = {} as T,
+    queryParams: { [index: string]: string } | null = null,
+    strict = false
+  ): string {
     const url = this._replaceParams(this._getUrl(eNums, true), params);
     return (strict ? this._removeParams(url) : url) + (queryParams ? this._formatQueryParams(queryParams) : '');
   }
@@ -119,7 +124,7 @@ export class BydRoutesCore {
     return null;
   }
 
-  private _formatQueryParams(params: {[index: string]: string}): string {
+  private _formatQueryParams(params: { [index: string]: string }): string {
     const queryString = Object.entries(params)
       .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
       .join('&');

@@ -1,9 +1,10 @@
+import { Injectable } from '@angular/core';
+
 import { map } from 'rxjs/operators';
 
-
 import { BehaviorSubject, Observable, filter, of } from 'rxjs';
+
 import { Logger } from '../logger';
-import { Injectable } from '@angular/core';
 
 export type BydPermissionLevel = string | 'authenticated' | 'unauthenticated';
 
@@ -103,4 +104,3 @@ export class BydPermissionsServices {
     return this._updated$.pipe(map(() => this.canDirectAccess(feature, level)));
   }
 }
-

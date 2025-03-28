@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { TranslationData } from '../common-dialog';
 import { BydButtonComponent } from '../../../../components/button/button.component';
+import { TranslationData } from '../common-dialog';
 
 export interface BydDialogValidationReturn {
   accepted: boolean;
@@ -12,7 +12,7 @@ export interface BydDialogValidationReturn {
   templateUrl: './dialog-validation.component.html',
   styleUrls: ['./dialog-validation.component.scss'],
   standalone: true,
-  imports: [BydButtonComponent]
+  imports: [BydButtonComponent],
 })
 export class BydDialogValidationComponent {
   constructor(

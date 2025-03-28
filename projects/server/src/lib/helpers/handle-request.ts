@@ -1,6 +1,5 @@
-import { BehaviorSubject, Observable, filter, map, tap } from 'rxjs';
-
 import { isNonNullable } from '@beyond/utils';
+import { BehaviorSubject, Observable, filter, map, tap } from 'rxjs';
 
 export class HandleComplexRequest<T> {
   public data$ = new BehaviorSubject<{ [index: string | number]: T }>({});

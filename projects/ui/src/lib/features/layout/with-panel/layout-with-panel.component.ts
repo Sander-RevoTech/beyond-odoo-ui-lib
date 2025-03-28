@@ -11,8 +11,8 @@ import {
 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { MatDrawer, MatDrawerContainer } from '@angular/material/sidenav';
-import { BydBaseComponent } from '@beyond/utils';
 
+import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
   selector: 'byd-layout-with-panel',

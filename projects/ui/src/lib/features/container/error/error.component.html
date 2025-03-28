@@ -2,12 +2,7 @@
   <ng-content></ng-content>
 </ng-container>
 <ng-container *ngIf="this.message !== ''">
-  <byd-picture-info-message
-    icon="sad"
-    iconSize="lg"
-    type="danger"
-    text="container.error.title"
-  >
+  <byd-picture-info-message icon="sad" iconSize="lg" type="danger" text="container.error.title">
   </byd-picture-info-message>
   <p>{{ this.message | translate }}</p>
 </ng-container>

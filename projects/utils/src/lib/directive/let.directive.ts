@@ -14,7 +14,10 @@ export class LetDirective<T> {
 
   private _hasView: boolean = false;
 
-  constructor(private _viewContainer: ViewContainerRef, private _templateRef: TemplateRef<LetContext<T>>) {}
+  constructor(
+    private _viewContainer: ViewContainerRef,
+    private _templateRef: TemplateRef<LetContext<T>>
+  ) {}
 
   @Input()
   set ngLet(value: T) {

@@ -1,11 +1,11 @@
+import { NgClass, NgIf, NgStyle } from '@angular/common';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
+import { InputBase } from '@beyond/form-model';
+import { LoaderComponent } from '@beyond/ui';
+import { BydBaseComponent } from '@beyond/utils';
 import { Observable } from 'rxjs';
 
-import { InputBase } from '@beyond/form-model';
-import { BydBaseComponent } from '@beyond/utils';
-import { NgClass, NgIf, NgStyle } from '@angular/common';
-import { LoaderComponent } from '@beyond/ui';
 import { BydFormComponent } from '../form.component';
 
 export type Layout = 'row' | 'column';
@@ -49,7 +49,11 @@ export class EditFieldComponent extends BydBaseComponent implements OnInit, OnCh
     this.input = this.getInput();
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes["isLoading"] && changes["isLoading"].currentValue !== changes["isLoading"].previousValue && changes["isLoading"].currentValue === false) {
+    if (
+      changes['isLoading'] &&
+      changes['isLoading'].currentValue !== changes['isLoading'].previousValue &&
+      changes['isLoading'].currentValue === false
+    ) {
       this.input = this.getInput();
       this.editMode = false;
     }

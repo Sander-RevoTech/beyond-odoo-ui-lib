@@ -9,7 +9,7 @@ import { Placeholder } from './config';
   templateUrl: './placeholder.component.html',
   styleUrls: ['./placeholder.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class PlaceholderComponent {
   @Input()

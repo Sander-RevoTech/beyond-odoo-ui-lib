@@ -8,7 +8,7 @@ import { BydBaseComponent } from '@beyond/utils';
   templateUrl: './swiper-light.component.html',
   styleUrls: ['./swiper-light.component.scss'],
   standalone: true,
-  imports: [NgClass]
+  imports: [NgClass],
 })
 export class SwiperLightComponent extends BydBaseComponent implements OnInit {
   @Input()

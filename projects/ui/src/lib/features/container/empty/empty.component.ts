@@ -1,16 +1,17 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 import { BydSizes } from '@beyond/styles';
 import { MessageLevel } from '@beyond/utils';
+
 import { PictureInfoMessageComponent } from '../../../components/picture-info-message/picture-info-message.component';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'byd-empty',
   templateUrl: './empty.component.html',
   styleUrls: ['./empty.component.scss'],
   standalone: true,
-  imports: [PictureInfoMessageComponent, NgIf]
+  imports: [PictureInfoMessageComponent, NgIf],
 })
 export class EmptyComponent {
   @Input() isEmpty: boolean = true;

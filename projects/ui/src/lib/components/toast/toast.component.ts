@@ -1,6 +1,6 @@
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-import { NgClass } from '@angular/common';
 import { EToast, getTypeClass } from './helpers';
 
 export { EToast } from './helpers';

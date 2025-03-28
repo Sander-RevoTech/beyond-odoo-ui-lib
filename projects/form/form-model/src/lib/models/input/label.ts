@@ -1,7 +1,8 @@
 import { FormGroup } from '@angular/forms';
 
-import { IInputBase, InputBase } from './base';
 import { Observable, of } from 'rxjs';
+
+import { IInputBase, InputBase } from './base';
 
 export interface IInputLabel extends IInputBase<null> {
   extraInfo?: Observable<string>;

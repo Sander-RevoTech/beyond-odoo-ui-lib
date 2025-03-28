@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { LoginCardComponent } from '../../components/public-api';
 
 @Component({
@@ -8,6 +9,4 @@ import { LoginCardComponent } from '../../components/public-api';
   styleUrl: './login.component.scss',
   standalone: true,
 })
-export class BydLoginPage {
-
-}
+export class BydLoginPage {}

@@ -14,7 +14,6 @@ export abstract class CamLazyTranslationService implements ITranslation {
   private _isApp = false;
 
   constructor(id: string, isApp = false) {
-
     this._id = id;
     this._isApp = isApp;
     this._registry.register(this);
@@ -25,7 +24,7 @@ export abstract class CamLazyTranslationService implements ITranslation {
   }
 
   public getTranslation(lang: string): Observable<object | null> {
-    return of({})
+    return of({});
     // return this._strapiService.fetchQueryList$<Translation>(GET_TRANSLATIONS(lang, this._id), 'translations').pipe(
     //   map(translations =>
     //     translations.reduce<{ [index: string]: string }>((acc, translation) => {

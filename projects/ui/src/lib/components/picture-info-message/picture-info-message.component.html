@@ -13,8 +13,5 @@
 </ng-container>
 
 <ng-container *ngIf="!this.icon">
-  <byd-typed-message
-    [text]="this.displayedText"
-    [type]="this.type ?? 'info'"
-  ></byd-typed-message>
+  <byd-typed-message [text]="this.displayedText" [type]="this.type ?? 'info'"></byd-typed-message>
 </ng-container>

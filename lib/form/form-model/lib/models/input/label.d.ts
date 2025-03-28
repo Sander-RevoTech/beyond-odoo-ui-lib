@@ -1,5 +1,5 @@
-import { IInputBase, InputBase } from './base';
 import { Observable } from 'rxjs';
+import { IInputBase, InputBase } from './base';
 export interface IInputLabel extends IInputBase<null> {
     extraInfo?: Observable<string>;
 }

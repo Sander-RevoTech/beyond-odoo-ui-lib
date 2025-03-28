@@ -1,6 +1,5 @@
-@use "beyond/utils/mixins/common";
-@use "beyond/utils/mixins/fonts";
-
+@use 'beyond/utils/mixins/common';
+@use 'beyond/utils/mixins/fonts';
 
 h1 {
   @include fonts.fontSizeHeader(h1);

@@ -12,11 +12,7 @@
   </ng-container>
   <ng-container *ngIf="this.editMode">
     <div class="align-center g-space-sm" [ngClass]="'flex-' + this.layout">
-      <byd-form
-        class="flex-fill"
-        [inputs]="[this.input]"
-        [canDisplayButton]="false"
-      ></byd-form>
+      <byd-form class="flex-fill" [inputs]="[this.input]" [canDisplayButton]="false"></byd-form>
 
       <!-- <byd-font-icon
         name="check-line"

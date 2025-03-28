@@ -3,16 +3,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
 import { addDays, endOfWeek, getISODay, getWeek, startOfWeek, startOfYear } from 'date-fns';
+
 import { BydButtonComponent } from '../../../button/button.component';
 import { BydTitleComponent } from '../../../title/title.component';
-
 
 @Component({
   selector: 'byd-navigation-date-week',
   templateUrl: './week.component.html',
   styleUrls: ['./week.component.scss'],
-    standalone: true,
-    imports: [BydButtonComponent, BydTitleComponent, DatePipe, MatIcon]
+  standalone: true,
+  imports: [BydButtonComponent, BydTitleComponent, DatePipe, MatIcon],
 })
 export class BydNavigationDateWeekComponent {
   @Input()

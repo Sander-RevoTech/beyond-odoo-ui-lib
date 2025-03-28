@@ -1,27 +1,26 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { BydPermissionsServices } from '../services/user/permissions.services.';
 
+import { BydPermissionsServices } from '../services/user/permissions.services.';
 
 @Injectable()
 export class BearerInterceptor implements HttpInterceptor {
   private readonly _permissionsServices = inject(BydPermissionsServices);
 
   constructor() {
-    console.log("BearerInterceptor")
+    console.log('BearerInterceptor');
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if(this._permissionsServices.token) {
+    if (this._permissionsServices.token) {
       const bearerHeader = req.clone({
-        headers: req.headers.set('Authorization', "Bearer " + this._permissionsServices.token)
+        headers: req.headers.set('Authorization', 'Bearer ' + this._permissionsServices.token),
       });
       return next.handle(bearerHeader);
     }
 
     return next.handle(req);
-
   }
 }

@@ -1,16 +1,16 @@
 <div class="guard">
-  @if(this.isGuardValid()) {
-  <div class="guard-valid">
-    <ng-content></ng-content>
-  </div>
-  } @else if(!this.isGuardValid() && this.canDisplayErrorMessage) {
-  <div class="guard-no-valid ta-c">
-    <!-- <cam-font-icon name="close-tool" size="md"></cam-font-icon> -->
-    {{ "container.guard.content" }}
+  @if (this.isGuardValid()) {
+    <div class="guard-valid">
+      <ng-content></ng-content>
+    </div>
+  } @else if (!this.isGuardValid() && this.canDisplayErrorMessage) {
+    <div class="guard-no-valid ta-c">
+      <!-- <cam-font-icon name="close-tool" size="md"></cam-font-icon> -->
+      {{ 'container.guard.content' }}
 
-    @if(this.level === 'authenticated') {
-    <byd-button (action)="this.goToLogin()"> Me connecter </byd-button>
-    }
-  </div>
+      @if (this.level === 'authenticated') {
+        <byd-button (action)="this.goToLogin()"> Me connecter </byd-button>
+      }
+    </div>
   }
 </div>

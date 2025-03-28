@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './card-tag.component.html',
   styleUrls: ['./card-tag.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class CardBydgComponent {
   constructor() {}

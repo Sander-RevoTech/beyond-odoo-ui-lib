@@ -1,4 +1,4 @@
-@use "beyond/utils/mixins/common";
+@use 'beyond/utils/mixins/common';
 
 @mixin generateMap($name, $map, $cssKlass: false) {
   $flat-map: common.flat-map($name, $map);

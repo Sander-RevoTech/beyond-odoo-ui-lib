@@ -16,11 +16,7 @@
           {{ this.buttonTitle | translate }}
         </byd-button>
       </byd-loader>
-      <byd-notification-inline
-        [message]="this.error.message"
-        [code]="this.error.status"
-        class="my-space-sm"
-      >
+      <byd-notification-inline [message]="this.error.message" [code]="this.error.status" class="my-space-sm">
         <div class="justify-end"></div>
       </byd-notification-inline>
     </div>

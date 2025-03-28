@@ -1,7 +1,7 @@
 .layout-content {
   position: relative;
   margin: 8px;
- // @include setHeight($isMinHeight: true, $withBottom: true);
+  // @include setHeight($isMinHeight: true, $withBottom: true);
 
   &.auto {
     min-height: auto;

@@ -1,6 +1,6 @@
+import { BydNotificationService } from '@beyond/notification';
 import { BydPermissionsServices } from '@beyond/server';
 import { Subject } from 'rxjs';
-import { BydNotificationService } from '@beyond/notification';
 import * as i0 from "@angular/core";
 export interface OdooAuthenticateResponse {
     uid: number;

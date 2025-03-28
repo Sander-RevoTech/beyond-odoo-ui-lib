@@ -1,7 +1,7 @@
 import { EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TranslationData } from '../common-dialog';
 import { BydBaseComponent } from '@beyond/utils';
+import { TranslationData } from '../common-dialog';
 import * as i0 from "@angular/core";
 export declare class BydContainerValidationComponent extends BydBaseComponent {
     dialog: MatDialog;

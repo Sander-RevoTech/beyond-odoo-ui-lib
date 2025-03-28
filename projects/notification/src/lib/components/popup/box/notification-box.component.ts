@@ -1,16 +1,16 @@
+import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { tap } from 'rxjs/operators';
 
+import { EToast, ToastComponent } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
 
 import { ENotificationCode } from '../../../enum';
 import { BydNotificationService } from '../../../services/notification.service';
-import { NotificationInlineComponent } from "../inline/notification-inline.component";
-import { NgFor } from '@angular/common';
-import { EToast, ToastComponent } from '@beyond/ui';
-import { MatDialog } from '@angular/material/dialog';
 import { ErrorDialog, ErrorParams } from '../error/error.component';
+import { NotificationInlineComponent } from '../inline/notification-inline.component';
 
 @Component({
   selector: 'byd-notification-box',

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './card-subtitle.component.html',
   styleUrls: ['./card-subtitle.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class CardSubtitleComponent {
   constructor() {}

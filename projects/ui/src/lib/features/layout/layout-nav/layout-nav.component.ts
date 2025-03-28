@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './layout-nav.component.html',
   styleUrls: ['./layout-nav.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class LayoutNavComponent {
   constructor() {}

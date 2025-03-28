@@ -1,8 +1,8 @@
-@use "beyond/utils/mixins/common";
+@use 'beyond/utils/mixins/common';
 
 $lighten-percentage: 0.85;
 
-.badge{
+.badge {
   font-size: 14px;
 }
 .badge-danger {

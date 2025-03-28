@@ -5,15 +5,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { InputTextarea } from '@beyond/form-model';
+
 import { FormLabelComponent } from '../../label/label.component';
 
 @Component({
   selector: 'byd-input-textarea',
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.scss'],
-    standalone: true,
-    imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, FormLabelComponent],
-
+  standalone: true,
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, FormLabelComponent],
 })
 export class TextareaComponent {
   @Input()
@@ -25,5 +25,4 @@ export class TextareaComponent {
   public validators = Validators;
 
   constructor() {}
-
 }

@@ -1,15 +1,15 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { Placeholder, PlaceholderConfig, getPlaceholderConfig } from '../placeholder/config';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'byd-loader',
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.scss'],
   standalone: true,
-  imports: [MatProgressSpinnerModule, NgIf]
+  imports: [MatProgressSpinnerModule, NgIf],
 })
 export class LoaderComponent {
   @Input()

@@ -7,7 +7,7 @@
     class="radio-element"
     [ngClass]="{
       validated: this.input.value === option.id,
-      disabled: this.input.disabled
+      disabled: this.input.disabled,
     }"
     *ngFor="let option of this.input.options | async"
     (click)="this.onOptionClicked(option.id)"
@@ -15,7 +15,7 @@
     <div
       [ngClass]="{
         'button-with-icon': this.hasLabel(option),
-        'only-icon': !this.hasLabel(option)
+        'only-icon': !this.hasLabel(option),
       }"
     >
       <!-- <byd-local-icon
@@ -32,11 +32,7 @@
   </div>
 </div>
 
-<mat-radio-group
-  *ngIf="this.input.useMaterialTheme"
-  [id]="this.input.key"
-  [formControl]="$any(this.input.formControl)"
->
+<mat-radio-group *ngIf="this.input.useMaterialTheme" [id]="this.input.key" [formControl]="$any(this.input.formControl)">
   <mat-radio-button
     [ngClass]="{ validated: this.input.value === option.id }"
     *ngFor="let option of this.input.options | async"

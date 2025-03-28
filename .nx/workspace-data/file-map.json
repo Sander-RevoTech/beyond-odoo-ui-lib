@@ -1,0 +1,3176 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.5.0",
+  "pathMappings": {
+    "@beyond/ui": [
+      "./lib/ui"
+    ],
+    "@beyond/styles": [
+      "./lib/styles"
+    ],
+    "@beyond/utils": [
+      "./lib/utils"
+    ],
+    "@beyond/server": [
+      "./lib/server"
+    ],
+    "@beyond/menu": [
+      "./lib/menu"
+    ],
+    "@beyond/odoo": [
+      "./lib/odoo"
+    ],
+    "@beyond/user": [
+      "./lib/user"
+    ],
+    "@beyond/form-basic": [
+      "./lib/form/form-basic"
+    ],
+    "@beyond/form-input": [
+      "./lib/form/form-input"
+    ],
+    "@beyond/form-model": [
+      "./lib/form/form-model"
+    ],
+    "@beyond/notification": [
+      "./lib/notification"
+    ],
+    "@beyond/translation": [
+      "./lib/translation"
+    ],
+    "@beyond/eslint": [
+      "./lib/eslint"
+    ],
+    "@beyond/prettier": [
+      "./lib/prettier"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "lib/translation/lib/services/translation-registry.service.d.ts",
+        "hash": "17291174636465380714"
+      },
+      {
+        "file": "lerna.json",
+        "hash": "10307142885639291195"
+      },
+      {
+        "file": "lib/odoo/lib/services/auth.service.d.ts",
+        "hash": "18011342744638843628"
+      },
+      {
+        "file": "lib/odoo/lib/services/baseService.d.ts",
+        "hash": "9527770128557945482"
+      },
+      {
+        "file": "lib/utils/README.md",
+        "hash": "7031654138367457844"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/layout-header/layout-header-default/layout-header-default.component.d.ts",
+        "hash": "17226926645378068554"
+      },
+      {
+        "file": "lib/utils/lib/utils/clipboard.d.ts",
+        "hash": "11214725575077505766"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/dropdown.d.ts",
+        "hash": "6606824245780643410"
+      },
+      {
+        "file": "lib/ui/lib/features/card/cta/card-cta.component.d.ts",
+        "hash": "12681056477182572645"
+      },
+      {
+        "file": "lib/form/form-basic/fesm2022/beyond-form-basic.mjs",
+        "hash": "18356518857258726226"
+      },
+      {
+        "file": "lib/user/lib/services/form/form.service.d.ts",
+        "hash": "15095965867894085379"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/graphEndpoint.d.ts",
+        "hash": "10841264266486583636"
+      },
+      {
+        "file": "lib/styles/lib/types/types.d.ts",
+        "hash": "10378398957681825950"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/label/label.component.d.ts",
+        "hash": "16682805693796500792"
+      },
+      {
+        "file": "lib/utils/lib/utils/string.d.ts",
+        "hash": "465926073408539984"
+      },
+      {
+        "file": "lib/utils/lib/directive/on-render.directive.d.ts",
+        "hash": "7383378256630622547"
+      },
+      {
+        "file": "lib/odoo/fesm2022/beyond-odoo.mjs.map",
+        "hash": "7624774184275253077"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/graphConfig.d.ts",
+        "hash": "16035003629429155844"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/layout-panel/layout-panel.component.d.ts",
+        "hash": "1569499509274159323"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/with-panel/layout-with-panel.component.d.ts",
+        "hash": "11305252328572679129"
+      },
+      {
+        "file": "lib/form/form-model/package.json",
+        "hash": "8715239162420851143"
+      },
+      {
+        "file": "lib/utils/lib/abstract/basePage.d.ts",
+        "hash": "14632431893346633471"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "15603878741928717532"
+      },
+      {
+        "file": "lib/translation/lib/services/translation.loader.d.ts",
+        "hash": "12254971110834853434"
+      },
+      {
+        "file": "lib/ui/lib/components/logo/logo.component.d.ts",
+        "hash": "6896814838242594893"
+      },
+      {
+        "file": "lib/form/form-basic/lib/components/inputs/inputs.component.d.ts",
+        "hash": "8600697564479144980"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/number.d.ts",
+        "hash": "10586418015997119961"
+      },
+      {
+        "file": "lib/server/lib/services/server/baseService.d.ts",
+        "hash": "4105490219580417298"
+      },
+      {
+        "file": "lib/utils/public-api.d.ts",
+        "hash": "2268285028903979017"
+      },
+      {
+        "file": "lib/odoo/public-api.d.ts",
+        "hash": "844495683957467342"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/graphResponsePagedData.d.ts",
+        "hash": "8770273240221787129"
+      },
+      {
+        "file": "lib/server/lib/services/logger.d.ts",
+        "hash": "12747112003152366386"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "11934160580685414355"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "2830815800884022647"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/textarea/textarea.component.d.ts",
+        "hash": "17665307552399252238"
+      },
+      {
+        "file": "lib/server/lib/services/user/public-api.d.ts",
+        "hash": "1405329580808331477"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/public-api.d.ts",
+        "hash": "15669657652707649742"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/pageInfo.d.ts",
+        "hash": "4143146658200473385"
+      },
+      {
+        "file": "lib/ui/README.md",
+        "hash": "16736273314470153287"
+      },
+      {
+        "file": "package.json",
+        "hash": "13510864776308191677"
+      },
+      {
+        "file": "lib/utils/lib/helpers/scrolls/horizontal-scroll.d.ts",
+        "hash": "13710469825952417612"
+      },
+      {
+        "file": "lib/ui/package.json",
+        "hash": "2892730388985929099"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/public-api.d.ts",
+        "hash": "12207797071292659706"
+      },
+      {
+        "file": "lib/ui/lib/components/typed-message/typed-message.component.d.ts",
+        "hash": "13674945332167687913"
+      },
+      {
+        "file": "lib/utils/index.d.ts",
+        "hash": "7517868117821168777"
+      },
+      {
+        "file": "lib/utils/lib/const/environment.d.ts",
+        "hash": "8332097623997197767"
+      },
+      {
+        "file": "lib/server/package.json",
+        "hash": "8134662101881922660"
+      },
+      {
+        "file": "lib/utils/lib/utils/compare.d.ts",
+        "hash": "10694487520912476267"
+      },
+      {
+        "file": "lib/ui/lib/components/badge/badge.component.d.ts",
+        "hash": "10723630172997477787"
+      },
+      {
+        "file": "lib/utils/lib/pipe/join.pipe.d.ts",
+        "hash": "17149772935358261302"
+      },
+      {
+        "file": "lib/ui/lib/features/container/empty/empty.component.d.ts",
+        "hash": "12897891991142194815"
+      },
+      {
+        "file": "lib/ui/lib/components/navigation/date/day/day.component.d.ts",
+        "hash": "10284307360607411076"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/colorPicker.d.ts",
+        "hash": "18214659791960524836"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "12107902832732538678"
+      },
+      {
+        "file": "lib/ui/lib/features/container/swiper-light/swiper-light.component.d.ts",
+        "hash": "7098808974211015776"
+      },
+      {
+        "file": "lib/utils/lib/pipe/plural.pipe.d.ts",
+        "hash": "12848235566395842438"
+      },
+      {
+        "file": "lib/form/form-input/fesm2022/beyond-form-input.mjs.map",
+        "hash": "13826982680117092108"
+      },
+      {
+        "file": "lib/ui/lib/components/navigation/date/week/week.component.d.ts",
+        "hash": "15783608999071138377"
+      },
+      {
+        "file": "lib/server/lib/services/server/cacheInterceptor.d.ts",
+        "hash": "12871325968333870297"
+      },
+      {
+        "file": "README.md",
+        "hash": "16656480309985881342"
+      },
+      {
+        "file": "lib/user/lib/pages/public-api.d.ts",
+        "hash": "18064561908312300174"
+      },
+      {
+        "file": "lib/utils/lib/directive/let.directive.d.ts",
+        "hash": "8305185493118184337"
+      },
+      {
+        "file": "lib/odoo/lib/injectionToken.d.ts",
+        "hash": "16326764758688038012"
+      },
+      {
+        "file": "lib/utils/lib/types/type.d.ts",
+        "hash": "3299270920865027481"
+      },
+      {
+        "file": "lib/notification/index.d.ts",
+        "hash": "6612090731822006645"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/password.d.ts",
+        "hash": "17638652151626134900"
+      },
+      {
+        "file": "lib/utils/lib/types/files/file-data.d.ts",
+        "hash": "5618567704840455751"
+      },
+      {
+        "file": "lib/utils/lib/utils/color.d.ts",
+        "hash": "1567153457265522840"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/graphSchema.d.ts",
+        "hash": "18085826327582549904"
+      },
+      {
+        "file": "lib/utils/fesm2022/beyond-utils.mjs.map",
+        "hash": "14430927715187399368"
+      },
+      {
+        "file": "lib/styles/package.json",
+        "hash": "9334609939638280325"
+      },
+      {
+        "file": "lib/ui/lib/features/container/placeholder/config.d.ts",
+        "hash": "12410194574669943847"
+      },
+      {
+        "file": "lib/utils/lib/directive/type-template-directive.d.ts",
+        "hash": "14365179117980562075"
+      },
+      {
+        "file": "lib/server/README.md",
+        "hash": "240274891474051932"
+      },
+      {
+        "file": "lib/form/form-basic/fesm2022/beyond-form-basic.mjs.map",
+        "hash": "8835276507143220651"
+      },
+      {
+        "file": "lib/notification/fesm2022/beyond-notification.mjs.map",
+        "hash": "10597604689612648712"
+      },
+      {
+        "file": "lib/server/lib/services/server/token.d.ts",
+        "hash": "13772693669250431803"
+      },
+      {
+        "file": "lib/utils/lib/pipe/safe.pipe.d.ts",
+        "hash": "1764543299863999196"
+      },
+      {
+        "file": "lib/utils/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/odoo/package.json",
+        "hash": "9815742087066678104"
+      },
+      {
+        "file": "lib/user/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/menu/index.d.ts",
+        "hash": "17243602696549073552"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/responseData.d.ts",
+        "hash": "11316116198962353919"
+      },
+      {
+        "file": "lib/odoo/fesm2022/beyond-odoo.mjs",
+        "hash": "13991940723504640526"
+      },
+      {
+        "file": "public/favicon.ico",
+        "hash": "3988961587069885523"
+      },
+      {
+        "file": "lib/ui/lib/features/container/validation/dialog/dialog-validation.component.d.ts",
+        "hash": "9606118490294302849"
+      },
+      {
+        "file": "lib/ui/lib/components/title/title.component.d.ts",
+        "hash": "14344037094916587650"
+      },
+      {
+        "file": "lib/form/form-input/index.d.ts",
+        "hash": "12154983057920066936"
+      },
+      {
+        "file": "lib/utils/lib/utils/array.d.ts",
+        "hash": "8581337554813800408"
+      },
+      {
+        "file": "nx.json",
+        "hash": "14956164081691901687"
+      },
+      {
+        "file": "lib/utils/lib/helpers/request/state.d.ts",
+        "hash": "8995193793381869180"
+      },
+      {
+        "file": "lib/utils/lib/pipe/file-size.pipe.d.ts",
+        "hash": "15902761292835636065"
+      },
+      {
+        "file": "lib/translation/README.md",
+        "hash": "11910086836318658641"
+      },
+      {
+        "file": "lib/ui/lib/features/container/error/error.component.d.ts",
+        "hash": "699580730814463551"
+      },
+      {
+        "file": "lib/translation/public-api.d.ts",
+        "hash": "12225755901777680571"
+      },
+      {
+        "file": "lib/ui/lib/features/card/card.component.d.ts",
+        "hash": "4822496661193855599"
+      },
+      {
+        "file": "lib/user/lib/pages/login/login.component.d.ts",
+        "hash": "6829234670476130492"
+      },
+      {
+        "file": "lib/form/form-basic/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/server/lib/services/server/response.d.ts",
+        "hash": "1908765726860150881"
+      },
+      {
+        "file": "lib/form/form-basic/index.d.ts",
+        "hash": "3273434726060951121"
+      },
+      {
+        "file": "lib/user/public-api.d.ts",
+        "hash": "3656765881161623584"
+      },
+      {
+        "file": "lib/utils/lib/types/public-api.d.ts",
+        "hash": "6463264255316328313"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "5271499686745832605"
+      },
+      {
+        "file": "lib/odoo/lib/interceptor/targetUrlInterceptor.d.ts",
+        "hash": "4462760110690148917"
+      },
+      {
+        "file": "src/app/app.config.ts",
+        "hash": "7216790460514074924"
+      },
+      {
+        "file": "src/app/app.routes.ts",
+        "hash": "15454763813477065205"
+      },
+      {
+        "file": "lib/user/index.d.ts",
+        "hash": "14058574156310288692"
+      },
+      {
+        "file": "lib/translation/lib/services/translation.service.d.ts",
+        "hash": "10460235390168437243"
+      },
+      {
+        "file": "lib/utils/lib/utils/enum.d.ts",
+        "hash": "2180160703804847743"
+      },
+      {
+        "file": "lib/utils/package.json",
+        "hash": "13591696590905926437"
+      },
+      {
+        "file": "lib/menu/fesm2022/beyond-menu.mjs.map",
+        "hash": "13317163185008038352"
+      },
+      {
+        "file": "lib/ui/lib/components/toast/helpers.d.ts",
+        "hash": "7108504646804024521"
+      },
+      {
+        "file": "lib/server/lib/types/cache.d.ts",
+        "hash": "15904169355010246544"
+      },
+      {
+        "file": "lib/form/form-basic/README.md",
+        "hash": "3452239858187087238"
+      },
+      {
+        "file": "lib/odoo/README.md",
+        "hash": "3905092261144975696"
+      },
+      {
+        "file": "lib/translation/index.d.ts",
+        "hash": "15346009243973918449"
+      },
+      {
+        "file": "lib/utils/lib/directive/stop-propagation.directive.d.ts",
+        "hash": "15621739619719459559"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "6686520031028425313"
+      },
+      {
+        "file": "lib/ui/fesm2022/beyond-ui.mjs.map",
+        "hash": "14882090453788233423"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/address.d.ts",
+        "hash": "6777045645618196619"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/radio.d.ts",
+        "hash": "13078897638715917746"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/slider.d.ts",
+        "hash": "16885736889981263535"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/label.d.ts",
+        "hash": "1054849744677676431"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/graphResponseData.d.ts",
+        "hash": "2818236967176349437"
+      },
+      {
+        "file": "lib/notification/lib/components/popup/inline/notification-inline.component.d.ts",
+        "hash": "5987242484974877718"
+      },
+      {
+        "file": "lib/styles/fesm2022/beyond-styles.mjs",
+        "hash": "6511325274445474549"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/timePicker.d.ts",
+        "hash": "10925997802110496128"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/label/label.component.d.ts",
+        "hash": "15563037845939760800"
+      },
+      {
+        "file": "lib/form/form-model/README.md",
+        "hash": "15987395864516678825"
+      },
+      {
+        "file": "lib/ui/public-api.d.ts",
+        "hash": "9780533352359946546"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/dropdown/dropdown.component.d.ts",
+        "hash": "1005962204098966006"
+      },
+      {
+        "file": "lib/server/public-api.d.ts",
+        "hash": "12228596639379893124"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/public-api.d.ts",
+        "hash": "16559666109474908547"
+      },
+      {
+        "file": "lib/styles/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/public-api.d.ts",
+        "hash": "16193886601060347883"
+      },
+      {
+        "file": "lib/ui/lib/features/card/tag/card-tag.component.d.ts",
+        "hash": "7485434600592999895"
+      },
+      {
+        "file": "lib/notification/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/utils/lib/abstract/public-api.d.ts",
+        "hash": "7579478772097453627"
+      },
+      {
+        "file": "lib/notification/public-api.d.ts",
+        "hash": "7833320883852964586"
+      },
+      {
+        "file": "sass/_bases.scss",
+        "hash": "3143484499814061424"
+      },
+      {
+        "file": "lib/notification/lib/enum.d.ts",
+        "hash": "10726453317593400412"
+      },
+      {
+        "file": "lib/ui/lib/components/text/text.component.d.ts",
+        "hash": "6145758174735015844"
+      },
+      {
+        "file": "lib/server/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/form/form-basic/lib/components/form.component.d.ts",
+        "hash": "2631392092686091456"
+      },
+      {
+        "file": "lib/server/lib/services/user/permissions.services..d.ts",
+        "hash": "3346527452676761480"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/toggle/toggle.component.d.ts",
+        "hash": "17859142507897281373"
+      },
+      {
+        "file": "lib/odoo/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/user/fesm2022/beyond-user.mjs.map",
+        "hash": "8058881742741804209"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "133569235753268202"
+      },
+      {
+        "file": "lib/user/lib/components/public-api.d.ts",
+        "hash": "13215943934717074219"
+      },
+      {
+        "file": "lib/translation/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/with-nav/layout-with-nav.component.d.ts",
+        "hash": "11022261101175983517"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "3955284687384049321"
+      },
+      {
+        "file": "lib/utils/lib/types/civility/civility.d.ts",
+        "hash": "5953610220337309124"
+      },
+      {
+        "file": "lib/form/form-model/fesm2022/beyond-form-model.mjs.map",
+        "hash": "3457297134207273160"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/dynamic.d.ts",
+        "hash": "137459277805165536"
+      },
+      {
+        "file": "lib/utils/lib/helpers/breakpoints/detection.d.ts",
+        "hash": "11084878868030480780"
+      },
+      {
+        "file": "lib/ui/lib/features/container/validation/cta/container-validation.component.d.ts",
+        "hash": "5988184718956563615"
+      },
+      {
+        "file": "lib/ui/lib/features/card/subtitle/card-subtitle.component.d.ts",
+        "hash": "17362364525163648829"
+      },
+      {
+        "file": "lib/ui/lib/features/card/content/card-content.component.d.ts",
+        "hash": "15708487338229084032"
+      },
+      {
+        "file": "lib/server/lib/services/server/api/requestMap.d.ts",
+        "hash": "1998104099678896755"
+      },
+      {
+        "file": "lib/ui/lib/components/public-api.d.ts",
+        "hash": "1476896730632788033"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/factory.d.ts",
+        "hash": "16917122550562894971"
+      },
+      {
+        "file": "lib/utils/fesm2022/beyond-utils.mjs",
+        "hash": "16841902665863644042"
+      },
+      {
+        "file": "lib/translation/fesm2022/beyond-translation.mjs",
+        "hash": "13825598170919368792"
+      },
+      {
+        "file": "lib/utils/lib/utils/identifier.d.ts",
+        "hash": "2603642076036745690"
+      },
+      {
+        "file": "lib/menu/lib/models/public-api.d.ts",
+        "hash": "14392920829914029089"
+      },
+      {
+        "file": "lib/form/form-basic/lib/components/input/panel/panel.component.d.ts",
+        "hash": "14146745402637755566"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/layout-title/layout-title.component.d.ts",
+        "hash": "10332577437228060234"
+      },
+      {
+        "file": "lib/ui/lib/components/toast/toast.component.d.ts",
+        "hash": "13464055897284412995"
+      },
+      {
+        "file": "lib/form/form-model/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/choices.d.ts",
+        "hash": "13890616372156844311"
+      },
+      {
+        "file": "lib/form/form-basic/lib/components/edit-field/edit-field.component.d.ts",
+        "hash": "11756185891891800202"
+      },
+      {
+        "file": "lib/ui/lib/components/picture-info-message/picture-info-message.component.d.ts",
+        "hash": "12036863118682168097"
+      },
+      {
+        "file": "lib/notification/README.md",
+        "hash": "14411010540159368724"
+      },
+      {
+        "file": "lib/styles/README.md",
+        "hash": "10747099821372853472"
+      },
+      {
+        "file": "lib/user/lib/components/login/login-card.component.d.ts",
+        "hash": "9327328665045710730"
+      },
+      {
+        "file": "lib/translation/lib/services/lazy-translation.service.d.ts",
+        "hash": "8155925821319199878"
+      },
+      {
+        "file": "lib/utils/lib/types/files/temporary-files.d.ts",
+        "hash": "15769790058772460950"
+      },
+      {
+        "file": "lib/utils/lib/utils/date.d.ts",
+        "hash": "17351760413717066240"
+      },
+      {
+        "file": "lib/notification/lib/components/popup/error/error.component.d.ts",
+        "hash": "5013390662859695397"
+      },
+      {
+        "file": "lib/user/README.md",
+        "hash": "13159374918841557153"
+      },
+      {
+        "file": "lib/ui/lib/features/container/loader/loader.component.d.ts",
+        "hash": "15419392182796767216"
+      },
+      {
+        "file": "lib/utils/lib/abstract/baseModal.d.ts",
+        "hash": "4339873378777466119"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/panel.d.ts",
+        "hash": "4282914758147758289"
+      },
+      {
+        "file": "lib/translation/lib/provider.d.ts",
+        "hash": "18096837052175830895"
+      },
+      {
+        "file": "lib/user/package.json",
+        "hash": "13040774517348250690"
+      },
+      {
+        "file": "lib/utils/lib/abstract/abstractComponent.d.ts",
+        "hash": "12688226536917213911"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/layout-nav/layout-nav.component.d.ts",
+        "hash": "17139937242674897960"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/base.d.ts",
+        "hash": "1073307585928912823"
+      },
+      {
+        "file": "lib/server/lib/helpers/handle-request.d.ts",
+        "hash": "12620219581439139204"
+      },
+      {
+        "file": "lib/notification/lib/services/notification.service.d.ts",
+        "hash": "39025886804521253"
+      },
+      {
+        "file": "lib/form/form-model/public-api.d.ts",
+        "hash": "15008559133124796924"
+      },
+      {
+        "file": "lib/notification/lib/components/popup/box/notification-box.component.d.ts",
+        "hash": "17033846305250251646"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "2101694235454666620"
+      },
+      {
+        "file": "lib/ui/fesm2022/beyond-ui.mjs",
+        "hash": "17566027872726657931"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "10175894702052279752"
+      },
+      {
+        "file": "lib/ui/lib/features/card/public-api.d.ts",
+        "hash": "11890695248723058049"
+      },
+      {
+        "file": "lib/server/lib/provider.d.ts",
+        "hash": "11806443253246260694"
+      },
+      {
+        "file": "lib/utils/lib/pipe/translate.pipe.d.ts",
+        "hash": "4525588563950228164"
+      },
+      {
+        "file": "lib/ui/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "15968911897943554792"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/checkbox.d.ts",
+        "hash": "3325501301040927096"
+      },
+      {
+        "file": "lib/menu/lib/models/routes.d.ts",
+        "hash": "11659030704825988012"
+      },
+      {
+        "file": "lib/utils/lib/types/files/file-extension.d.ts",
+        "hash": "16756568689625253140"
+      },
+      {
+        "file": "lib/menu/fesm2022/beyond-menu.mjs",
+        "hash": "5163637479448648053"
+      },
+      {
+        "file": "lib/odoo/lib/provider.d.ts",
+        "hash": "8868391431262738745"
+      },
+      {
+        "file": "lib/user/lib/components/guard/guard.component.d.ts",
+        "hash": "12758343870141788099"
+      },
+      {
+        "file": "lib/utils/lib/utils/math.d.ts",
+        "hash": "15261652555581326124"
+      },
+      {
+        "file": "lib/menu/package.json",
+        "hash": "5101542115401342327"
+      },
+      {
+        "file": "lib/form/form-input/fesm2022/beyond-form-input.mjs",
+        "hash": "10162978706277499661"
+      },
+      {
+        "file": "lib/form/form-input/package.json",
+        "hash": "289825107506696938"
+      },
+      {
+        "file": "lib/ui/lib/features/card/title/card-title.component.d.ts",
+        "hash": "11733932102410686673"
+      },
+      {
+        "file": "lib/styles/fesm2022/beyond-styles.mjs.map",
+        "hash": "3947415042595220154"
+      },
+      {
+        "file": "prettier.config.mjs",
+        "hash": "3421897557323764492"
+      },
+      {
+        "file": "lib/utils/lib/utils/maps.d.ts",
+        "hash": "12227144069245432174"
+      },
+      {
+        "file": "lib/user/lib/guards/auth.guard.d.ts",
+        "hash": "15440159182891842246"
+      },
+      {
+        "file": "lib/notification/lib/components/public-api.d.ts",
+        "hash": "5634514587358514437"
+      },
+      {
+        "file": "lib/ui/lib/features/card/card-image/card-image.component.d.ts",
+        "hash": "3390298523346779986"
+      },
+      {
+        "file": "lib/notification/package.json",
+        "hash": "2871950117131265457"
+      },
+      {
+        "file": "lib/server/lib/services/server/interface.d.ts",
+        "hash": "15171397959319971681"
+      },
+      {
+        "file": "lib/utils/lib/utils/mail.d.ts",
+        "hash": "2023928362263969189"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/layout-content/layout-content.component.d.ts",
+        "hash": "6367949680893276083"
+      },
+      {
+        "file": "lib/utils/lib/utils/public-api.d.ts",
+        "hash": "12928712762999983684"
+      },
+      {
+        "file": "lib/server/lib/services/server/request.d.ts",
+        "hash": "5339405880178247090"
+      },
+      {
+        "file": "lib/form/form-basic/package.json",
+        "hash": "12909513459609701174"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "11283423158270283945"
+      },
+      {
+        "file": "lib/form/form-input/public-api.d.ts",
+        "hash": "13181920530241357111"
+      },
+      {
+        "file": "lib/ui/lib/features/card/header/card-header.component.d.ts",
+        "hash": "3641014402410517659"
+      },
+      {
+        "file": "lib/server/lib/services/strapi/public-api.d.ts",
+        "hash": "15338480372364202931"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/radio/radio.component.d.ts",
+        "hash": "7037420104069281208"
+      },
+      {
+        "file": "lib/user/lib/guards/public-api.d.ts",
+        "hash": "7454955592567491901"
+      },
+      {
+        "file": "lib/user/fesm2022/beyond-user.mjs",
+        "hash": "15306229860903684622"
+      },
+      {
+        "file": "lib/utils/lib/utils/object.d.ts",
+        "hash": "4274092424474458059"
+      },
+      {
+        "file": "lib/form/form-model/lib/validators/slug.validator.d.ts",
+        "hash": "6250764808491413871"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/email.d.ts",
+        "hash": "11241951219568324048"
+      },
+      {
+        "file": "lib/menu/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/form/form-input/README.md",
+        "hash": "8920046877251526792"
+      },
+      {
+        "file": "angular.json",
+        "hash": "1580274090889884815"
+      },
+      {
+        "file": "lib/utils/lib/helpers/public-api.d.ts",
+        "hash": "518795760457807019"
+      },
+      {
+        "file": "lib/server/lib/interceptor/bearerInterceptor.d.ts",
+        "hash": "6673886383977026099"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/models/graphPayload.d.ts",
+        "hash": "16854927412138899671"
+      },
+      {
+        "file": "lib/utils/lib/helpers/subscriber/handler.d.ts",
+        "hash": "845923821244954205"
+      },
+      {
+        "file": "lib/form/form-basic/public-api.d.ts",
+        "hash": "13181920530241357111"
+      },
+      {
+        "file": "lib/form/form-input/.npmignore",
+        "hash": "5396670232953713277"
+      },
+      {
+        "file": "lib/styles/index.d.ts",
+        "hash": "5514189468674917773"
+      },
+      {
+        "file": "lib/utils/lib/directive/time-ago.directive.d.ts",
+        "hash": "15835577520356339255"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/phone.d.ts",
+        "hash": "8025620462220961080"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/textbox.d.ts",
+        "hash": "12471386251621778483"
+      },
+      {
+        "file": "sass/_vars.scss",
+        "hash": "17945707315518051803"
+      },
+      {
+        "file": "lib/utils/lib/abstract/baseComponent.d.ts",
+        "hash": "5689330085806296021"
+      },
+      {
+        "file": "lib/form/form-model/index.d.ts",
+        "hash": "13706469787150346210"
+      },
+      {
+        "file": "lib/utils/lib/pipe/public-api.d.ts",
+        "hash": "4602057158225238120"
+      },
+      {
+        "file": "lib/server/lib/services/strapi/dto/base.d.ts",
+        "hash": "10131737079484650429"
+      },
+      {
+        "file": "lib/utils/lib/directive/public-api.d.ts",
+        "hash": "6652652579161611000"
+      },
+      {
+        "file": "lib/server/lib/services/strapi/dto/types/rich-text.d.ts",
+        "hash": "15482752204183456027"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/layout-page/layout-page.component.d.ts",
+        "hash": "12061791202250694740"
+      },
+      {
+        "file": "lib/styles/public-api.d.ts",
+        "hash": "2931346076531729118"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "lib/server/fesm2022/beyond-server.mjs.map",
+        "hash": "4633175387902130076"
+      },
+      {
+        "file": "lib/notification/fesm2022/beyond-notification.mjs",
+        "hash": "871889242815534746"
+      },
+      {
+        "file": "lib/menu/public-api.d.ts",
+        "hash": "12704226589100381077"
+      },
+      {
+        "file": "lib/utils/lib/utils/phone.d.ts",
+        "hash": "10678099226121278054"
+      },
+      {
+        "file": "lib/ui/index.d.ts",
+        "hash": "8803116453831133788"
+      },
+      {
+        "file": "lib/server/fesm2022/beyond-server.mjs",
+        "hash": "12087560124904362862"
+      },
+      {
+        "file": "lib/ui/lib/features/container/public-api.d.ts",
+        "hash": "11911338742811431711"
+      },
+      {
+        "file": "lib/translation/fesm2022/beyond-translation.mjs.map",
+        "hash": "10227940981624392574"
+      },
+      {
+        "file": "lib/ui/lib/components/button/button.component.d.ts",
+        "hash": "6477657914445110686"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/checkbox/checkbox.component.d.ts",
+        "hash": "4570597349543447193"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/switch.d.ts",
+        "hash": "17252606092011946429"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "3282046241413685648"
+      },
+      {
+        "file": "lib/odoo/index.d.ts",
+        "hash": "6240286517959952304"
+      },
+      {
+        "file": "lib/ui/lib/features/layout/layout-header/layout-header.component.d.ts",
+        "hash": "18416828859381036698"
+      },
+      {
+        "file": "lib/server/index.d.ts",
+        "hash": "4018307169630058115"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/upload.d.ts",
+        "hash": "7090592800262169397"
+      },
+      {
+        "file": "lib/translation/package.json",
+        "hash": "14333774336158147418"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/input/textbox/text-box.component.d.ts",
+        "hash": "13642941928902976818"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/helpers/queries.d.ts",
+        "hash": "6739458812355874928"
+      },
+      {
+        "file": "lib/utils/lib/utils/sorts.d.ts",
+        "hash": "1859861871881662032"
+      },
+      {
+        "file": "lib/form/form-basic/lib/components/public-api.d.ts",
+        "hash": "4857179495288446429"
+      },
+      {
+        "file": "lib/form/form-model/fesm2022/beyond-form-model.mjs",
+        "hash": "896005564711305757"
+      },
+      {
+        "file": "lib/server/lib/services/server/api/server.service.d.ts",
+        "hash": "7218468301381494626"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/extra/button.d.ts",
+        "hash": "17229101056021298759"
+      },
+      {
+        "file": ".vscode/tasks.json",
+        "hash": "15692578660292912717"
+      },
+      {
+        "file": "lib/server/lib/services/dto/keyvalue.d.ts",
+        "hash": "13893120633534536411"
+      },
+      {
+        "file": "lib/user/lib/guards/feature.guard.d.ts",
+        "hash": "15458242340106582236"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/helpers/mutations.d.ts",
+        "hash": "2267950170780862845"
+      },
+      {
+        "file": "lib/menu/README.md",
+        "hash": "16313298193655077434"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/datePicker.d.ts",
+        "hash": "8865253240103200840"
+      },
+      {
+        "file": "lib/form/form-model/lib/models/input/textarea.d.ts",
+        "hash": "10201536218054702981"
+      },
+      {
+        "file": "lib/utils/lib/helpers/request/entity.d.ts",
+        "hash": "14783579996816852370"
+      },
+      {
+        "file": "lib/form/form-input/lib/components/public-api.d.ts",
+        "hash": "11948320608020050353"
+      },
+      {
+        "file": "lib/ui/lib/features/container/validation/common-dialog.d.ts",
+        "hash": "11162851468847376027"
+      },
+      {
+        "file": "lib/server/lib/services/strapi/strapi.service.d.ts",
+        "hash": "17238241373956190562"
+      },
+      {
+        "file": "lib/odoo/lib/services/connector/json.service.d.ts",
+        "hash": "9976375975884868241"
+      },
+      {
+        "file": "lib/server/lib/services/graphql/graph.service.d.ts",
+        "hash": "9339807686197050262"
+      },
+      {
+        "file": "src/styles.scss",
+        "hash": "14899041623284520844"
+      }
+    ],
+    "projectFileMap": {
+      "@beyond/menu": [
+        {
+          "file": "projects/menu/README.md",
+          "hash": "16313298193655077434"
+        },
+        {
+          "file": "projects/menu/ng-package.json",
+          "hash": "16355542696125059760"
+        },
+        {
+          "file": "projects/menu/package.json",
+          "hash": "3191995650945579689",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/menu/src/lib/models/public-api.ts",
+          "hash": "14392920829914029089"
+        },
+        {
+          "file": "projects/menu/src/lib/models/routes.ts",
+          "hash": "3320871138336818606"
+        },
+        {
+          "file": "projects/menu/src/public-api.ts",
+          "hash": "13929242807719145672"
+        },
+        {
+          "file": "projects/menu/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/menu/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/menu/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/prettier": [
+        {
+          "file": "projects/config/prettier/README.md",
+          "hash": "10793654004734762434"
+        },
+        {
+          "file": "projects/config/prettier/index.mjs",
+          "hash": "15716788307251403069"
+        },
+        {
+          "file": "projects/config/prettier/ng-package.json",
+          "hash": "18181203405257769512"
+        },
+        {
+          "file": "projects/config/prettier/package.json",
+          "hash": "9410335311035887750",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        }
+      ],
+      "@beyond/translation": [
+        {
+          "file": "projects/translation/README.md",
+          "hash": "11910086836318658641"
+        },
+        {
+          "file": "projects/translation/ng-package.json",
+          "hash": "14851523291175455273"
+        },
+        {
+          "file": "projects/translation/package.json",
+          "hash": "12892898526390641334",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib",
+            "npm:@ngx-translate/core",
+            "npm:@ngx-translate/http-loader",
+            "npm:storage-manager-js"
+          ]
+        },
+        {
+          "file": "projects/translation/src/lib/provider.ts",
+          "hash": "15468380341909006116"
+        },
+        {
+          "file": "projects/translation/src/lib/services/lazy-translation.service.ts",
+          "hash": "2790987094942091032"
+        },
+        {
+          "file": "projects/translation/src/lib/services/queries.ts",
+          "hash": "619097487932020871"
+        },
+        {
+          "file": "projects/translation/src/lib/services/translation-registry.service.ts",
+          "hash": "8744542792026012046"
+        },
+        {
+          "file": "projects/translation/src/lib/services/translation.loader.ts",
+          "hash": "2071825717025235988"
+        },
+        {
+          "file": "projects/translation/src/lib/services/translation.service.ts",
+          "hash": "13268847113677381451"
+        },
+        {
+          "file": "projects/translation/src/public-api.ts",
+          "hash": "15227032425253196282"
+        },
+        {
+          "file": "projects/translation/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/translation/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/translation/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/styles": [
+        {
+          "file": "projects/styles/README.md",
+          "hash": "10747099821372853472"
+        },
+        {
+          "file": "projects/styles/ng-package.json",
+          "hash": "9033364582491297104"
+        },
+        {
+          "file": "projects/styles/package.json",
+          "hash": "5019557030740974887",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:bootstrap",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/styles/src/index.scss",
+          "hash": "13264158706320877962"
+        },
+        {
+          "file": "projects/styles/src/lib/types/types.ts",
+          "hash": "9103790252865547893"
+        },
+        {
+          "file": "projects/styles/src/public-api.ts",
+          "hash": "2931346076531729118"
+        },
+        {
+          "file": "projects/styles/src/scss-bundle.config.json",
+          "hash": "606308687656902137"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/_generate.scss",
+          "hash": "1189268792927756788"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/_index.scss",
+          "hash": "431597862218420208"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/_vars.scss",
+          "hash": "14094165114148671164"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/external/_bootstrap.scss",
+          "hash": "6335960349177492241"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/external/_material.scss",
+          "hash": "4987885692880072407"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_borders.scss",
+          "hash": "2691046146251379132"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_colors.scss",
+          "hash": "8782672907395504816"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_common.scss",
+          "hash": "1283230903343717800"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_components.scss",
+          "hash": "6124289991710399884"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_flex.scss",
+          "hash": "8170105422193200024"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_fonts.scss",
+          "hash": "2845386146114013389"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_shadows.scss",
+          "hash": "5986091247128222188"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/settings/_spaces.scss",
+          "hash": "2567510725057975900"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_colors.scss",
+          "hash": "13662351599076001367"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_common.scss",
+          "hash": "12944141541434559789"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_flex.scss",
+          "hash": "16474877351832556259"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_fonts.scss",
+          "hash": "7149504821596768868"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_generateResponsive.scss",
+          "hash": "14701884902064660398"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_mediaQueriesRanges.scss",
+          "hash": "5176969117263651859"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_mediaQueryCondition.scss",
+          "hash": "1014724811706968941"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_mobile.scss",
+          "hash": "7667625057229308583"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_screen.scss",
+          "hash": "13797664551909955060"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_shadows.scss",
+          "hash": "9404005416677075834"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_spaces.scss",
+          "hash": "4762199533350943756"
+        },
+        {
+          "file": "projects/styles/src/style/beyond/utils/mixins/_text.scss",
+          "hash": "839653680666266008"
+        },
+        {
+          "file": "projects/styles/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/styles/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/styles/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/form-input": [
+        {
+          "file": "projects/form/form-input/README.md",
+          "hash": "8920046877251526792"
+        },
+        {
+          "file": "projects/form/form-input/ng-package.json",
+          "hash": "294438816488141176"
+        },
+        {
+          "file": "projects/form/form-input/package.json",
+          "hash": "8690182160606545883",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "@beyond/form-model",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/checkbox/checkbox.component.html",
+          "hash": "13634763681082471808"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/checkbox/checkbox.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/checkbox/checkbox.component.ts",
+          "hash": "10630530457835998851"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/dropdown/dropdown.component.html",
+          "hash": "5420159750002335201"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/dropdown/dropdown.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/dropdown/dropdown.component.ts",
+          "hash": "5756398440014919102"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/extra/button/button.component.html",
+          "hash": "2778870810230450700"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/extra/button/button.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/extra/button/button.component.spec.ts",
+          "hash": "2487006019345141060"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/extra/button/button.component.ts",
+          "hash": "1126826089381167375"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/label/label.component.html",
+          "hash": "14398944224369382236"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/label/label.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/label/label.component.ts",
+          "hash": "15166986012182777716"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/public-api.ts",
+          "hash": "15669657652707649742"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/radio/radio.component.html",
+          "hash": "1170152153833310182"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/radio/radio.component.scss",
+          "hash": "8995365278253593274"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/radio/radio.component.ts",
+          "hash": "2456729944371656005"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/textarea/textarea.component.html",
+          "hash": "1323780086226418267"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/textarea/textarea.component.scss",
+          "hash": "3043029621800383690"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/textarea/textarea.component.ts",
+          "hash": "17755355999969118008"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/textbox/text-box.component.html",
+          "hash": "10690439918519613374"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/textbox/text-box.component.scss",
+          "hash": "17147698430370577560"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/textbox/text-box.component.ts",
+          "hash": "1101404484792969630"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/toggle/toggle.component.html",
+          "hash": "1562635716404486784"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/toggle/toggle.component.scss",
+          "hash": "1013548628406096032"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/input/toggle/toggle.component.ts",
+          "hash": "7818959226386943648"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/label/label.component.html",
+          "hash": "16127412688522950811"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/label/label.component.scss",
+          "hash": "13008269021541526581"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/label/label.component.ts",
+          "hash": "1925189945050054936"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/components/public-api.ts",
+          "hash": "11948320608020050353"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/translation/en.json",
+          "hash": "317471077894712739"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/translation/es.json",
+          "hash": "7158515042014677429"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/translation/fr.json",
+          "hash": "18422664212533682140"
+        },
+        {
+          "file": "projects/form/form-input/src/lib/translation/nl.json",
+          "hash": "16331792555219580240"
+        },
+        {
+          "file": "projects/form/form-input/src/public-api.ts",
+          "hash": "7072064896006154869"
+        },
+        {
+          "file": "projects/form/form-input/tsconfig.lib.json",
+          "hash": "11536244928043268102"
+        },
+        {
+          "file": "projects/form/form-input/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/form/form-input/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/eslint": [
+        {
+          "file": "projects/config/eslint/README.md",
+          "hash": "2607489052900804029"
+        },
+        {
+          "file": "projects/config/eslint/index.mjs",
+          "hash": "13398542083420399340"
+        },
+        {
+          "file": "projects/config/eslint/ng-package.json",
+          "hash": "17261170774818470256"
+        },
+        {
+          "file": "projects/config/eslint/package.json",
+          "hash": "5016563784838649571",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        }
+      ],
+      "@beyond/form-model": [
+        {
+          "file": "projects/form/form-model/README.md",
+          "hash": "15987395864516678825"
+        },
+        {
+          "file": "projects/form/form-model/ng-package.json",
+          "hash": "4623710062749078009"
+        },
+        {
+          "file": "projects/form/form-model/package.json",
+          "hash": "2380195787608169619",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "@beyond/utils",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/errorMessage.ts",
+          "hash": "13773673584980240279"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/factory.ts",
+          "hash": "14501331611124876176"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/address.ts",
+          "hash": "14153549006665079604"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/base.ts",
+          "hash": "13710924905552438128"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/checkbox.ts",
+          "hash": "6832800580404616062"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/choices.ts",
+          "hash": "1467061430972211139"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/colorPicker.ts",
+          "hash": "8149328492883531596"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/datePicker.ts",
+          "hash": "16537824908443670849"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/dropdown.ts",
+          "hash": "6711785387318367533"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/dynamic.ts",
+          "hash": "15656801385421468284"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/email.ts",
+          "hash": "10299634905823724172"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/extra/button.ts",
+          "hash": "17917893098902224499"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/label.ts",
+          "hash": "10702771493833545886"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/number.ts",
+          "hash": "16342868130751459964"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/panel.ts",
+          "hash": "9941415264995036038"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/password.ts",
+          "hash": "15627219875324998967"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/phone.ts",
+          "hash": "879770155608504955"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/radio.ts",
+          "hash": "17053699388014092054"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/slider.ts",
+          "hash": "1237364424241227629"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/switch.ts",
+          "hash": "3262136240439871673"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/textarea.ts",
+          "hash": "4389366111902454378"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/textbox.ts",
+          "hash": "7819260702764038973"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/timePicker.ts",
+          "hash": "18137083365090920464"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/input/upload.ts",
+          "hash": "11157936360321333745"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/models/public-api.ts",
+          "hash": "18103114021210729450"
+        },
+        {
+          "file": "projects/form/form-model/src/lib/validators/slug.validator.ts",
+          "hash": "7738630352797333848"
+        },
+        {
+          "file": "projects/form/form-model/src/public-api.ts",
+          "hash": "919982917038889647"
+        },
+        {
+          "file": "projects/form/form-model/tsconfig.lib.json",
+          "hash": "11536244928043268102"
+        },
+        {
+          "file": "projects/form/form-model/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/form/form-model/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/form-basic": [
+        {
+          "file": "projects/form/form-basic/README.md",
+          "hash": "3452239858187087238"
+        },
+        {
+          "file": "projects/form/form-basic/ng-package.json",
+          "hash": "1482872548668589923"
+        },
+        {
+          "file": "projects/form/form-basic/package.json",
+          "hash": "3670360098324648123",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "@beyond/form-input",
+            "@beyond/form-model",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/edit-field/edit-field.component.html",
+          "hash": "17572319478572283338"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/edit-field/edit-field.component.scss",
+          "hash": "3207280122458228511"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/edit-field/edit-field.component.ts",
+          "hash": "6336576567904759629"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/form.component.html",
+          "hash": "14704644323018351933"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/form.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/form.component.ts",
+          "hash": "15690210377816123924"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/input/dynamic/dynamic.component.html",
+          "hash": "7800589409902081086"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/input/dynamic/dynamic.component.scss",
+          "hash": "8432934010666797967"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/input/dynamic/dynamic.component.ts",
+          "hash": "1922071504570616813"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/input/panel/panel.component.html",
+          "hash": "10558679281093507958"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/input/panel/panel.component.scss",
+          "hash": "6448730296985672941"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/input/panel/panel.component.ts",
+          "hash": "15397671060077666021"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/inputs/inputs.component.html",
+          "hash": "17027957367495600114"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/inputs/inputs.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/inputs/inputs.component.ts",
+          "hash": "8152691078336319857"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/components/public-api.ts",
+          "hash": "13071590889447353108"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/translation/en.json",
+          "hash": "2300596394431034791"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/translation/es.json",
+          "hash": "13348997702416234930"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/translation/fr.json",
+          "hash": "6620352874235856264"
+        },
+        {
+          "file": "projects/form/form-basic/src/lib/translation/nl.json",
+          "hash": "5162042414755087548"
+        },
+        {
+          "file": "projects/form/form-basic/src/public-api.ts",
+          "hash": "9194638254472654624"
+        },
+        {
+          "file": "projects/form/form-basic/tsconfig.lib.json",
+          "hash": "11536244928043268102"
+        },
+        {
+          "file": "projects/form/form-basic/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/form/form-basic/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/ui": [
+        {
+          "file": "projects/ui/README.md",
+          "hash": "16736273314470153287"
+        },
+        {
+          "file": "projects/ui/ng-package.json",
+          "hash": "7296041886811904263"
+        },
+        {
+          "file": "projects/ui/package.json",
+          "hash": "4499026601250270849",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib",
+            "npm:@angular/cdk",
+            "@beyond/utils",
+            "@beyond/styles",
+            "npm:date-fns"
+          ]
+        },
+        {
+          "file": "projects/ui/src/lib/components/badge/badge.component.html",
+          "hash": "5043442237733627786"
+        },
+        {
+          "file": "projects/ui/src/lib/components/badge/badge.component.scss",
+          "hash": "5303617555350115346"
+        },
+        {
+          "file": "projects/ui/src/lib/components/badge/badge.component.ts",
+          "hash": "11238115649076171598"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/action/action-button-data.ts",
+          "hash": "7882094905426871926"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/action/action-button.component.html",
+          "hash": "11086008397491754020"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/action/action-button.component.scss",
+          "hash": "1406595480788867236"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/action/action-button.component.ts",
+          "hash": "16419340075967939445"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/action/action-button.stories.ts",
+          "hash": "984918619447726041"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/button.component.html",
+          "hash": "606922358016401737"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/button.component.scss",
+          "hash": "13307307894248909595"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/button.component.ts",
+          "hash": "15107055915679601315"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/dual/dual-button.component.html",
+          "hash": "3656885632849362219"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/dual/dual-button.component.scss",
+          "hash": "18432476644448431802"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/dual/dual-button.component.ts",
+          "hash": "17134622191251811068"
+        },
+        {
+          "file": "projects/ui/src/lib/components/button/dual/dual-button.stories.ts",
+          "hash": "8287380005790544608"
+        },
+        {
+          "file": "projects/ui/src/lib/components/logo/logo.component.html",
+          "hash": "10321008222215627200"
+        },
+        {
+          "file": "projects/ui/src/lib/components/logo/logo.component.scss",
+          "hash": "15207586355269798446"
+        },
+        {
+          "file": "projects/ui/src/lib/components/logo/logo.component.ts",
+          "hash": "13383312584291746026"
+        },
+        {
+          "file": "projects/ui/src/lib/components/navigation/date/day/day.component.html",
+          "hash": "11313222062323172351"
+        },
+        {
+          "file": "projects/ui/src/lib/components/navigation/date/day/day.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/components/navigation/date/day/day.component.ts",
+          "hash": "8204000543004802251"
+        },
+        {
+          "file": "projects/ui/src/lib/components/navigation/date/week/week.component.html",
+          "hash": "194377693014489290"
+        },
+        {
+          "file": "projects/ui/src/lib/components/navigation/date/week/week.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/components/navigation/date/week/week.component.ts",
+          "hash": "622387053879387963"
+        },
+        {
+          "file": "projects/ui/src/lib/components/picture-info-message/picture-info-message.component.html",
+          "hash": "10245406136034588076"
+        },
+        {
+          "file": "projects/ui/src/lib/components/picture-info-message/picture-info-message.component.scss",
+          "hash": "2005668585139054369"
+        },
+        {
+          "file": "projects/ui/src/lib/components/picture-info-message/picture-info-message.component.ts",
+          "hash": "9312861688895706480"
+        },
+        {
+          "file": "projects/ui/src/lib/components/public-api.ts",
+          "hash": "5143950313598278895"
+        },
+        {
+          "file": "projects/ui/src/lib/components/text/text.component.html",
+          "hash": "18027438047036189136"
+        },
+        {
+          "file": "projects/ui/src/lib/components/text/text.component.scss",
+          "hash": "17870540653345006716"
+        },
+        {
+          "file": "projects/ui/src/lib/components/text/text.component.ts",
+          "hash": "1281872515900445864"
+        },
+        {
+          "file": "projects/ui/src/lib/components/title/title.component.html",
+          "hash": "14705207320417570860"
+        },
+        {
+          "file": "projects/ui/src/lib/components/title/title.component.scss",
+          "hash": "13945125988365071818"
+        },
+        {
+          "file": "projects/ui/src/lib/components/title/title.component.ts",
+          "hash": "17602048326788756263"
+        },
+        {
+          "file": "projects/ui/src/lib/components/toast/helpers.ts",
+          "hash": "5655715082328898469"
+        },
+        {
+          "file": "projects/ui/src/lib/components/toast/toast.component.html",
+          "hash": "9946840112056992110"
+        },
+        {
+          "file": "projects/ui/src/lib/components/toast/toast.component.scss",
+          "hash": "8448554153947656639"
+        },
+        {
+          "file": "projects/ui/src/lib/components/toast/toast.component.ts",
+          "hash": "17033519462473923846"
+        },
+        {
+          "file": "projects/ui/src/lib/components/typed-message/typed-message.component.html",
+          "hash": "15364532819143668663"
+        },
+        {
+          "file": "projects/ui/src/lib/components/typed-message/typed-message.component.scss",
+          "hash": "13600674157601299038"
+        },
+        {
+          "file": "projects/ui/src/lib/components/typed-message/typed-message.component.ts",
+          "hash": "13079248959171750849"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/card-image/card-image.component.html",
+          "hash": "2536873352681420983"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/card-image/card-image.component.scss",
+          "hash": "17529859953333302724"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/card-image/card-image.component.ts",
+          "hash": "16263800721230846207"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/card.component.html",
+          "hash": "1580157339705570188"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/card.component.scss",
+          "hash": "16771331240747290980"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/card.component.ts",
+          "hash": "12246296543871642024"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/content/card-content.component.html",
+          "hash": "8709584810371159406"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/content/card-content.component.scss",
+          "hash": "4180733033416256001"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/content/card-content.component.ts",
+          "hash": "11328045221219500742"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/cta/card-cta.component.html",
+          "hash": "18315826528686894706"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/cta/card-cta.component.scss",
+          "hash": "18334267525321286893"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/cta/card-cta.component.ts",
+          "hash": "3517260616040619642"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/header/card-header.component.html",
+          "hash": "10273431164433568776"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/header/card-header.component.scss",
+          "hash": "9444914463280894265"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/header/card-header.component.ts",
+          "hash": "14806337496344128534"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/public-api.ts",
+          "hash": "17155115745452381426"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/subtitle/card-subtitle.component.html",
+          "hash": "11276105877545240770"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/subtitle/card-subtitle.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/subtitle/card-subtitle.component.ts",
+          "hash": "7013886353637552227"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/tag/card-tag.component.html",
+          "hash": "11276105877545240770"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/tag/card-tag.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/tag/card-tag.component.ts",
+          "hash": "13989687569501609415"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/title/card-title.component.html",
+          "hash": "11276105877545240770"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/title/card-title.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/card/title/card-title.component.ts",
+          "hash": "14662725808837688168"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/empty/empty.component.html",
+          "hash": "12297196653636294479"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/empty/empty.component.scss",
+          "hash": "7603403154054800950"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/empty/empty.component.ts",
+          "hash": "17326065776337005067"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/error/error.component.html",
+          "hash": "10090283591200313425"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/error/error.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/error/error.component.ts",
+          "hash": "13769531855463383807"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/loader/loader.component.html",
+          "hash": "12287052873696313378"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/loader/loader.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/loader/loader.component.ts",
+          "hash": "3396677325678999258"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/placeholder/config.ts",
+          "hash": "3238008767364322002"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/placeholder/placeholder.component.html",
+          "hash": "5718494892600293006"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/placeholder/placeholder.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/placeholder/placeholder.component.ts",
+          "hash": "6282504988639628496"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/public-api.ts",
+          "hash": "6784168106599427102"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/swiper-light/swiper-light.component.html",
+          "hash": "8129482523770003690"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/swiper-light/swiper-light.component.scss",
+          "hash": "7431606407492784677"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/swiper-light/swiper-light.component.ts",
+          "hash": "18444663782790947038"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/translation/en.json",
+          "hash": "11354441980734333690"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/translation/es.json",
+          "hash": "13353525608705012772"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/translation/fr.json",
+          "hash": "17095183952117937606"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/translation/nl.json",
+          "hash": "7821780091981916525"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/validation/common-dialog.ts",
+          "hash": "2157458247007839189"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/validation/cta/container-validation.component.html",
+          "hash": "1381349541511581864"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/validation/cta/container-validation.component.ts",
+          "hash": "3904461356954787019"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/validation/dialog/dialog-validation.component.html",
+          "hash": "11907049350685480761"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/validation/dialog/dialog-validation.component.scss",
+          "hash": "18290337448678491680"
+        },
+        {
+          "file": "projects/ui/src/lib/features/container/validation/dialog/dialog-validation.component.ts",
+          "hash": "11733263083776564497"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-content/layout-content.component.html",
+          "hash": "8958295435728854245"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-content/layout-content.component.scss",
+          "hash": "9923846463146544022"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-content/layout-content.component.ts",
+          "hash": "2092878782147018487"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-header/layout-header-default/layout-header-default.component.html",
+          "hash": "1921334289577541577"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-header/layout-header-default/layout-header-default.component.scss",
+          "hash": "418980087114399999"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-header/layout-header-default/layout-header-default.component.ts",
+          "hash": "151945292354345746"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-header/layout-header.component.html",
+          "hash": "5673612414492231528"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-header/layout-header.component.scss",
+          "hash": "7024021410403113148"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-header/layout-header.component.ts",
+          "hash": "8314706626777520918"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-nav/layout-nav.component.html",
+          "hash": "11276105877545240770"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-nav/layout-nav.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-nav/layout-nav.component.ts",
+          "hash": "6582015915174520591"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-page/layout-page.component.html",
+          "hash": "12612194983883640392"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-page/layout-page.component.scss",
+          "hash": "11001866731913449480"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-page/layout-page.component.ts",
+          "hash": "12300731390208013114"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-panel/layout-panel.component.html",
+          "hash": "9064666852551740009"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-panel/layout-panel.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-panel/layout-panel.component.ts",
+          "hash": "13881504192779189652"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-title/layout-title.component.html",
+          "hash": "16525335917351755299"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-title/layout-title.component.scss",
+          "hash": "9960267298908591864"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/layout-title/layout-title.component.ts",
+          "hash": "1274620175082700714"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/public-api.ts",
+          "hash": "478054064131673887"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/with-nav/layout-with-nav.component.html",
+          "hash": "1202406763737493646"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/with-nav/layout-with-nav.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/with-nav/layout-with-nav.component.ts",
+          "hash": "6323716866456346386"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/with-panel/layout-with-panel.component.html",
+          "hash": "1753771675996488416"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/with-panel/layout-with-panel.component.scss",
+          "hash": "14742354385504447477"
+        },
+        {
+          "file": "projects/ui/src/lib/features/layout/with-panel/layout-with-panel.component.ts",
+          "hash": "13041842301342567620"
+        },
+        {
+          "file": "projects/ui/src/public-api.ts",
+          "hash": "4215352287214484048"
+        },
+        {
+          "file": "projects/ui/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/ui/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/ui/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/odoo": [
+        {
+          "file": "projects/odoo/README.md",
+          "hash": "3905092261144975696"
+        },
+        {
+          "file": "projects/odoo/ng-package.json",
+          "hash": "4225796430614820361"
+        },
+        {
+          "file": "projects/odoo/package.json",
+          "hash": "17809494133971616787",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "@beyond/notification",
+            "@beyond/server",
+            "npm:angular-odoo-jsonrpc",
+            "npm:@fernandoslim/odoo-jsonrpc",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/odoo/src/lib/injectionToken.ts",
+          "hash": "5157848441436956372"
+        },
+        {
+          "file": "projects/odoo/src/lib/interceptor/targetUrlInterceptor.ts",
+          "hash": "14570280235249456346"
+        },
+        {
+          "file": "projects/odoo/src/lib/provider.ts",
+          "hash": "4324814449558893743"
+        },
+        {
+          "file": "projects/odoo/src/lib/services/auth.service.ts",
+          "hash": "16143412098694639967"
+        },
+        {
+          "file": "projects/odoo/src/lib/services/baseService.ts",
+          "hash": "12467744119560188836"
+        },
+        {
+          "file": "projects/odoo/src/lib/services/connector/back.ts",
+          "hash": "13676634072821307062"
+        },
+        {
+          "file": "projects/odoo/src/lib/services/connector/json.service.ts",
+          "hash": "2408387451121939891"
+        },
+        {
+          "file": "projects/odoo/src/public-api.ts",
+          "hash": "6473273008576063112"
+        },
+        {
+          "file": "projects/odoo/tsconfig.lib.json",
+          "hash": "15625384052391156617"
+        },
+        {
+          "file": "projects/odoo/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/odoo/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/notification": [
+        {
+          "file": "projects/notification/README.md",
+          "hash": "14411010540159368724"
+        },
+        {
+          "file": "projects/notification/ng-package.json",
+          "hash": "14442047798181424928"
+        },
+        {
+          "file": "projects/notification/package.json",
+          "hash": "4939092373880289169",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "@beyond/translation",
+            "@beyond/utils",
+            "@beyond/ui",
+            "@beyond/styles",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/box/notification-box.component.html",
+          "hash": "291283714539072721"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/box/notification-box.component.scss",
+          "hash": "528639489242693083"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/box/notification-box.component.ts",
+          "hash": "8927722254794981682"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/error/error.component.html",
+          "hash": "1514498825598906688"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/error/error.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/error/error.component.ts",
+          "hash": "11277398650296687687"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/inline/notification-inline.component.html",
+          "hash": "7356040603125230509"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/inline/notification-inline.component.scss",
+          "hash": "3437331560115260911"
+        },
+        {
+          "file": "projects/notification/src/lib/components/popup/inline/notification-inline.component.ts",
+          "hash": "9156219998084231207"
+        },
+        {
+          "file": "projects/notification/src/lib/components/public-api.ts",
+          "hash": "5634514587358514437"
+        },
+        {
+          "file": "projects/notification/src/lib/enum.ts",
+          "hash": "201705685577162563"
+        },
+        {
+          "file": "projects/notification/src/lib/services/notification.service.ts",
+          "hash": "4800108954096934307"
+        },
+        {
+          "file": "projects/notification/src/lib/translation/en.json",
+          "hash": "12541616537907347036"
+        },
+        {
+          "file": "projects/notification/src/lib/translation/es.json",
+          "hash": "9293179775311537209"
+        },
+        {
+          "file": "projects/notification/src/lib/translation/fr.json",
+          "hash": "4394177989922023602"
+        },
+        {
+          "file": "projects/notification/src/lib/translation/nl.json",
+          "hash": "3474120365629194362"
+        },
+        {
+          "file": "projects/notification/src/public-api.ts",
+          "hash": "15199572790148221715"
+        },
+        {
+          "file": "projects/notification/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/notification/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/notification/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/server": [
+        {
+          "file": "projects/server/README.md",
+          "hash": "240274891474051932"
+        },
+        {
+          "file": "projects/server/ng-package.json",
+          "hash": "1321381349083686955"
+        },
+        {
+          "file": "projects/server/package.json",
+          "hash": "11949681767235438626",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "@beyond/utils",
+            "npm:@apollo/client",
+            "npm:apollo-angular",
+            "npm:graphql",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/server/src/lib/helpers/handle-request.ts",
+          "hash": "12657752830105321337"
+        },
+        {
+          "file": "projects/server/src/lib/interceptor/bearerInterceptor.ts",
+          "hash": "9860994140609069790"
+        },
+        {
+          "file": "projects/server/src/lib/provider.ts",
+          "hash": "14200808007243579280"
+        },
+        {
+          "file": "projects/server/src/lib/services/dto/keyvalue.ts",
+          "hash": "818621913421013570"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/graph.service.ts",
+          "hash": "10574225688295364350"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/helpers/mutations.ts",
+          "hash": "5763979112594665414"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/helpers/queries.ts",
+          "hash": "7979614883461752699"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/graphConfig.ts",
+          "hash": "92237660292370397"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/graphEndpoint.ts",
+          "hash": "17653340868483298912"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/graphPayload.ts",
+          "hash": "15196555605323732938"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/graphResponseData.ts",
+          "hash": "3018289660234691860"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/graphResponsePagedData.ts",
+          "hash": "13340656174516604240"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/graphSchema.ts",
+          "hash": "14961504077355295749"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/pageInfo.ts",
+          "hash": "15628199979885472066"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/models/responseData.ts",
+          "hash": "10471103782633355529"
+        },
+        {
+          "file": "projects/server/src/lib/services/graphql/public-api.ts",
+          "hash": "17459410889345489213"
+        },
+        {
+          "file": "projects/server/src/lib/services/logger.ts",
+          "hash": "2446957960883360346"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/api/requestMap.ts",
+          "hash": "6824471886895920063"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/api/server.service.ts",
+          "hash": "14682364215333280763"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/baseService.ts",
+          "hash": "6052763082011189023"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/cacheInterceptor.ts",
+          "hash": "3351162826496344687"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/interface.ts",
+          "hash": "7368462729548320145"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/request.ts",
+          "hash": "11873405227330260995"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/response.ts",
+          "hash": "17477512379668598151"
+        },
+        {
+          "file": "projects/server/src/lib/services/server/token.ts",
+          "hash": "7166445545392979694"
+        },
+        {
+          "file": "projects/server/src/lib/services/strapi/dto/base.ts",
+          "hash": "6776773234133431116"
+        },
+        {
+          "file": "projects/server/src/lib/services/strapi/dto/types/rich-text.ts",
+          "hash": "3554132446393053156"
+        },
+        {
+          "file": "projects/server/src/lib/services/strapi/public-api.ts",
+          "hash": "9591718829078809758"
+        },
+        {
+          "file": "projects/server/src/lib/services/strapi/strapi.service.ts",
+          "hash": "5198781896928654082"
+        },
+        {
+          "file": "projects/server/src/lib/services/user/permissions.services..ts",
+          "hash": "12075728486846754873"
+        },
+        {
+          "file": "projects/server/src/lib/services/user/public-api.ts",
+          "hash": "12676293487827091343"
+        },
+        {
+          "file": "projects/server/src/lib/types/cache.ts",
+          "hash": "5890339305268609739"
+        },
+        {
+          "file": "projects/server/src/public-api.ts",
+          "hash": "12814353078439702657"
+        },
+        {
+          "file": "projects/server/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/server/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/server/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/utils": [
+        {
+          "file": "projects/utils/README.md",
+          "hash": "7031654138367457844"
+        },
+        {
+          "file": "projects/utils/ng-package.json",
+          "hash": "14914213580050257318"
+        },
+        {
+          "file": "projects/utils/package.json",
+          "hash": "2716687873871061554",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/utils/src/lib/abstract/abstractComponent.ts",
+          "hash": "2587134553403025825"
+        },
+        {
+          "file": "projects/utils/src/lib/abstract/baseComponent.ts",
+          "hash": "11267980031778871808"
+        },
+        {
+          "file": "projects/utils/src/lib/abstract/baseModal.ts",
+          "hash": "2606914787735910321"
+        },
+        {
+          "file": "projects/utils/src/lib/abstract/basePage.ts",
+          "hash": "2007171774990480452"
+        },
+        {
+          "file": "projects/utils/src/lib/abstract/public-api.ts",
+          "hash": "7579478772097453627"
+        },
+        {
+          "file": "projects/utils/src/lib/const/environment.ts",
+          "hash": "13543596944022730259"
+        },
+        {
+          "file": "projects/utils/src/lib/directive/let.directive.ts",
+          "hash": "7577066345175809794"
+        },
+        {
+          "file": "projects/utils/src/lib/directive/on-render.directive.ts",
+          "hash": "17288650689363239090"
+        },
+        {
+          "file": "projects/utils/src/lib/directive/public-api.ts",
+          "hash": "6652652579161611000"
+        },
+        {
+          "file": "projects/utils/src/lib/directive/stop-propagation.directive.ts",
+          "hash": "18068565176957709303"
+        },
+        {
+          "file": "projects/utils/src/lib/directive/time-ago.directive.ts",
+          "hash": "15035425054589341442"
+        },
+        {
+          "file": "projects/utils/src/lib/directive/type-template-directive.ts",
+          "hash": "8545938457316235918"
+        },
+        {
+          "file": "projects/utils/src/lib/helpers/breakpoints/detection.ts",
+          "hash": "2445356075892883036"
+        },
+        {
+          "file": "projects/utils/src/lib/helpers/public-api.ts",
+          "hash": "518795760457807019"
+        },
+        {
+          "file": "projects/utils/src/lib/helpers/request/entity.ts",
+          "hash": "5676647905212347518"
+        },
+        {
+          "file": "projects/utils/src/lib/helpers/request/state.ts",
+          "hash": "11305364089325669611"
+        },
+        {
+          "file": "projects/utils/src/lib/helpers/scrolls/horizontal-scroll.ts",
+          "hash": "13723881941879775743"
+        },
+        {
+          "file": "projects/utils/src/lib/helpers/subscriber/handler.ts",
+          "hash": "2298177271357066665"
+        },
+        {
+          "file": "projects/utils/src/lib/pipe/file-size.pipe.ts",
+          "hash": "9125212360552185324"
+        },
+        {
+          "file": "projects/utils/src/lib/pipe/join.pipe.ts",
+          "hash": "10533524274654018437"
+        },
+        {
+          "file": "projects/utils/src/lib/pipe/plural.pipe.ts",
+          "hash": "556330997330800239"
+        },
+        {
+          "file": "projects/utils/src/lib/pipe/public-api.ts",
+          "hash": "4602057158225238120"
+        },
+        {
+          "file": "projects/utils/src/lib/pipe/safe.pipe.ts",
+          "hash": "13493731517920982422"
+        },
+        {
+          "file": "projects/utils/src/lib/pipe/translate.pipe.ts",
+          "hash": "2007714546772582675"
+        },
+        {
+          "file": "projects/utils/src/lib/translation/en.json",
+          "hash": "17055137209169678706"
+        },
+        {
+          "file": "projects/utils/src/lib/translation/es.json",
+          "hash": "11252101151045253259"
+        },
+        {
+          "file": "projects/utils/src/lib/translation/fr.json",
+          "hash": "8102729529455240520"
+        },
+        {
+          "file": "projects/utils/src/lib/translation/nl.json",
+          "hash": "8293282498668028675"
+        },
+        {
+          "file": "projects/utils/src/lib/types/civility/civility.ts",
+          "hash": "13543552663181107304"
+        },
+        {
+          "file": "projects/utils/src/lib/types/files/file-data.ts",
+          "hash": "2591136218312948362"
+        },
+        {
+          "file": "projects/utils/src/lib/types/files/file-extension.ts",
+          "hash": "2226723456617357374"
+        },
+        {
+          "file": "projects/utils/src/lib/types/files/temporary-files.ts",
+          "hash": "7213573894595480815"
+        },
+        {
+          "file": "projects/utils/src/lib/types/public-api.ts",
+          "hash": "12284312664296507475"
+        },
+        {
+          "file": "projects/utils/src/lib/types/type.ts",
+          "hash": "13547452740908255494"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/array.ts",
+          "hash": "15581430634525721388"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/clipboard.ts",
+          "hash": "14112113649581973991"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/color.ts",
+          "hash": "15736785269648044419"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/compare.ts",
+          "hash": "1665597056845628518"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/date.ts",
+          "hash": "7847880823892289704"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/enum.ts",
+          "hash": "14059020887486700236"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/filters.ts",
+          "hash": "2656504990659859976"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/identifier.ts",
+          "hash": "17804650995041458402"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/mail.ts",
+          "hash": "5337703316257338472"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/maps.ts",
+          "hash": "17730478154369278345"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/math.ts",
+          "hash": "14186033503532093638"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/object.ts",
+          "hash": "10124173439972625379"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/phone.ts",
+          "hash": "14195241144382283501"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/public-api.ts",
+          "hash": "12928712762999983684"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/router.ts",
+          "hash": "7816683630317617708"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/sorts.ts",
+          "hash": "6660237255100419277"
+        },
+        {
+          "file": "projects/utils/src/lib/utils/string.ts",
+          "hash": "13870825495029638331"
+        },
+        {
+          "file": "projects/utils/src/public-api.ts",
+          "hash": "396077267073325143"
+        },
+        {
+          "file": "projects/utils/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/utils/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/utils/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ],
+      "@beyond/user": [
+        {
+          "file": "projects/user/README.md",
+          "hash": "13159374918841557153"
+        },
+        {
+          "file": "projects/user/ng-package.json",
+          "hash": "5421250645988943860"
+        },
+        {
+          "file": "projects/user/package.json",
+          "hash": "4949018880217770",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "@beyond/notification",
+            "@beyond/odoo",
+            "@beyond/menu",
+            "@beyond/form-model",
+            "@beyond/form-basic",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "projects/user/src/lib/components/guard/guard.component.html",
+          "hash": "11010121889342330876"
+        },
+        {
+          "file": "projects/user/src/lib/components/guard/guard.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/user/src/lib/components/guard/guard.component.ts",
+          "hash": "8022570016889949899"
+        },
+        {
+          "file": "projects/user/src/lib/components/login/login-card.component.html",
+          "hash": "12044917868923232721"
+        },
+        {
+          "file": "projects/user/src/lib/components/login/login-card.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/user/src/lib/components/login/login-card.component.ts",
+          "hash": "16027484269332003132"
+        },
+        {
+          "file": "projects/user/src/lib/components/public-api.ts",
+          "hash": "7154485993257054280"
+        },
+        {
+          "file": "projects/user/src/lib/guards/auth.guard.ts",
+          "hash": "10621211136960461949"
+        },
+        {
+          "file": "projects/user/src/lib/guards/feature.guard.ts",
+          "hash": "3740141735554534035"
+        },
+        {
+          "file": "projects/user/src/lib/guards/public-api.ts",
+          "hash": "14396332694401941126"
+        },
+        {
+          "file": "projects/user/src/lib/pages/login/login.component.html",
+          "hash": "16879996782700131683"
+        },
+        {
+          "file": "projects/user/src/lib/pages/login/login.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "projects/user/src/lib/pages/login/login.component.ts",
+          "hash": "3105717738662381978"
+        },
+        {
+          "file": "projects/user/src/lib/pages/public-api.ts",
+          "hash": "18064561908312300174"
+        },
+        {
+          "file": "projects/user/src/lib/services/dto/profile.ts",
+          "hash": "4261323258373708530"
+        },
+        {
+          "file": "projects/user/src/lib/services/form/form.service.ts",
+          "hash": "11095530855030896431"
+        },
+        {
+          "file": "projects/user/src/lib/services/user.service.ts",
+          "hash": "6006430966525284834"
+        },
+        {
+          "file": "projects/user/src/public-api.ts",
+          "hash": "1371676703312318167"
+        },
+        {
+          "file": "projects/user/tsconfig.lib.json",
+          "hash": "2305286886725680948"
+        },
+        {
+          "file": "projects/user/tsconfig.lib.prod.json",
+          "hash": "6001745575449866921"
+        },
+        {
+          "file": "projects/user/tsconfig.spec.json",
+          "hash": "13940985610731224666"
+        }
+      ]
+    }
+  }
+}

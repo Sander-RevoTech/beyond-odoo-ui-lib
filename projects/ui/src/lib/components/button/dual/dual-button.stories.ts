@@ -1,8 +1,7 @@
-import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-
 import { BydIconsModule } from '@beyond/icons';
 import { BydTranslationModule } from '@beyond/translation';
 import { BydDirectivePipeModule } from '@beyond/utils';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 
 import { DualButtonComponent } from './dual-button.component';
 

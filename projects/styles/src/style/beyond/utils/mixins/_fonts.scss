@@ -1,4 +1,4 @@
-@use "beyond/vars";
+@use 'beyond/vars';
 
 @use 'beyond/utils/mixins/common';
 @use 'beyond/utils/mixins/text';
@@ -8,8 +8,11 @@
   @font-face {
     font-family: $font-family;
     src: url($font-path + '.eot');
-    src: local($font-name), url($font-path + '.eot?#iefix') format('embedded-opentype'),
-      url($font-path + '.woff') format('woff'), url($font-path + '.woff2') format('woff2'),
+    src:
+      local($font-name),
+      url($font-path + '.eot?#iefix') format('embedded-opentype'),
+      url($font-path + '.woff') format('woff'),
+      url($font-path + '.woff2') format('woff2'),
       url($font-path + '.ttf') format('truetype');
     font-weight: $font-weight;
     font-style: normal;

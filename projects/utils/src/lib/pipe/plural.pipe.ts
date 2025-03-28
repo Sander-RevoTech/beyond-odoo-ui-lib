@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'pluralTranslate',
   pure: false,
-  standalone: true
+  standalone: true,
 })
 export class PluralTranslatePipe implements PipeTransform {
   transform(key: string, number: number): string {

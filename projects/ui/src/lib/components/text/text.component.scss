@@ -1,6 +1,5 @@
 @use 'beyond/utils/mixins/fonts';
 
-
 .text {
   @include fonts.fontSizeBody(md);
 }

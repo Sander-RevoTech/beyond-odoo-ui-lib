@@ -1,6 +1,6 @@
 import { InjectionToken } from '@angular/core';
-import { BydBaseService } from '../server/baseService';
 import { GraphMutationPayload, GraphQueryPayload } from '../graphql/models/graphPayload';
+import { BydBaseService } from '../server/baseService';
 import * as i0 from "@angular/core";
 export declare const STRAPI_SERVER_CONFIG: InjectionToken<IStrapiConfig>;
 export interface IStrapiConfig {

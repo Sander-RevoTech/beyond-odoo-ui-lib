@@ -25,4 +25,3 @@ export * from './input/choices';
 export * from './input/address';
 export * from './input/upload';
 export * from './input/extra/button';
-

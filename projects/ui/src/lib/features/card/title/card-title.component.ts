@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './card-title.component.html',
   styleUrls: ['./card-title.component.scss'],
   standalone: true,
-  imports: []
+  imports: [],
 })
 export class CardTitleComponent {
   constructor() {}

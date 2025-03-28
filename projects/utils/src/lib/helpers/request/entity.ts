@@ -1,17 +1,15 @@
-
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
 export class HandleEntity<T> {
+  public entity$: Observable<T> | null = null;
 
-   public entity$: Observable<T> | null = null;
+  constructor() {}
 
-   constructor() {}
+  public set(subscriber: Observable<T>) {
+    this.entity$ = subscriber;
+  }
 
-   public set(subscriber: Observable<T>) {
-     this.entity$ = subscriber;
-   }
-
-   public get$() {
-     return this.entity$;
-   }
- }
+  public get$() {
+    return this.entity$;
+  }
+}

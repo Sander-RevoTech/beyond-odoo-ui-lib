@@ -1,24 +1,34 @@
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 import { map, switchMap } from 'rxjs/operators';
 
+import { InputDropdown } from '@beyond/form-model';
+import { BydBaseComponent, TranslatePipe, toArray } from '@beyond/utils';
 import { Observable } from 'rxjs';
 
-import { InputDropdown } from '@beyond/form-model';
-import { BydBaseComponent, toArray, TranslatePipe } from '@beyond/utils';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
 import { FormLabelComponent } from '../../label/label.component';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'byd-input-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
   standalone: true,
-  imports: [AsyncPipe, NgIf, NgFor, MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, TranslatePipe, FormLabelComponent],
+  imports: [
+    AsyncPipe,
+    NgIf,
+    NgFor,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslatePipe,
+    FormLabelComponent,
+  ],
 })
 export class DropdownComponent extends BydBaseComponent implements OnInit {
   @Input()

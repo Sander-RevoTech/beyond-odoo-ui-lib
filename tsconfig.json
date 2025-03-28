@@ -1,6 +1,12 @@
 /* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
@@ -29,13 +35,9 @@
       "@beyond/form-input": ["./lib/form/form-input"],
       "@beyond/form-model": ["./lib/form/form-model"],
       "@beyond/notification": ["./lib/notification"],
-      "@beyond/translation": ["./dist/translation"]
+      "@beyond/translation": ["./lib/translation"],
+      "@beyond/eslint": ["./lib/eslint"],
+      "@beyond/prettier": ["./lib/prettier"]
     }
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
   }
 }
