@@ -412,3 +412,196 @@
 [NX v20.5.0 Daemon Server] - 2025-03-28T13:26:17.838Z - [SYNC]: project graph hash is the same, not collecting task sync generators
 [NX v20.5.0 Daemon Server] - 2025-03-28T13:26:17.838Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
 [NX v20.5.0 Daemon Server] - 2025-03-28T13:26:17.839Z - Time taken for 'hash changed files from watcher' 8.390500000001339ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.918Z - Established a connection. Number of open connections: 1
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.919Z - Closed a connection. Number of open connections: 0
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.921Z - Established a connection. Number of open connections: 1
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.923Z - [REQUEST]: Client Request for Project Graph Received
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.924Z - [REQUEST]: Responding to the client. project-graph
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.925Z - Time taken for 'total for creating and serializing project graph' 0.5890999999974156ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.926Z - Done responding to the client project-graph
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.926Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 2.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.940Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.941Z - Done responding to the client handleContextFileData
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:29.941Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 2. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.049Z - [REQUEST]: Client Request for Project Graph Received
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.050Z - [REQUEST]: Responding to the client. project-graph
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.051Z - Time taken for 'total for creating and serializing project graph' 0.4170999999914784ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.051Z - Done responding to the client project-graph
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.051Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.058Z - [REQUEST]: Responding to the client. handleRunPreTasksExecution
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.058Z - Time taken for 'preTasksExecution' 0.24930000001040753ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.059Z - Done responding to the client handleRunPreTasksExecution
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.059Z - Handled PRE_TASKS_EXECUTION. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.099Z - [REQUEST]: Responding to the client. handleHashTasks
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.100Z - Done responding to the client handleHashTasks
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.100Z - Handled HASH_TASKS. Handling time: 17. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.125Z - [REQUEST]: Responding to the client. handleGetEstimatedTaskTimings
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.126Z - Done responding to the client handleGetEstimatedTaskTimings
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.126Z - Handled GET_ESTIMATED_TASK_TIMINGS. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.172Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.173Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.173Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.176Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.176Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.176Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 1. Response time: 0.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.178Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.179Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.179Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.181Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.181Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.181Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 1. Response time: 0.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.183Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.184Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.184Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.218Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.218Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.218Z - Handled RECORD_OUTPUTS_HASH. Handling time: 1. Response time: 0.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.255Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.256Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.256Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.266Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.267Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.267Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.276Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.276Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.276Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 1. Response time: 0.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.278Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.278Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.278Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 1. Response time: 0.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.280Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.281Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.281Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.307Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.307Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.307Z - Handled RECORD_OUTPUTS_HASH. Handling time: 1. Response time: 0.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.323Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.324Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.324Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.326Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.327Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.327Z - Handled RECORD_OUTPUTS_HASH. Handling time: 1. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.347Z - [REQUEST]: Responding to the client. outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.348Z - Done responding to the client outputsHashesMatch
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.348Z - Handled OUTPUTS_HASHES_MATCH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.354Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.354Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:30.355Z - Handled RECORD_OUTPUTS_HASH. Handling time: 1. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.491Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 91 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.493Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.609Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.609Z - [REQUEST]: 
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.609Z - [REQUEST]: lib/ui/lib/features/card/title,lib/ui/public-api.d.ts,lib/ui/lib/components/typed-message,lib/ui/lib/features/container/error/error.component.d.ts,lib/ui/lib/features/layout/layout-title,lib/ui/lib/features/container/validation/dialog/dialog-validation.component.d.ts,lib/ui/lib/components/picture-info-message/picture-info-message.component.d.ts,lib/ui/lib/features/container/empty,lib/ui/lib/features/layout/layout-content,lib/ui/lib/features/container/error,lib/ui/lib/features/container/validation,lib/ui/lib/features/card/public-api.d.ts,lib/ui/lib/components/navigation/date,lib/ui/lib/features/card,lib/ui/index.d.ts,lib/ui/lib/components/logo,lib/ui/lib/features/layout/layout-title/layout-title.component.d.ts,lib/ui/lib/features/card/card.component.d.ts,lib/ui/lib/features/container/swiper-light/swiper-light.component.d.ts,lib/ui/lib/features/card/cta/card-cta.component.d.ts,lib/ui/lib/features/layout/with-nav/layout-with-nav.component.d.ts,lib/ui/lib/features/layout/layout-nav,lib/ui/lib/features/layout/with-nav,lib/ui/lib/features/card/subtitle,lib/ui/lib/features/card/tag,lib/ui/lib/features/layout/with-panel/layout-with-panel.component.d.ts,lib/ui/lib/features/layout/with-panel,lib/ui,lib/ui/fesm2022/beyond-ui.mjs,lib/ui/lib/features/container/swiper-light,lib/ui/lib/components/typed-message/typed-message.component.d.ts,lib/ui/lib/features/card/card-image,lib/ui/lib/features/container/public-api.d.ts,lib/ui/lib/features/container/validation/cta/container-validation.component.d.ts,lib/ui/lib/components/toast/helpers.d.ts,lib/ui/lib/components/navigation/date/week/week.component.d.ts,lib/ui/lib/features/card/header/card-header.component.d.ts,lib/ui/lib/components/button,lib/ui/lib/components/text,lib/ui/lib/features/container/placeholder,lib/ui/lib/components/toast/toast.component.d.ts,lib/ui/.npmignore,lib/ui/lib/components/button/button.component.d.ts,lib/ui/fesm2022/beyond-ui.mjs.map,lib/ui/lib/components/title/title.component.d.ts,lib/ui/lib/features/layout/layout-header/layout-header-default/layout-header-default.component.d.ts,lib/ui/lib/features/layout/layout-content/layout-content.component.d.ts,lib/ui/lib/components/logo/logo.component.d.ts,lib/ui/lib/features/container/validation/cta,lib/ui/lib/features/layout/public-api.d.ts,lib/ui/lib/features/layout/layout-nav/layout-nav.component.d.ts,lib/ui/lib/features/layout/layout-header,lib/ui/lib/components/picture-info-message,lib/ui/lib/features/layout,lib/ui/lib/features,lib/ui/lib/features/layout/layout-header/layout-header.component.d.ts,lib/ui/lib,lib/ui/lib/components/toast,lib/ui/lib/features/layout/layout-page,lib/ui/lib/components/badge,lib/ui/lib/features/card/card-image/card-image.component.d.ts,lib/ui/lib/features/layout/layout-panel/layout-panel.component.d.ts,lib/ui/lib/features/container/validation/common-dialog.d.ts,lib/ui/lib/features/card/content/card-content.component.d.ts,lib/ui/package.json,lib/ui/lib/features/container/loader,lib/ui/lib/features/layout/layout-header/layout-header-default,lib/ui/lib/components/navigation/date/week,lib/ui/lib/components,lib/ui/lib/components/navigation,lib/ui/lib/components/title,lib/ui/README.md,lib/ui/lib/features/container/placeholder/config.d.ts,lib/ui/lib/components/public-api.d.ts,lib/ui/lib/features/card/cta,lib/ui/lib/components/text/text.component.d.ts,lib/ui/lib/components/badge/badge.component.d.ts,lib/ui/lib/features/card/title/card-title.component.d.ts,lib/ui/lib/features/card/subtitle/card-subtitle.component.d.ts,lib/ui/lib/features/card/header,lib/ui/lib/features/container/empty/empty.component.d.ts,lib/ui/lib/features/card/content,lib/ui/lib/components/navigation/date/day,lib/ui/lib/features/card/tag/card-tag.component.d.ts,lib/ui/lib/features/container/loader/loader.component.d.ts,lib/ui/lib/features/container/validation/dialog,lib/ui/lib/features/container,lib/ui/lib/features/layout/layout-page/layout-page.component.d.ts,lib/ui/fesm2022,lib/ui/lib/components/navigation/date/day/day.component.d.ts,lib/ui/lib/features/layout/layout-panel
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.679Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.680Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.680Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:35.680Z - Time taken for 'hash changed files from watcher' 15.61590000000433ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.458Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.459Z - [WATCHER]: 0 file(s) created or restored, 6 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.511Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.514Z - [WATCHER]: 0 file(s) created or restored, 6 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.566Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.570Z - [WATCHER]: 0 file(s) created or restored, 5 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.620Z - [WATCHER]: 0 file(s) created or restored, 8 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.621Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.667Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.667Z - [REQUEST]: lib/ui/lib/components/logo/logo.component.d.ts,lib/ui/lib/components/button/button.component.d.ts,lib/ui/lib/components/typed-message/typed-message.component.d.ts,lib/ui/lib/components/picture-info-message/picture-info-message.component.d.ts,lib/ui/lib/components/title/title.component.d.ts,lib/ui/lib/components/text/text.component.d.ts,lib/ui/lib/components/toast/helpers.d.ts,lib/ui/lib/components/badge/badge.component.d.ts,lib/ui/lib/components/navigation/date/day/day.component.d.ts,lib/ui/lib/components/navigation/date/week/week.component.d.ts,lib/ui/lib/components/toast/toast.component.d.ts,lib/ui/lib/components/public-api.d.ts,lib/ui/lib/features/container/error/error.component.d.ts,lib/ui/lib/features/container/empty/empty.component.d.ts,lib/ui/lib/features/container/loader/loader.component.d.ts,lib/ui/lib/features/container/placeholder/config.d.ts,lib/ui/lib/features/container/validation/common-dialog.d.ts,lib/ui/lib/features/container/validation/cta/container-validation.component.d.ts,lib/ui/lib/features/container/swiper-light/swiper-light.component.d.ts,lib/ui/lib/features/container/validation/dialog/dialog-validation.component.d.ts,lib/ui/lib/features/container/public-api.d.ts,lib/ui/lib/features/card/cta/card-cta.component.d.ts,lib/ui/lib/features/card/content/card-content.component.d.ts,lib/ui/lib/features/card/card.component.d.ts,lib/ui/lib/features/card/card-image/card-image.component.d.ts
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.667Z - [REQUEST]: 
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.784Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.785Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.785Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.786Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.786Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.787Z - [WATCHER]: 0 file(s) created or restored, 10 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.790Z - [WATCHER]: 0 file(s) created or restored, 7 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:41.791Z - Time taken for 'hash changed files from watcher' 4.141900000002352ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.105Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.106Z - [WATCHER]: 0 file(s) created or restored, 5 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.192Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.192Z - [REQUEST]: lib/ui/lib/features/card/public-api.d.ts,lib/ui/lib/features/layout/layout-header/layout-header.component.d.ts,lib/ui/lib/features/layout/layout-nav/layout-nav.component.d.ts,lib/ui/lib/features/layout/layout-content/layout-content.component.d.ts,lib/ui/lib/features/layout/layout-title/layout-title.component.d.ts,lib/ui/lib/features/layout/layout-header/layout-header-default/layout-header-default.component.d.ts,lib/ui/lib/features/card/subtitle/card-subtitle.component.d.ts,lib/ui/lib/features/card/tag/card-tag.component.d.ts,lib/ui/lib/features/card/header/card-header.component.d.ts,lib/ui/lib/features/card/title/card-title.component.d.ts,lib/ui/lib/features/layout/layout-page/layout-page.component.d.ts,lib/ui/index.d.ts,lib/ui/lib/features/layout/with-nav/layout-with-nav.component.d.ts,lib/ui/lib/features/layout/with-panel/layout-with-panel.component.d.ts,lib/ui/lib/features/layout/layout-panel/layout-panel.component.d.ts,lib/ui/public-api.d.ts,lib/ui/lib/features/layout/public-api.d.ts,lib/ui/package.json,lib/ui/fesm2022/beyond-ui.mjs,lib/ui/fesm2022/beyond-ui.mjs.map,lib/ui/README.md,lib/ui/.npmignore
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.192Z - [REQUEST]: 
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.286Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.287Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.287Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.292Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.292Z - Time taken for 'hash changed files from watcher' 2.351599999994505ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.293Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:42.293Z - Handled RECORD_OUTPUTS_HASH. Handling time: 1. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:46.636Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:46.638Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 22 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:47.444Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:47.445Z - [REQUEST]: 
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:47.445Z - [REQUEST]: lib/notification/fesm2022/beyond-notification.mjs.map,lib/notification/fesm2022/beyond-notification.mjs,lib/notification/.npmignore,lib/notification/fesm2022,lib/notification/index.d.ts,lib/notification/public-api.d.ts,lib/notification/lib/components/public-api.d.ts,lib/notification/lib/components,lib/notification/README.md,lib/notification/lib/components/popup/box/notification-box.component.d.ts,lib/notification/lib/components/popup/inline/notification-inline.component.d.ts,lib/notification/lib/components/popup/error/error.component.d.ts,lib/notification/lib/components/popup,lib/notification/lib,lib/notification,lib/notification/lib/services/notification.service.d.ts,lib/notification/package.json,lib/notification/lib/enum.d.ts,lib/notification/lib/services,lib/notification/lib/components/popup/error,lib/notification/lib/components/popup/box,lib/notification/lib/components/popup/inline
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:47.549Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:47.550Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:47.550Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:47.551Z - Time taken for 'hash changed files from watcher' 4.879899999999907ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.146Z - [WATCHER]: 0 file(s) created or restored, 4 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.149Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.198Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.202Z - [WATCHER]: 0 file(s) created or restored, 4 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.357Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.358Z - [WATCHER]: 0 file(s) created or restored, 5 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.463Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.463Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:50.464Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:51.756Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:51.756Z - [REQUEST]: lib/notification/lib/components/popup/inline/notification-inline.component.d.ts,lib/notification/lib/enum.d.ts,lib/notification/lib/services/notification.service.d.ts,lib/notification/lib/components/popup/error/error.component.d.ts,lib/notification/lib/components/popup/box/notification-box.component.d.ts,lib/notification/lib/components/public-api.d.ts,lib/notification/public-api.d.ts,lib/notification/index.d.ts,lib/notification/fesm2022/beyond-notification.mjs,lib/notification/README.md,lib/notification/.npmignore,lib/notification/package.json,lib/notification/fesm2022/beyond-notification.mjs.map
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:51.756Z - [REQUEST]: 
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:51.873Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:51.873Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:51.874Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:51.875Z - Time taken for 'hash changed files from watcher' 2.470600000000559ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:54.825Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 19 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:54.826Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.029Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.029Z - [REQUEST]: 
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.029Z - [REQUEST]: lib/odoo/lib/interceptor,lib/odoo/package.json,lib/odoo/README.md,lib/odoo/lib/provider.d.ts,lib/odoo/fesm2022,lib/odoo/.npmignore,lib/odoo/public-api.d.ts,lib/odoo/lib/services/baseService.d.ts,lib/odoo/lib/interceptor/targetUrlInterceptor.d.ts,lib/odoo,lib/odoo/lib/services/connector,lib/odoo/index.d.ts,lib/odoo/lib/services/auth.service.d.ts,lib/odoo/lib/injectionToken.d.ts,lib/odoo/lib/services,lib/odoo/lib,lib/odoo/lib/services/connector/json.service.d.ts,lib/odoo/fesm2022/beyond-odoo.mjs,lib/odoo/fesm2022/beyond-odoo.mjs.map
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.112Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.113Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.113Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.113Z - Time taken for 'hash changed files from watcher' 3.5800000000017462ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.251Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.253Z - [WATCHER]: 0 file(s) created or restored, 4 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.306Z - [WATCHER]: 0 file(s) created or restored, 4 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.307Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.515Z - [WATCHER]: 0 file(s) created or restored, 5 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.516Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.588Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.588Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:26:58.589Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:02.708Z - [WATCHER]: 0 file(s) created or restored, 0 file(s) modified, 27 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:02.708Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:04.671Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:04.671Z - [REQUEST]: lib/odoo/lib/interceptor/targetUrlInterceptor.d.ts,lib/odoo/lib/provider.d.ts,lib/odoo/lib/injectionToken.d.ts,lib/odoo/lib/services/connector/json.service.d.ts,lib/odoo/lib/services/auth.service.d.ts,lib/odoo/index.d.ts,lib/odoo/lib/services/baseService.d.ts,lib/odoo/public-api.d.ts,lib/odoo/.npmignore,lib/odoo/README.md,lib/odoo/package.json,lib/odoo/fesm2022/beyond-odoo.mjs.map,lib/odoo/fesm2022/beyond-odoo.mjs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:04.671Z - [REQUEST]: lib/user/fesm2022/beyond-user.mjs.map,lib/user/lib/pages,lib/user/.npmignore,lib/user/fesm2022/beyond-user.mjs,lib/user/lib/services/form,lib/user/lib/components/public-api.d.ts,lib/user/public-api.d.ts,lib/user/lib/guards/feature.guard.d.ts,lib/user/package.json,lib/user/lib/pages/public-api.d.ts,lib/user/lib/components/login/login-card.component.d.ts,lib/user/lib/components/login,lib/user/fesm2022,lib/user/lib/pages/login/login.component.d.ts,lib/user/index.d.ts,lib/user/lib/guards,lib/user/lib/pages/login,lib/user/lib/guards/public-api.d.ts,lib/user/lib/components,lib/user/lib/components/guard/guard.component.d.ts,lib/user/lib/components/guard,lib/user/README.md,lib/user/lib/services,lib/user,lib/user/lib,lib/user/lib/guards/auth.guard.d.ts,lib/user/lib/services/form/form.service.d.ts
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:04.792Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:04.793Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:04.793Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:04.795Z - Time taken for 'hash changed files from watcher' 17.00659999999334ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.489Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.490Z - [WATCHER]: 0 file(s) created or restored, 6 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.543Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.545Z - [WATCHER]: 0 file(s) created or restored, 5 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.769Z - [WATCHER]: 0 file(s) created or restored, 5 file(s) modified, 0 file(s) deleted
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.770Z - [WATCHER]: Processing file changes in outputs
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.874Z - [REQUEST]: Responding to the client. recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.875Z - Done responding to the client recordOutputsHash
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.875Z - Handled RECORD_OUTPUTS_HASH. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.899Z - [REQUEST]: Responding to the client. handleRecordTaskRuns
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.900Z - Done responding to the client handleRecordTaskRuns
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.900Z - Handled RECORD_TASK_RUNS. Handling time: 5. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.902Z - [REQUEST]: Responding to the client. handleGetFlakyTasks
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.902Z - Done responding to the client handleGetFlakyTasks
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:07.902Z - Handled GET_FLAKY_TASKS. Handling time: 1. Response time: 0.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:08.279Z - [REQUEST]: Responding to the client. handleRunPostTasksExecution
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:08.280Z - Time taken for 'postTasksExecution' 0.5279999999911524ms
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:08.280Z - Done responding to the client handleRunPostTasksExecution
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:08.280Z - Handled POST_TASKS_EXECUTION. Handling time: 0. Response time: 1.
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:08.286Z - Closed a connection. Number of open connections: 0
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:13.893Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:13.893Z - [REQUEST]: lib/user/lib/components/login/login-card.component.d.ts,lib/user/lib/components/public-api.d.ts,lib/user/lib/components/guard/guard.component.d.ts,lib/user/lib/pages/login/login.component.d.ts,lib/user/lib/pages/public-api.d.ts,lib/user/lib/services/form/form.service.d.ts,lib/user/public-api.d.ts,lib/user/lib/guards/feature.guard.d.ts,lib/user/lib/guards/auth.guard.d.ts,lib/user/index.d.ts,lib/user/lib/guards/public-api.d.ts,lib/user/.npmignore,lib/user/fesm2022/beyond-user.mjs.map,lib/user/fesm2022/beyond-user.mjs,lib/user/README.md,lib/user/package.json
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:13.893Z - [REQUEST]: 
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:13.951Z - [SYNC]: collect registered sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:13.952Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:13.952Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX v20.5.0 Daemon Server] - 2025-03-28T13:27:13.952Z - Time taken for 'hash changed files from watcher' 1.9267000000108965ms
