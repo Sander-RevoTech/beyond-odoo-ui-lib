@@ -1,0 +1,25 @@
+[2K[1G[33mwarning[39m package.json: No license field
+[2K[1G[2m$ ng build @beyond/user[22m
+[34mBuilding Angular Package[39m
+[37m[39m
+[37m------------------------------------------------------------------------------[39m
+[37mBuilding entry point '@beyond/user'[39m
+[37m------------------------------------------------------------------------------[39m
+- Compiling with Angular sources in Ivy partial compilation mode.
+[32m✔[39m Compiling with Angular sources in Ivy partial compilation mode.
+[32m✔[39m Generating FESM bundles
+- Copying assets
+[32m✔[39m Copying assets
+- Writing package manifest
+[34mℹ[39m Removing scripts section in package.json as it's considered a potential security vulnerability.
+[32m✔[39m Writing package manifest
+[32m✔[39m Built @beyond/user
+[32m[39m
+[32m------------------------------------------------------------------------------[39m
+[32mBuilt Angular Package[39m
+[32m - from: C:/techatome/Odoo/beyond-odoo-ui-lib/projects/user[39m
+[32m - to:   C:/techatome/Odoo/beyond-odoo-ui-lib/lib/user[39m
+[32m------------------------------------------------------------------------------[39m
+[37m[37m[39m[37m[39m
+[37m[37mBuild at: [1m2025-03-28T14:06:15.698Z[22m - Time: [1m3909[22mms[39m[37m[39m
+[37m[37m[39m[37m[39m

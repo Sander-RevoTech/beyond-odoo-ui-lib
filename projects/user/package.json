@@ -1,6 +1,6 @@
 {
   "name": "@beyond/user",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "build": "ng build @beyond/user"
   },
@@ -9,11 +9,11 @@
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "@beyond/notification": "0.0.1",
-    "@beyond/odoo": "0.0.1",
-    "@beyond/menu": "0.0.1",
-    "@beyond/form-model": "0.0.1",
-    "@beyond/form-basic": "0.0.1",
+    "@beyond/notification": "0.0.0",
+    "@beyond/odoo": "0.0.0",
+    "@beyond/menu": "0.0.0",
+    "@beyond/form-model": "0.0.0",
+    "@beyond/form-basic": "0.0.0",
     "tslib": "^2.3.0"
   },
   "sideEffects": false
