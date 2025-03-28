@@ -20,7 +20,9 @@ export class BydPermissionsServices {
   public token: string | null = null;
   public guards: { [index: string]: string[] } = {};
   public roles: string[] = [];
-  public isAuthenticated: boolean = false;
+  get isAuthenticated() {
+    return !!this.uid;
+  }
 
   public updated$ = this._updated$.pipe(filter(data => !!data));
 
@@ -58,11 +60,6 @@ export class BydPermissionsServices {
 
     this.guards = {};
 
-    this._updated$.next(Date.now());
-  }
-
-  public setAuthenticated(isAuthenticated: boolean) {
-    this.isAuthenticated = isAuthenticated;
     this._updated$.next(Date.now());
   }
 
