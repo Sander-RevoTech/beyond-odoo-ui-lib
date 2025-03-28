@@ -1,12 +1,13 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { StopPropagationDirective } from '@beyond/utils';
 
 @Component({
   selector: 'byd-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, StopPropagationDirective],
 })
 export class CardComponent {
   @Input()
