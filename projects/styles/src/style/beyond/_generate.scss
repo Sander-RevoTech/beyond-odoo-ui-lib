@@ -25,3 +25,41 @@
 
   @include flex.generateFlex();
 }
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: $font-primary;
+  font-weight: 400;
+}
+hr {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.container {
+  max-width: none;
+  &.root {
+    padding: 0;
+  }
+}
+.align-items-center {
+  margin: auto;
+}
+
+.mat-toolbar-single-row {
+  height: 50px;
+}
+
+.close-dialog {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 100;
+
+  cursor: pointer;
+}
