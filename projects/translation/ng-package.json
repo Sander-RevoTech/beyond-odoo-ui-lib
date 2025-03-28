@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "allowedNonPeerDependencies": ["@angular", "@camelot", "@ngx-translate", "storage-manager-js"],
+  "allowedNonPeerDependencies": ["@angular", "@camelot", "@ngx-translate"],
   "dest": "../../lib/translation",
   "lib": {
     "entryFile": "src/public-api.ts"

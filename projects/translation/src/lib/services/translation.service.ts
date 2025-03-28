@@ -1,7 +1,6 @@
 import { Inject, Injectable, Optional, inject } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
-import { SessionStorage } from 'storage-manager-js';
 
 import { CamTranslationRegistryService } from './translation-registry.service';
 
@@ -37,7 +36,7 @@ export class CamTranslationService {
     this.translateService.setDefaultLang(this._config.default);
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
-    let lang: string = SessionStorage.get('lang') ?? this.translateService.getBrowserLang() ?? this._config.default;
+    let lang: string = sessionStorage.getItem('lang') ?? this.translateService.getBrowserLang() ?? this._config.default;
 
     if (!lang || !this._config.supportedLanguages.find(langId => langId === lang)) {
       lang = this._config.default;
@@ -45,16 +44,16 @@ export class CamTranslationService {
     this.translateService.use(lang);
 
     this.translateService.onLangChange.subscribe(({ lang }) => {
-      if (!SessionStorage.has('lang')) {
-        SessionStorage.set('lang', lang);
+      if (!sessionStorage.getItem('lang')) {
+        sessionStorage.setItem('lang', lang);
         return;
       }
 
-      if (lang === SessionStorage.get('lang')) {
+      if (lang === sessionStorage.getItem('lang')) {
         return;
       }
 
-      SessionStorage.set('lang', lang);
+      sessionStorage.setItem('lang', lang);
       location.reload();
     });
   }

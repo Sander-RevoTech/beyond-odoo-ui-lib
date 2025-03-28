@@ -9,10 +9,9 @@
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
     "@ngx-translate/core": "^16.0.4",
     "@ngx-translate/http-loader": "^16.0.1",
-    "storage-manager-js": "4.2.6"
+    "tslib": "^2.3.0"
   },
   "sideEffects": false
 }
