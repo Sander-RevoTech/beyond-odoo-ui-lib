@@ -1,0 +1,9 @@
+@if (this.addActions.length === 1) {
+  <byd-button (action)="this.addActions[0].callback()">
+    <mat-icon>{{ this.addActions[0].icon | translate }}</mat-icon>
+  </byd-button>
+} @else if (this.addActions.length > 1) {
+  <byd-button *ngFor="let action of this.addActions" (action)="action.callback()">
+    <mat-icon>{{ action.icon }}</mat-icon>
+  </byd-button>
+}

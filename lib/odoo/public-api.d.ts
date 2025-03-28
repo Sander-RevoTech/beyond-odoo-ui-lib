@@ -1,3 +1,4 @@
+export * from './lib/features/chatting/public-api';
 export * from './lib/provider';
 export * from './lib/injectionToken';
 export * from './lib/interceptor/targetUrlInterceptor';

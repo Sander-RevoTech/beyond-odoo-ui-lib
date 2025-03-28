@@ -3,6 +3,7 @@
   "allowedNonPeerDependencies": ["@beyond", "angular-odoo-jsonrpc", "odoo-jsonrpc"],
   "dest": "../../lib/odoo",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": ["../styles/src/style"]
   }
 }

@@ -11,4 +11,5 @@ export * from './object';
 export * from './phone';
 export * from './sorts';
 export * from './string';
+export * from './file';
 export * from './clipboard';

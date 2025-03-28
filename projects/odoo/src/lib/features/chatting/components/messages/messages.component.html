@@ -1,0 +1,37 @@
+<div>
+  <byd-loader [isLoading]="this.requestState.isLoading()">
+    <byd-error [message]="this.requestState.getErrorMessage()" [code]="this.requestState.getErrorStatus()">
+      <div>
+        <byd-input-textbox [input]="this.input"></byd-input-textbox>
+      </div>
+
+      <div class="row row-cols-3 g-0 align-items-center mb-2">
+        <div *ngFor="let pic of this.tempImages" class="temp-pic-container">
+          <img [src]="pic.localUrl" width="100%" />
+          <div class="remove-cta" (click)="this.remove(pic)">
+            <mat-icon>close</mat-icon>
+          </div>
+        </div>
+        <div>
+          <byd-files-upload (filesPicked)="this.uploadImage($event)" [features]="['take-pic']"></byd-files-upload>
+        </div>
+      </div>
+
+      <byd-button (action)="this.send()" [state]="this.disable ? 'disabled' : 'classic'">
+        <mat-icon>send</mat-icon> Send
+      </byd-button>
+
+      <div>
+        <div *ngFor="let message of this.data$ | async" class="item-message">
+          <div [innerHTML]="message.body"></div>
+          <hr *ngIf="(message.body && message.attachment_ids?.length) || 0 > 0" />
+          <div class="row row-cols-3">
+            <div *ngFor="let picId of message.attachment_ids">
+              <img [src]="this.getPicUrl(picId)" width="100%" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </byd-error>
+  </byd-loader>
+</div>

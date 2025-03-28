@@ -1,6 +1,7 @@
 /*
  * Public API Surface of odoo
  */
+export * from './lib/features/chatting/public-api';
 
 export * from './lib/provider';
 
