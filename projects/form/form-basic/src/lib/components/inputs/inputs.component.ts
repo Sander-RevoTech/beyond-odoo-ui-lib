@@ -11,6 +11,7 @@ import {
   TextBoxComponent,
   TextareaComponent,
   ToggleComponent,
+  BydInputButtonComponent
 } from '@beyond/form-input';
 import { InputBase } from '@beyond/form-model';
 import { BydBaseComponent } from '@beyond/utils';
@@ -41,6 +42,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     ToggleComponent,
     PanelComponent,
     LabelComponent,
+    BydInputButtonComponent
   ],
 })
 export class InputsComponent extends BydBaseComponent {

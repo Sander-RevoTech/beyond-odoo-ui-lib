@@ -1,6 +1,7 @@
-<app-button
+<byd-button
   (action)="this.input.callback()"
-  [disabled]="(this.input.disabled$ | async) ?? false"
+  [state]="(this.input.disabled$ | async) ? 'disabled' : 'classic'"
   [style]="this.input.style"
-  >{{ this.input.label }}</app-button
 >
+  {{ this.input.label | translate }}
+</byd-button>

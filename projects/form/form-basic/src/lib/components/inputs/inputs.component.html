@@ -32,5 +32,8 @@
     <ng-container *ngSwitchCase="'label'">
       <byd-input-label [input]="input"></byd-input-label>
     </ng-container>
+    <ng-container *ngSwitchCase="'button'">
+      <byd-input-button [input]="$any(input)"></byd-input-button>
+    </ng-container>
   </ng-container>
 </ng-template>

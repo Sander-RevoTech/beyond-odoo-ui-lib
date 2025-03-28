@@ -1,13 +1,18 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { InputButton } from '@beyond/form-model';
+import { TranslatePipe } from '@beyond/translation';
+import { BydButtonComponent } from '@beyond/ui';
 
-import { InputButton } from 'src/app/models/form/input/extra/button';
 
 @Component({
-  selector: 'app-input-button',
+  selector: 'byd-input-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  standalone: true,
+  imports: [BydButtonComponent, TranslatePipe, AsyncPipe],
 })
-export class InputButtonComponent {
+export class BydInputButtonComponent {
   @Input()
   input!: InputButton;
 }

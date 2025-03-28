@@ -12,7 +12,7 @@ export const openDialog = (
 ): Observable<BydDialogValidationReturn | undefined> => {
   return dialog
     .open<BydDialogValidationComponent, TranslationData, BydDialogValidationReturn>(BydDialogValidationComponent, {
-      width: '100%',
+      width: '75%',
       data,
     })
     .afterClosed()
