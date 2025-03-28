@@ -1,13 +1,13 @@
 {
   "name": "@beyond/odoo",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "@beyond/notification": "0.0.1",
-    "@beyond/server": "0.0.1",
+    "@beyond/notification": "0.0.0",
+    "@beyond/server": "0.0.0",
     "angular-odoo-jsonrpc": "^2.0.9",
     "@fernandoslim/odoo-jsonrpc": "2.0.2",
     "tslib": "^2.3.0"

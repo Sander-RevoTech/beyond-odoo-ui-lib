@@ -1,6 +1,6 @@
 {
   "name": "@beyond/menu",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "build": "ng build @beyond/menu"
   },

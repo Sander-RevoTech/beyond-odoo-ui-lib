@@ -1,12 +1,12 @@
 {
   "name": "@beyond/server",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "@beyond/utils": "^0.0.1",
+    "@beyond/utils": "^0.0.0",
     "@apollo/client": "^3.12.4",
     "apollo-angular": "^8.0.0",
     "graphql": "^16.10.0",

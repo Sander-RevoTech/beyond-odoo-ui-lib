@@ -1,6 +1,6 @@
 {
   "name": "@beyond/form-input",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "build": "ng build @beyond/form-input"
   },
@@ -9,7 +9,7 @@
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "@beyond/form-model": "^0.0.1",
+    "@beyond/form-model": "^0.0.0",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

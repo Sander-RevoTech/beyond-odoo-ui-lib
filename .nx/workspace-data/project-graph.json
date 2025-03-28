@@ -14080,6 +14080,26 @@
         "source": "@beyond/prettier",
         "target": "npm:@angular/core",
         "type": "static"
+      },
+      {
+        "source": "@beyond/prettier",
+        "target": "npm:@trivago/prettier-plugin-sort-imports",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/prettier",
+        "target": "npm:prettier",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/prettier",
+        "target": "npm:prettier-eslint",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/prettier",
+        "target": "npm:prettier-plugin-sort-json",
+        "type": "static"
       }
     ],
     "@beyond/eslint": [
@@ -14091,6 +14111,81 @@
       {
         "source": "@beyond/eslint",
         "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:@angular-eslint/builder",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:@angular-eslint/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:@angular-eslint/eslint-plugin-template",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:@angular-eslint/schematics",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:@angular-eslint/template-parser",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:@typescript-eslint/eslint-plugin",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:@typescript-eslint/parser",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint-config-prettier",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint-config-standard",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint-plugin-import",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint-plugin-node",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint-plugin-prettier",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint-plugin-promise",
+        "type": "static"
+      },
+      {
+        "source": "@beyond/eslint",
+        "target": "npm:eslint-plugin-unused-imports",
         "type": "static"
       }
     ],
@@ -30800,5 +30895,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1743168433940
+  "computedAt": 1743170569028
 }

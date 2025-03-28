@@ -1,15 +1,15 @@
 {
   "name": "@beyond/notification",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "@beyond/translation": "^0.0.1",
-    "@beyond/utils": "^0.0.1",
-    "@beyond/ui": "^0.0.1",
-    "@beyond/styles": "^0.0.1",
+    "@beyond/translation": "^0.0.0",
+    "@beyond/utils": "^0.0.0",
+    "@beyond/ui": "^0.0.0",
+    "@beyond/styles": "^0.0.0",
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
