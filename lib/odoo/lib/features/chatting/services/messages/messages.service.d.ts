@@ -14,7 +14,7 @@ export declare class AppMessagesService extends BydBaseOdooService {
         model: string;
         message_type: string;
     }): import("rxjs").Observable<Message[]>;
-    postMessage$(id: number, message: Message, files: FileStructure[]): Promise<import("rxjs").Observable<unknown[]>>;
+    postMessage$(id: number, message: Message, files: FileStructure[]): Promise<import("rxjs").Observable<Message | unknown[]>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AppMessagesService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AppMessagesService>;
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, filter, forkJoin, map, merge, mergeMap, tap } from 'rxjs';
+import { BehaviorSubject, filter, forkJoin, map, merge, mergeMap, of, tap } from 'rxjs';
 
 
 import { Message } from './dto/message';
@@ -53,9 +53,13 @@ export class AppMessagesService extends BydBaseOdooService {
     return this._odooService.create$<Message>('mail.message', { ...message, ...{ subtype_id: 2}})
     .pipe(
       filter(data => !!data),
-      mergeMap(data => forkJoin([...attachments.map(attachment =>
-        this._odooService.create$<unknown>('ir.attachment', { ...attachment, ...{ res_id: data.id } })
-      )]),
-      ));
+      mergeMap(data => {
+        if(attachments.length === 0) {
+          return of(data);
+        }
+        return forkJoin([...attachments.map(attachment =>
+          this._odooService.create$<unknown>('ir.attachment', { ...attachment, ...{ res_id: data.id } })
+        )])
+      }));
   }
 }
