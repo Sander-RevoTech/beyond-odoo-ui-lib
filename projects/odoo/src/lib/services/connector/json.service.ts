@@ -126,7 +126,7 @@ export class OdooJsonConnector {
           subject$.error(error);
           subject$.complete();
           subject$.unsubscribe();
-          this._handleErrorMessage(error);
+          //this._handleErrorMessage(error);
         });
     });
 
