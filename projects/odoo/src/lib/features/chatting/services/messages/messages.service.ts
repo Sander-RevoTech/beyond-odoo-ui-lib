@@ -50,7 +50,7 @@ export class AppMessagesService extends BydBaseOdooService {
       attachments.push({ file: base64, filetype: 'jpeg' });
     }
 
-    return this._odooService.create$<Message>('mail.message', message).pipe(filter(data => !!data));
+    return this._odooService.create$<Message>('mail.message', { ...message, ...{ subtype_id: 2}}).pipe(filter(data => !!data));
     // return this._odooService
     //   .action$<Message>('sale.order', 'log_message', [id],
     //   //    {
