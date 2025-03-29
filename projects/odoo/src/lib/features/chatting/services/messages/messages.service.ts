@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, filter, map, tap } from 'rxjs';
+import { BehaviorSubject, filter, forkJoin, map, merge, mergeMap, tap } from 'rxjs';
 
 
 import { Message } from './dto/message';
@@ -43,21 +43,19 @@ export class AppMessagesService extends BydBaseOdooService {
   }
 
   public async postMessage$(id: number, message: Message, files: FileStructure[]) {
-    const attachments = [];
+    const attachments: any[] = [];
 
     for (let file of files.filter(att => att.file)) {
       const base64 = file.file ? await getBase64FromFile(file.file) : null;
-      attachments.push({ file: base64, filetype: 'jpeg' });
+      attachments.push({ name: file.localUrl, datas: base64, filetype: 'jpeg', res_model: "mail.message", });
     }
 
-    return this._odooService.create$<Message>('mail.message', { ...message, ...{ subtype_id: 2}}).pipe(filter(data => !!data));
-    // return this._odooService
-    //   .action$<Message>('sale.order', 'log_message', [id],
-    //   //    {
-    //   //   ...message,
-    //   //   ...(attachments.length > 0 ? { attachments } : {}),
-    //   // }
-    // )
-    //   .pipe(filter(data => !!data));
+    return this._odooService.create$<Message>('mail.message', { ...message, ...{ subtype_id: 2}})
+    .pipe(
+      filter(data => !!data),
+      mergeMap(data => forkJoin([...attachments.map(attachment =>
+        this._odooService.create$<unknown>('ir.attachment', { ...attachment, ...{ res_id: data.id } })
+      )]),
+      ));
   }
 }
