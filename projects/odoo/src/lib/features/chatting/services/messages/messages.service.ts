@@ -47,7 +47,7 @@ export class AppMessagesService extends BydBaseOdooService {
 
     for (let file of files.filter(att => att.file)) {
       const base64 = file.file ? await getBase64FromFile(file.file) : null;
-      attachments.push({ name: file.localUrl, datas: base64, filetype: 'jpeg', res_model: "mail.message", });
+      attachments.push({ name: 'attachments by app', datas: base64, res_model: "mail.message", type: "binary", });
     }
 
     return this._odooService.create$<Message>('mail.message', { ...message, ...{ subtype_id: 2}})
