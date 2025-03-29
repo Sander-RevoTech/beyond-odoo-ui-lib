@@ -21,6 +21,9 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
   @Input()
   id!: number;
 
+  @Input()
+  model!: string;
+
   public input = new InputTextBox();
 
   public tempImages: FileStructure[] = [];
@@ -58,7 +61,7 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
       {
         body: this.input.value ?? '',
         res_id: this.id,
-        model: 'sale.order',
+        model: this.model,
         message_type: 'comment',
       },
       this.tempImages
@@ -78,7 +81,7 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
     this._messagesService
       .fetchMessage$({
         res_id: this.id,
-        model: 'sale.order',
+        model: this.model,
         message_type: 'comment',
       })
       .subscribe({

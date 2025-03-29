@@ -6,6 +6,7 @@ import * as i0 from "@angular/core";
 export declare class BydMessagesComponent extends BydBaseComponent implements OnInit {
     private _messagesService;
     id: number;
+    model: string;
     input: InputTextBox<string>;
     tempImages: FileStructure[];
     get disable(): boolean;
@@ -18,5 +19,5 @@ export declare class BydMessagesComponent extends BydBaseComponent implements On
     send(): Promise<void>;
     private _fetch;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydMessagesComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BydMessagesComponent, "byd-messages", never, { "id": { "alias": "id"; "required": false; }; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydMessagesComponent, "byd-messages", never, { "id": { "alias": "id"; "required": false; }; "model": { "alias": "model"; "required": false; }; }, {}, never, never, true, never>;
 }

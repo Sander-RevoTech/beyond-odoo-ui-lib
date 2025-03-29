@@ -6,12 +6,10 @@ import { ApolloModule } from 'apollo-angular';
 import { BearerInterceptor } from './interceptor/bearerInterceptor';
 import { GRAPHQL_SERVER_CONFIG, IGraphConfig } from './services/graphql/models/graphConfig';
 import { IServerConfig, SERVER_CONFIG_KEY } from './services/server/api/server.service';
-import { IStrapiConfig, STRAPI_SERVER_CONFIG } from './services/strapi/strapi.service';
 
 export const provideServer = (data: {
   graphQlConfig: IGraphConfig;
   httpConfig: IServerConfig;
-  strapiConfig: IStrapiConfig;
 }): Provider => [
   importProvidersFrom(ApolloModule),
   {
@@ -26,9 +24,5 @@ export const provideServer = (data: {
   {
     provide: SERVER_CONFIG_KEY,
     useValue: data.httpConfig,
-  },
-  {
-    provide: STRAPI_SERVER_CONFIG,
-    useValue: data.strapiConfig,
   },
 ];

@@ -8,7 +8,8 @@
   "dependencies": {
     "tslib": "^2.3.0",
     "compressorjs": "^1.2.1",
-    "@capacitor/camera": "^5.0.9"
+    "@capacitor/camera": "^5.0.9",
+    "@capacitor/core": "^5.0.4"
   },
   "sideEffects": false,
   "module": "fesm2022/beyond-utils.mjs",

@@ -46,17 +46,18 @@ export class AppMessagesService extends BydBaseOdooService {
     const attachments = [];
 
     for (let file of files.filter(att => att.file)) {
-      const base64 = file.file ? await getBase64FromFile(file.file) : null; //.replace('data:jpeg;base64,', '')
+      const base64 = file.file ? await getBase64FromFile(file.file) : null;
       attachments.push({ file: base64, filetype: 'jpeg' });
     }
 
-    return this._odooService
-      .action$<Message>('sale.order', 'log_message', [id],
-      //    {
-      //   ...message,
-      //   ...(attachments.length > 0 ? { attachments } : {}),
-      // }
-    )
-      .pipe(filter(data => !!data));
+    return this._odooService.create$<Message>('mail.message', message).pipe(filter(data => !!data));
+    // return this._odooService
+    //   .action$<Message>('sale.order', 'log_message', [id],
+    //   //    {
+    //   //   ...message,
+    //   //   ...(attachments.length > 0 ? { attachments } : {}),
+    //   // }
+    // )
+    //   .pipe(filter(data => !!data));
   }
 }

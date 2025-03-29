@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 
-import { BydNotificationService, ENotificationCode } from '@beyond/notification';
+import { BydNotificationService } from '@beyond/notification';
 import { BydPermissionsServices } from '@beyond/server';
-import { BehaviorSubject, Subject, map, tap } from 'rxjs';
+import { Subject, map, tap } from 'rxjs';
 
 import { ODOO_SERVER_CONFIG_KEY } from '../../injectionToken';
 
@@ -39,8 +39,6 @@ export class OdooJsonConnector {
     return this._connectWithCredentials$(user, password).pipe(
       tap(result => {
         this.permissionsServices.set(result.uid, password);
-
-        this.permissionsServices.setAuthenticated(true);
       }),
       map(result => result.uid)
     );
