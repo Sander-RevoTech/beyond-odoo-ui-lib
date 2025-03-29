@@ -1,3 +1,5 @@
+export * from './layout-container/layout-container.component';
+
 export * from './layout-content/layout-content.component';
 export * from './layout-title/layout-title.component';
 

@@ -12,5 +12,5 @@ export declare class BydLayoutWithPanelComponent extends BydBaseComponent implem
     ngOnChanges(changes: SimpleChanges): void;
     manageDrawer(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydLayoutWithPanelComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BydLayoutWithPanelComponent, "byd-layout-with-panel", never, { "open": { "alias": "open"; "required": false; }; "width": { "alias": "width"; "required": false; }; }, { "close": "close"; }, never, ["byd-layout-panel", "byd-layout-content"], true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydLayoutWithPanelComponent, "byd-layout-with-panel", never, { "open": { "alias": "open"; "required": false; }; "width": { "alias": "width"; "required": false; }; }, { "close": "close"; }, never, ["byd-layout-panel", "byd-layout-container"], true, never>;
 }
