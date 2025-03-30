@@ -5,7 +5,7 @@ export interface ITranslationConfig {
     default: string;
     supportedLanguages: string[];
 }
-export declare class CamTranslationService {
+export declare class BydTranslationService {
     private _config;
     translateService: TranslateService;
     private _registry;
@@ -14,6 +14,6 @@ export declare class CamTranslationService {
     getLanguage(): string;
     get(key: string | string[], interpolateParams?: Object): import("rxjs").Observable<any>;
     use(lang: string): import("rxjs").Observable<import("@ngx-translate/core").InterpolatableTranslationObject>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<CamTranslationService, [{ optional: true; }]>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<CamTranslationService>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydTranslationService, [{ optional: true; }]>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<BydTranslationService>;
 }

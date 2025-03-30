@@ -2,11 +2,11 @@ import { LOCALE_ID, Provider, inject, provideAppInitializer } from '@angular/cor
 
 import { TranslateLoader, provideTranslateService } from '@ngx-translate/core';
 
-import { CamTranslationLoader } from './services/translation.loader';
-import { CamTranslationService, TRANSLATION_CONFIG } from './services/translation.service';
+import { BydTranslationLoader } from './services/translation.loader';
+import { BydTranslationService, TRANSLATION_CONFIG } from './services/translation.service';
 
 export function HttpLoaderFactory() {
-  return new CamTranslationLoader();
+  return new BydTranslationLoader();
 }
 
 export const provideTranslation = (data: { default: string; supportedLanguages: string[] }): Provider => [
@@ -18,11 +18,11 @@ export const provideTranslation = (data: { default: string; supportedLanguages: 
   }),
   {
     provide: LOCALE_ID,
-    deps: [CamTranslationService],
-    useFactory: (TranslationService: CamTranslationService) => TranslationService.getLanguage(),
+    deps: [BydTranslationService],
+    useFactory: (TranslationService: BydTranslationService) => TranslationService.getLanguage(),
   },
   provideAppInitializer(() => {
-    const translationService = inject(CamTranslationService);
+    const translationService = inject(BydTranslationService);
     return translationService.init();
   }),
   {

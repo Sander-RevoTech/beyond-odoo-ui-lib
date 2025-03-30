@@ -2,7 +2,7 @@ import { Inject, Injectable, Optional, inject } from '@angular/core';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { CamTranslationRegistryService } from './translation-registry.service';
+import { BydTranslationRegistryService } from './translation-registry.service';
 
 export const TRANSLATION_CONFIG = 'config_translation';
 export interface ITranslationConfig {
@@ -13,9 +13,9 @@ export interface ITranslationConfig {
 @Injectable({
   providedIn: 'root',
 })
-export class CamTranslationService {
+export class BydTranslationService {
   public translateService = inject(TranslateService);
-  private _registry = inject(CamTranslationRegistryService);
+  private _registry = inject(BydTranslationRegistryService);
 
   constructor(
     @Optional()

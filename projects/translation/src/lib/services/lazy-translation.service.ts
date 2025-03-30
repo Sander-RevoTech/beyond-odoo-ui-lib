@@ -2,13 +2,13 @@ import { inject } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
-import { CamTranslationRegistryService, ITranslation } from './translation-registry.service';
+import { BydTranslationRegistryService, ITranslation } from './translation-registry.service';
 
-export abstract class CamLazyTranslationService implements ITranslation {
+export abstract class BydLazyTranslationService implements ITranslation {
   get id() {
     return this._id;
   }
-  private readonly _registry = inject(CamTranslationRegistryService);
+  private readonly _registry = inject(BydTranslationRegistryService);
 
   private _id = '';
   private _isApp = false;

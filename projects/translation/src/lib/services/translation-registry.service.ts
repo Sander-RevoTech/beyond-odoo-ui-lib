@@ -10,7 +10,7 @@ export interface ITranslation {
 @Injectable({
   providedIn: 'root',
 })
-export class CamTranslationRegistryService {
+export class BydTranslationRegistryService {
   registered: ITranslation[] = [];
   newRegistrationSubscription$ = new Subject();
 

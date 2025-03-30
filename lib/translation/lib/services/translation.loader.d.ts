@@ -1,6 +1,6 @@
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-export declare class CamTranslationLoader implements TranslateLoader {
+export declare class BydTranslationLoader implements TranslateLoader {
     private registry;
     constructor();
     getTranslation(lang: string): Observable<object>;
