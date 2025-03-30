@@ -121,8 +121,8 @@ $byd-theme: mat.define-theme(
 
 :root {
   @include mat.all-component-themes($byd-theme);
-  --mat-dialog-container-max-width: 90vw;
-  --mat-dialog-container-min-width: 90vh;
+  --mat-dialog-container-max-width: 90vw !important;
+  --mat-dialog-container-min-width: 90vh !important;
 }
 
 div {
