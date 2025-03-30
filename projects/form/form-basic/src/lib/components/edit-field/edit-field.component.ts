@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 import { BydFormComponent } from '../form.component';
 
-export type Layout = 'row' | 'column';
+export type Layout = 'grid' | 'column';
 
 @Component({
   selector: 'byd-edit-field',
@@ -19,7 +19,7 @@ export type Layout = 'row' | 'column';
 })
 export class EditFieldComponent extends BydBaseComponent implements OnInit, OnChanges {
   @Input()
-  layout: Layout = 'row';
+  layout: Layout = 'grid';
 
   @Input()
   getInput!: () => InputBase<any>;

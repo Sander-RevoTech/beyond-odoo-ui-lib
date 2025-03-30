@@ -3,7 +3,7 @@ import { InputBase } from '@beyond/form-model';
 import { BydBaseComponent } from '@beyond/utils';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
-export type Layout = 'row' | 'column';
+export type Layout = 'grid' | 'column';
 export declare class EditFieldComponent extends BydBaseComponent implements OnInit, OnChanges {
     layout: Layout;
     getInput: () => InputBase<any>;
