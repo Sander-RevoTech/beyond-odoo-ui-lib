@@ -3,6 +3,7 @@ import { Inject, Injectable, Optional, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { BydTranslationRegistryService } from './translation-registry.service';
+import { debounceTime, mergeMap } from 'rxjs';
 
 export const TRANSLATION_CONFIG = 'config_translation';
 export interface ITranslationConfig {
@@ -25,9 +26,25 @@ export class BydTranslationService {
       supportedLanguages: ['fr'],
     }
   ) {
-    this._registry.newRegistrationSubscription$.subscribe(() => {
-      // this._config.supportedLanguages.forEach(l => this.translateService.reloadLang(l));
-      this.translateService.reloadLang(this.translateService.currentLang);
+    this._registry.newRegistrationSubscription$.pipe(
+      debounceTime(500),
+      mergeMap(() => this.translateService.reloadLang(this.translateService.currentLang))
+    ).subscribe({
+      next: (data) => this.translateService.onTranslationChange.emit({ translations: data, lang: this.translateService.currentLang})
+    });
+
+    this.translateService.onLangChange.subscribe(({ lang }) => {
+      if (!sessionStorage.getItem('lang')) {
+        sessionStorage.setItem('lang', lang);
+        return;
+      }
+
+      if (lang === sessionStorage.getItem('lang')) {
+        return;
+      }
+
+      sessionStorage.setItem('lang', lang);
+      location.reload();
     });
   }
 
@@ -43,19 +60,7 @@ export class BydTranslationService {
     }
     this.translateService.use(lang);
 
-    this.translateService.onLangChange.subscribe(({ lang }) => {
-      if (!sessionStorage.getItem('lang')) {
-        sessionStorage.setItem('lang', lang);
-        return;
-      }
 
-      if (lang === sessionStorage.getItem('lang')) {
-        return;
-      }
-
-      sessionStorage.setItem('lang', lang);
-      location.reload();
-    });
   }
 
   public getLanguage(): string {
