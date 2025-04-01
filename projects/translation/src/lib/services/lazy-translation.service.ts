@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 
 import { BydTranslationRegistryService, ITranslation } from './translation-registry.service';
 
@@ -12,10 +12,12 @@ export abstract class BydLazyTranslationService implements ITranslation {
 
   private _id = '';
   private _isApp = false;
+  private _translations: { [key: string]: any } = {};
 
-  constructor(id: string, isApp = false) {
+  constructor(id: string, isApp = false, translation: { [key: string]: Object } = {}) {
     this._id = id;
     this._isApp = isApp;
+    this._translations = translation;
     this._registry.register(this);
   }
 
@@ -24,29 +26,22 @@ export abstract class BydLazyTranslationService implements ITranslation {
   }
 
   public getTranslation(lang: string): Observable<object | null> {
-    return of({});
-    // return this._strapiService.fetchQueryList$<Translation>(GET_TRANSLATIONS(lang, this._id), 'translations').pipe(
-    //   map(translations =>
-    //     translations.reduce<{ [index: string]: string }>((acc, translation) => {
-    //       acc[(this._isApp ? '' : this._id + '.') + translation.key] = translation.value;
-    //       return acc;
-    //     }, {})
-    //   ),
-    //   map(translations =>
-    //     Object.entries(translations).reduce((acc, [key, value]) => {
-    //       const keys = key.split('.');
-    //       keys.reduce<{ [index: string]: any }>((current, k, index) => {
-    //         if (index === keys.length - 1) {
-    //           current[k] = value;
-    //         } else {
-    //           current[k] = current[k] || {};
-    //         }
-    //         return current[k];
-    //       }, acc);
+    return of(this._translations[lang]).pipe(
+      map(translations =>
+        Object.entries(translations).reduce((acc, [key, value]) => {
+          const keys = key.split('.');
+          keys.reduce<{ [index: string]: any }>((current, k, index) => {
+            if (index === keys.length - 1) {
+              current[k] = value;
+            } else {
+              current[k] = current[k] || {};
+            }
+            return current[k];
+          }, acc);
 
-    //       return acc;
-    //     }, {})
-    //   )
-    // );
+          return acc;
+        }, {})
+      )
+    );
   }
 }

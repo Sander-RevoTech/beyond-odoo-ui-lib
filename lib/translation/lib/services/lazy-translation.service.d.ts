@@ -5,7 +5,10 @@ export declare abstract class BydLazyTranslationService implements ITranslation 
     private readonly _registry;
     private _id;
     private _isApp;
-    constructor(id: string, isApp?: boolean);
+    private _translations;
+    constructor(id: string, isApp?: boolean, translation?: {
+        [key: string]: Object;
+    });
     static getInstance(): BydLazyTranslationService;
     getTranslation(lang: string): Observable<object | null>;
 }
