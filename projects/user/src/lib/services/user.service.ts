@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 
 import { BydBaseOdooService } from '@beyond/odoo';
 import { BydPermissionsServices } from '@beyond/server';
-import { BehaviorSubject, filter, tap } from 'rxjs';
+import { BehaviorSubject, filter, mergeMap, of, tap } from 'rxjs';
 
 import { Profile } from './dto/profile';
 
@@ -15,16 +15,17 @@ export class BydUserService extends BydBaseOdooService {
 
   constructor() {
     super();
+    this.permissionsServices.updated$.pipe(
+      mergeMap(() => this.fetchProfile$())
+    ).subscribe()
   }
 
   public fetchProfile$() {
     if (!this.permissionsServices.uid) {
-      return null;
+      return of(null);
     }
     return this._odooService
-      .searchRead<Profile[], Profile>('res.users', [['id', '=', this.permissionsServices.uid]], {
-        fields: ['id', 'email', 'display_name'],
-      })
+      .searchRead$<Profile>('res.users', [['id', '=', this.permissionsServices.uid]], ['id', 'email', 'display_name'])
       .pipe(
         filter(data => !!data),
         tap(entities => {

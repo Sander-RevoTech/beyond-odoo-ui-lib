@@ -59,8 +59,6 @@ export class BydTranslationService {
       lang = this._config.default;
     }
     this.translateService.use(lang);
-
-
   }
 
   public getLanguage(): string {
