@@ -1,2 +1,3 @@
 import { Provider } from '@angular/core';
-export declare const provideOdoo: () => Provider;
+import { IOdooServerConfig } from './injectionToken';
+export declare const provideOdoo: (config: IOdooServerConfig) => Provider;
