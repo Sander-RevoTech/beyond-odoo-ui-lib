@@ -42,32 +42,32 @@ $components: () !default;
 /** Foundation **/
 $brand: map.merge(
   (
-    900: #235590,
-    800: #2b75b3,
-    700: #2f85c7,
-    600: #3498db,
-    500: #38a6ea,
-    400: #45b3ee,
-    300: #5dc0f0,
-    200: #87d2f6,
-    100: #b6e4fa,
-    50: #e2f5fd,
+    900: #0b2832,
+    800: #1c3c48,
+    700: #294f5c,
+    600: #366272,
+    500: #427182,
+    400: #5d8595,
+    300: #779ba9,
+    200: #9bb8c3,
+    100: #bed5de,
+    50: #dfeff7,
   ),
   $brand
 );
 
 $second: map.merge(
   (
-    900: #006e1e,
-    800: #008e32,
-    700: #009f3e,
-    600: #00b24b,
-    500: #00c255,
-    400: #2ecc70,
-    300: #62d68a,
-    200: #95e1ad,
-    100: #c0edcd,
-    50: #e5f8eb,
+    900: #e17b21,
+    800: #e8a12f,
+    700: #ebb837,
+    600: #eecf3f,
+    500: #efdf44,
+    400: #f1e45d,
+    300: #f4e979,
+    200: #f7ef9e,
+    100: #faf6c4,
+    50: #fdfce7,
   ),
   $second
 );
@@ -104,7 +104,7 @@ $icon: map.merge(
     secondary: map.get($neutral, 500),
     tertiary: map.get($neutral, 400),
     brand: (
-      primary: map.get($brand, 700),
+      primary: map.get($brand, 800),
       secondary: map.get($brand, 600),
     ),
     invert: (
@@ -124,7 +124,7 @@ $text: map.merge(
     secondary: map.get($neutral, 500),
     tertiary: map.get($neutral, 400),
     brand: (
-      primary: map.get($brand, 700),
+      primary: map.get($brand, 800),
       secondary: map.get($brand, 600),
     ),
     invert: (
@@ -147,12 +147,12 @@ $surface: map.merge(
     secondary: map.get($neutral, 200),
     tertiary: map.get($neutral, 100),
     brand: (
-      primary: map.get($brand, 700),
-      secondary: map.get($brand, 400),
-      tertiary: map.get($brand, 100),
+      primary: map.get($brand, 800),
+      secondary: map.get($brand, 500),
+      tertiary: map.get($brand, 200),
     ),
     hover: (
-      primary: map.get($brand, 800),
+      primary: map.get($brand, 900),
       secondary: map.get($brand, 300),
     ),
     invert: map.get($brand, 900),
