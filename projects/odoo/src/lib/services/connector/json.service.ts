@@ -112,6 +112,7 @@ export class OdooJsonConnector {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'target-url': this.server.odooUrl
       },
       body: JSON.stringify(params),
     }).then(response => {
