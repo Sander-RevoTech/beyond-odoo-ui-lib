@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule, ValidatorFn, Validators } from '@angu
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-import { TranslatePipe } from '@beyond/utils';
+import { TranslatePipe } from '@beyond/translation';
 
 @Component({
   selector: 'byd-form-label',

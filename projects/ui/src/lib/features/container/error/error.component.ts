@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
-import { TranslatePipe } from '@beyond/utils';
+import { TranslatePipe } from '@beyond/translation';
 
 import { PictureInfoMessageComponent } from '../../../components/picture-info-message/picture-info-message.component';
 

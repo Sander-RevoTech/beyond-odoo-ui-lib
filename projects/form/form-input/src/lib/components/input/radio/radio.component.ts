@@ -6,7 +6,8 @@ import { MatRadioModule } from '@angular/material/radio';
 
 import { InputRadio } from '@beyond/form-model';
 import { BydSizes } from '@beyond/styles';
-import { BydBaseComponent, TranslatePipe } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
+import { TranslatePipe } from '@beyond/translation';
 
 import { FormLabelComponent } from '../../label/label.component';
 

@@ -5,9 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { InputLabel } from '@beyond/form-model';
-import { TranslatePipe } from '@beyond/utils';
-
-import { FormLabelComponent } from '../../label/label.component';
+import { TranslatePipe } from '@beyond/translation';
 
 @Component({
   selector: 'byd-input-label',

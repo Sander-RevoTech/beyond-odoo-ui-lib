@@ -2,7 +2,8 @@ import { NgClass, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
-import { BydBaseComponent, TranslatePipe } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
+import { TranslatePipe } from '@beyond/translation';
 
 import { ENotificationCode } from '../../../enum';
 

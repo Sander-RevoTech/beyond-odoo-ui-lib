@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { InputNumber, InputTextBox } from '@beyond/form-model';
-import { TranslatePipe } from '@beyond/utils';
+import { TranslatePipe } from '@beyond/translation';
 
 import { FormLabelComponent } from '../../label/label.component';
 import { TextareaComponent } from '../textarea/textarea.component';

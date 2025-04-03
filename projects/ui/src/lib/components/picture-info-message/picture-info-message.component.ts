@@ -2,10 +2,11 @@ import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 import { BydSizes } from '@beyond/styles';
-import { MessageLevel, TranslatePipe } from '@beyond/utils';
+import { MessageLevel } from '@beyond/utils';
 
 // import { MaterialIconComponent } from "@beyond/icons";
 import { TypedMessageComponent } from '../typed-message/typed-message.component';
+import { TranslatePipe } from '@beyond/translation';
 
 @Component({
   selector: 'byd-picture-info-message',

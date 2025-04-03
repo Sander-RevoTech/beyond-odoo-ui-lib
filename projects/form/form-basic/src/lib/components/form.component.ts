@@ -5,7 +5,9 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IInputsError, InputBase } from '@beyond/form-model';
 import { NotificationInlineComponent } from '@beyond/notification';
 import { BydButtonComponent, LoaderComponent } from '@beyond/ui';
-import { BydBaseComponent, TranslatePipe } from '@beyond/utils';
+import { BydBaseComponent } from '@beyond/utils';
+import { TranslatePipe } from '@beyond/translation';
+
 import deepEqual from 'fast-deep-equal';
 import { Observable, distinctUntilChanged } from 'rxjs';
 
