@@ -76,7 +76,7 @@ export class InputBase<T> implements IInputBase<T> {
     this.message = options.message || '';
     this.controlType = options.controlType || '';
     this.validators = options.validators || [];
-    this.class = options.class || 'col';
+    this.class = options.class || 'g-col-12';
     this.children = [];
     this.disabled = options.disabled === true;
     this.readonly = options.readonly === true;

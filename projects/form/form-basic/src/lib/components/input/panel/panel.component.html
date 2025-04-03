@@ -9,7 +9,7 @@
         [ngClass]="input.class"
         [style.display]="(input.visible$ | async) ? 'block' : 'none'"
         *ngIf="input"
-        class="mb-space-sm"
+        class="mb-space-xs"
       >
         <ng-container
           [ngTemplateOutlet]="this.inputsTemplate"
