@@ -1,9 +1,9 @@
 import { Component, inject, Input, OnDestroy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { BydBaseComponent } from '@beyond/utils';
-import { BydScanPackingService } from '../../../services/scan/scan-packing.service';
+import { BydScanPackingService } from '../../services/scan-packing.service';
 import { BydNotificationService } from '@beyond/notification';
-import { SearchItem, SearchResult } from '../../../services/scan/dto/search';
+import { SearchItem, SearchResult } from '../../services/dto/search';
 import { CardComponent, CardHeaderComponent, CardTitleComponent, EmptyComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { TranslatePipe } from '@beyond/translation';

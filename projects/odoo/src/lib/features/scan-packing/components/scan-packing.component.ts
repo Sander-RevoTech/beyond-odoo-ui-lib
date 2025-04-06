@@ -2,14 +2,14 @@ import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { ScanPackingDialog } from './scan-packing-modal/scan-packing-modal.component';
-import { BydScanPackingService } from '../../services/scan/scan-packing.service';
+import { BydScanPackingService } from '../services/scan-packing.service';
 import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
-  selector: 'app-scan-packing',
+  selector: 'byd-scan-packing',
   template: '',
 })
-export class ScanPackingComponent extends BydBaseComponent {
+export class BydScanPackingComponent extends BydBaseComponent {
   private readonly _scanPacking = inject(BydScanPackingService);
   constructor(private _dialog: MatDialog) {
     super();

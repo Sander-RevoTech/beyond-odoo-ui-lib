@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { filter, Subject } from 'rxjs';
 
 import { SearchItem, SearchResult } from './dto/search';
-import { BydBaseOdooService } from '../baseService';
+import { BydBaseOdooService } from '../../../services/baseService';
 
 @Injectable({
   providedIn: 'root',
