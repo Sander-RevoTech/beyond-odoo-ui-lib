@@ -7,16 +7,20 @@ export interface Scope {
     key: string;
     navigation: (id: number) => void;
 }
+export interface ScanPackingDialogData {
+    scopes: Scope[];
+}
 export declare class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     dialogRef: MatDialogRef<ScanPackingDialog>;
-    scopes: Scope[];
+    data?: ScanPackingDialogData | undefined;
     private readonly _scanPackingService;
     private readonly _notificationService;
     step: 'scan' | 'search';
     activeScope: Scope | null;
     searchResult: SearchResult | null;
+    get scopes(): Scope[];
     get noData(): boolean;
-    constructor(dialogRef: MatDialogRef<ScanPackingDialog>);
+    constructor(dialogRef: MatDialogRef<ScanPackingDialog>, data?: ScanPackingDialogData | undefined);
     scanSuccess(result: string): void;
     permissionResponse(repsonse: boolean): void;
     getDataByScope(scope: Scope): SearchItem[];
@@ -27,5 +31,5 @@ export declare class ScanPackingDialog extends BydBaseComponent implements OnDes
     private _extractIdFormUrl;
     private _extractModelFormUrl;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScanPackingDialog, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ScanPackingDialog, "ng-component", never, { "scopes": { "alias": "scopes"; "required": false; }; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ScanPackingDialog, "ng-component", never, {}, {}, never, never, true, never>;
 }
