@@ -3,7 +3,6 @@ import { SearchItem, SearchResult } from './dto/search';
 import { BydBaseOdooService } from '../../../services/baseService';
 import * as i0 from "@angular/core";
 export declare class BydScanPackingService extends BydBaseOdooService {
-    private readonly _scanPackingService;
     askScanning: Subject<unknown>;
     searchScanItem: SearchItem | null;
     constructor();

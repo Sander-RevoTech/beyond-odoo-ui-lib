@@ -9,6 +9,8 @@
     "@beyond/notification": "0.0.0",
     "@beyond/server": "0.0.0",
     "@fernandoslim/odoo-jsonrpc": "2.0.2",
+    "@zxing/browser": "^0.1.5",
+    "@zxing/library": "^0.21.3",
     "@zxing/ngx-scanner": "^19.0.0",
     "angular-odoo-jsonrpc": "^2.0.9",
     "tslib": "^2.3.0"

@@ -9,7 +9,6 @@ import { BydBaseOdooService } from '../../../services/baseService';
   providedIn: 'root',
 })
 export class BydScanPackingService extends BydBaseOdooService {
-  private readonly _scanPackingService = inject(BydScanPackingService);
 
   public askScanning = new Subject();
 
