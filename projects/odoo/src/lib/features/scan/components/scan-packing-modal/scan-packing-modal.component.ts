@@ -1,5 +1,5 @@
-import { Component, inject, Input, OnDestroy } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, inject, Input, OnDestroy } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BydBaseComponent } from '@beyond/utils';
 import { BydScanPackingService } from '../../services/scan-packing.service';
 import { BydNotificationService } from '@beyond/notification';
@@ -9,10 +9,13 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { TranslatePipe } from '@beyond/translation';
 import { MatIcon } from '@angular/material/icon';
 
-
 export interface Scope {
   key: string;
   navigation: (id: number) => void;
+}
+
+export interface ScanPackingDialogData {
+  scopes: Scope[];
 }
 @Component({
   selector: '',
@@ -22,8 +25,7 @@ export interface Scope {
   imports: [LoaderComponent, EmptyComponent, ErrorComponent, ZXingScannerModule, CardComponent, CardHeaderComponent, CardTitleComponent, TranslatePipe, MatIcon],
 })
 export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
-  @Input()
-  scopes!: Scope[];
+
 
   private readonly _scanPackingService = inject(BydScanPackingService);
   private readonly _notificationService = inject(BydNotificationService);
@@ -34,6 +36,9 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
 
   public searchResult: SearchResult | null = null;
 
+  get scopes() {
+    return this.data?.scopes || [];
+  }
   get noData() {
     return (
       !this.searchResult ||
@@ -42,7 +47,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
         this.searchResult.work_orders.length === 0)
     );
   }
-  constructor(public dialogRef: MatDialogRef<ScanPackingDialog>) {
+  constructor(public dialogRef: MatDialogRef<ScanPackingDialog>,  @Inject(MAT_DIALOG_DATA) public data?: ScanPackingDialogData) {
     super();
   }
 
