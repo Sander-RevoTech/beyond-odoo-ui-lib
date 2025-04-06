@@ -1,0 +1,47 @@
+<div class="p-15">
+  @if (this.step === 'scan') {
+    <zxing-scanner
+      (scanSuccess)="this.scanSuccess($event)"
+      (permissionResponse)="this.permissionResponse($event)"
+    ></zxing-scanner>
+  } @else if (this.step === 'search') {
+    <byd-loader [isLoading]="this.requestState.isLoading()">
+      <byd-error [message]="this.requestState.getErrorMessage()" [code]="this.requestState.getErrorStatus()">
+        <byd-empty [isEmpty]="this.noData" [isLight]="false">
+          <div class="grid">
+            @for (scope of this.scopes; track scope) {
+              @if (this.getDataByScope(scope).length > 0) {
+                <div>
+                  <byd-card [highlight]="this.activeScope?.key === scope.key" (click)="this.setScope(scope)">
+                    <byd-card-header class="ta-c">
+                      <byd-card-title>
+                        {{ 'scan.' + scope + '.name' | translate }} ({{ this.getDataByScope(scope).length }})
+                      </byd-card-title>
+                    </byd-card-header>
+                  </byd-card>
+                </div>
+              }
+            }
+          </div>
+          @if (this.activeScope) {
+            <div>
+              @for (item of this.getDataByScope(this.activeScope); track item) {
+                <div
+                  class="d-flex justify-content-between m-10 bdB fs-5"
+                  (click)="this.navigateTo(this.activeScope, item)"
+                >
+                  <div>
+                    {{ item.name }}
+                  </div>
+                  <div>
+                    <mat-icon>chevron_right</mat-icon>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </byd-empty>
+      </byd-error>
+    </byd-loader>
+  }
+</div>
