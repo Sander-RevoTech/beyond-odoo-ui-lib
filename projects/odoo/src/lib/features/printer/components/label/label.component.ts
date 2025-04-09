@@ -7,6 +7,9 @@ import { PrintDirectWizard } from '../../services/dto/print_direct_wizard';
 import { BydPrinterService } from '../../services/printer.service';
 import { BydPrinterFormService } from '../../services/form.service';
 import { BydNotificationService, ENotificationCode } from '@beyond/notification';
+import { BydTitleComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
+import { BydFormComponent } from '@beyond/form-basic';
+import { MatIcon } from '@angular/material/icon';
 
 
 export interface LabelModalData {
@@ -17,6 +20,8 @@ export interface LabelModalData {
   selector: '',
   templateUrl: './label.component.html',
   styleUrls: ['./label.component.scss'],
+  standalone: true,
+  imports: [LoaderComponent, ErrorComponent, BydTitleComponent, BydFormComponent, MatIcon],
 })
 export class LabelModal extends BydBaseComponent {
   private readonly _notificationService = inject(BydNotificationService);

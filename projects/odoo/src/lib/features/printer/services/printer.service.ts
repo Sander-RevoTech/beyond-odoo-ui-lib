@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable, Subject, forkJoin, of } from 'rxjs';
 import { PrintDirectWizard } from './dto/print_direct_wizard';
 import { PrintDirectWizardLine, PrintDirectWizardLinePost } from './dto/print_direct_wizard_line';
 import { Printer } from './dto/printer';
-import { BydBaseOdooService } from '@beyond/odoo';
+import { BydBaseOdooService } from '../../../services/baseService';
 
 @Injectable({
   providedIn: 'root',

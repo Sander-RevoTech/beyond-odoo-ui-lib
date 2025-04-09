@@ -3,6 +3,7 @@
  */
 export * from './lib/features/chatting/public-api';
 export * from './lib/features/scan/public-api';
+export * from './lib/features/printer/public-api';
 
 
 export * from './lib/provider';
