@@ -4,10 +4,10 @@ import { Observable, of } from 'rxjs';
 
 import { IInputBase, InputBase } from './base';
 
-export interface IInputLabel extends IInputBase<null> {
+export interface IInputLabel extends IInputBase<unknown> {
   extraInfo?: Observable<string>;
 }
-export class InputLabel extends InputBase<null> implements IInputLabel {
+export class InputLabel extends InputBase<unknown> implements IInputLabel {
   extraInfo: Observable<string>;
   constructor(options: IInputLabel = {}) {
     super(options);

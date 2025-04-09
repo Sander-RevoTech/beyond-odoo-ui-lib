@@ -3,11 +3,11 @@
   <p>
     {{ this.data?.message }}
   </p>
-  <div class="row mB-10">
-    <byd-button class="col" (action)="this.copyContent()">
+  <div class="grid mB-space-10">
+    <byd-button (action)="this.copyContent()">
       {{ 'core.notification.error.copy' | translate }}
     </byd-button>
-    <byd-button class="col" (action)="this.close()">
+    <byd-button (action)="this.close()">
       {{ 'core.notification.error.close' | translate }}
     </byd-button>
   </div>

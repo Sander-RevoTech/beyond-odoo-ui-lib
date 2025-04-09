@@ -9,6 +9,8 @@
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
+    "@beyond/form-input": "0.0.0",
+    "@beyond/form-model": "0.0.0",
     "@beyond/notification": "0.0.0",
     "@beyond/server": "0.0.0",
     "@fernandoslim/odoo-jsonrpc": "2.0.2",
