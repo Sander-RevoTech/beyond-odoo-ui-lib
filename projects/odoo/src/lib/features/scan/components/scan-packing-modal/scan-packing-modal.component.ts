@@ -1,4 +1,4 @@
-import { Component, Inject, inject, Input, OnDestroy } from '@angular/core';
+import { Component, Inject, inject, Input, OnDestroy, signal } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BydBaseComponent } from '@beyond/utils';
 import { BydScanPackingService } from '../../services/scan-packing.service';
@@ -30,7 +30,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
   private readonly _scanPackingService = inject(BydScanPackingService);
   private readonly _notificationService = inject(BydNotificationService);
 
-  public step: 'scan' | 'search' = 'scan';
+  public step = signal<'scan' | 'search'>('scan');
 
   public activeScope: Scope | null = null;
 
@@ -71,7 +71,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
       return;
     }
 
-    this.step = 'search';
+    this.step.set('search');
     this._scanPackingService.lookForPacking(id).subscribe({
       next: searchResult => {
         this._processSearchResult(searchResult);

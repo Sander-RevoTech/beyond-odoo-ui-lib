@@ -15,7 +15,7 @@ export declare class ScanPackingDialog extends BydBaseComponent implements OnDes
     data?: ScanPackingDialogData | undefined;
     private readonly _scanPackingService;
     private readonly _notificationService;
-    step: 'scan' | 'search';
+    step: import("@angular/core").WritableSignal<"scan" | "search">;
     activeScope: Scope | null;
     searchResult: SearchResult | null;
     get scopes(): Scope[];
