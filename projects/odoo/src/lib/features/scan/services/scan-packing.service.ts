@@ -20,7 +20,7 @@ export class BydScanPackingService extends BydBaseOdooService {
 
   public lookForPacking(id: number) {
     return this._odooService
-        .action$<SearchResult>('sale.order', 'search_by_sale_order_id', [id])
+        .action$<SearchResult>('sale.order', 'search_by_sale_order_id', id)
         .pipe(filter(data => !!data));
 
   }

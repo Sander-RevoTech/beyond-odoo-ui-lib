@@ -87,7 +87,7 @@ export class BydPrinterService extends BydBaseOdooService {
         }
         return this._odooService
           .write$<PrintDirectWizardLine>('print.direct.wizard.line', line.id, line)
-          .pipe(switchMap(() => this._odooService.action$('print.direct.wizard.line', 'action_print', [line.id])));
+          .pipe(switchMap(() => this._odooService.action$('print.direct.wizard.line', 'action_print', line.id)));
       })
     );
   }

@@ -82,8 +82,8 @@ export class OdooJsonConnector {
     return this._call_kw$<boolean>(model, 'unlink', [[id]]);
   }
 
-  public action$<T>(model: string, action: string, context: Record<'id'| string, any>) {
-    return this._call_kw$<T>(model, action, [], context);
+  public action$<T>(model: string, action: string, id: number, context?: Record<string, any>) {
+    return this._call_kw$<T>(model, action, [[id]], context);
   }
 
   private _call_kw$<T>(model: string, method: string, args: any[], kwargs: Record<string, any> = {}) {

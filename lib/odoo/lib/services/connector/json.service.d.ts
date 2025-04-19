@@ -21,7 +21,7 @@ export declare class OdooJsonConnector {
     create$<T>(model: string, values: Record<string, any>): Subject<T>;
     write$<T>(model: string, id: number, values: Record<string, any>): Subject<T>;
     delete$(model: string, id: number): Subject<boolean>;
-    action$<T>(model: string, action: string, context: Record<'id' | string, any>): Subject<T>;
+    action$<T>(model: string, action: string, id: number, context?: Record<string, any>): Subject<T>;
     private _call_kw$;
     private _callWithUid;
     private _call$;
