@@ -4,7 +4,7 @@ import { BydBaseComponent } from '@beyond/utils';
 import { BydScanPackingService } from '../../services/scan-packing.service';
 import { BydNotificationService } from '@beyond/notification';
 import { SearchItem, SearchResult } from '../../services/dto/search';
-import { CardComponent, CardHeaderComponent, CardTitleComponent, EmptyComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
+import { CardComponent, CardCtaComponent, CardHeaderComponent, CardTitleComponent, EmptyComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { TranslatePipe } from '@beyond/translation';
 import { MatIcon } from '@angular/material/icon';
@@ -22,7 +22,7 @@ export interface ScanPackingDialogData {
   templateUrl: './scan-packing-modal.component.html',
   styleUrls: ['./scan-packing-modal.component.scss'],
   standalone: true,
-  imports: [LoaderComponent, EmptyComponent, ErrorComponent, ZXingScannerModule, CardComponent, CardHeaderComponent, CardTitleComponent, TranslatePipe, MatIcon],
+  imports: [LoaderComponent, EmptyComponent, ErrorComponent, ZXingScannerModule, CardComponent, CardHeaderComponent, CardTitleComponent, TranslatePipe, MatIcon, CardCtaComponent],
 })
 export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
 

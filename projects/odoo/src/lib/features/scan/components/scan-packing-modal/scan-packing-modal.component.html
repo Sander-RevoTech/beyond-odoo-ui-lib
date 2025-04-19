@@ -15,7 +15,7 @@
                   <byd-card [highlight]="this.activeScope?.key === scope.key" (click)="this.setScope(scope)">
                     <byd-card-header class="ta-c">
                       <byd-card-title>
-                        {{ 'scan.' + scope + '.name' | translate }} ({{ this.getDataByScope(scope).length }})
+                        {{ 'scan.' + scope.key + '.name' | translate }} ({{ this.getDataByScope(scope).length }})
                       </byd-card-title>
                     </byd-card-header>
                   </byd-card>
@@ -26,16 +26,17 @@
           @if (this.activeScope) {
             <div>
               @for (item of this.getDataByScope(this.activeScope); track item) {
-                <div
-                  class="d-flex justify-content-between m-10 bdB fs-5"
-                  (click)="this.navigateTo(this.activeScope, item)"
-                >
-                  <div>
-                    {{ item.name }}
-                  </div>
-                  <div>
-                    <mat-icon>chevron_right</mat-icon>
-                  </div>
+                <div class="flex-column justify-content-between m-space-md">
+                  <byd-card (click)="this.navigateTo(this.activeScope, item)">
+                    <byd-card-header class="ta-c">
+                      <byd-card-title>
+                        {{ item.name }}
+                      </byd-card-title>
+                    </byd-card-header>
+                    <byd-card-cta>
+                      <mat-icon>chevron_right</mat-icon>
+                    </byd-card-cta>
+                  </byd-card>
                 </div>
               }
             </div>
