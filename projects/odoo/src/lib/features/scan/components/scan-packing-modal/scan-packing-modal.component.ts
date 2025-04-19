@@ -112,6 +112,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     this._scanPackingService.setActiveScanItem(item);
 
     scope.navigation(item);
+    this.dialogRef.close();
   }
 
   private _processSearchResult(searchResult: { [index: string]: SearchItem[] }) {
