@@ -65,14 +65,14 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     }
 
     const model = this._extractModelFormUrl(result);
-    if (model?.toLocaleLowerCase() !== 'sale.order') {
+    if (!model) {
       this._notificationService.addErrorNotification('QR core is not valid (model)');
       this.dialogRef.close();
       return;
     }
 
     this.step.set('search');
-    this._scanPackingService.lookForPacking(id).subscribe({
+    this._scanPackingService.lookForPacking$(model, id).subscribe({
       next: searchResult => {
         this._processSearchResult(searchResult);
 

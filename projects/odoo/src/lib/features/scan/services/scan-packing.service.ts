@@ -18,9 +18,9 @@ export class BydScanPackingService extends BydBaseOdooService {
     super();
   }
 
-  public lookForPacking(id: number) {
+  public lookForPacking$(model: string, id: number) {
     return this._odooService
-        .action$<SearchResult>('sale.order', 'search_by_sale_order_id', id)
+        .action$<SearchResult>(model, 'search_by_id', id)
         .pipe(filter(data => !!data));
 
   }
