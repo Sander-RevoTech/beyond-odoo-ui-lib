@@ -40,12 +40,15 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     return this.data?.scopes || [];
   }
   get noData() {
-    return (
-      !this.searchResult ||
-      (this.searchResult.deliveries.length === 0 &&
-        this.searchResult.returns.length === 0 &&
-        this.searchResult.work_orders.length === 0)
-    );
+    if (!this.searchResult) {
+      return true;
+    }
+
+    // Récupérer tous les tableaux de résultats
+    const allResults = Object.values(this.searchResult);
+
+    // Vérifier s'ils sont tous vides
+    return allResults.every(items => items.length === 0);
   }
   constructor(public dialogRef: MatDialogRef<ScanPackingDialog>,  @Inject(MAT_DIALOG_DATA) public data?: ScanPackingDialogData) {
     super();
@@ -93,16 +96,10 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     }
   }
   public getDataByScope(scope: Scope) {
-    switch (scope.key) {
-      case 'workcenter':
-        return this.searchResult?.work_orders || [];
-      case 'delivery':
-        return this.searchResult?.deliveries || [];
-      case 'return':
-        return this.searchResult?.returns || [];
-      default:
-        return [];
+    if(!this.searchResult) {
+      return [];
     }
+    return this.searchResult[scope.key] || [];
   }
   public setScope(scope: Scope) {
     this.activeScope = scope;
@@ -122,23 +119,22 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     scope.navigation(item.type);
   }
 
-  private _processSearchResult(searchResult: SearchResult) {
+  private _processSearchResult(searchResult: { [index: string]: SearchItem[] }) {
     this.searchResult = searchResult;
 
-    if (searchResult.deliveries.length + searchResult.returns.length + searchResult.work_orders.length !== 1) {
+    const allEntries = Object.entries(searchResult);
+    const totalCount = allEntries.reduce((sum, [, items]) => sum + items.length, 0);
+
+    if (totalCount !== 1) {
       return;
     }
-    if (searchResult.deliveries.length > 0) {
-      this.navigateTo(this._getScopeByKey('delivery'), searchResult.deliveries[0]);
-      return;
-    }
-    if (searchResult.returns.length > 0) {
-      this.navigateTo(this._getScopeByKey('return'), searchResult.returns[0]);
-      return;
-    }
-    if (searchResult.work_orders.length > 0) {
-      this.navigateTo(this._getScopeByKey('workcenter'), searchResult.work_orders[0]);
-      return;
+
+    for (const [key, items] of allEntries) {
+      if (items.length > 0) {
+        const scope = this._getScopeByKey(key);
+        this.navigateTo(scope, items[0]);
+        return;
+      }
     }
   }
   private _getScopeByKey(key: string): Scope | null {

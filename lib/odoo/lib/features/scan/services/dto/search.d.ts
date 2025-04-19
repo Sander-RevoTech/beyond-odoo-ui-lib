@@ -7,7 +7,5 @@ export interface SearchItem {
     is_return?: boolean;
 }
 export interface SearchResult {
-    deliveries: SearchItem[];
-    returns: SearchItem[];
-    work_orders: SearchItem[];
+    [index: string]: SearchItem[];
 }
