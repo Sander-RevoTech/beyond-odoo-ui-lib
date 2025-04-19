@@ -11,7 +11,7 @@ import { MatIcon } from '@angular/material/icon';
 
 export interface Scope {
   key: string;
-  navigation: (id: number) => void;
+  navigation: (id: SearchItem) => void;
 }
 
 export interface ScanPackingDialogData {
@@ -111,7 +111,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     }
     this._scanPackingService.setActiveScanItem(item);
 
-    scope.navigation(item.type);
+    scope.navigation(item);
   }
 
   private _processSearchResult(searchResult: { [index: string]: SearchItem[] }) {

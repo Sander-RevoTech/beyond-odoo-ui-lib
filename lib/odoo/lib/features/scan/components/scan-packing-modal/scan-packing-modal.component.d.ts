@@ -5,7 +5,7 @@ import { SearchItem, SearchResult } from '../../services/dto/search';
 import * as i0 from "@angular/core";
 export interface Scope {
     key: string;
-    navigation: (id: number) => void;
+    navigation: (id: SearchItem) => void;
 }
 export interface ScanPackingDialogData {
     scopes: Scope[];
