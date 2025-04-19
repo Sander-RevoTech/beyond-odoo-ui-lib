@@ -43,12 +43,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     if (!this.searchResult) {
       return true;
     }
-
-    // Récupérer tous les tableaux de résultats
-    const allResults = Object.values(this.searchResult);
-
-    // Vérifier s'ils sont tous vides
-    return allResults.every(items => items.length === 0);
+    return Object.values(this.searchResult).every(items => items.length === 0);
   }
   constructor(public dialogRef: MatDialogRef<ScanPackingDialog>,  @Inject(MAT_DIALOG_DATA) public data?: ScanPackingDialogData) {
     super();
