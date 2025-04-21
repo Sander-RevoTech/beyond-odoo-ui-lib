@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { AppMessagesService } from '../../services/messages/messages.service';
 import { BydBaseComponent, FileStructure } from '@beyond/utils';
 import { InputTextBox } from '@beyond/form-model';
@@ -8,6 +8,7 @@ import { TextBoxComponent } from '@beyond/form-input';
 import { MatIcon } from '@angular/material/icon';
 import { BydUploadComponent } from '../upload/files-upload.component';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { ODOO_SERVER_CONFIG_KEY } from '../../../../injectionToken';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
   @Input()
   model!: string;
 
+  readonly server = inject(ODOO_SERVER_CONFIG_KEY);
   public input = new InputTextBox();
 
   public tempImages: FileStructure[] = [];
@@ -51,7 +53,7 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
   }
 
   public getPicUrl(id: number) {
-    return ""; // `${environment.server.odooUrl}/web/image/${id}`;
+    return `${this.server.odooUrl}/web/image/${id}`;
   }
 
   public async send() {

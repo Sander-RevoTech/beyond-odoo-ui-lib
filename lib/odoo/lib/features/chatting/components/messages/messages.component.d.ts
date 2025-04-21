@@ -7,6 +7,7 @@ export declare class BydMessagesComponent extends BydBaseComponent implements On
     private _messagesService;
     id: number;
     model: string;
+    readonly server: import("@beyond/odoo").IOdooServerConfig;
     input: InputTextBox<string>;
     tempImages: FileStructure[];
     get disable(): boolean;
