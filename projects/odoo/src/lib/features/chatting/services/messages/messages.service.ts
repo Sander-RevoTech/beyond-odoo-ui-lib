@@ -50,19 +50,13 @@ export class AppMessagesService extends BydBaseOdooService {
         continue;
       }
       const base64 = (await getBase64FromFile(file.file)).split(',')[1];
-      attachments.push({ name: 'attachments-by-app-'+id, datas: base64, res_model: "mail.message" });
+      attachments.push({ name: 'attachments-by-app-'+id, datas: base64, res_model:message.model });
     }
 
-    return this._odooService.create$<number>('mail.message', { ...message, ...{ subtype_id: 2}})
-    .pipe(
-      filter(id => !!id),
-      mergeMap(id => {
-        if(attachments.length === 0) {
-          return of(id);
-        }
-        return forkJoin([...attachments.map(attachment =>
-          this._odooService.create$<unknown>('ir.attachment', { ...attachment, ...{ res_id: id } })
-        )])
-      }));
+    return (attachments.length > 0 ? forkJoin([...attachments.map(attachment =>
+      this._odooService.create$<number>('ir.attachment', { ...attachment, ...{ res_id: id } })
+    )]) : of([])).pipe(mergeMap((ids: number[]) => {
+    return this._odooService.create$<number>('mail.message', { ...message, ...{ subtype_id: 2, attachment_ids: ids } });
+    }));
   }
 }
