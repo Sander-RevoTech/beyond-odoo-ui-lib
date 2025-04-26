@@ -1,4 +1,4 @@
-<mat-form-field class="textbox-container" [floatLabel]="'auto'">
+<div class="textbox-container">
   <input
     #box
     matInput
@@ -7,7 +7,7 @@
     [type]="'text'"
     (keyup)="this.searchValuechanged(this.searchValue)"
   />
-</mat-form-field>
+</div>
 <div>
   <byd-card *ngFor="let item of this.options | async" (click)="this.choice(item)">
     <byd-card-content>

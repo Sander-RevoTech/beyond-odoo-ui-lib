@@ -1,6 +1,6 @@
 import { AsyncPipe, NgFor } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { InputChoices, InputChoicesOption } from '@beyond/form-model';
