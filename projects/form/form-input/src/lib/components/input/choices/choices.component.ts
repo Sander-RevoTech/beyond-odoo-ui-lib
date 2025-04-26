@@ -49,6 +49,7 @@ export class InputChoicesComponent extends BydAbstractComponent {
         .subscribe(data => {
           if (data) {
             this.input.value = data.id;
+            this.option = data;
           }
         })
     );

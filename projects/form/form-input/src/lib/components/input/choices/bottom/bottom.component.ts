@@ -27,6 +27,7 @@ export class ChoicesBottomSheetComponent {
   public searchValue: string = '';
 
   readonly options = new Subject<InputChoicesOption[]>();
+
   constructor(
     private _bottomSheetRef: MatBottomSheetRef<ChoicesBottomSheetComponent, ChoicesBottomSheetComponentResult>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: ChoicesBottomSheetComponentData

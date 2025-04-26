@@ -8,7 +8,7 @@
     (keyup)="this.searchValuechanged(this.searchValue)"
   />
 </div>
-<div>
+<div class="flex-column g-space-sm">
   <byd-card *ngFor="let item of this.options | async" (click)="this.choice(item)">
     <byd-card-content>
       {{ item.name }}
