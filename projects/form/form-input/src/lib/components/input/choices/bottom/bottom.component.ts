@@ -1,3 +1,4 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
@@ -20,7 +21,7 @@ export interface ChoicesBottomSheetComponentResult {
   templateUrl: './bottom.component.html',
   styleUrls: ['./bottom.component.scss'],
   standalone: true,
-  imports: [MatFormFieldModule, FormsModule, CardComponent, CardContentComponent],
+  imports: [MatFormFieldModule, FormsModule, CardComponent, CardContentComponent, AsyncPipe],
 })
 export class ChoicesBottomSheetComponent {
   public searchValue: string = '';
