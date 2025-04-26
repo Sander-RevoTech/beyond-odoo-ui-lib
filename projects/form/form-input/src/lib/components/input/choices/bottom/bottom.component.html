@@ -1,12 +1,5 @@
 <div class="textbox-container">
-  <input
-    #box
-    matInput
-    class="form-control"
-    [(ngModel)]="this.searchValue"
-    [type]="'text'"
-    (keyup)="this.searchValuechanged(this.searchValue)"
-  />
+  <input #box matInput class="form-control" [type]="'text'" (keyup)="this.searchValuechanged(box.value)" />
 </div>
 <div class="flex-column g-space-sm">
   <byd-card *ngFor="let item of this.options | async" (click)="this.choice(item)">
