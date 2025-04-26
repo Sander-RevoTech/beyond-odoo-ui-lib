@@ -1,0 +1,45 @@
+<ng-container *ngIf="this.input.label">
+  <mat-label>{{ this.input.label | translate }}</mat-label>
+</ng-container>
+<div class="input-group" (click)="this.openBottomSheet()">
+  <mat-form-field class="textbox-container" [floatLabel]="'auto'">
+    <input
+      #box
+      matInput
+      class="form-control"
+      [value]="this.input.value"
+      [errorStateMatcher]="this.matcher"
+      readonly
+      [type]="'text'"
+    />
+
+    <mat-hint>
+      <small class="form-text text-muted">
+        <div *ngFor="let validator of this.input.validators">
+          <span *ngIf="validator === validators.required"> {{ 'form.input.required' | translate }} </span>
+        </div>
+        <div *ngIf="this.input.message" class="message">
+          <span> {{ this.input.message }} </span>
+        </div>
+      </small>
+    </mat-hint>
+    <mat-error *ngIf="this.input.formControl?.hasError('message')">
+      <small class="form-text text-danger">
+        {{ this.input.formControl?.getError('message') }}
+      </small>
+    </mat-error>
+    <mat-error *ngIf="this.input.formControl?.hasError('minlength')">
+      <small class="form-text text-danger">
+        {{ 'core.form.text-box.minimum-length' | translate }}
+      </small>
+    </mat-error>
+    <mat-error *ngIf="this.input.formControl?.hasError('type')">
+      <small class="form-text text-danger">{{ 'core.form.text-box.error-occured' | translate }}</small>
+    </mat-error>
+    <mat-error *ngIf="this.input.formControl?.hasError('required')">
+      <small class="form-text text-danger">
+        {{ 'core.form.text-box.is-mandatory' | translate }}
+      </small>
+    </mat-error>
+  </mat-form-field>
+</div>

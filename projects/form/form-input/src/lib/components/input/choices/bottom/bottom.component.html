@@ -1,0 +1,17 @@
+<mat-form-field class="textbox-container" [floatLabel]="'auto'">
+  <input
+    #box
+    matInput
+    class="form-control"
+    [(ngModel)]="this.searchValue"
+    [type]="'text'"
+    (keyup)="this.searchValuechanged(this.searchValue)"
+  />
+</mat-form-field>
+<div>
+  <byd-card *ngFor="let item of this.options | async" (click)="this.choice(item)">
+    <byd-card-content>
+      {{ item.name }}
+    </byd-card-content>
+  </byd-card>
+</div>
