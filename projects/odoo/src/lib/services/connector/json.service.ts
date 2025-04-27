@@ -98,7 +98,7 @@ export class OdooJsonConnector {
       params: {
         service: 'object',
         method: 'execute_kw',
-        args: [this.db, this.uid, this.pass, model, method, args, {...kwargs, ...{"company_id": 1}}],
+        args: [this.db, this.uid, this.pass, model, method, args, {...kwargs, ...{"allowed_company_ids": 1}}],
       },
       id: new Date().getTime(),
     };
