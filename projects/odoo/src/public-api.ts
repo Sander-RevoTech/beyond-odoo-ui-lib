@@ -15,3 +15,6 @@ export * from './lib/services/baseService';
 
 export * from './lib/types/types';
 export * from './lib/services/auth.service';
+
+export * from './lib/services/employee/employee.service';
+
