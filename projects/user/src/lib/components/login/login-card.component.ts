@@ -19,9 +19,9 @@ export class LoginCardComponent extends BydBaseComponent {
   private readonly _authService = inject(BydAuthOdooService);
   private readonly _notificationService = inject(BydNotificationService);
   private readonly _formService = inject(AppUserFormService);
-  private readonly _odooService = inject(BydBaseOdooService);
 
   public readonly form = signal(this._formService.getLoginForm());
+
   constructor() {
     super();
   }
@@ -39,7 +39,6 @@ export class LoginCardComponent extends BydBaseComponent {
         } else {
           this._errorMessage('notification.success');
         }
-        this._odooService._odooService.searchRead$('res.partner', []);
       },
       error: (message: string) => {
         this.requestState.completed();

@@ -4,7 +4,6 @@ export declare class LoginCardComponent extends BydBaseComponent {
     private readonly _authService;
     private readonly _notificationService;
     private readonly _formService;
-    private readonly _odooService;
     readonly form: import("@angular/core").WritableSignal<import("@beyond/form-model").InputBase<any>[]>;
     constructor();
     login(data: any): void;
