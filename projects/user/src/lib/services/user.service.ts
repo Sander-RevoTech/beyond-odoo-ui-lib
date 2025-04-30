@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 
 import { BydBaseOdooService } from '@beyond/odoo';
 import { BydPermissionsServices, HandleSimpleRequest } from '@beyond/server';
-import { filter, map, mergeMap, of } from 'rxjs';
+import { filter, map, mergeMap, of, tap } from 'rxjs';
 
 import { Profile } from './dto/profile';
 import { isNonNullable } from '@beyond/utils';
@@ -31,6 +31,9 @@ export class BydUserService extends BydBaseOdooService {
       .pipe(
         filter(isNonNullable),
         map((result) => result[0]),
-      ));
+        tap((profile) => {
+          this.permissionsServices.setRole(profile.share ? 'shared' : 'interne');
+        }
+      )));
   }
 }

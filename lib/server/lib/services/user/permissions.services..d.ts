@@ -17,7 +17,7 @@ export declare class BydPermissionsServices {
     get received(): boolean;
     constructor();
     set(uid: number | null, pass: string): void;
-    setRoles(role: Role): void;
+    setRole(role: Role): void;
     reset(): void;
     hasRole(role: Role): boolean;
     canDirectAccess(feature: string, level: BydPermissionLevel): boolean;

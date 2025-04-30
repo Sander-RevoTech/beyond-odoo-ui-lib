@@ -56,7 +56,7 @@ export class BydPermissionsServices {
     this._updated$.next(Date.now());
   }
 
-  public setRoles(role: Role) {
+  public setRole(role: Role) {
     this.roles = [role];
 
     if(role === 'admin') {
