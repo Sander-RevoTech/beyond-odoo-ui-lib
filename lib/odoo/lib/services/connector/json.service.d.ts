@@ -9,7 +9,7 @@ export declare class OdooJsonConnector {
     readonly notificationService: BydNotificationService;
     readonly permissionsServices: BydPermissionsServices;
     readonly server: import("@beyond/odoo").IOdooServerConfig;
-    get uid(): number | null;
+    get uid(): number | "%%COMMON_ID%%" | null;
     get pass(): string | null;
     get url(): string;
     get db(): string;

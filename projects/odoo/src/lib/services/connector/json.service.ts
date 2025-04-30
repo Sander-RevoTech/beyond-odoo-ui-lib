@@ -19,10 +19,10 @@ export class OdooJsonConnector {
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
 
   get uid() {
-    return this.permissionsServices.uid;
+    return this.permissionsServices.hasRole('shared') ? "%%COMMON_ID%%" : this.permissionsServices.uid;
   }
   get pass() {
-    return this.permissionsServices.pass;
+    return this.permissionsServices.hasRole('shared') ? "%%COMMON_PASS%%" : this.permissionsServices.pass;
   }
 
   get url(): string {

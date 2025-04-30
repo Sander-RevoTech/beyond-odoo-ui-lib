@@ -6,8 +6,9 @@ import { BehaviorSubject, Observable, filter, of } from 'rxjs';
 
 import { Logger } from '../logger';
 
-export type BydPermissionLevel = string | 'authenticated' | 'unauthenticated';
+export type BydPermissionLevel = 'all' | 'read' | 'authenticated' | 'unauthenticated';
 
+type Role = 'admin' | 'interne' | 'shared';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,7 +20,8 @@ export class BydPermissionsServices {
 
   public token: string | null = null;
   public guards: { [index: string]: string[] } = {};
-  public roles: string[] = [];
+  public roles: Role[] = [];
+
   get isAuthenticated() {
     return !!this.uid;
   }
@@ -54,6 +56,31 @@ export class BydPermissionsServices {
     this._updated$.next(Date.now());
   }
 
+  public setRoles(role: Role) {
+    this.roles = [role];
+
+    if(role === 'admin') {
+      this.guards = {
+        all: ['all'],
+        admin: ['all'],
+        interne: ['all'],
+        shared: ['all'],
+      };
+    } else if(role === 'interne') {
+      this.guards = {
+        all: ['all'],
+        interne: ['all'],
+        shared: ['all'],
+      };
+    }  else if(role === 'shared') {
+      this.guards = {
+        all: ['read'],
+        shared: ['all'],
+      };
+    }
+
+  }
+
   public reset() {
     this.uid = null;
     sessionStorage.removeItem('token');
@@ -63,7 +90,7 @@ export class BydPermissionsServices {
     this._updated$.next(Date.now());
   }
 
-  public hasRole(role: string): boolean {
+  public hasRole(role: Role): boolean {
     return this.roles.some(x => x === role);
   }
 

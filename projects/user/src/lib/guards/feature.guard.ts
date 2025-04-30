@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 import { BydRoutes } from '@beyond/menu';
-import { BydPermissionsServices } from '@beyond/server';
+import { BydPermissionLevel, BydPermissionsServices } from '@beyond/server';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -32,7 +32,7 @@ export class FeatureGuard {
     this.router.navigateByUrl(BydRoutes.getHome());
   }
 
-  private _isValidPermission(feature: string, level: string) {
+  private _isValidPermission(feature: string, level: BydPermissionLevel) {
     if (this._permissionsServices.canDirectAccess(feature, level)) {
       return true;
     }
