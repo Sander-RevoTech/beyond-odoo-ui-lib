@@ -29,7 +29,7 @@ export class AppUserFormService {
             key: 'email',
             label: 'Email',
             validators: [Validators.required],
-            visible$: asAdmin.changeValue$
+            visible$: asAdmin.changeValue$.pipe(map(value => !value)),
           }),
           new InputPassword({
             key: 'password',
