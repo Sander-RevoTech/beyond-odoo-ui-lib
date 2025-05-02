@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Validators } from '@angular/forms';
 
 import { InputBase, InputCheckBox, InputEmail, InputPanel, InputPassword, InputSwitch } from '@beyond/form-model';
-import { map } from 'rxjs';
+import { map, startWith } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +29,7 @@ export class AppUserFormService {
             key: 'email',
             label: 'Email',
             validators: [Validators.required],
-            visible$: asAdmin.changeValue$.pipe(map(value => !value)),
+            visible$: asAdmin.changeValue$.pipe(startWith(true), map(value => !value)),
           }),
           new InputPassword({
             key: 'password',
