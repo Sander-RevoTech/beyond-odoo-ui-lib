@@ -4,8 +4,6 @@ import { BydPermissionsServices } from '@beyond/server';
 
 import { BydBaseOdooService } from './baseService';
 
-interface UserProfile {}
-
 @Injectable({
   providedIn: 'root',
 })

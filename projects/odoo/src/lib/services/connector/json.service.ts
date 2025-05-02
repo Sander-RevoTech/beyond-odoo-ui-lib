@@ -37,8 +37,12 @@ export class OdooJsonConnector {
   public login$(user: string | null, password: string) {
     console.info('Getting UID');
     if(!user) {
-      this.permissionsServices.set(2, password);
-      return of(2);
+      return this.searchRead$('res.users', [['id', '=', 2]], ['id']).pipe(
+        tap(() => {
+          this.permissionsServices.set(2, password);
+        }),
+        map(() => 2)
+      );
     }
     return this._connectWithCredentials$(user, password).pipe(
       tap(result => {
