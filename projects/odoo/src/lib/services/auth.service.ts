@@ -15,7 +15,7 @@ export class BydAuthOdooService extends BydBaseOdooService {
     super();
   }
 
-  public login$(data: { identifier: string; password: string }) {
+  public login$(data: { identifier: string | null; password: string }) {
     return this._odooService.login$(data.identifier, data.password);
   }
 

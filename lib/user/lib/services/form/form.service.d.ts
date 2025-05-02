@@ -4,7 +4,7 @@ export declare class AppUserFormService {
     constructor();
     getLoginForm(): InputBase<any>[];
     formatLoginForm(data: any): {
-        user: string;
+        user: string | null;
         pass: string;
     };
     static ɵfac: i0.ɵɵFactoryDeclaration<AppUserFormService, never>;

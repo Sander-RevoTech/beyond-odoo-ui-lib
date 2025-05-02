@@ -5,7 +5,7 @@ export declare class BydAuthOdooService extends BydBaseOdooService {
     readonly permissionsServices: BydPermissionsServices;
     constructor();
     login$(data: {
-        identifier: string;
+        identifier: string | null;
         password: string;
     }): import("rxjs").Observable<number>;
     logout(): void;
