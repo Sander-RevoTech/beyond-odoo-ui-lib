@@ -7,7 +7,7 @@ export declare class BydAuthOdooService extends BydBaseOdooService {
     login$(data: {
         identifier: string | null;
         password: string;
-    }): import("rxjs").Observable<number>;
+    }): import("rxjs").Observable<any>;
     logout(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydAuthOdooService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<BydAuthOdooService>;

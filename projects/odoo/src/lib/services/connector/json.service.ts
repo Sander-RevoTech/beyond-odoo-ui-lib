@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 
 import { BydNotificationService } from '@beyond/notification';
 import { BydPermissionsServices } from '@beyond/server';
-import { Subject, map, of, tap } from 'rxjs';
+import { Subject, catchError, map, of, tap } from 'rxjs';
 
 import { ODOO_SERVER_CONFIG_KEY } from '../../injectionToken';
 
@@ -37,11 +37,10 @@ export class OdooJsonConnector {
   public login$(user: string | null, password: string) {
     console.info('Getting UID');
     if(!user) {
-      return this.searchRead$('res.users', [['id', '=', 2]], ['id']).pipe(
-        tap(() => {
-          this.permissionsServices.set(2, password);
-        }),
-        map(() => 2)
+      this.permissionsServices.set(2, password);
+      return this.searchCount$('res.users', [['id', '=', 2]]).pipe(
+        map(() => 2),
+        catchError(err => {this.permissionsServices.reset(); return of(err.message);}),
       );
     }
     return this._connectWithCredentials$(user, password).pipe(
