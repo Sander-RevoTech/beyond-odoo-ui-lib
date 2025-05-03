@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { AppMessagesService } from '../../services/messages/messages.service';
 import { BydBaseComponent, FileStructure } from '@beyond/utils';
 import { InputTextBox } from '@beyond/form-model';
@@ -27,11 +27,11 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
 
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
   public input = new InputTextBox();
+  public images = signal<FileStructure[]>([]);
 
-  public tempImages: FileStructure[] = [];
 
   get disable() {
-    return !this.input.value && this.tempImages.length === 0;
+    return !this.input.value && this.images().length === 0;
   }
   get data$() {
     return this._messagesService.getMessages$(this.id);
@@ -43,13 +43,6 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
 
   ngOnInit() {
     this._fetch();
-  }
-
-  public uploadImage(images: FileStructure[]) {
-    this.tempImages = [...this.tempImages, ...images];
-  }
-  public remove(pic: FileStructure) {
-    this.tempImages = this.tempImages.filter(item => item.localUrl !== pic.localUrl);
   }
 
   public getPicUrl(id: number) {
@@ -66,13 +59,13 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
         model: this.model,
         message_type: 'comment',
       },
-      this.tempImages
+      this.images()
     );
 
     subject$?.subscribe(() => {
       this._fetch();
 
-      this.tempImages = [];
+      this.images.set([]);
       this.input.value = '';
     });
   }

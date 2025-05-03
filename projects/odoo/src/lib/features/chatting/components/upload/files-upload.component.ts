@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, computed, EventEmitter, Input, Output, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { TranslatePipe } from '@beyond/translation';
 import { BydButtonComponent } from '@beyond/ui';
@@ -29,6 +29,8 @@ export class BydUploadComponent {
   @Output()
   filesPicked = new EventEmitter<FileStructure[]>();
 
+  public tempImages = signal<FileStructure[]>([]);
+
   get addActions(): ActionButtonData[] {
     const actionsAvailable: ActionButtonData[] = [];
 
@@ -57,6 +59,17 @@ export class BydUploadComponent {
     // }
 
     return actionsAvailable;
+  }
+
+  constructor() {
+    computed(() => this.filesPicked.emit(this.tempImages()));
+  }
+
+  public uploadImage(images: FileStructure[]) {
+    this.tempImages.set([...this.tempImages(), ...images]);
+  }
+  public remove(pic: FileStructure) {
+    this.tempImages.set(this.tempImages().filter(item => item.localUrl !== pic.localUrl));
   }
 
   private _haveFeature(feature: Feature) {

@@ -5,16 +5,8 @@
         <byd-input-textbox [input]="this.input"></byd-input-textbox>
       </div>
 
-      <div class="grid align-items-center mb-space-xs">
-        <div *ngFor="let pic of this.tempImages" class="temp-pic-container g-col-3">
-          <img [src]="pic.localUrl" width="100%" />
-          <div class="remove-cta" (click)="this.remove(pic)">
-            <mat-icon>close</mat-icon>
-          </div>
-        </div>
-        <div>
-          <byd-files-upload (filesPicked)="this.uploadImage($event)" [features]="['take-pic']"></byd-files-upload>
-        </div>
+      <div>
+        <byd-files-upload (filesPicked)="this.images.set($event)" [features]="['take-pic']"></byd-files-upload>
       </div>
 
       <byd-button (action)="this.send()" [state]="this.disable ? 'disabled' : 'classic'">
