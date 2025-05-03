@@ -1,19 +1,38 @@
 import { Injectable } from '@angular/core';
 
-import { forkJoin, of } from 'rxjs';
+import { filter, forkJoin, of } from 'rxjs';
 
 import { BydBaseOdooService } from '../../../../services/baseService';
 import { FileStructure, getBase64FromFile } from '@beyond/utils';
+import { HandleComplexRequest } from '@beyond/server';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BydAttachementsService extends BydBaseOdooService {
 
+  public readonly attachments = new HandleComplexRequest<FileStructure[]>();
+
   constructor() {
     super();
   }
 
+  public key(id: number, model: string) {
+    return `${id}-${model}`;
+  }
+
+  public fetch$(id: number, model: string) {
+    return this.attachments.fetch(
+      this.key(id, model),
+      this._odooService.searchRead$<FileStructure>('ir.attachment', [
+        ['res_id', '=', id],
+        ['res_model', 'like', model]
+      ])
+      .pipe(
+          filter(data => !!data)
+      )
+    );
+  }
   public async post$(id: number, model: string, files: FileStructure[]) {
     const attachments: any[] = [];
 
