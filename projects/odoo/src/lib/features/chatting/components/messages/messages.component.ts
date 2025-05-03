@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
-import { AppMessagesService } from '../../services/messages/messages.service';
+import { BydMessagesService } from '../../services/messages/messages.service';
 import { BydBaseComponent, FileStructure } from '@beyond/utils';
 import { InputTextBox } from '@beyond/form-model';
 import { BydButtonComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
@@ -26,6 +26,7 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
   model!: string;
 
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
+  private readonly _messagesService = inject(BydMessagesService);
   public input = new InputTextBox();
   public images = signal<FileStructure[]>([]);
 
@@ -36,7 +37,7 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
   get data$() {
     return this._messagesService.getMessages$(this.id);
   }
-  constructor(private _messagesService: AppMessagesService) {
+  constructor() {
     super();
     this.input.createFormControl();
   }

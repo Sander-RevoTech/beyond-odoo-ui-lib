@@ -3,7 +3,7 @@ import { Message } from './dto/message';
 import { BydBaseOdooService } from '../../../../services/baseService';
 import { FileStructure } from '@beyond/utils';
 import * as i0 from "@angular/core";
-export declare class AppMessagesService extends BydBaseOdooService {
+export declare class BydMessagesService extends BydBaseOdooService {
     messages$: BehaviorSubject<{
         [id: number]: Message[];
     }>;
@@ -15,6 +15,6 @@ export declare class AppMessagesService extends BydBaseOdooService {
         message_type: string;
     }): import("rxjs").Observable<Message[]>;
     postMessage$(id: number, message: Message, files: FileStructure[]): Promise<import("rxjs").Observable<number>>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<AppMessagesService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<AppMessagesService>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<BydMessagesService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<BydMessagesService>;
 }

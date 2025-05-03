@@ -10,7 +10,7 @@ import { FileStructure, getBase64FromFile } from '@beyond/utils';
 @Injectable({
   providedIn: 'root',
 })
-export class AppMessagesService extends BydBaseOdooService {
+export class BydMessagesService extends BydBaseOdooService {
   public messages$ = new BehaviorSubject<{ [id: number]: Message[] }>({});
 
   constructor() {
