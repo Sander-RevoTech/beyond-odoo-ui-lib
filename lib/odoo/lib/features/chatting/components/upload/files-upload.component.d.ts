@@ -14,7 +14,7 @@ export declare class BydUploadComponent {
     tempImages: import("@angular/core").WritableSignal<FileStructure[]>;
     get addActions(): ActionButtonData[];
     constructor();
-    uploadImage(images: FileStructure[]): void;
+    addImage(images: FileStructure[]): void;
     remove(pic: FileStructure): void;
     private _haveFeature;
     private _takePic;

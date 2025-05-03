@@ -65,7 +65,7 @@ export class BydUploadComponent {
     computed(() => this.filesPicked.emit(this.tempImages()));
   }
 
-  public uploadImage(images: FileStructure[]) {
+  public addImage(images: FileStructure[]) {
     this.tempImages.set([...this.tempImages(), ...images]);
   }
   public remove(pic: FileStructure) {
@@ -81,12 +81,12 @@ export class BydUploadComponent {
     if (!file) {
       return;
     }
-    this.filesPicked.emit([file]);
+    this.addImage([file]);
   }
 
   private async _uploadPic() {
     const pics = await picImages();
-    this.filesPicked.emit(pics);
+    this.addImage(pics);
   }
 
   // private async _uploadFile() {
