@@ -1,4 +1,4 @@
-import { Component, computed, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, computed, effect, EventEmitter, Input, Output, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { TranslatePipe } from '@beyond/translation';
 import { BydButtonComponent } from '@beyond/ui';
@@ -62,7 +62,9 @@ export class BydUploadComponent {
   }
 
   constructor() {
-    computed(() => this.filesPicked.emit(this.tempImages()));
+    effect(() => {
+      this.filesPicked.emit(this.tempImages());
+    });
   }
 
   public addImage(images: FileStructure[]) {
