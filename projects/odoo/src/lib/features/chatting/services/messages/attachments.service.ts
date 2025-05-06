@@ -5,13 +5,14 @@ import { filter, forkJoin, of } from 'rxjs';
 import { BydBaseOdooService } from '../../../../services/baseService';
 import { FileStructure, getBase64FromFile } from '@beyond/utils';
 import { HandleComplexRequest } from '@beyond/server';
+import { Attachment } from './dto/attachment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BydAttachementsService extends BydBaseOdooService {
 
-  public readonly attachments = new HandleComplexRequest<FileStructure[]>();
+  public readonly attachments = new HandleComplexRequest<Attachment[]>();
 
   constructor() {
     super();
@@ -24,10 +25,10 @@ export class BydAttachementsService extends BydBaseOdooService {
   public fetch$(id: number, model: string) {
     return this.attachments.fetch(
       this.key(id, model),
-      this._odooService.searchRead$<FileStructure>('ir.attachment', [
+      this._odooService.searchRead$<Attachment>('ir.attachment', [
         ['res_id', '=', id],
         ['res_model', 'like', model]
-      ])
+      ], ['id'])
       .pipe(
           filter(data => !!data)
       )
