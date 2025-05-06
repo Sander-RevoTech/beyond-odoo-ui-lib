@@ -27,7 +27,7 @@ export class BydAttachementsService extends BydBaseOdooService {
       this.key(id, model),
       this._odooService.searchRead$<Attachment>('ir.attachment', [
         ['res_id', '=', id],
-        ['res_model', 'like', model]
+        ['res_model', '=', model]
       ], ['id'])
       .pipe(
           filter(data => !!data)
