@@ -5,4 +5,5 @@ export interface Profile {
     display_name: string;
     share: boolean;
     groups_id: ManyToOneType;
+    employee_id: ManyToOneType;
 }
