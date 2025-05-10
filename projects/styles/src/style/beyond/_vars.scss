@@ -112,8 +112,8 @@ $icon: map.merge(
       secondary: map.get($brand, 600),
     ),
     disabled: map.get($neutral, 300),
-    success: map.get($semantic, green-dark),
-    alert: map.get($semantic, red-dark),
+    success: map.get($semantic, green),
+    alert: map.get($semantic, red),
   ),
   $icon
 );
@@ -132,9 +132,9 @@ $text: map.merge(
       secondary: map.get($brand, 400),
     ),
     body: map.get($neutral, 600),
-    success: map.get($semantic, green-dark),
-    warning: map.get($semantic, orange-dark),
-    alert: map.get($semantic, red-dark),
+    success: map.get($semantic, green),
+    warning: map.get($semantic, orange),
+    alert: map.get($semantic, red),
     link: map.get($brand, 700),
   ),
   $text
@@ -156,18 +156,18 @@ $surface: map.merge(
       secondary: map.get($brand, 300),
     ),
     invert: map.get($brand, 900),
-    success: map.get($semantic, green-light),
-    warning: map.get($semantic, orange-light),
-    alert: map.get($semantic, red-light),
+    success: map.get($semantic, green),
+    warning: map.get($semantic, orange),
+    alert: map.get($semantic, red),
   ),
   $surface
 );
 
 $semantic-token: map.merge(
   (
-    success: map.get($semantic, green-dark),
-    alert: map.get($semantic, red-dark),
-    warning: map.get($semantic, orange-dark),
+    success: map.get($semantic, green),
+    alert: map.get($semantic, red),
+    warning: map.get($semantic, orange),
     link: map.get($brand, 700),
   ),
   $semantic-token
@@ -181,9 +181,9 @@ $border: map.merge(
     hover: map.get($neutral, 500),
     invert: map.get($brand, 600),
     disabled: map.get($brand, 300),
-    success: map.get($semantic, green-dark),
-    warning: map.get($semantic, orange-dark),
-    alert: map.get($semantic, red-dark),
+    success: map.get($semantic, green),
+    warning: map.get($semantic, orange),
+    alert: map.get($semantic, red),
   ),
   $border
 );
