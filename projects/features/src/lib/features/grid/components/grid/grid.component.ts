@@ -1,13 +1,12 @@
 import { Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BydAbstractGridComponent } from '../abstract.component';
 import { PaginationComponent } from "../pagination/pagination.component";
-import { GridControlComponent } from "../control/control.component";
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
 
 
 @Component({
   selector: 'byd-grid',
-  imports: [PaginationComponent, GridControlComponent, NgTemplateOutlet, AsyncPipe],
+  imports: [PaginationComponent, NgTemplateOutlet, AsyncPipe],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss',
   encapsulation: ViewEncapsulation.None

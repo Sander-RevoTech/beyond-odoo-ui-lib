@@ -1,9 +1,8 @@
-@if(this.isReady$ | async){
-    <div [style.display]="this.displayType() === 'grid' ? 'block' : 'none'">
-        real grid
-        <div #table></div>
-    </div>
+<div [style.display]="this.displayType() === 'grid' ? 'block' : 'none'">
+    <div #table></div>
+</div>
 
+@if(this.isReady$ | async){
     @if(this.displayType() === 'card') {
         <ng-template
             [ngTemplateOutlet]="this.cardTemplate"

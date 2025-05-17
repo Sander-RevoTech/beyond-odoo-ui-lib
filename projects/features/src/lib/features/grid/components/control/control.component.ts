@@ -12,7 +12,7 @@ import { AsyncPipe } from '@angular/common';
   standalone: true,
   imports: [MatIcon, AsyncPipe],
 })
-export class GridControlComponent extends BydAbstractGridComponent<any> implements OnInit {
+export class BydGridControlComponent extends BydAbstractGridComponent<any> implements OnInit {
   @Input()
   show: { switchView?: boolean; } = { switchView: true };
 
