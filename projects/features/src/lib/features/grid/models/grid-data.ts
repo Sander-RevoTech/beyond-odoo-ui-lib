@@ -55,12 +55,15 @@ export class BydGridData<T> {
             ajaxResponse: function(_: any, __: any, response: ajaxResponse<T>) {
                 return response;
             },
+        });        
+
+        this.table.on("tableBuilt", () => {
+            this.tableHtml = params.elementRef;
+            this.filters = new BydGridFilters(this.scope, this.table!);
+            this.isReady$.next(true);
         });
 
-        this.tableHtml = params.elementRef;
 
-        this.filters = new BydGridFilters(this.scope, this.table);
-        this.isReady$.next(true);
     }
 
 
