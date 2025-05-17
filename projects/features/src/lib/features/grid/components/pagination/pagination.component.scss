@@ -1,0 +1,13 @@
+@use 'beyond/utils/mixins/common';
+
+.figure {
+  color: common.get-var(text, primary);
+  border: 1px solid common.get-var(border, secondary);
+  padding: common.get-var(space, sm) common.get-var(space, md);
+  border-radius: common.get-var(radius, rounded);
+
+  &.is-active {
+    color: common.get-var(text, invert, primary);
+    background-color: common.get-var(surface, brand, primary);
+  }
+}

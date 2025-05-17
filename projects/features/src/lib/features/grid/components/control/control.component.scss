@@ -1,0 +1,26 @@
+@use 'beyond/utils/mixins/common';
+@use 'beyond/utils/mixins/flex';
+
+.grid-control-container {
+  @include flex.space-between();
+
+  border-radius: 8px;
+  border: 1px solid common.get-var(brand, 400);
+  overflow: hidden;
+
+  .trigger {
+    @include flex.align-center();
+
+    padding: common.get-var(space, sm);
+
+    &.active {
+      background: common.get-var(brand, 100);
+      color: common.get-var(brand, 500);
+    }
+  }
+
+  .sep {
+    border-left: 1px solid common.get-var(brand, 400);
+  }
+}
+

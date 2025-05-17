@@ -5,17 +5,22 @@ import { provideRouter } from '@angular/router';
 import { ODOO_SERVER_CONFIG_KEY } from '@beyond/odoo';
 
 import { routes } from './app.routes';
+import { provideTranslation } from '@beyond/translation';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(withInterceptorsFromDi()),
     provideRouter(routes),
+    provideTranslation({
+      default: 'en',
+      supportedLanguages: ['en'],
+    }),
     {
       provide: ODOO_SERVER_CONFIG_KEY,
       useValue: {
-        proxyUrl: 'http://localhost:3000',
-        db: 'testing',
+        proxyUrl: 'http://192.168.1.47:3000',
+        db: 're-uz-test',
         odooUrl: 'http://localhost:8069',
       },
     },

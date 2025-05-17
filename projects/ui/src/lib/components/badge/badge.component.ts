@@ -1,12 +1,13 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'byd-badge',
   templateUrl: './badge.component.html',
   styleUrls: ['./badge.component.scss'],
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, MatIcon],
 })
 export class BydBadgeComponent {
   /**
@@ -19,7 +20,13 @@ export class BydBadgeComponent {
    * Style of badge
    */
   @Input()
-  type: 'danger' | 'warning' | 'success' | 'primary' | 'secondary' = 'primary';
+  type: 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'secondary' = 'primary';
+
+  @Input()
+  icon?: string;
+
+  @Output()
+  clickAction = new EventEmitter();
 
   constructor() {}
 

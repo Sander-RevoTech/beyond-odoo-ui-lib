@@ -1,0 +1,19 @@
+<byd-grid-control [gridId]="this.gridId"></byd-grid-control>
+
+@if(this.isReady$ | async){
+    <div [style.display]="this.displayType() === 'grid' ? 'block' : 'none'">
+        real grid
+        <div #table></div>
+    </div>
+
+    @if(this.displayType() === 'card') {
+        <ng-template
+            [ngTemplateOutlet]="this.cardTemplate"
+            [ngTemplateOutletContext]="{ items: this.data }"
+        ></ng-template>
+    }
+    <byd-grid-pagination [gridId]="this.gridId"></byd-grid-pagination>
+}
+
+
+

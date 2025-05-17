@@ -1,1 +1,7 @@
-<span class="badge" [ngClass]="this.getClass()">{{ this.value }}</span>
+<span class="badge-container" [ngClass]="this.getClass()" (click)="this.clickAction.emit()">
+    {{ this.value }}
+
+    @if(this.icon) {
+        <mat-icon>{{ this.icon }}</mat-icon>
+    }
+</span>

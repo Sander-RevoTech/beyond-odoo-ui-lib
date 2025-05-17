@@ -37,7 +37,12 @@
       "@beyond/notification": ["./lib/notification"],
       "@beyond/translation": ["./lib/translation"],
       "@beyond/eslint": ["./lib/eslint"],
-      "@beyond/prettier": ["./lib/prettier"]
+      "@beyond/prettier": [
+        "./lib/prettier"
+      ],
+      "@beyond/features": [
+        "./lib/features"
+      ]
     }
   }
 }

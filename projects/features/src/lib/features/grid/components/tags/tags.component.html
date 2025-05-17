@@ -1,0 +1,33 @@
+<div class="flex-row align-center g-space-sm">
+  <div class="list-tag">
+    @for(tag of this.activeFilters; track tag.key){
+      <div
+        class="item-tag"
+      >
+        <div class="tag-title">
+          {{ "grid." + this.gridId + ".core." + tag.key | translate }}
+        </div>
+        @for(value of tag.values; track value.field){
+        <byd-badge [value]="value.type + ' ' + value.value" type="primary" icon="close" (clickAction)="this.remove(value)"></byd-badge>
+        }
+      </div>
+    }
+
+  </div>
+
+  <div class="reset-n-result flex-start g-space-md">
+    <!-- <div class="rest" *ngIf="this.tagsList.length > 0">
+      <cam-link (action)="this.reset()" [underline]="false">
+        <div class="flex-start g-space-xs align-center">
+          <cam-font-icon type="sm" name="close-tool"></cam-font-icon>
+          {{ "grid.tag.delete" | translate }}
+        </div>
+      </cam-link>
+    </div> -->
+    <div class="result">
+      <byd-text>
+        {{ "grid.tag.results" | translate : { nb: this.data.length} }}
+      </byd-text>
+    </div>
+  </div>
+</div>

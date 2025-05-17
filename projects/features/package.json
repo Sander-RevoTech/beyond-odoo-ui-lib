@@ -1,0 +1,19 @@
+{
+  "name": "@beyond/features",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "ng build @beyond/features"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0"
+  },
+  "dependencies": {
+    "tabulator-tables": "^6.3.1",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/tabulator-tables": "^6.2.6"
+  }
+}
