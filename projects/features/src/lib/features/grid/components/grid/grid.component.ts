@@ -27,7 +27,7 @@ export class BydGridComponent<T extends { id: number}> extends BydAbstractGridCo
       this.isReady$.subscribe({
         next: () => {
           if(this._grid.tableHtml) {
-            this.renderer.appendChild(this.tableElement, this._grid.tableHtml.nativeElement);
+            this.renderer.appendChild(this.tableElement.nativeElement, this._grid.tableHtml.nativeElement);
           }
         }
       })

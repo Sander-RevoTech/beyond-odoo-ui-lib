@@ -6,7 +6,7 @@ import { Filter } from '../../models/types';
 
 
 @Component({
-  selector: 'nyd-grid-tags',
+  selector: 'byd-grid-tags',
   templateUrl: './tags.component.html',
   styleUrls: ['./tags.component.scss'],
   standalone: true,

@@ -6,5 +6,5 @@ export declare class BydGridTagsComponent extends BydAbstractGridComponent<unkno
     ngOnInit(): void;
     remove(filter: Filter): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydGridTagsComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BydGridTagsComponent, "nyd-grid-tags", never, {}, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydGridTagsComponent, "byd-grid-tags", never, {}, {}, never, never, true, never>;
 }
