@@ -1,22 +1,33 @@
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, inject, Input, OnInit, signal } from '@angular/core';
-import { BydMessagesService } from '../../services/messages/messages.service';
-import { BydBaseComponent, FileStructure } from '@beyond/utils';
+import { Component, Input, OnInit, inject, signal } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+
+import { TextBoxComponent } from '@beyond/form-input';
 import { InputTextBox } from '@beyond/form-model';
 import { BydButtonComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
-import { TextBoxComponent } from '@beyond/form-input';
-import { MatIcon } from '@angular/material/icon';
-import { BydUploadComponent } from '../upload/files-upload.component';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ODOO_SERVER_CONFIG_KEY } from '../../../../injectionToken';
+import { BydBaseComponent, FileStructure } from '@beyond/utils';
 
+import { ODOO_SERVER_CONFIG_KEY } from '../../../../injectionToken';
+import { BydMessagesService } from '../../services/messages/messages.service';
+import { BydUploadComponent } from '../upload/files-upload.component';
 
 @Component({
   selector: 'byd-messages',
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.scss'],
   standalone: true,
-  imports: [BydButtonComponent, LoaderComponent, ErrorComponent, TextBoxComponent, MatIcon, BydUploadComponent, NgIf, NgFor, AsyncPipe],
+  imports: [
+    BydButtonComponent,
+    LoaderComponent,
+    ErrorComponent,
+    TextBoxComponent,
+    MatIcon,
+    BydUploadComponent,
+    NgIf,
+    NgFor,
+    AsyncPipe,
+  ],
 })
 export class BydMessagesComponent extends BydBaseComponent implements OnInit {
   @Input()
@@ -29,7 +40,6 @@ export class BydMessagesComponent extends BydBaseComponent implements OnInit {
   private readonly _messagesService = inject(BydMessagesService);
   public input = new InputTextBox();
   public images = signal<FileStructure[]>([]);
-
 
   get disable() {
     return !this.input.value && this.images().length === 0;

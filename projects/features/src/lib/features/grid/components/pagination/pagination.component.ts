@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { BydAbstractGridComponent } from '../abstract.component';
-import { MatIcon } from '@angular/material/icon';
 import { NgTemplateOutlet } from '@angular/common';
+import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+
 import { TypedTemplateDirective } from '@beyond/utils';
+
+import { BydAbstractGridComponent } from '../abstract.component';
 
 type PageNumber = {
   number: number;

@@ -15,7 +15,6 @@ export class AuthGuard {
 
   constructor(private router: Router) {}
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-
     if (this._permissionsServices.isAuthenticated === false) {
       this.setRedirect();
       return false;

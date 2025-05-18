@@ -1,18 +1,20 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { MatError, MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+import { InputChoices } from '@beyond/form-model';
+import { TranslatePipe } from '@beyond/translation';
+import { BydAbstractComponent } from '@beyond/utils';
+
 import {
   ChoicesBottomSheetComponent,
   ChoicesBottomSheetComponentData,
   ChoicesBottomSheetComponentResult,
 } from './bottom/bottom.component';
-import { BydAbstractComponent } from '@beyond/utils';
-import { InputChoices } from '@beyond/form-model';
-import { MatError, MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
-import { TranslatePipe } from '@beyond/translation';
-import { MatInputModule } from '@angular/material/input';
-import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-input-choices',

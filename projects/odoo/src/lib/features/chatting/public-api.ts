@@ -5,5 +5,3 @@ export * from './services/messages/messages.service';
 export * from './services/messages/attachments.service';
 
 export * from './services/messages/dto/attachment';
-
-

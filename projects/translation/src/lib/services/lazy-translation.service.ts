@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 
-import { map, Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 
 import { BydTranslationRegistryService, ITranslation } from './translation-registry.service';
 

@@ -1,18 +1,17 @@
-import { Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { BydAbstractGridComponent } from '../abstract.component';
-import { PaginationComponent } from "../pagination/pagination.component";
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
+import { Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 
+import { BydAbstractGridComponent } from '../abstract.component';
+import { PaginationComponent } from '../pagination/pagination.component';
 
 @Component({
   selector: 'byd-grid',
   imports: [PaginationComponent, NgTemplateOutlet, AsyncPipe],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
-export class BydGridComponent<T extends { id: number}> extends BydAbstractGridComponent<T> {
-
+export class BydGridComponent<T extends { id: number }> extends BydAbstractGridComponent<T> {
   @Input()
   cardTemplate!: TemplateRef<{ items: T[] }>;
 
@@ -26,11 +25,11 @@ export class BydGridComponent<T extends { id: number}> extends BydAbstractGridCo
     this._registerSubscription(
       this.isReady$.subscribe({
         next: () => {
-          if(this._grid.tableHtml) {
+          if (this._grid.tableHtml) {
             this.renderer.appendChild(this.tableElement.nativeElement, this._grid.tableHtml.nativeElement);
           }
-        }
+        },
       })
-    )
+    );
   }
 }

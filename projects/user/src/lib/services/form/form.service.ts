@@ -16,7 +16,7 @@ export class AppUserFormService {
       label: 'Login as admin',
       class: 'col-sm-12',
       toggle: true,
-    })
+    });
 
     return [
       new InputPanel({
@@ -29,7 +29,10 @@ export class AppUserFormService {
             key: 'email',
             label: 'Email',
             validators: [Validators.required],
-            visible$: asAdmin.changeValue$.pipe(startWith(false), map(value => !value)),
+            visible$: asAdmin.changeValue$.pipe(
+              startWith(false),
+              map(value => !value)
+            ),
           }),
           new InputPassword({
             key: 'password',

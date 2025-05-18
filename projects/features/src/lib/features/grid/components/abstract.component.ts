@@ -1,16 +1,13 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 
 import { BydBaseComponent } from '@beyond/utils';
+import { Observable, filter, tap } from 'rxjs';
 
 import { BydGridData } from '../models/grid-data';
 import { BydGridInstanceService } from '../services/grid-instance.service';
-import { filter, Observable, tap } from 'rxjs';
 
 @Component({ template: '' })
-export abstract class BydAbstractGridComponent<T>
-  extends BydBaseComponent
-  implements OnInit
-{
+export abstract class BydAbstractGridComponent<T> extends BydBaseComponent implements OnInit {
   @Input()
   gridId!: string;
 
@@ -31,7 +28,9 @@ export abstract class BydAbstractGridComponent<T>
 
   ngOnInit() {
     this._grid = this._dataService.get(this.gridId, true);
-    this.isReady$ = this._grid.isReady$.pipe(filter(isReady => isReady), tap(a => console.log('after', a)));
+    this.isReady$ = this._grid.isReady$.pipe(
+      filter(isReady => isReady),
+      tap(a => console.log('after', a))
+    );
   }
-
 }

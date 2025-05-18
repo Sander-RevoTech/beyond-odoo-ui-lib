@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { StopPropagationDirective } from '@beyond/utils';
 
 @Component({

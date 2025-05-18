@@ -22,7 +22,6 @@ export * from './lib/services/graphql/public-api';
 
 export * from './lib/services/server/token';
 
-
 export * from './lib/services/user/public-api';
 
 export * from './lib/provider';

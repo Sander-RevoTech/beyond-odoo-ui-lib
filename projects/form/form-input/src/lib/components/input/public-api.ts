@@ -7,4 +7,3 @@ export * from './textbox/text-box.component';
 export * from './toggle/toggle.component';
 export * from './choices/choices.component';
 export * from './extra/button/button.component';
-

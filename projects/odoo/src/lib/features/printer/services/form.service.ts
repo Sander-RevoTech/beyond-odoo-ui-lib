@@ -1,19 +1,18 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { map } from 'rxjs/operators';
 
+import { InputBase, InputCheckBox, InputDropdown, InputLabel, InputNumber, InputPanel } from '@beyond/form-model';
+import { getFirstNumber } from '@beyond/utils';
 
 import { PrintDirectWizard } from './dto/print_direct_wizard';
 import { PrintDirectWizardLinePost } from './dto/print_direct_wizard_line';
 import { BydPrinterService } from './printer.service';
-import { InputBase, InputDropdown, InputPanel, InputLabel, InputNumber, InputCheckBox } from '@beyond/form-model';
-import { getFirstNumber } from '@beyond/utils';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BydPrinterFormService {
-
   private readonly _printerService = inject(BydPrinterService);
   constructor() {
     this._printerService.fetchPrinters$().subscribe();
@@ -35,7 +34,7 @@ export class BydPrinterFormService {
       ),
     });
     printerlistInput.changeValue$.subscribe(value => {
-      printerItemsInput.forEach(item => (item.value = (value ? value : null)));
+      printerItemsInput.forEach(item => (item.value = value ? value : null));
     });
 
     /* Qty */

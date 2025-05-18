@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BydGridData } from '../models/grid-data';
+
 import { InputBase, InputPanel } from '@beyond/form-model';
 import { isNonNullable } from '@beyond/utils';
+
+import { BydGridData } from '../models/grid-data';
 import { Filter } from '../models/types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BydGridFormService<T> {
-
-  constructor() {
-  }
+  constructor() {}
 
   public getFiltersForm(model: BydGridData<T>): InputBase<any>[] {
     const keys = Object.keys(model.cols);
@@ -23,9 +23,7 @@ export class BydGridFormService<T> {
         key: 'main-panel',
         label: `grid.${model.scope}.title`,
         class: 'p-space-sm',
-        children: keys
-          .map(key => model.cols[key].getInputForm())
-          .filter(isNonNullable),
+        children: keys.map(key => model.cols[key].getInputForm()).filter(isNonNullable),
       }),
     ];
   }
@@ -34,11 +32,10 @@ export class BydGridFormService<T> {
     return Object.keys(model.cols).reduce<Filter[]>((acc, key) => {
       const filter = model.cols[key].formatInputForm(data);
 
-      if(!filter){
-        return acc
+      if (!filter) {
+        return acc;
       }
-      return [...acc, filter]
-      }, []);
+      return [...acc, filter];
+    }, []);
   }
-
 }

@@ -1,8 +1,5 @@
 export default {
-  plugins: [
-    '@trivago/prettier-plugin-sort-imports',
-    'prettier-plugin-sort-json', // ✅ Ajout du plugin pour trier les clés des objets
-  ],
+  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-sort-json'],
   tabWidth: 2,
   useTabs: false,
   singleQuote: true,
@@ -13,13 +10,10 @@ export default {
   bracketSameLine: false,
   printWidth: 120,
   endOfLine: 'auto',
-
-  // ✅ Empêcher la suppression des types génériques
   proseWrap: 'preserve',
   quoteProps: 'consistent',
   typescript: true,
 
-  // 📌 Ignorer certains fichiers
   overrides: [
     {
       files: ['*.d.ts'],
@@ -31,7 +25,6 @@ export default {
     },
   ],
 
-  // ✅ Tri et organisation des imports
   importOrder: [
     '^@angular/(.*)$',
     '^rxjs/(.*)$',

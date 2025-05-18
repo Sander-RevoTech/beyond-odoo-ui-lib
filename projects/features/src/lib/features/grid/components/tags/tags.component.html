@@ -1,18 +1,20 @@
 <div class="flex-row align-center g-space-sm">
   <div class="list-tag">
-    @for(tag of this.activeFilters; track tag.key){
-      <div
-        class="item-tag"
-      >
+    @for (tag of this.activeFilters; track tag.key) {
+      <div class="item-tag">
         <div class="tag-title">
-          {{ "grid." + this.gridId + ".core." + tag.key | translate }}
+          {{ 'grid.' + this.gridId + '.core.' + tag.key | translate }}
         </div>
-        @for(value of tag.values; track value.field){
-        <byd-badge [value]="value.type + ' ' + value.value" type="primary" icon="close" (clickAction)="this.remove(value)"></byd-badge>
+        @for (value of tag.values; track value.field) {
+          <byd-badge
+            [value]="value.type + ' ' + value.value"
+            type="primary"
+            icon="close"
+            (clickAction)="this.remove(value)"
+          ></byd-badge>
         }
       </div>
     }
-
   </div>
 
   <div class="reset-n-result flex-start g-space-md">
@@ -26,7 +28,7 @@
     </div> -->
     <div class="result">
       <byd-text>
-        {{ "grid.tag.results" | translate : { nb: this.data.length} }}
+        {{ 'grid.tag.results' | translate: { nb: this.data.length } }}
       </byd-text>
     </div>
   </div>

@@ -1,32 +1,30 @@
-import { InputTextBox } from "@beyond/form-model";
-import { BaseCol } from "./base-col";
-import { Filter } from "../types";
+import { InputTextBox } from '@beyond/form-model';
+
+import { Filter } from '../types';
+import { BaseCol } from './base-col';
 
 export class StringCol extends BaseCol<string> {
-  
-    public override getInputForm() {
-       // const value = this.values;
+  public override getInputForm() {
+    // const value = this.values;
 
-      return new InputTextBox({
-        key: this.key,
-        label: this.inputLabel,
-        class: 'pb-2',
-      })
+    return new InputTextBox({
+      key: this.key,
+      label: this.inputLabel,
+      class: 'pb-2',
+    });
+  }
+
+  public override formatInputForm(data: any): Filter | null {
+    const value = data[this.key];
+
+    if (!value || value === '' || value.length === 0) {
+      return null;
     }
 
-      
-    public override formatInputForm(data: any): Filter | null {
-        const value = data[this.key];
-
-        if (!value || value === '' || value.length === 0) {
-            return null;
-        }
-        
-        return {
-            field: this.key,
-            type: 'like',
-            value: value,
-        };
-        
-    }
+    return {
+      field: this.key,
+      type: 'like',
+      value: value,
+    };
+  }
 }

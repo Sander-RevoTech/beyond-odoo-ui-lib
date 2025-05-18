@@ -3,10 +3,10 @@ import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { InputChoices, InputChoicesOption } from '@beyond/form-model';
 import { BydBadgeComponent, CardComponent, CardContentComponent } from '@beyond/ui';
-import { debounceTime, mergeMap, Subject } from 'rxjs';
-
+import { Subject, debounceTime, mergeMap } from 'rxjs';
 
 export interface ChoicesBottomSheetComponentData {
   input: InputChoices;
@@ -23,7 +23,7 @@ export interface ChoicesBottomSheetComponentResult {
   standalone: true,
   imports: [CardComponent, CardContentComponent, AsyncPipe, NgFor],
 })
-export class ChoicesBottomSheetComponent extends BydBadgeComponent{
+export class ChoicesBottomSheetComponent extends BydBadgeComponent {
   readonly searchValue = new Subject<string>();
 
   readonly options = new Subject<InputChoicesOption[]>();
@@ -33,10 +33,15 @@ export class ChoicesBottomSheetComponent extends BydBadgeComponent{
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: ChoicesBottomSheetComponentData
   ) {
     super();
-    if(this.data.input.advancedSearch$) {
-      this.searchValue.pipe(debounceTime(1000), mergeMap((value) => this.data.input.advancedSearch$!(value))).subscribe((result) => {
-        this.options.next(result);
-      });
+    if (this.data.input.advancedSearch$) {
+      this.searchValue
+        .pipe(
+          debounceTime(1000),
+          mergeMap(value => this.data.input.advancedSearch$!(value))
+        )
+        .subscribe(result => {
+          this.options.next(result);
+        });
     }
     this.searchValuechanged('');
   }

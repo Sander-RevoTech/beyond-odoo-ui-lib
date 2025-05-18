@@ -5,13 +5,13 @@ import { IInputBase, InputBase } from '../base';
 export interface IInputButton extends IInputBase<any> {
   callback?: Function;
   disabled$?: Observable<boolean>;
-  style?:  'primary' | 'secondary' | 'danger';
+  style?: 'primary' | 'secondary' | 'danger';
 }
 export class InputButton extends InputBase<any> {
   override controlType = 'button';
   public callback: Function = () => {};
   public disabled$?: Observable<boolean> = of(false);
-  public style:  'primary' | 'secondary' | 'danger';
+  public style: 'primary' | 'secondary' | 'danger';
 
   constructor(options: IInputButton = {}) {
     super(options);

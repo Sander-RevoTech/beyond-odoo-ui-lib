@@ -1,4 +1,4 @@
-import { ManyToOneType } from "../../../../types/types";
+import { ManyToOneType } from '../../../../types/types';
 
 export interface PrintDirectWizardLine {
   id: number;

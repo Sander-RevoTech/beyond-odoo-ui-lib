@@ -2,8 +2,8 @@ import { AsyncPipe, NgClass, NgFor, NgIf, NgTemplateOutlet } from '@angular/comm
 import { Component, Input, TemplateRef } from '@angular/core';
 
 import { InputPanel } from '@beyond/form-model';
-import { BydBaseComponent } from '@beyond/utils';
 import { TranslatePipe } from '@beyond/translation';
+import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
   selector: 'byd-form-panel',

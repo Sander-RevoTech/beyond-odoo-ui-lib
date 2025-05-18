@@ -4,11 +4,10 @@ import { filter, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 
 import { BehaviorSubject, Observable, Subject, forkJoin, of } from 'rxjs';
 
-
+import { BydBaseOdooService } from '../../../services/baseService';
 import { PrintDirectWizard } from './dto/print_direct_wizard';
 import { PrintDirectWizardLine, PrintDirectWizardLinePost } from './dto/print_direct_wizard_line';
 import { Printer } from './dto/printer';
-import { BydBaseOdooService } from '../../../services/baseService';
 
 @Injectable({
   providedIn: 'root',
@@ -75,7 +74,7 @@ export class BydPrinterService extends BydBaseOdooService {
 
   public fetchPrinters$() {
     return this._odooService
-      .searchRead$<Printer>('remote.printer.printer', [], ['id', 'name'],)
+      .searchRead$<Printer>('remote.printer.printer', [], ['id', 'name'])
       .pipe(tap(list => this.printers$.next(list)));
   }
 

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
+import { FileStructure, getBase64FromFile } from '@beyond/utils';
 import { BehaviorSubject, filter, forkJoin, map, merge, mergeMap, of, tap } from 'rxjs';
 
-
-import { Message } from './dto/message';
 import { BydBaseOdooService } from '../../../../services/baseService';
-import { FileStructure, getBase64FromFile } from '@beyond/utils';
+import { Message } from './dto/message';
 
 @Injectable({
   providedIn: 'root',
@@ -30,7 +29,7 @@ export class BydMessagesService extends BydBaseOdooService {
           ['model', 'like', data.model],
           ['message_type', 'like', data.message_type],
         ],
-        ['body', 'attachment_ids'],
+        ['body', 'attachment_ids']
       )
       .pipe(
         filter(data => !!data),
@@ -46,17 +45,28 @@ export class BydMessagesService extends BydBaseOdooService {
     const attachments: any[] = [];
 
     for (let file of files.filter(att => att.file)) {
-      if(!file.file) {
+      if (!file.file) {
         continue;
       }
       const base64 = (await getBase64FromFile(file.file)).split(',')[1];
-      attachments.push({ name: 'attachments-by-app-'+id, datas: base64, res_model:message.model });
+      attachments.push({ name: 'attachments-by-app-' + id, datas: base64, res_model: message.model });
     }
 
-    return (attachments.length > 0 ? forkJoin([...attachments.map(attachment =>
-      this._odooService.create$<number>('ir.attachment', { ...attachment, ...{ res_id: id } })
-    )]) : of([])).pipe(mergeMap((ids: number[]) => {
-    return this._odooService.create$<number>('mail.message', { ...message, ...{ subtype_id: 2, attachment_ids: ids } });
-    }));
+    return (
+      attachments.length > 0
+        ? forkJoin([
+            ...attachments.map(attachment =>
+              this._odooService.create$<number>('ir.attachment', { ...attachment, ...{ res_id: id } })
+            ),
+          ])
+        : of([])
+    ).pipe(
+      mergeMap((ids: number[]) => {
+        return this._odooService.create$<number>('mail.message', {
+          ...message,
+          ...{ subtype_id: 2, attachment_ids: ids },
+        });
+      })
+    );
   }
 }

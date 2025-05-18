@@ -7,8 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { InputCheckBox } from '@beyond/form-model';
-import { BydBaseComponent } from '@beyond/utils';
 import { TranslatePipe } from '@beyond/translation';
+import { BydBaseComponent } from '@beyond/utils';
 
 @Component({
   selector: 'byd-input-toggle',

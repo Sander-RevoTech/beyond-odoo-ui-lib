@@ -25,11 +25,11 @@ export interface ColMetaData {
   // additionalInfo: KeyValuePair[];
 }
 
-export type ActiveFilter = { key: string, values: Filter[] };
+export type ActiveFilter = { key: string; values: Filter[] };
 export type Filter = TabulatorFilter;
-export type Sort = {field: string; dir: 'asc' | 'desc'}
+export type Sort = { field: string; dir: 'asc' | 'desc' };
 
-export type ajaxResponse<T> = { data: T[]; last_page: number }
-export type ajaxRequestFuncParams = { filter: Filter[], sort: Sort[], page: number, size: number }
+export type ajaxResponse<T> = { data: T[]; last_page: number };
+export type ajaxRequestFuncParams = { filter: Filter[]; sort: Sort[]; page: number; size: number };
 
 export type ViewType = 'grid' | 'card';

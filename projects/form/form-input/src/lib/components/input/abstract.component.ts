@@ -9,17 +9,15 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { BydBaseComponent } from '@beyond/utils';
-import { InputBase } from '@beyond/form-model';
 import { Validators } from '@angular/forms';
-import { delay, Observable } from 'rxjs';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+import { InputBase } from '@beyond/form-model';
+import { BydBaseComponent } from '@beyond/utils';
+import { Observable, delay } from 'rxjs';
 
 @Component({ template: '' })
-export abstract class BydAbstractInputComponent<
-    C extends InputBase<any>,
-    V = unknown
-  >
+export abstract class BydAbstractInputComponent<C extends InputBase<any>, V = unknown>
   extends BydBaseComponent
   implements OnInit, AfterViewInit, OnDestroy
 {
@@ -56,7 +54,7 @@ export abstract class BydAbstractInputComponent<
     }
     this._registerSubscription(
       this.input.changeValue$.subscribe({
-        next: (value) => this.onChange(value),
+        next: value => this.onChange(value),
       })
     );
   }

@@ -1,16 +1,10 @@
 <div [style.display]="this.displayType() === 'grid' ? 'block' : 'none'">
-    <div #table></div>
+  <div #table></div>
 </div>
 
-@if(this.isReady$ | async){
-    @if(this.displayType() === 'card') {
-        <ng-template
-            [ngTemplateOutlet]="this.cardTemplate"
-            [ngTemplateOutletContext]="{ items: this.data }"
-        ></ng-template>
-    }
-    <byd-grid-pagination [gridId]="this.gridId"></byd-grid-pagination>
+@if (this.isReady$ | async) {
+  @if (this.displayType() === 'card') {
+    <ng-template [ngTemplateOutlet]="this.cardTemplate" [ngTemplateOutletContext]="{ items: this.data }"></ng-template>
+  }
+  <byd-grid-pagination [gridId]="this.gridId"></byd-grid-pagination>
 }
-
-
-

@@ -1,9 +1,9 @@
-import { Component, computed, effect, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, EventEmitter, Input, Output, computed, effect, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
+
 import { TranslatePipe } from '@beyond/translation';
 import { BydButtonComponent } from '@beyond/ui';
 import { FileStructure, picImages, takeImage } from '@beyond/utils';
-
 
 export interface ActionButtonData {
   callback: (data?: any) => void;

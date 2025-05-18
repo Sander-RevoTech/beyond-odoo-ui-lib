@@ -7,10 +7,7 @@ import { BearerInterceptor } from './interceptor/bearerInterceptor';
 import { GRAPHQL_SERVER_CONFIG, IGraphConfig } from './services/graphql/models/graphConfig';
 import { IServerConfig, SERVER_CONFIG_KEY } from './services/server/api/server.service';
 
-export const provideServer = (data: {
-  graphQlConfig: IGraphConfig;
-  httpConfig: IServerConfig;
-}): Provider => [
+export const provideServer = (data: { graphQlConfig: IGraphConfig; httpConfig: IServerConfig }): Provider => [
   importProvidersFrom(ApolloModule),
   {
     provide: HTTP_INTERCEPTORS,

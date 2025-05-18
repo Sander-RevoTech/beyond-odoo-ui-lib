@@ -1,6 +1,6 @@
-@if(this.isReady$ | async) {
+@if (this.isReady$ | async) {
   <div class="d-flex">
-    @if(this.show.switchView) {
+    @if (this.show.switchView) {
       <div class="grid-control-container ml-space-xs c-pointer">
         <div (click)="this.switchView('grid')" class="trigger" [class.active]="this.displayType() === 'grid'">
           <mat-icon>list</mat-icon>
@@ -13,5 +13,4 @@
       </div>
     }
   </div>
-
 }

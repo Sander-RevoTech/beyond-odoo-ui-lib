@@ -59,26 +59,25 @@ export class BydPermissionsServices {
   public setRole(role: Role) {
     this.roles = [role];
 
-    if(role === 'admin') {
+    if (role === 'admin') {
       this.guards = {
         all: ['all'],
         admin: ['all'],
         interne: ['all'],
         shared: ['all'],
       };
-    } else if(role === 'interne') {
+    } else if (role === 'interne') {
       this.guards = {
         all: ['all'],
         interne: ['all'],
         shared: ['all'],
       };
-    }  else if(role === 'shared') {
+    } else if (role === 'shared') {
       this.guards = {
         all: ['read'],
         shared: ['all'],
       };
     }
-
   }
 
   public reset() {

@@ -1,16 +1,17 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, inject, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { InputBase } from '@beyond/form-model';
-import { BydBaseComponent } from '@beyond/utils';
-import { PrintDirectWizard } from '../../services/dto/print_direct_wizard';
-import { BydPrinterService } from '../../services/printer.service';
-import { BydPrinterFormService } from '../../services/form.service';
-import { BydNotificationService, ENotificationCode } from '@beyond/notification';
-import { BydTitleComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
-import { BydFormComponent } from '@beyond/form-basic';
 import { MatIcon } from '@angular/material/icon';
 
+import { BydFormComponent } from '@beyond/form-basic';
+import { InputBase } from '@beyond/form-model';
+import { BydNotificationService, ENotificationCode } from '@beyond/notification';
+import { BydTitleComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
+import { BydBaseComponent } from '@beyond/utils';
+
+import { PrintDirectWizard } from '../../services/dto/print_direct_wizard';
+import { BydPrinterFormService } from '../../services/form.service';
+import { BydPrinterService } from '../../services/printer.service';
 
 export interface LabelModalData {
   id: number;

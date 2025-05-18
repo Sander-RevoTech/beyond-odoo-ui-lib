@@ -1,13 +1,23 @@
-import { Component, Inject, inject, Input, OnDestroy, signal } from '@angular/core';
+import { Component, Inject, Input, OnDestroy, inject, signal } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { BydBaseComponent } from '@beyond/utils';
-import { BydScanPackingService } from '../../services/scan-packing.service';
-import { BydNotificationService } from '@beyond/notification';
-import { SearchItem, SearchResult } from '../../services/dto/search';
-import { CardComponent, CardCtaComponent, CardHeaderComponent, CardTitleComponent, EmptyComponent, ErrorComponent, LoaderComponent } from '@beyond/ui';
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
-import { TranslatePipe } from '@beyond/translation';
 import { MatIcon } from '@angular/material/icon';
+
+import { BydNotificationService } from '@beyond/notification';
+import { TranslatePipe } from '@beyond/translation';
+import {
+  CardComponent,
+  CardCtaComponent,
+  CardHeaderComponent,
+  CardTitleComponent,
+  EmptyComponent,
+  ErrorComponent,
+  LoaderComponent,
+} from '@beyond/ui';
+import { BydBaseComponent } from '@beyond/utils';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
+import { SearchItem, SearchResult } from '../../services/dto/search';
+import { BydScanPackingService } from '../../services/scan-packing.service';
 
 export interface Scope {
   key: string;
@@ -22,11 +32,20 @@ export interface ScanPackingDialogData {
   templateUrl: './scan-packing-modal.component.html',
   styleUrls: ['./scan-packing-modal.component.scss'],
   standalone: true,
-  imports: [LoaderComponent, EmptyComponent, ErrorComponent, ZXingScannerModule, CardComponent, CardHeaderComponent, CardTitleComponent, TranslatePipe, MatIcon, CardCtaComponent],
+  imports: [
+    LoaderComponent,
+    EmptyComponent,
+    ErrorComponent,
+    ZXingScannerModule,
+    CardComponent,
+    CardHeaderComponent,
+    CardTitleComponent,
+    TranslatePipe,
+    MatIcon,
+    CardCtaComponent,
+  ],
 })
 export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
-
-
   private readonly _scanPackingService = inject(BydScanPackingService);
   private readonly _notificationService = inject(BydNotificationService);
 
@@ -45,7 +64,10 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     }
     return Object.values(this.searchResult).every(items => items.length === 0);
   }
-  constructor(public dialogRef: MatDialogRef<ScanPackingDialog>,  @Inject(MAT_DIALOG_DATA) public data?: ScanPackingDialogData) {
+  constructor(
+    public dialogRef: MatDialogRef<ScanPackingDialog>,
+    @Inject(MAT_DIALOG_DATA) public data?: ScanPackingDialogData
+  ) {
     super();
   }
 
@@ -91,7 +113,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     }
   }
   public getDataByScope(scope: Scope) {
-    if(!this.searchResult) {
+    if (!this.searchResult) {
       return [];
     }
     return this.searchResult[scope.key] || [];
@@ -106,7 +128,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
   }
 
   public navigateTo(scope: Scope | null, item: SearchItem) {
-    if(!scope) {
+    if (!scope) {
       return;
     }
     this._scanPackingService.setActiveScanItem(item);

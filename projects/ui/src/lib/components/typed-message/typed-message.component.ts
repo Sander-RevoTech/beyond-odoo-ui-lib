@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 
-import { MessageLevel } from '@beyond/utils';
 import { TranslatePipe } from '@beyond/translation';
+import { MessageLevel } from '@beyond/utils';
+
 // import { MaterialIconComponent } from "@beyond/icons";
 
 @Component({

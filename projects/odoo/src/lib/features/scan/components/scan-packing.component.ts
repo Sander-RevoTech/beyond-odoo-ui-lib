@@ -1,10 +1,10 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { ScanPackingDialog, ScanPackingDialogData, Scope } from './scan-packing-modal/scan-packing-modal.component';
-import { BydScanPackingService } from '../services/scan-packing.service';
 import { BydBaseComponent } from '@beyond/utils';
 
+import { BydScanPackingService } from '../services/scan-packing.service';
+import { ScanPackingDialog, ScanPackingDialogData, Scope } from './scan-packing-modal/scan-packing-modal.component';
 
 @Component({
   selector: 'byd-scan-packing',

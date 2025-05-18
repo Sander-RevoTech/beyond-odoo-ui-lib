@@ -19,10 +19,10 @@ export class OdooJsonConnector {
   readonly server = inject(ODOO_SERVER_CONFIG_KEY);
 
   get uid() {
-    return this.permissionsServices.hasRole('shared') ? "%%COMMON_ID%%" : this.permissionsServices.uid;
+    return this.permissionsServices.hasRole('shared') ? '%%COMMON_ID%%' : this.permissionsServices.uid;
   }
   get pass() {
-    return this.permissionsServices.hasRole('shared') ? "%%COMMON_PASS%%" : this.permissionsServices.pass;
+    return this.permissionsServices.hasRole('shared') ? '%%COMMON_PASS%%' : this.permissionsServices.pass;
   }
 
   get url(): string {
@@ -36,11 +36,14 @@ export class OdooJsonConnector {
 
   public login$(user: string | null, password: string) {
     console.info('Getting UID');
-    if(!user) {
+    if (!user) {
       this.permissionsServices.set(2, password);
       return this.searchCount$('res.users', [['id', '=', 2]]).pipe(
         map(() => 2),
-        catchError(err => {this.permissionsServices.reset(); return of(err.message);}),
+        catchError(err => {
+          this.permissionsServices.reset();
+          return of(err.message);
+        })
       );
     }
     return this._connectWithCredentials$(user, password).pipe(
@@ -105,7 +108,7 @@ export class OdooJsonConnector {
       params: {
         service: 'object',
         method: 'execute_kw',
-        args: [this.db, this.uid, this.pass, model, method, args, {...kwargs, ...{context: {"company_id": 1}}}],
+        args: [this.db, this.uid, this.pass, model, method, args, { ...kwargs, ...{ context: { company_id: 1 } } }],
       },
       id: new Date().getTime(),
     };
@@ -119,7 +122,7 @@ export class OdooJsonConnector {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'target-url': this.server.odooUrl
+        'target-url': this.server.odooUrl,
       },
       body: JSON.stringify(params),
     }).then(response => {

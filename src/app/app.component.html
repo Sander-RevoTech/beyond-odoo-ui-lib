@@ -1,21 +1,18 @@
 <!-- <router-outlet /> -->
 <!-- <byd-notification-box></byd-notification-box> -->
 
-
 <ng-template #cardTemplate let-items="items">
-    @for(item of items; track item.id) {
-        <div class="row row-cols-2">
-            <div>{{ item.id }}</div>
-            <div>{{ item.name }}</div>
-        </div>
-    }
+  @for (item of items; track item.id) {
+    <div class="row row-cols-2">
+      <div>{{ item.id }}</div>
+      <div>{{ item.name }}</div>
+    </div>
+  }
 </ng-template>
 
 <byd-grid-container gridId="testing" model="res.users" [colsMetaData]="this.colsMetaData">
-    <byd-grid-tags gridId="testing"></byd-grid-tags>
-    <byd-grid gridId="testing" [cardTemplate]="cardTemplate"></byd-grid>
+  <byd-grid-tags gridId="testing"></byd-grid-tags>
+  <byd-grid gridId="testing" [cardTemplate]="cardTemplate"></byd-grid>
 
-    <byd-grid-form gridId="testing"></byd-grid-form>
+  <byd-grid-form gridId="testing"></byd-grid-form>
 </byd-grid-container>
-
-

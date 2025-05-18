@@ -8,8 +8,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { map, switchMap } from 'rxjs/operators';
 
 import { InputDropdown } from '@beyond/form-model';
-import { BydBaseComponent, toArray } from '@beyond/utils';
 import { TranslatePipe } from '@beyond/translation';
+import { BydBaseComponent, toArray } from '@beyond/utils';
 import { Observable } from 'rxjs';
 
 import { FormLabelComponent } from '../../label/label.component';

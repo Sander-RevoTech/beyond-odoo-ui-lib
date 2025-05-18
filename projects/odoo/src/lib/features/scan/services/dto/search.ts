@@ -7,4 +7,6 @@ export interface SearchItem {
   is_return?: boolean;
 }
 
-export interface SearchResult { [index:string]: SearchItem[]; }
+export interface SearchResult {
+  [index: string]: SearchItem[];
+}

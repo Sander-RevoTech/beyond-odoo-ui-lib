@@ -3,9 +3,9 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { ODOO_SERVER_CONFIG_KEY } from '@beyond/odoo';
+import { provideTranslation } from '@beyond/translation';
 
 import { routes } from './app.routes';
-import { provideTranslation } from '@beyond/translation';
 
 export const appConfig: ApplicationConfig = {
   providers: [

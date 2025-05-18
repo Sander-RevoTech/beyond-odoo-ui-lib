@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { BydAbstractGridComponent } from '../abstract.component';
-import { ViewType } from '../../models/types';
-import { MatIcon } from '@angular/material/icon';
 import { AsyncPipe } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+
+import { ViewType } from '../../models/types';
+import { BydAbstractGridComponent } from '../abstract.component';
 
 @Component({
   selector: 'byd-grid-control',
@@ -14,7 +14,7 @@ import { AsyncPipe } from '@angular/common';
 })
 export class BydGridControlComponent extends BydAbstractGridComponent<any> implements OnInit {
   @Input()
-  show: { switchView?: boolean; } = { switchView: true };
+  show: { switchView?: boolean } = { switchView: true };
 
   constructor() {
     super();
@@ -30,5 +30,4 @@ export class BydGridControlComponent extends BydAbstractGridComponent<any> imple
   public switchView(type: ViewType) {
     this._grid.switchView(type);
   }
-
 }

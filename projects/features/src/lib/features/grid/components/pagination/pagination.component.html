@@ -1,54 +1,35 @@
-@if(this.grid && this.grid.table && this.show) {
-  <div
-    class="flex-start g-space-sm align-center"
-  >
-    <mat-icon (click)="this.grid.table.previousPage()">
-      chevron_left
-    </mat-icon>
-    <ng-template
-      [ngTemplateOutlet]="item"
-      [ngTemplateOutletContext]="{ pagenumber: { number: 1 } }"
-    ></ng-template>
+@if (this.grid && this.grid.table && this.show) {
+  <div class="flex-start g-space-sm align-center">
+    <mat-icon (click)="this.grid.table.previousPage()"> chevron_left </mat-icon>
+    <ng-template [ngTemplateOutlet]="item" [ngTemplateOutletContext]="{ pagenumber: { number: 1 } }"></ng-template>
 
-    @for(page of this.getListPage(); track page.number) {
-      <ng-template
-        [ngTemplateOutlet]="item"
-        [ngTemplateOutletContext]="{ pagenumber: page }"
-      ></ng-template>
+    @for (page of this.getListPage(); track page.number) {
+      <ng-template [ngTemplateOutlet]="item" [ngTemplateOutletContext]="{ pagenumber: page }"></ng-template>
     }
 
-    @if(this.paginationGetTotalPages > 1) {
+    @if (this.paginationGetTotalPages > 1) {
       <ng-template
         [ngTemplateOutlet]="item"
         [ngTemplateOutletContext]="{
-          pagenumber: { number: this.paginationGetTotalPages }
+          pagenumber: { number: this.paginationGetTotalPages },
         }"
       ></ng-template>
     }
 
-    <mat-icon (click)="this.grid.table.nextPage()">
-      chevron_right
-    </mat-icon>
+    <mat-icon (click)="this.grid.table.nextPage()"> chevron_right </mat-icon>
   </div>
 }
 
-
-<ng-template
-  #item
-  let-pagenumber="pagenumber"
-  [typedTemplate]="this.PageNumber"
->
+<ng-template #item let-pagenumber="pagenumber" [typedTemplate]="this.PageNumber">
   <div
     class="figure c-pointer"
-    [class.is-active]="
-      pagenumber.number === (this.grid.table?.getPage() || 0 )
-    "
+    [class.is-active]="pagenumber.number === (this.grid.table?.getPage() || 0)"
     (click)="this.grid.table?.setPage(pagenumber.number)"
   >
-    @if(pagenumber.icon) {
-        <mat-icon type="sm">{{ pagenumber.icon }}</mat-icon>
+    @if (pagenumber.icon) {
+      <mat-icon type="sm">{{ pagenumber.icon }}</mat-icon>
     } @else {
-        {{ pagenumber.number }}
+      {{ pagenumber.number }}
     }
   </div>
 </ng-template>

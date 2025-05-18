@@ -1,10 +1,8 @@
-
-import { Observable } from 'rxjs';
-
 import { InputBase } from '@beyond/form-model';
+import { Observable } from 'rxjs';
+import { ColumnDefinition } from 'tabulator-tables';
 
 import { BydGridData } from '../grid-data';
-import { ColumnDefinition } from 'tabulator-tables';
 import { ColMetaData, Filter } from '../types';
 
 export const operatorMap: { [key: string]: string } = {
@@ -61,7 +59,7 @@ export class BaseCol<T> {
     return {
       field: this.key,
       title: this.inputLabel,
-      headerFilter: "input" 
+      headerFilter: 'input',
     };
   }
 

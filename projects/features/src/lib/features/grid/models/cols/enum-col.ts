@@ -1,5 +1,3 @@
-import { BaseCol } from "./base-col";
+import { BaseCol } from './base-col';
 
-export class EnumCol extends BaseCol<Number> {
-  
-}
+export class EnumCol extends BaseCol<Number> {}
