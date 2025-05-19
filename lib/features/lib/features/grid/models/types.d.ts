@@ -10,6 +10,7 @@ export declare enum ParameterType {
 export interface ColMetaData {
     name: string;
     type: ParameterType;
+    enumValues?: string[];
 }
 export type ActiveFilter = {
     key: string;

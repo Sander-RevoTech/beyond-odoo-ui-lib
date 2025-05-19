@@ -17,7 +17,7 @@ export enum ParameterType {
 export interface ColMetaData {
   name: string;
   type: ParameterType;
-  // enumName?: 'Criticity' | string;
+  enumValues?: string[];
   // nullable: boolean;
   // multiSearchEnabled: boolean;
   // meSearchEnabled: boolean;

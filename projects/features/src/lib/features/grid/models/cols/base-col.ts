@@ -67,7 +67,17 @@ export class BaseCol<T> {
     return null;
   }
   public formatInputForm(data: any): Filter | null {
-    return null;
+    const value = data[this.key];
+
+    if (!value) {
+      return null;
+    }
+
+    return {
+      field: this.key,
+      type: '=',
+      value: value,
+    };
   }
 }
 
