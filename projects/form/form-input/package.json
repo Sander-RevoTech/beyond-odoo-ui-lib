@@ -9,7 +9,6 @@
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "@angular/animations": "^19.2.0",
     "@beyond/form-model": "^0.0.0",
     "@beyond/ui": "^0.0.0",
     "tslib": "^2.3.0"

@@ -4,7 +4,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { InputDatePicker } from '@beyond/form-model';
 import { BydBaseComponent } from '@beyond/utils';
@@ -17,7 +17,7 @@ import { FormLabelComponent } from '../../label/label.component';
   styleUrls: ['./date-picker.component.scss'],
   standalone: true,
   imports: [
-    BrowserAnimationsModule,
+    BrowserModule,
     MatFormFieldModule,
     MatInputModule,
     FormLabelComponent,
