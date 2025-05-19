@@ -13,7 +13,7 @@ export class InputDatePicker extends InputBase<Date | Partial<{ start: Date | nu
 
   constructor(options: IInputDatePicker = {}) {
     super(options);
-    this.controlType = 'datePicker';
+    this.controlType = 'date-picker';
 
     this.minDate = this.parseDate(options.minDate);
     this.maxDate = this.parseDate(options.maxDate);
