@@ -1,4 +1,4 @@
-import { ManyToOneType } from "@beyond/odoo";
+import { ManyToOneType } from '@beyond/odoo';
 export interface Profile {
     id: number;
     email: string;

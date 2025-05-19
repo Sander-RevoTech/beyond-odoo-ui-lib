@@ -1,7 +1,7 @@
-import { BehaviorSubject } from 'rxjs';
-import { Message } from './dto/message';
-import { BydBaseOdooService } from '../../../../services/baseService';
 import { FileStructure } from '@beyond/utils';
+import { BehaviorSubject } from 'rxjs';
+import { BydBaseOdooService } from '../../../../services/baseService';
+import { Message } from './dto/message';
 import * as i0 from "@angular/core";
 export declare class BydMessagesService extends BydBaseOdooService {
     messages$: BehaviorSubject<{

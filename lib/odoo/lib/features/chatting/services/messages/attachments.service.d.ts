@@ -1,6 +1,6 @@
-import { BydBaseOdooService } from '../../../../services/baseService';
-import { FileStructure } from '@beyond/utils';
 import { HandleComplexRequest } from '@beyond/server';
+import { FileStructure } from '@beyond/utils';
+import { BydBaseOdooService } from '../../../../services/baseService';
 import { Attachment } from './dto/attachment';
 import * as i0 from "@angular/core";
 export declare class BydAttachementsService extends BydBaseOdooService {

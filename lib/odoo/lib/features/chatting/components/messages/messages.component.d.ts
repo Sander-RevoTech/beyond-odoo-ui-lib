@@ -1,6 +1,6 @@
 import { OnInit } from '@angular/core';
-import { BydBaseComponent, FileStructure } from '@beyond/utils';
 import { InputTextBox } from '@beyond/form-model';
+import { BydBaseComponent, FileStructure } from '@beyond/utils';
 import * as i0 from "@angular/core";
 export declare class BydMessagesComponent extends BydBaseComponent implements OnInit {
     id: number;

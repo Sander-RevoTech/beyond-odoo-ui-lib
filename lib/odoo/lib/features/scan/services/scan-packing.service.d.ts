@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
-import { SearchItem, SearchResult } from './dto/search';
 import { BydBaseOdooService } from '../../../services/baseService';
+import { SearchItem, SearchResult } from './dto/search';
 import * as i0 from "@angular/core";
 export declare class BydScanPackingService extends BydBaseOdooService {
     askScanning: Subject<unknown>;

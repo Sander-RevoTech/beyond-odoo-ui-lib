@@ -1,5 +1,5 @@
-import { Employee } from './dto/employee';
 import { BydBaseOdooService } from '../baseService';
+import { Employee } from './dto/employee';
 import * as i0 from "@angular/core";
 export declare class BydEmployeeService extends BydBaseOdooService {
     constructor();

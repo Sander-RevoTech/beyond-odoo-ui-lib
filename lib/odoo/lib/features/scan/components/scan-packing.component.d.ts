@@ -1,6 +1,6 @@
 import { MatDialog } from '@angular/material/dialog';
-import { Scope } from './scan-packing-modal/scan-packing-modal.component';
 import { BydBaseComponent } from '@beyond/utils';
+import { Scope } from './scan-packing-modal/scan-packing-modal.component';
 import * as i0 from "@angular/core";
 export declare class BydScanPackingComponent extends BydBaseComponent {
     private _dialog;

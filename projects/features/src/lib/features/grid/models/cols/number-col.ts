@@ -1,5 +1,6 @@
-import { InputLabel, InputNumber, InputPanel } from '@beyond/form-model';
+import { InputNumber, InputPanel } from '@beyond/form-model';
 
+import { Filter } from '../types';
 import { BaseCol } from './base-col';
 
 export class NumberCol extends BaseCol<Number> {
@@ -8,20 +9,25 @@ export class NumberCol extends BaseCol<Number> {
       key: 'number-panel',
       contentClass: 'row g-0',
       children: [
-        new InputLabel({
-          key: 'number-panel-label',
+        new InputNumber({
+          key: this.key,
           label: this.inputLabel,
-          class: 'col-12',
-        }),
-        new InputNumber({
-          key: this.key + '#min',
-          label: 'min',
-        }),
-        new InputNumber({
-          key: this.key + '#max',
-          label: 'max',
         }),
       ],
     });
+  }
+
+  public override formatInputForm(data: any): Filter | null {
+    const value = data[this.key];
+
+    if (!value) {
+      return null;
+    }
+
+    return {
+      field: this.key,
+      type: '=',
+      value: value,
+    };
   }
 }
