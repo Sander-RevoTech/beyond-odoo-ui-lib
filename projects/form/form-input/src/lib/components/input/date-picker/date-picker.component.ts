@@ -19,11 +19,12 @@ import { FormLabelComponent } from '../../label/label.component';
     MatFormFieldModule,
     MatInputModule,
     FormLabelComponent,
-    MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
     MatNativeDateModule,
   ],
+  providers: [MatNativeDateModule],
 })
 export class BydDatePickerComponent extends BydBaseComponent {
   @Input()
