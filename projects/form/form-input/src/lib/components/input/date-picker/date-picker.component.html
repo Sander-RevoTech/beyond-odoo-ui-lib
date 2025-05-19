@@ -1,0 +1,16 @@
+<byd-form-label [input]="this.input"></byd-form-label>
+
+<mat-form-field class="date-picker-container" [floatLabel]="'auto'">
+  <input
+    matInput
+    class="form-control"
+    [matDatepicker]="picker"
+    [value]="this.input.value"
+    [formControl]="$any(input.formControl)"
+    (click)="picker.open()"
+    [min]="this.input.minDate"
+    [max]="this.input.maxDate"
+  />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker touchUi #picker></mat-datepicker>
+</mat-form-field>

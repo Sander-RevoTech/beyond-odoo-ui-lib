@@ -4,6 +4,7 @@ import { FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 import {
+  BydDatePickerComponent,
   BydInputButtonComponent,
   CheckboxComponent,
   DropdownComponent,
@@ -45,6 +46,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     LabelComponent,
     InputChoicesComponent,
     BydInputButtonComponent,
+    BydDatePickerComponent,
   ],
 })
 export class InputsComponent extends BydBaseComponent {
