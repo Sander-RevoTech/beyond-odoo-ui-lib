@@ -28,7 +28,7 @@ export class RelationCol extends BaseCol<string> {
 
     return {
       field: this.key,
-      type: 'in',
+      type: this.data.col.multivalues ? 'in' : '=',
       value: Number(value),
     };
   }
