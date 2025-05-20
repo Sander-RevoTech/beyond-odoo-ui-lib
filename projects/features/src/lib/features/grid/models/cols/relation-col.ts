@@ -1,5 +1,6 @@
 import { InputChoices, InputTextBox } from '@beyond/form-model';
 
+import { Filter } from '../types';
 import { BaseCol } from './base-col';
 
 export class RelationCol extends BaseCol<string> {
@@ -16,5 +17,19 @@ export class RelationCol extends BaseCol<string> {
     return new InputTextBox({
       key: this.key,
     });
+  }
+
+  public override formatInputForm(data: any): Filter | null {
+    const value = data[this.key];
+
+    if (!value) {
+      return null;
+    }
+
+    return {
+      field: this.key,
+      type: 'in',
+      value: value,
+    };
   }
 }
