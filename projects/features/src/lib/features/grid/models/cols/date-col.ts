@@ -1,4 +1,5 @@
 import { InputDatePicker } from '@beyond/form-model';
+import { format } from 'date-fns';
 
 import { Filter } from '../types';
 import { BaseCol } from './base-col';
@@ -22,7 +23,7 @@ export class DateCol extends BaseCol<Date> {
     return {
       field: this.key,
       type: 'like',
-      value: value,
+      value: format(value, 'yyyy-MM-dd'),
     };
   }
 }

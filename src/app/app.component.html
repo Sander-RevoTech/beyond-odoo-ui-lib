@@ -10,9 +10,10 @@
   }
 </ng-template>
 
-<byd-grid-container gridId="testing" model="res.users" [colsMetaData]="this.colsMetaData">
-  <byd-grid-tags gridId="testing"></byd-grid-tags>
-  <byd-grid gridId="testing" [cardTemplate]="cardTemplate"></byd-grid>
+<byd-grid-container gridId="washing" model="washing.production" [colsMetaData]="this.colsMetaData">
+  <byd-grid-tags gridId="washing"></byd-grid-tags>
+  <byd-grid-control gridId="washing"></byd-grid-control>
+  <byd-grid gridId="washing" [cardTemplate]="cardTemplate"></byd-grid>
 
-  <byd-grid-form gridId="testing"></byd-grid-form>
+  <byd-grid-form gridId="washing"></byd-grid-form>
 </byd-grid-container>

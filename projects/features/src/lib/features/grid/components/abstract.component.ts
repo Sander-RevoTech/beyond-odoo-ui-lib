@@ -28,9 +28,6 @@ export abstract class BydAbstractGridComponent<T> extends BydBaseComponent imple
 
   ngOnInit() {
     this._grid = this._dataService.get(this.gridId, true);
-    this.isReady$ = this._grid.isReady$.pipe(
-      filter(isReady => isReady),
-      tap(a => console.log('after', a))
-    );
+    this.isReady$ = this._grid.isReady$.pipe(filter(isReady => isReady));
   }
 }

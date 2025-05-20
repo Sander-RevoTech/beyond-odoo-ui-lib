@@ -17,23 +17,9 @@ export const operatorMap: { [key: string]: string } = {
 export interface IFilterOptions {
   allow: boolean;
 }
-export interface IColOptions {
-  sortable?: boolean;
-  filters?: IFilterOptions;
-  enumInfo?: {
-    cellRenderer: any;
-    enum: any | null;
-    values: {
-      id: string;
-      name: string;
-    }[];
-  };
-  dataSearch$?: (search: string, colId: string) => Observable<string[]>;
-}
 export interface IBaseCol {
   scope: string;
   col: ColMetaData;
-  options?: IColOptions;
 }
 
 export class BaseCol<T> {
@@ -42,9 +28,6 @@ export class BaseCol<T> {
 
   get key() {
     return this.data.col.name;
-  }
-  get options() {
-    return this.data.options;
   }
 
   get inputLabel() {

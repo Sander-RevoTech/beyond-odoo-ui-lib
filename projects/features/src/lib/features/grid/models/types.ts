@@ -1,3 +1,5 @@
+import { InputChoicesOption } from '@beyond/form-model';
+import { Observable } from 'rxjs';
 import { Filter as TabulatorFilter } from 'tabulator-tables';
 
 type KeyValuePair = {
@@ -12,17 +14,14 @@ export enum ParameterType {
   Boolean,
   DateTime,
   Enum,
+  Relation,
 }
 
 export interface ColMetaData {
   name: string;
   type: ParameterType;
   enumValues?: string[];
-  // nullable: boolean;
-  // multiSearchEnabled: boolean;
-  // meSearchEnabled: boolean;
-  // showEntireListWhenFiltering: boolean;
-  // additionalInfo: KeyValuePair[];
+  dataSearch$?: (search?: string) => Observable<InputChoicesOption[]>;
 }
 
 export type ActiveFilter = { key: string; values: Filter[] };

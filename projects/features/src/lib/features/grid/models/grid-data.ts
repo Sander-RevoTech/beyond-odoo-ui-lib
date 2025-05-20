@@ -8,6 +8,7 @@ import { BoolCol } from './cols/bool-col';
 import { DateCol } from './cols/date-col';
 import { EnumCol } from './cols/enum-col';
 import { NumberCol } from './cols/number-col';
+import { RelationCol } from './cols/relation-col';
 import { StringCol } from './cols/string-col';
 import { BydGridFilters } from './grid-filters';
 import { ColMetaData, Filter, ParameterType, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
@@ -92,6 +93,8 @@ export class BydGridData<T> {
         return new DateCol({ scope: this.scope, col: col }, this);
       case ParameterType.Boolean:
         return new BoolCol({ scope: this.scope, col: col }, this);
+      case ParameterType.Relation:
+        return new RelationCol({ scope: this.scope, col: col }, this);
       default:
         return new BaseCol({ scope: this.scope, col: col }, this);
     }
