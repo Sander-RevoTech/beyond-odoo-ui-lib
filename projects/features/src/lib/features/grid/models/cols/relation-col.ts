@@ -29,7 +29,7 @@ export class RelationCol extends BaseCol<string> {
     return {
       field: this.key,
       type: 'in',
-      value: value,
+      value: Number(value),
     };
   }
 }
