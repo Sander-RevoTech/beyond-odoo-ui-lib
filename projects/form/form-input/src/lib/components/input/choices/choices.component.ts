@@ -17,13 +17,13 @@ import {
 } from './bottom/bottom.component';
 
 @Component({
-  selector: 'app-input-choices',
+  selector: 'byd-input-choices',
   templateUrl: './choices.component.html',
   styleUrls: ['./choices.component.scss'],
   standalone: true,
   imports: [MatFormField, MatLabel, MatHint, MatError, TranslatePipe, MatInputModule, NgFor, NgIf],
 })
-export class InputChoicesComponent extends BydAbstractComponent {
+export class BydInputChoicesComponent extends BydAbstractComponent {
   @Input()
   input!: InputChoices;
 

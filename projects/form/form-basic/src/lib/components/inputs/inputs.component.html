@@ -35,12 +35,11 @@
     <ng-container *ngSwitchCase="'date-picker'">
       <byd-input-date-picker [input]="input"></byd-input-date-picker>
     </ng-container>
-
     <ng-container *ngSwitchCase="'button'">
       <byd-input-button [input]="$any(input)"></byd-input-button>
     </ng-container>
     <ng-container *ngSwitchCase="'choices'">
-      <app-input-choices [input]="$any(input)"></app-input-choices>
+      <byd-input-choices [input]="$any(input)"></byd-input-choices>
     </ng-container>
   </ng-container>
 </ng-template>

@@ -5,7 +5,7 @@ import { BaseCol } from './base-col';
 export class RelationCol extends BaseCol<string> {
   public override getInputForm() {
     if (this.data.col.dataSearch$) {
-      new InputChoices({
+      return new InputChoices({
         key: this.key,
         label: this.inputLabel,
         class: 'pb-2',
