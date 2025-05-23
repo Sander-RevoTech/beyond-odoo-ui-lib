@@ -8,7 +8,9 @@
   @include fonts.fontSizeBody(xs, true);
 
   border-radius: 6px;
-
+  mat-icon {
+    transform: scale(0.5);
+  }
   .value {
     white-space: nowrap;
   }
