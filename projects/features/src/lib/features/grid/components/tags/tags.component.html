@@ -1,10 +1,15 @@
-<div class="flex-row align-center g-space-sm">
-  <div class="list-tag">
+<div class="space-between align-center">
+  <div class="list-tag flex-start g-space-sm">
+    <div class="group-tag flex-start g-space-xs align-center">
+      @if (this.group) {
+        {{ 'grid.' + this.gridId + '.core.groupBy' | translate }}:
+        <byd-badge [value]="this.group" type="primary" icon="close" (clickAction)="this.removeGroup()"></byd-badge>
+      }
+    </div>
+
     @for (tag of this.activeFilters; track tag.key) {
-      <div class="item-tag">
-        <div class="tag-title">
-          {{ 'grid.' + this.gridId + '.core.' + tag.key | translate }}
-        </div>
+      <div class="item-tag flex-start g-space-xs align-center">
+        <div class="tag-title">{{ 'grid.' + this.gridId + '.core.' + tag.key | translate }}:</div>
         @for (value of tag.values; track value.field) {
           <byd-badge
             [value]="value.type + ' ' + value.value"
@@ -17,15 +22,14 @@
     }
   </div>
 
-  <div class="reset-n-result flex-start g-space-md">
-    <!-- <div class="rest" *ngIf="this.tagsList.length > 0">
-      <cam-link (action)="this.reset()" [underline]="false">
-        <div class="flex-start g-space-xs align-center">
-          <cam-font-icon type="sm" name="close-tool"></cam-font-icon>
-          {{ "grid.tag.delete" | translate }}
-        </div>
-      </cam-link>
-    </div> -->
+  <div class="reset-n-result flex-start g-space-md align-center">
+    @if (this.activeFilters.length > 0) {
+      <div class="reset">
+        <byd-button (action)="this.clear()">
+          {{ 'grid.tag.reset' | translate }}
+        </byd-button>
+      </div>
+    }
     <div class="result">
       <byd-text>
         {{ 'grid.tag.results' | translate: { nb: this.data.length } }}

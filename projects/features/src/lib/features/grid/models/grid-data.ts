@@ -11,7 +11,8 @@ import { NumberCol } from './cols/number-col';
 import { RelationCol } from './cols/relation-col';
 import { StringCol } from './cols/string-col';
 import { BydGridFilters } from './grid-filters';
-import { ColMetaData, Filter, ParameterType, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
+import { ColMetaData, ParameterType, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
+import { groupBy } from './utils';
 
 export interface IDataService<T> {
   getData$: (params: ajaxRequestFuncParams) => Observable<ajaxResponse<T>>;
@@ -20,6 +21,12 @@ export interface IDataService<T> {
 export class BydGridData<T> {
   get data(): T[] {
     return this.table?.getData() ?? [];
+  }
+  get dataByGroup() {
+    return groupBy(this.groupBy, this.data);
+  }
+  get isGroup() {
+    return this.groupBy !== null;
   }
   public table: Tabulator | null = null;
   public cols: { [index: string]: BaseCol<any> } = {};
@@ -30,6 +37,8 @@ export class BydGridData<T> {
   public tableHtml: ElementRef | null = null;
   public readonly displayType = signal<ViewType>('card');
 
+  public groupBy: keyof T | null = null;
+
   constructor(public readonly scope: string) {}
 
   public init(params: { elementRef: ElementRef; colsMetaData: ColMetaData[]; services: IDataService<T> }) {
@@ -38,7 +47,7 @@ export class BydGridData<T> {
       layout: 'fitColumns',
       paginationMode: 'remote',
       pagination: true,
-      paginationSize: 10,
+      paginationSize: 20,
       paginationInitialPage: 1,
       ajaxFiltering: true,
       filterMode: 'remote',
@@ -50,7 +59,7 @@ export class BydGridData<T> {
 
       ajaxURL: 'dummy',
       ajaxRequestFunc: (url: string, config: any, ajaxParams: ajaxRequestFuncParams): Promise<ajaxResponse<T>> => {
-        return firstValueFrom(params.services.getData$(ajaxParams));
+        return firstValueFrom(params.services.getData$({ ...ajaxParams, groupBy: this.groupBy as string }));
       },
       ajaxResponse: function (_: any, __: any, response: ajaxResponse<T>) {
         return response;
@@ -62,6 +71,17 @@ export class BydGridData<T> {
       this.filters = new BydGridFilters(this.scope, this.table!);
       this.isReady$.next(true);
     });
+  }
+
+  public setGroupBy(field: string) {
+    this.groupBy = field as keyof T;
+    this.table?.setGroupBy(field);
+    this.table?.setData();
+  }
+  public clearGroupBy() {
+    this.groupBy = null;
+    this.table?.setGroupBy([]);
+    this.table?.setData();
   }
 
   public switchView(type: ViewType) {

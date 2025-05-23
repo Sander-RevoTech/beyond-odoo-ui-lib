@@ -30,6 +30,12 @@ export type Filter = TabulatorFilter;
 export type Sort = { field: string; dir: 'asc' | 'desc' };
 
 export type ajaxResponse<T> = { data: T[]; last_page: number };
-export type ajaxRequestFuncParams = { filter: Filter[]; sort: Sort[]; page: number; size: number };
+export type ajaxRequestFuncParams = {
+  filter: Filter[];
+  sort: Sort[];
+  groupBy: string | null;
+  page: number;
+  size: number;
+};
 
 export type ViewType = 'grid' | 'card';

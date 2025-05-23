@@ -14,10 +14,8 @@ import { BydAbstractGridComponent } from '../abstract.component';
   styleUrl: './form.component.scss',
 })
 export class BydGridFormComponent extends BydAbstractGridComponent<unknown> {
-  @Output()
-  applied = new EventEmitter<Filter[]>();
-
   public filtersForm = signal<InputBase<any>[]>([]);
+  public groupForm = signal<InputBase<any>[]>([]);
 
   private _formService = inject(BydGridFormService<unknown>);
 
@@ -26,16 +24,26 @@ export class BydGridFormComponent extends BydAbstractGridComponent<unknown> {
 
     this._registerSubscription(
       this.isReady$.subscribe({
-        next: () => this.filtersForm.set(this._formService.getFiltersForm(this._grid)),
+        next: () => {
+          this.filtersForm.set(this._formService.getFiltersForm(this._grid));
+          this.groupForm.set(this._formService.getGroupForm(this._grid));
+        },
       })
     );
   }
 
-  public apply(data: any) {
+  public applyFilters(data: any) {
     const filters = this._formService.formatFiltersForm(this._grid, data);
 
     this._grid.filters?.apply(filters);
+  }
+  public applyGroup(data: any) {
+    const group = this._formService.formatGroupForm(data);
 
-    this.applied.emit(filters);
+    if (!group) {
+      this._grid.clearGroupBy();
+      return;
+    }
+    this._grid.setGroupBy(group);
   }
 }

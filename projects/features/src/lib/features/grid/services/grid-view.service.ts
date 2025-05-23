@@ -21,12 +21,13 @@ export class BydGridViewService extends BydBaseOdooService {
   ): Observable<ajaxResponse<T>> {
     const filterParams = ajaxParam.filter.map(f => [f.field, f.type, f.value]) ?? [];
     const orderParams = ajaxParam.sort.map(s => `${s.field} ${s.dir}`).join(',') ?? '';
+    const groupBy = ajaxParam.groupBy;
 
     return this._odooService.searchCount$(model, filterParams).pipe(
       mergeMap(count =>
         this._odooService
           .searchRead$<T>(model, filterParams, fields, {
-            order: orderParams,
+            order: groupBy ? `${groupBy} asc ${orderParams ? ',' + orderParams : ''}` : orderParams,
             offset: (ajaxParam.page - 1) * ajaxParam.size,
             limit: ajaxParam.size,
           })

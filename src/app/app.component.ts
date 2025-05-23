@@ -12,6 +12,8 @@ import {
 import { BydEmployeeService } from '@beyond/odoo';
 import { map } from 'rxjs';
 
+import { AppTranslationService } from './translations/translation.service';
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -61,4 +63,8 @@ export class AppComponent {
           .pipe(map(data => data.map(item => ({ id: item.id.toString(), name: item.name, data: item })))),
     },
   ];
+
+  constructor() {
+    AppTranslationService.getInstance();
+  }
 }

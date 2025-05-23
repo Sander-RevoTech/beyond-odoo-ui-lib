@@ -11,8 +11,14 @@ export abstract class BydAbstractGridComponent<T> extends BydBaseComponent imple
   @Input()
   gridId!: string;
 
+  get isGroup() {
+    return this._grid.isGroup;
+  }
   get data() {
     return this._grid.data;
+  }
+  get dataByGroup() {
+    return this._grid.dataByGroup;
   }
   get displayType() {
     return this._grid.displayType;

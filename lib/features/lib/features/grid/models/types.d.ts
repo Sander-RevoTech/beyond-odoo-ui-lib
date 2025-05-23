@@ -33,6 +33,7 @@ export type ajaxResponse<T> = {
 export type ajaxRequestFuncParams = {
     filter: Filter[];
     sort: Sort[];
+    groupBy: string | null;
     page: number;
     size: number;
 };

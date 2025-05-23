@@ -79,6 +79,16 @@ export class OdooJsonConnector {
     console.info('Search & Read:', model);
     return this._call_kw$<T[]>(model, 'search_read', [domain, fields], opts);
   }
+  public searchReadAndGroup$<T>(
+    model: string,
+    domain: any[],
+    fields: Array<keyof T> = [],
+    groups: Array<keyof T> = [],
+    opts: Record<string, any> = {}
+  ) {
+    console.info('Search & Read - Group:', model);
+    return this._call_kw$<T[]>(model, 'read_group', [domain, fields, groups], opts);
+  }
 
   public create$<T>(model: string, values: Record<string, any>) {
     return this._call_kw$<T>(model, 'create', [values]);

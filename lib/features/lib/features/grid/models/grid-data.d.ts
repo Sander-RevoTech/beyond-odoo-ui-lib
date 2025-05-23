@@ -10,6 +10,11 @@ export interface IDataService<T> {
 export declare class BydGridData<T> {
     readonly scope: string;
     get data(): T[];
+    get dataByGroup(): {
+        key: string;
+        data: T[];
+    }[];
+    get isGroup(): boolean;
     table: Tabulator | null;
     cols: {
         [index: string]: BaseCol<any>;
@@ -18,12 +23,15 @@ export declare class BydGridData<T> {
     readonly isReady$: BehaviorSubject<boolean>;
     tableHtml: ElementRef | null;
     readonly displayType: import("@angular/core").WritableSignal<ViewType>;
+    groupBy: keyof T | null;
     constructor(scope: string);
     init(params: {
         elementRef: ElementRef;
         colsMetaData: ColMetaData[];
         services: IDataService<T>;
     }): void;
+    setGroupBy(field: string): void;
+    clearGroupBy(): void;
     switchView(type: ViewType): void;
     private _getColumns;
     private _factoryCols;

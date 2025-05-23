@@ -1,1 +1,8 @@
-<byd-form [inputs]="this.filtersForm()" (valid)="this.apply($event)"></byd-form>
+<div class="space-between">
+  <div>
+    <byd-form [inputs]="this.filtersForm()" (valid)="this.applyFilters($event)" [askOnDestroy]="true"></byd-form>
+  </div>
+  <div>
+    <byd-form [inputs]="this.groupForm()" (valid)="this.applyGroup($event)" [askOnDestroy]="true"></byd-form>
+  </div>
+</div>

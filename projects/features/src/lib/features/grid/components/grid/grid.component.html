@@ -4,7 +4,20 @@
 
 @if (this.isReady$ | async) {
   @if (this.displayType() === 'card') {
-    <ng-template [ngTemplateOutlet]="this.cardTemplate" [ngTemplateOutletContext]="{ items: this.data }"></ng-template>
+    @if (this.isGroup) {
+      @for (group of this.dataByGroup; track group.key) {
+        <byd-title [level]="3">{{ group.key }}</byd-title>
+        <ng-template
+          [ngTemplateOutlet]="this.cardTemplate"
+          [ngTemplateOutletContext]="{ items: group.data }"
+        ></ng-template>
+      }
+    } @else {
+      <ng-template
+        [ngTemplateOutlet]="this.cardTemplate"
+        [ngTemplateOutletContext]="{ items: this.data }"
+      ></ng-template>
+    }
   }
   <byd-grid-pagination [gridId]="this.gridId"></byd-grid-pagination>
 }

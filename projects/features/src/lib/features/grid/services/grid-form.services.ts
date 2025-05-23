@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { InputBase, InputPanel } from '@beyond/form-model';
+import { InputBase, InputDropdown, InputPanel } from '@beyond/form-model';
 import { isNonNullable } from '@beyond/utils';
+import { of } from 'rxjs';
 
 import { BydGridData } from '../models/grid-data';
 import { Filter } from '../models/types';
@@ -37,5 +38,31 @@ export class BydGridFormService<T> {
       }
       return [...acc, filter];
     }, []);
+  }
+
+  public getGroupForm(model: BydGridData<T>): InputBase<any>[] {
+    return [
+      new InputPanel({
+        key: 'main-panel',
+        label: `grid.${model.scope}.title`,
+        class: 'p-space-sm',
+        children: [
+          new InputDropdown({
+            key: 'group',
+            label: `grid.${model.scope}.groupBy`,
+            options: of(
+              Object.values(model.cols).map(group => ({
+                id: group.key,
+                name: group.key,
+              }))
+            ),
+          }),
+        ],
+      }),
+    ];
+  }
+
+  public formatGroupForm(data: any): string | null {
+    return data['group'] || null;
   }
 }
