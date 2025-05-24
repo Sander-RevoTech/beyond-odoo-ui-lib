@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild, inject } from '@angular/core';
 
 import { ColMetaData } from '../../models/types';
 import { BydGridViewService } from '../../services/grid-view.service';
@@ -10,7 +10,7 @@ import { BydAbstractGridComponent } from '../abstract.component';
   templateUrl: './container.component.html',
   styleUrl: './container.component.scss',
 })
-export class BydGridContainerComponent extends BydAbstractGridComponent<unknown> {
+export class BydGridContainerComponent extends BydAbstractGridComponent<unknown> implements AfterViewInit, OnDestroy {
   @Input()
   model!: string;
 
@@ -34,5 +34,9 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
           ),
       },
     });
+  }
+
+  override ngOnDestroy() {
+    this._grid.destroy();
   }
 }

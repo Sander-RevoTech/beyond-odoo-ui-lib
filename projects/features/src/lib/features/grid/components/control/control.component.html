@@ -12,5 +12,12 @@
         </div>
       </div>
     }
+    @if (this.show.filters) {
+      <div class="grid-control-container ml-space-xs c-pointer">
+        <div (click)="this.openFilters()" class="trigger">
+          <mat-icon>list</mat-icon>
+        </div>
+      </div>
+    }
   </div>
 }

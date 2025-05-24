@@ -73,6 +73,10 @@ export class BydGridData<T> {
     });
   }
 
+  public destroy() {
+    this.table?.destroy();
+  }
+
   public setGroupBy(field: string) {
     this.groupBy = field as keyof T;
     this.table?.setGroupBy(field);

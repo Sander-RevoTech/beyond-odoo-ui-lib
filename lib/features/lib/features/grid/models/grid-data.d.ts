@@ -30,6 +30,7 @@ export declare class BydGridData<T> {
         colsMetaData: ColMetaData[];
         services: IDataService<T>;
     }): void;
+    destroy(): void;
     setGroupBy(field: string): void;
     clearGroupBy(): void;
     switchView(type: ViewType): void;

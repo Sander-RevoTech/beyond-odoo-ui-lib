@@ -1,9 +1,13 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
+
+import { BydButtonComponent } from '@beyond/ui';
 
 import { ViewType } from '../../models/types';
 import { BydAbstractGridComponent } from '../abstract.component';
+import { BydGridFormComponent } from '../form/form.component';
 
 @Component({
   selector: 'byd-grid-control',
@@ -14,7 +18,9 @@ import { BydAbstractGridComponent } from '../abstract.component';
 })
 export class BydGridControlComponent extends BydAbstractGridComponent<any> implements OnInit {
   @Input()
-  show: { switchView?: boolean } = { switchView: true };
+  show: { switchView?: boolean; filters?: boolean } = { switchView: true, filters: true };
+
+  readonly dialog = inject(MatDialog);
 
   constructor() {
     super();
@@ -29,5 +35,30 @@ export class BydGridControlComponent extends BydAbstractGridComponent<any> imple
 
   public switchView(type: ViewType) {
     this._grid.switchView(type);
+  }
+
+  public openFilters() {
+    this.dialog.open<FiltersModal, FiltersModalData>(FiltersModal, {
+      data: { gridId: this.gridId },
+    });
+  }
+}
+
+interface FiltersModalData {
+  gridId: string;
+}
+@Component({
+  selector: '',
+  template:
+    '<div class="p-space-md"><byd-grid-form [gridId]="this.data.gridId"></byd-grid-form><byd-button (action)="this.close()">Applied</byd-button></div>',
+  standalone: true,
+  imports: [BydGridFormComponent, BydButtonComponent],
+})
+export class FiltersModal {
+  public readonly dialogRef = inject(MatDialogRef<FiltersModal>);
+  public readonly data = inject<FiltersModalData>(MAT_DIALOG_DATA);
+
+  public close() {
+    this.dialogRef.close();
   }
 }
