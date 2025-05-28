@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 
 import { BydState } from '@beyond/styles';
 import { StopPropagationDirective } from '@beyond/utils';
@@ -9,7 +10,7 @@ import { StopPropagationDirective } from '@beyond/utils';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   standalone: true,
-  imports: [NgClass, StopPropagationDirective],
+  imports: [NgClass, StopPropagationDirective, MatIcon],
 })
 export class BydButtonComponent {
   /**
