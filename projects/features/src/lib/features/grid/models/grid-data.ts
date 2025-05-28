@@ -74,7 +74,7 @@ export class BydGridData<T> {
       this.isReady$.next(true);
     });
     this.table.on('rowClick', (_e, row) => {
-      console.log('✅ Ligne cliquée :', row.getData());
+      this.rowClicked$.next(<T>row.getData());
     });
   }
 
