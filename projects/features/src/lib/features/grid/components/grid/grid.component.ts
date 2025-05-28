@@ -1,5 +1,15 @@
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
-import { Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  Renderer2,
+  TemplateRef,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
 
 import { BydTitleComponent } from '@beyond/ui';
 
@@ -17,7 +27,11 @@ export class BydGridComponent<T extends { id: number }> extends BydAbstractGridC
   @Input()
   cardTemplate!: TemplateRef<{ items: T[] }>;
 
-  @ViewChild('table', { static: true }) tableElement!: ElementRef;
+  @Output()
+  rowClicked = new EventEmitter<T>();
+
+  @ViewChild('table', { static: true })
+  tableElement!: ElementRef;
 
   constructor(private renderer: Renderer2) {
     super();
@@ -30,6 +44,7 @@ export class BydGridComponent<T extends { id: number }> extends BydAbstractGridC
           if (this._grid.tableHtml) {
             this.renderer.appendChild(this.tableElement.nativeElement, this._grid.tableHtml.nativeElement);
           }
+          this._registerSubscription(this._grid.rowClicked$.subscribe({ next: row => this.rowClicked.emit(row) }));
         },
       })
     );

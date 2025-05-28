@@ -1,5 +1,5 @@
 import { ElementRef } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { BaseCol } from './cols/base-col';
 import { BydGridFilters } from './grid-filters';
@@ -15,6 +15,7 @@ export declare class BydGridData<T> {
         data: T[];
     }[];
     get isGroup(): boolean;
+    readonly rowClicked$: Subject<T>;
     table: Tabulator | null;
     cols: {
         [index: string]: BaseCol<any>;

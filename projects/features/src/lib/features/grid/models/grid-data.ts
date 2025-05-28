@@ -1,6 +1,6 @@
 import { ElementRef, signal } from '@angular/core';
 
-import { BehaviorSubject, Observable, firstValueFrom } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, firstValueFrom } from 'rxjs';
 import { ColumnDefinition, TabulatorFull as Tabulator } from 'tabulator-tables';
 
 import { BaseCol } from './cols/base-col';
@@ -28,6 +28,8 @@ export class BydGridData<T> {
   get isGroup() {
     return this.groupBy !== null;
   }
+
+  public readonly rowClicked$ = new Subject<T>();
   public table: Tabulator | null = null;
   public cols: { [index: string]: BaseCol<any> } = {};
   public filters: BydGridFilters | null = null;
@@ -70,6 +72,9 @@ export class BydGridData<T> {
       this.tableHtml = params.elementRef;
       this.filters = new BydGridFilters(this.scope, this.table!);
       this.isReady$.next(true);
+    });
+    this.table.on('rowClick', (_e, row) => {
+      console.log('✅ Ligne cliquée :', row.getData());
     });
   }
 
