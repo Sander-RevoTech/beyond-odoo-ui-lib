@@ -16,6 +16,11 @@ export interface ColMetaData {
     multivalues?: boolean;
     enumValues?: string[];
     dataSearch$?: (search?: string) => Observable<InputChoicesOption[]>;
+    manyToOneOptions?: {
+        field: string;
+        model: string;
+        data$: (id: number[]) => Observable<string[]>;
+    };
 }
 export type ActiveFilter = {
     key: string;
@@ -36,5 +41,6 @@ export type ajaxRequestFuncParams = {
     groupBy: string | null;
     page: number;
     size: number;
+    colsMetaData: ColMetaData[];
 };
 export type ViewType = 'grid' | 'card';

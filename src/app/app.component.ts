@@ -9,7 +9,7 @@ import {
   ColMetaData,
   ParameterType,
 } from '@beyond/features';
-import { BydEmployeeService } from '@beyond/odoo';
+import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
 import { map } from 'rxjs';
 
 import { AppTranslationService } from './translations/translation.service';
@@ -31,7 +31,42 @@ export class AppComponent {
   title = 'beyond-odoo-ui-lib';
 
   readonly service = inject(BydEmployeeService);
-  readonly colsMetaData: ColMetaData[] = [
+  readonly partnersService = inject(BydPartnersService);
+
+  // readonly colsMetaData: ColMetaData[] = [
+  //   {
+  //     name: 'id',
+  //     type: ParameterType.Number,
+  //   },
+  //   {
+  //     name: 'name',
+  //     type: ParameterType.String,
+  //   },
+  //   {
+  //     name: 'move_date',
+  //     type: ParameterType.DateTime,
+  //   },
+  //   {
+  //     name: 'state',
+  //     type: ParameterType.Enum,
+  //     enumValues: ['draft', 'confirmed'],
+  //   },
+  //   {
+  //     name: 'shift_period',
+  //     type: ParameterType.Enum,
+  //     enumValues: ['morning', 'afternoon', 'night'],
+  //   },
+  //   {
+  //     name: 'employee_id',
+  //     type: ParameterType.Relation,
+  //     dataSearch$: (search?: string) =>
+  //       this.service
+  //         .searchByName$(search ?? '')
+  //         .pipe(map(data => data.map(item => ({ id: item.id.toString(), name: item.name, data: item })))),
+  //   },
+  // ];
+
+  readonly colsMetaData = [
     {
       name: 'id',
       type: ParameterType.Number,
@@ -41,29 +76,19 @@ export class AppComponent {
       type: ParameterType.String,
     },
     {
-      name: 'move_date',
-      type: ParameterType.DateTime,
-    },
-    {
       name: 'state',
       type: ParameterType.Enum,
-      enumValues: ['draft', 'confirmed'],
+      enumValues: ['draft', 'waiting', 'confirmed', 'assigned', 'done'],
     },
     {
-      name: 'shift_period',
-      type: ParameterType.Enum,
-      enumValues: ['morning', 'afternoon', 'night'],
-    },
-    {
-      name: 'employee_id',
+      name: 'partner_id',
       type: ParameterType.Relation,
-      dataSearch$: (search?: string) =>
-        this.service
-          .searchByName$(search ?? '')
-          .pipe(map(data => data.map(item => ({ id: item.id.toString(), name: item.name, data: item })))),
+    },
+    {
+      name: 'scheduled_date',
+      type: ParameterType.DateTime,
     },
   ];
-
   constructor() {
     AppTranslationService.getInstance();
   }

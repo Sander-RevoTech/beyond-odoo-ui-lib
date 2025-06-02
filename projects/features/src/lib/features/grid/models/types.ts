@@ -2,11 +2,6 @@ import { InputChoicesOption } from '@beyond/form-model';
 import { Observable } from 'rxjs';
 import { Filter as TabulatorFilter } from 'tabulator-tables';
 
-type KeyValuePair = {
-  key: string;
-  value: number;
-};
-
 export enum ParameterType {
   Unknown,
   String,
@@ -23,6 +18,11 @@ export interface ColMetaData {
   multivalues?: boolean;
   enumValues?: string[];
   dataSearch$?: (search?: string) => Observable<InputChoicesOption[]>;
+  manyToOneOptions?: {
+    field: string;
+    model: string;
+    data$: (id: number[]) => Observable<string[]>;
+  };
 }
 
 export type ActiveFilter = { key: string; values: Filter[] };
@@ -36,6 +36,7 @@ export type ajaxRequestFuncParams = {
   groupBy: string | null;
   page: number;
   size: number;
+  colsMetaData: ColMetaData[];
 };
 
 export type ViewType = 'grid' | 'card';

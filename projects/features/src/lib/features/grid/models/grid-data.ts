@@ -61,7 +61,13 @@ export class BydGridData<T> {
 
       ajaxURL: 'dummy',
       ajaxRequestFunc: (url: string, config: any, ajaxParams: ajaxRequestFuncParams): Promise<ajaxResponse<T>> => {
-        return firstValueFrom(params.services.getData$({ ...ajaxParams, groupBy: this.groupBy as string }));
+        return firstValueFrom(
+          params.services.getData$({
+            ...ajaxParams,
+            groupBy: this.groupBy as string,
+            colsMetaData: params.colsMetaData,
+          })
+        );
       },
       ajaxResponse: function (_: any, __: any, response: ajaxResponse<T>) {
         return response;
