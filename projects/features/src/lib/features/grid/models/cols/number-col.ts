@@ -12,7 +12,7 @@ export class NumberCol extends BaseCol<Number> {
         new InputNumber({
           key: this.key,
           label: this.inputLabel,
-          value: this.filterValues[0]?.toString() || '',
+          value: this.filterValues[0]?.toString(),
         }),
       ],
     });

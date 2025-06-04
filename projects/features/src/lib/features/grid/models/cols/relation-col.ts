@@ -11,13 +11,13 @@ export class RelationCol extends BaseCol<string> {
         label: this.inputLabel,
         class: 'pb-2',
         advancedSearch$: this.data.col.dataSearch$,
-        value: this.filterValues[0] || '',
+        value: this.filterValues[0],
       });
     }
 
     return new InputTextBox({
       key: this.key,
-      value: this.filterValues[0] || '',
+      value: this.filterValues[0],
     });
   }
 

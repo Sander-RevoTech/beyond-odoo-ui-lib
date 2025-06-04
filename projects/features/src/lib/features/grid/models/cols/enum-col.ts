@@ -18,7 +18,7 @@ export class EnumCol extends BaseCol<string> {
               name: value,
             })) ?? []
           ),
-          value: this.filterValues[0] || '',
+          value: this.filterValues[0],
         }),
       ],
     });

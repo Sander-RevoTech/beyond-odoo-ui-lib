@@ -11,7 +11,7 @@ export class StringCol extends BaseCol<string> {
       key: this.key,
       label: this.inputLabel,
       class: 'pb-2',
-      value: this.filterValues[0] || '',
+      value: this.filterValues[0],
     });
   }
 
