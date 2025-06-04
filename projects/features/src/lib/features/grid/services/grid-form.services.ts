@@ -54,6 +54,7 @@ export class BydGridFormService<T> {
                 name: group.key,
               }))
             ),
+            value: model.groupBy,
           }),
         ],
       }),
