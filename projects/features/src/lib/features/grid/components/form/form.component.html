@@ -1,3 +1,7 @@
+<div>
+  <byd-title [level]="2">{{ 'grid.' + this.grid.scope + '.title' }}</byd-title>
+</div>
+
 <div class="space-between">
   <div>
     <byd-form [inputs]="this.filtersForm()" (valid)="this.applyFilters($event)" [askOnDestroy]="true"></byd-form>

@@ -10,6 +10,7 @@ export class DateCol extends BaseCol<Date> {
       key: this.key,
       label: this.inputLabel,
       rangeEnabled: true,
+      value: { start: this.filterValues[0] || '' },
     });
   }
 

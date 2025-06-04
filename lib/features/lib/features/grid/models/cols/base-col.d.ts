@@ -17,6 +17,7 @@ export declare class BaseCol<T> {
     model: BydGridData<any>;
     get key(): string;
     get inputLabel(): string;
+    get filterValues(): T[];
     constructor(data: IBaseCol, model: BydGridData<any>);
     getColDef(): ColumnDefinition;
     getInputForm(): InputBase<any> | null;

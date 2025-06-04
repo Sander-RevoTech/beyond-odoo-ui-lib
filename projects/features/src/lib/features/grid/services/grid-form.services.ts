@@ -22,7 +22,6 @@ export class BydGridFormService<T> {
     return [
       new InputPanel({
         key: 'main-panel',
-        label: `grid.${model.scope}.title`,
         class: 'p-space-sm',
         children: keys.map(key => model.cols[key].getInputForm()).filter(isNonNullable),
       }),
@@ -44,7 +43,6 @@ export class BydGridFormService<T> {
     return [
       new InputPanel({
         key: 'main-panel',
-        label: `grid.${model.scope}.title`,
         class: 'p-space-sm',
         children: [
           new InputDropdown({

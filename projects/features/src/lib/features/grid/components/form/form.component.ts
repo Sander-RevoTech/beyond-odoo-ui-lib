@@ -1,15 +1,15 @@
-import { Component, EventEmitter, Output, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 
 import { BydFormComponent } from '@beyond/form-basic';
 import { InputBase } from '@beyond/form-model';
+import { BydTitleComponent } from '@beyond/ui';
 
-import { Filter } from '../../models/types';
 import { BydGridFormService } from '../../services/grid-form.services';
 import { BydAbstractGridComponent } from '../abstract.component';
 
 @Component({
   selector: 'byd-grid-form',
-  imports: [BydFormComponent],
+  imports: [BydFormComponent, BydTitleComponent],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })

@@ -9,7 +9,6 @@ export declare class PaginationComponent extends BydAbstractGridComponent<any> {
         pagenumber: PageNumber;
     };
     readonly maxPageNumber = 10;
-    get grid(): import("../../models/grid-data").BydGridData<any>;
     get show(): boolean;
     get paginationGetTotalPages(): number;
     constructor();

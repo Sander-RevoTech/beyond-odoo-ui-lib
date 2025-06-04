@@ -5,6 +5,7 @@ import { BydGridData } from '../models/grid-data';
 import * as i0 from "@angular/core";
 export declare abstract class BydAbstractGridComponent<T> extends BydBaseComponent implements OnInit {
     gridId: string;
+    get grid(): BydGridData<T>;
     get isGroup(): boolean;
     get data(): T[];
     get dataByGroup(): {

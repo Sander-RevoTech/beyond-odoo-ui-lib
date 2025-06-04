@@ -20,9 +20,7 @@ type PageNumber = {
 export class PaginationComponent extends BydAbstractGridComponent<any> {
   readonly PageNumber!: { pagenumber: PageNumber };
   readonly maxPageNumber = 10;
-  get grid() {
-    return this._grid;
-  }
+
   get show() {
     return this.paginationGetTotalPages > 1;
   }
