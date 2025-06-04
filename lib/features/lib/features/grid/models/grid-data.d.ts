@@ -25,6 +25,7 @@ export declare class BydGridData<T> {
     tableHtml: ElementRef | null;
     readonly displayType: import("@angular/core").WritableSignal<ViewType>;
     groupBy: keyof T | null;
+    readonly totalItems: import("@angular/core").WritableSignal<number>;
     constructor(scope: string);
     init(params: {
         elementRef: ElementRef;

@@ -40,6 +40,7 @@ export class BydGridData<T> {
   public readonly displayType = signal<ViewType>('card');
 
   public groupBy: keyof T | null = null;
+  public readonly totalItems = signal(0);
 
   constructor(public readonly scope: string) {}
 
@@ -69,7 +70,8 @@ export class BydGridData<T> {
           })
         );
       },
-      ajaxResponse: function (_: any, __: any, response: ajaxResponse<T>) {
+      ajaxResponse: (_: any, __: any, response: ajaxResponse<T>) => {
+        this.totalItems.set(response.total);
         return response;
       },
     });

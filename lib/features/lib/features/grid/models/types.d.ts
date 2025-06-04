@@ -34,6 +34,7 @@ export type Sort = {
 export type ajaxResponse<T> = {
     data: T[];
     last_page: number;
+    total: number;
 };
 export type ajaxRequestFuncParams = {
     filter: Filter[];

@@ -29,7 +29,7 @@ export type ActiveFilter = { key: string; values: Filter[] };
 export type Filter = TabulatorFilter;
 export type Sort = { field: string; dir: 'asc' | 'desc' };
 
-export type ajaxResponse<T> = { data: T[]; last_page: number };
+export type ajaxResponse<T> = { data: T[]; last_page: number; total: number };
 export type ajaxRequestFuncParams = {
   filter: Filter[];
   sort: Sort[];

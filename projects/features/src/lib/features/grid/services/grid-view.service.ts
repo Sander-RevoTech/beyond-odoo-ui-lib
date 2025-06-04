@@ -47,6 +47,7 @@ export class BydGridViewService extends BydBaseOdooService {
             }),
             map(data => ({
               data: data,
+              total: count,
               last_page: Math.ceil(count / ajaxParam.size),
             }))
           )
