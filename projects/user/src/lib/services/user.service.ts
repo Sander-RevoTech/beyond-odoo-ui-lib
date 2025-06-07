@@ -28,7 +28,7 @@ export class BydUserService extends BydBaseOdooService {
         .searchRead$<Profile>(
           'res.users',
           [['id', '=', this.permissionsServices.uid]],
-          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id']
+          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id', 'company_id', 'company_ids']
         )
         .pipe(
           filter(isNonNullable),
