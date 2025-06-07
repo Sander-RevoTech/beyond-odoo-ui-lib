@@ -14,6 +14,7 @@ export declare abstract class BydAbstractGridComponent<T> extends BydBaseCompone
     }[];
     get displayType(): import("@angular/core").WritableSignal<import("@beyond/features").ViewType>;
     isReady$: Observable<boolean>;
+    isDataReady$: Observable<boolean>;
     protected _grid: BydGridData<T>;
     private _dataService;
     constructor();

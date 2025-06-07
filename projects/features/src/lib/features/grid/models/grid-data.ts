@@ -11,7 +11,7 @@ import { NumberCol } from './cols/number-col';
 import { RelationCol } from './cols/relation-col';
 import { StringCol } from './cols/string-col';
 import { BydGridFilters } from './grid-filters';
-import { ColMetaData, ParameterType, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
+import { ColMetaData, Filter, ParameterType, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
 import { groupBy } from './utils';
 
 export interface IDataService<T> {
@@ -35,6 +35,7 @@ export class BydGridData<T> {
   public filters: BydGridFilters | null = null;
 
   public readonly isReady$ = new BehaviorSubject(false);
+  public readonly isDataReady$ = new BehaviorSubject(false);
 
   public tableHtml: ElementRef | null = null;
   public readonly displayType = signal<ViewType>('card');
@@ -44,7 +45,12 @@ export class BydGridData<T> {
 
   constructor(public readonly scope: string) {}
 
-  public init(params: { elementRef: ElementRef; colsMetaData: ColMetaData[]; services: IDataService<T> }) {
+  public init(params: {
+    elementRef: ElementRef;
+    colsMetaData: ColMetaData[];
+    services: IDataService<T>;
+    initialFilter?: Filter[];
+  }) {
     this.table = new Tabulator(params.elementRef.nativeElement, {
       height: '500px',
       layout: 'fitColumns',
@@ -54,6 +60,7 @@ export class BydGridData<T> {
       paginationInitialPage: 1,
       ajaxFiltering: true,
       filterMode: 'remote',
+      initialFilter: params.initialFilter,
 
       ajaxSorting: true,
       sortMode: 'remote',
@@ -71,6 +78,7 @@ export class BydGridData<T> {
         );
       },
       ajaxResponse: (_: any, __: any, response: ajaxResponse<T>) => {
+        this.isDataReady$.next(true);
         this.totalItems.set(response.total);
         return response;
       },

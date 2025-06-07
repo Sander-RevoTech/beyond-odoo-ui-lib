@@ -27,6 +27,7 @@ export abstract class BydAbstractGridComponent<T> extends BydBaseComponent imple
     return this._grid.displayType;
   }
   public isReady$!: Observable<boolean>;
+  public isDataReady$!: Observable<boolean>;
 
   protected _grid!: BydGridData<T>;
   private _dataService = inject(BydGridInstanceService);
@@ -38,6 +39,10 @@ export abstract class BydAbstractGridComponent<T> extends BydBaseComponent imple
   ngOnInit() {
     this._grid = this._dataService.get(this.gridId, true);
     this.isReady$ = this._grid.isReady$.pipe(
+      distinctUntilChanged(),
+      filter(isReady => isReady)
+    );
+    this.isDataReady$ = this._grid.isDataReady$.pipe(
       distinctUntilChanged(),
       filter(isReady => isReady)
     );
