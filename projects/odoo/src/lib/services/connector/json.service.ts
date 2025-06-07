@@ -77,15 +77,15 @@ export class OdooJsonConnector {
   }
   public searchRead$<T>(model: string, domain: any[], fields: Array<keyof T> = [], opts: Record<string, any> = {}) {
     console.info('Search & Read:', model);
-    if (
-      this.permissionsServices.compagnies &&
-      this.permissionsServices.compagnies.length > 0 &&
-      fields &&
-      fields.length > 0 &&
-      fields.includes('company_id' as keyof T)
-    ) {
-      domain.push(['company_id', 'in', this.permissionsServices.compagnies]);
-    }
+    // if (
+    //   this.permissionsServices.compagnies &&
+    //   this.permissionsServices.compagnies.length > 0 &&
+    //   fields &&
+    //   fields.length > 0 &&
+    //   fields.includes('company_id' as keyof T)
+    // ) {
+    //   domain.push(['company_id', 'in', this.permissionsServices.compagnies]);
+    // }
     return this._call_kw$<T[]>(model, 'search_read', [domain, fields], opts);
   }
   public searchReadAndGroup$<T>(

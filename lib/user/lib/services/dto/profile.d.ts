@@ -6,5 +6,4 @@ export interface Profile {
     share: boolean;
     groups_id: ManyToOneType;
     employee_id: ManyToOneType;
-    company_ids: number[];
 }

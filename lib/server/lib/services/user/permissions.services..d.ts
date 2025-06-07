@@ -11,14 +11,15 @@ export declare class BydPermissionsServices {
         [index: string]: string[];
     };
     roles: Role[];
-    compagnies: number[];
+    wharehouse: number | null;
     get isAuthenticated(): boolean;
     updated$: Observable<number | null>;
     private _sep;
     get received(): boolean;
     constructor();
     set(uid: number | null, pass: string): void;
-    setRole(role: Role, compagnies?: number[]): void;
+    setWarehouse(warehouse: number | null): void;
+    setRole(role: Role): void;
     reset(): void;
     hasRole(role: Role): boolean;
     canDirectAccess(feature: string, level: BydPermissionLevel): boolean;

@@ -1,9 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 
-import { BydBaseOdooService } from '@beyond/odoo';
+import { BydBaseOdooService, BydEmployeeService } from '@beyond/odoo';
 import { BydPermissionsServices, HandleSimpleRequest } from '@beyond/server';
-import { isNonNullable } from '@beyond/utils';
-import { filter, map, mergeMap, of, tap } from 'rxjs';
+import { getFirstNumber, isNonNullable } from '@beyond/utils';
+import { filter, map, mergeMap, of, switchMap, tap } from 'rxjs';
 
 import { Profile } from './dto/profile';
 
@@ -12,7 +12,10 @@ import { Profile } from './dto/profile';
 })
 export class BydUserService extends BydBaseOdooService {
   readonly profile$ = new HandleSimpleRequest<Profile>();
+  readonly warehouse$ = new HandleSimpleRequest<number[]>();
+
   readonly permissionsServices = inject(BydPermissionsServices);
+  readonly employeesServices = inject(BydEmployeeService);
 
   constructor() {
     super();
@@ -28,13 +31,22 @@ export class BydUserService extends BydBaseOdooService {
         .searchRead$<Profile>(
           'res.users',
           [['id', '=', this.permissionsServices.uid]],
-          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id', 'company_ids']
+          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id']
         )
         .pipe(
           filter(isNonNullable),
           map(result => result[0]),
           tap(profile => {
-            this.permissionsServices.setRole(profile.share ? 'shared' : 'interne', profile.company_ids);
+            this.permissionsServices.setRole(profile.share ? 'shared' : 'interne');
+          }),
+          switchMap((profile: Profile) => {
+            return this.warehouse$
+              .fetch(
+                this.employeesServices
+                  .getWarehouses$(getFirstNumber(profile.employee_id) ?? 0)
+                  .pipe(filter(isNonNullable))
+              )
+              .pipe(map(() => profile));
           })
         )
     );

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { BydBaseOdooService } from '../baseService';
 import { Employee } from './dto/employee';
@@ -17,5 +17,12 @@ export class BydEmployeeService extends BydBaseOdooService {
     return this._odooService
       .searchRead$<Employee>('hr.employee', [['name', 'ilike', name]], ['id', 'name'])
       .pipe(filter(data => !!data));
+  }
+
+  public getWarehouses$(id: number) {
+    return this._odooService.searchRead$<Employee>('hr.employee', [['id', '=', id]], ['id', 'warehouse_ids']).pipe(
+      filter(data => !!data),
+      map(data => data[0]?.warehouse_ids || null)
+    );
   }
 }
