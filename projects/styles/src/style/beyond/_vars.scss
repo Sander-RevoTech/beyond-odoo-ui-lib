@@ -142,7 +142,7 @@ $text: map.merge(
 
 $surface: map.merge(
   (
-    default: map.get($brand, 200),
+    default: map.get($brand, 100),
     primary: map.get($neutral, white),
     secondary: map.get($neutral, 200),
     tertiary: map.get($neutral, 100),

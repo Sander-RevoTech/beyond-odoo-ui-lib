@@ -11,13 +11,15 @@ $spacing: common.get-var(space, md);
   &.hover {
     @include colors.hover-bgc();
   }
-  border-radius: common.get-var(space, md);
+  border-radius: common.get-var(radius, rounded);
 
   position: relative;
 
   padding: $spacing;
 
   background-color: common.get-var(surface, default);
+  border: 1px solid common.get-var(border, brand);
+
   color: common.get-var(text, primary);
 
   @include fonts.fontSizeBody(md);

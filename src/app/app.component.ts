@@ -12,6 +12,14 @@ import {
 import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
 
 import { Preset } from '../../projects/features/src/public-api';
+import { BydButtonComponent } from '../../projects/ui/src/lib/components/button/button.component';
+import { BydTitleComponent } from '../../projects/ui/src/lib/components/title/title.component';
+import { CardComponent } from '../../projects/ui/src/lib/features/card/card.component';
+import { CardContentComponent } from '../../projects/ui/src/lib/features/card/content/card-content.component';
+import { CardCtaComponent } from '../../projects/ui/src/lib/features/card/cta/card-cta.component';
+import { CardHeaderComponent } from '../../projects/ui/src/lib/features/card/header/card-header.component';
+import { CardSubtitleComponent } from '../../projects/ui/src/lib/features/card/subtitle/card-subtitle.component';
+import { CardTitleComponent } from '../../projects/ui/src/lib/features/card/title/card-title.component';
 import { AppTranslationService } from './translations/translation.service';
 
 @Component({
@@ -24,6 +32,14 @@ import { AppTranslationService } from './translations/translation.service';
     BydGridTagsComponent,
     BydGridControlComponent,
     BydGridSearchComponent,
+    CardComponent,
+    CardHeaderComponent,
+    CardTitleComponent,
+    CardSubtitleComponent,
+    CardContentComponent,
+    CardCtaComponent,
+    BydButtonComponent,
+    BydTitleComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -8,7 +8,7 @@
 
   border: none;
 
-  border-radius: common.get-var(radius, full);
+  border-radius: common.get-var(radius, rounded);
   padding: common.get-var(space, sm) common.get-var(space, md);
 
   @include fonts.fontSizeBody(md);

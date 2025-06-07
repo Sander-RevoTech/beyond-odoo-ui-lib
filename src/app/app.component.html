@@ -1,5 +1,23 @@
 <!-- <router-outlet /> -->
 <!-- <byd-notification-box></byd-notification-box> -->
+<div class="p-space-xxl">
+  <byd-card>
+    <byd-card-header>
+      <byd-card-title>
+        <byd-title>Washing Production</byd-title>
+      </byd-card-title>
+      <byd-card-subtitle>Production overview</byd-card-subtitle>
+    </byd-card-header>
+    <byd-card-content>
+      <p>Washing production overview content goes here.</p>
+      <p>Use the grid below to manage washing production items.</p>
+    </byd-card-content>
+    <byd-card-cta>
+      <byd-button icon="plus">add</byd-button>
+      <byd-button icon="refresh">refresh</byd-button>
+    </byd-card-cta>
+  </byd-card>
+</div>
 
 <ng-template #cardTemplate let-items="items">
   @for (item of items; track item.id) {
