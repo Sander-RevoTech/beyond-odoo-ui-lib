@@ -11,7 +11,7 @@ export class BydGridSessionService {
   private _filterData = new HandleComplexRequest<Filter[]>();
 
   public setFilter(key: string, filter: Filter[]) {
-    this._filterData.update(key, filter);
+    this._filterData.update(key, filter, false);
   }
   public getFilter(key: string) {
     return this._filterData.get(key);

@@ -26,7 +26,7 @@ export class BydGridSearchComponent extends BydAbstractGridComponent<any> {
     this.input.createFormControl();
   }
   public valueChanged(value: string) {
-    const filter: Filter[] = [
+    const filters: Filter[] = [
       {
         field: 'name',
         type: 'like',
@@ -34,9 +34,9 @@ export class BydGridSearchComponent extends BydAbstractGridComponent<any> {
       },
     ];
     if (this.outOfBox) {
-      this._session.setFilter(this.gridId, filter);
+      this._session.setFilter(this.gridId, filters);
     } else {
-      this.grid.filters?.apply(filter);
+      this.grid.filters?.apply(filters);
     }
   }
 }
