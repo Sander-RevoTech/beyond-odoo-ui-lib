@@ -22,7 +22,7 @@ export class BydGridControlComponent extends BydAbstractGridComponent<any> imple
   show: { switchView?: boolean; filters?: boolean; preset?: boolean } = {
     switchView: true,
     filters: true,
-    preset: false,
+    preset: true,
   };
 
   readonly dialog = inject(MatDialog);

@@ -7,7 +7,7 @@
         </div>
       </div>
     }
-    @if (this.show.preset) {
+    @if (this.show.preset && (this.grid.filters?.preset?.length ?? 0 > 0)) {
       <div class="grid-control-container ml-space-xs c-pointer">
         <div [matMenuTriggerFor]="menu" class="trigger">
           <mat-icon>visibility</mat-icon>
