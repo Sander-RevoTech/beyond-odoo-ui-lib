@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 import { BydWarehousesService } from '@beyond/odoo';
+import { CardComponent, CardHeaderComponent, CardTitleComponent } from '@beyond/ui';
 import { BydAbstractComponent } from '@beyond/utils';
 
 import { BydUserService } from '../../services/user.service';
@@ -11,7 +12,7 @@ import { BydUserService } from '../../services/user.service';
   selector: 'byd-warehouse',
   templateUrl: './warehouse.component.html',
   styleUrls: ['./warehouse.component.scss'],
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, CardComponent, CardHeaderComponent, CardTitleComponent],
   standalone: true,
 })
 export class WarehouseComponent extends BydAbstractComponent {
