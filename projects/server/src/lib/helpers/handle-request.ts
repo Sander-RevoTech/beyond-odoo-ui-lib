@@ -21,9 +21,11 @@ export class HandleComplexRequest<T> {
     const entities = this.data$.getValue();
 
     if (!entities[id]) {
-      return;
+      entities[id] = item; // Initialize if not present
+    } else {
+      entities[id] = merge ? { ...entities[id], ...item } : item;
     }
-    entities[id] = merge ? { ...entities[id], ...item } : item;
+
     this.data$.next(entities);
   }
   public get(key: string | number) {
