@@ -13,6 +13,8 @@ import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
 
 import { Preset } from '../../projects/features/src/public-api';
 import { BydButtonComponent } from '../../projects/ui/src/lib/components/button/button.component';
+import { BydNavigationDateDayComponent } from '../../projects/ui/src/lib/components/navigation/date/day/day.component';
+import { BydNavigationDateWeekComponent } from '../../projects/ui/src/lib/components/navigation/date/week/week.component';
 import { BydTitleComponent } from '../../projects/ui/src/lib/components/title/title.component';
 import { CardComponent } from '../../projects/ui/src/lib/features/card/card.component';
 import { CardContentComponent } from '../../projects/ui/src/lib/features/card/content/card-content.component';
@@ -40,6 +42,7 @@ import { AppTranslationService } from './translations/translation.service';
     CardCtaComponent,
     BydButtonComponent,
     BydTitleComponent,
+    BydNavigationDateWeekComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

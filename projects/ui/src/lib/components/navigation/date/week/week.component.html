@@ -1,22 +1,20 @@
-<div class="grid pb-3 justify-content-center">
-  <div class="align-items-center">
-    <byd-button (action)="this.previous()" type="primary">
+<div class="d-flex align-center g-space-md">
+  <div>
+    <byd-button (action)="this.previous()" type="secondary">
       <mat-icon>chevron_left</mat-icon>
     </byd-button>
   </div>
 
-  <div class="g-col-8 align-items-center">
-    <byd-title>
-      <div>
-        From {{ this.fromDay | date: 'dd/MM/YY' }} to
-        {{ this.toDay | date: 'dd/MM/YY' }}
-      </div>
-      <div class="fsz-md">week number: {{ this.weekInYear }}</div>
+  <div>
+    <byd-title [level]="2" [isBold]="true" [isTheme]="true">
+      {{ this.fromDay | date: 'dd/MM/YY' }} - {{ this.toDay | date: 'dd/MM/YY' }}
     </byd-title>
+
+    <div class="ta-c">week number: {{ this.weekInYear }}</div>
   </div>
 
-  <div class="align-items-center">
-    <byd-button (action)="this.next()" type="primary">
+  <div>
+    <byd-button (action)="this.next()" type="secondary">
       <mat-icon>chevron_right</mat-icon>
     </byd-button>
   </div>

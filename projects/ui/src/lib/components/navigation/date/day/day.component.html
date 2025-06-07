@@ -1,16 +1,16 @@
-<div class="grid pb-3 justify-content-center">
-  <div class="align-items-center">
-    <byd-button (action)="this.previous()" type="primary">
+<div class="d-flex align-center g-space-md">
+  <div>
+    <byd-button (action)="this.previous()" type="secondary">
       <mat-icon>chevron_left</mat-icon>
     </byd-button>
   </div>
 
-  <div class="g-col-8 align-items-center">
-    <byd-title> {{ this.viewDate | date: 'fullDate' }} </byd-title>
+  <div>
+    <byd-title [level]="2" [isBold]="true" [isTheme]="true"> {{ this.viewDate | date: 'fullDate' }} </byd-title>
   </div>
 
-  <div class="align-items-center">
-    <byd-button (action)="this.next()" type="primary">
+  <div>
+    <byd-button (action)="this.next()" type="secondary">
       <mat-icon>chevron_right</mat-icon>
     </byd-button>
   </div>
