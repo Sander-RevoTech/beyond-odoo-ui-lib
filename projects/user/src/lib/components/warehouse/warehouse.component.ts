@@ -1,7 +1,8 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
-import { BydPermissionsServices } from '@beyond/server';
-import { BydButtonComponent } from '@beyond/ui';
+import { BydWarehousesService } from '@beyond/odoo';
 import { BydAbstractComponent } from '@beyond/utils';
 
 import { BydUserService } from '../../services/user.service';
@@ -10,13 +11,23 @@ import { BydUserService } from '../../services/user.service';
   selector: 'byd-warehouse',
   templateUrl: './warehouse.component.html',
   styleUrls: ['./warehouse.component.scss'],
-  imports: [BydButtonComponent],
+  imports: [AsyncPipe],
   standalone: true,
 })
 export class WarehouseComponent extends BydAbstractComponent {
   private readonly _usersServices = inject(BydUserService);
+  private readonly _warehouseServices = inject(BydWarehousesService);
+
+  public dialogRef = inject(MatDialogRef);
+  public warehouses$ = this._warehouseServices.warehouse.get$();
 
   constructor() {
     super();
+    this._warehouseServices.fetch$(this._usersServices.warehouse$.get() ?? []).subscribe();
+  }
+
+  public select(id: number) {
+    this._usersServices.permissionsServices.setWarehouse(id);
+    this.dialogRef.close();
   }
 }

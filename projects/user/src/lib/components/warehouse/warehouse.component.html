@@ -1,1 +1,8 @@
-<div class="guard"></div>
+<div>
+  @for (warehouse of this.warehouses$ | async; track warehouse.id) {
+    <div class="warehouse-item">
+      <h3>{{ warehouse.name }}</h3>
+      <button (click)="this.select(warehouse.id)">select</button>
+    </div>
+  }
+</div>

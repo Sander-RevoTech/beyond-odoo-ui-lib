@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { BydPermissionsServices } from '@beyond/server';
-import { BydButtonComponent } from '@beyond/ui';
 import { BydAbstractComponent } from '@beyond/utils';
 
 import { BydUserService } from '../../services/user.service';
@@ -10,9 +9,8 @@ import { WarehouseComponent } from './warehouse.component';
 
 @Component({
   selector: 'byd-warehouse-guard',
-  templateUrl: './warehouse.component.html',
-  styleUrls: ['./warehouse.component.scss'],
-  imports: [BydButtonComponent],
+  template: '',
+  imports: [],
   standalone: true,
 })
 export class WarehouseGuardComponent extends BydAbstractComponent {

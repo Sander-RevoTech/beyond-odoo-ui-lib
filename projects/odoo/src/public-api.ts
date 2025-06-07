@@ -16,5 +16,5 @@ export * from './lib/types/types';
 export * from './lib/services/auth.service';
 
 export * from './lib/services/employee/employee.service';
-
 export * from './lib/services/partners/partners.service';
+export * from './lib/services/warehouses/warehouses.service';
