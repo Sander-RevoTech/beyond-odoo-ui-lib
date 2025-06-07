@@ -127,7 +127,15 @@ export class OdooJsonConnector {
       params: {
         service: 'object',
         method: 'execute_kw',
-        args: [this.db, this.uid, this.pass, model, method, args, { ...kwargs, ...{ context: { company_id: 1 } } }],
+        args: [
+          this.db,
+          this.uid,
+          this.pass,
+          model,
+          method,
+          args,
+          { ...kwargs, ...{ context: { company_id: this.permissionsServices.compagnies } } },
+        ],
       },
       id: new Date().getTime(),
     };
