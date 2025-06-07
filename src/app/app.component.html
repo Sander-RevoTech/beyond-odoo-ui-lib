@@ -10,10 +10,22 @@
   }
 </ng-template>
 
-<byd-grid-container gridId="washing" model="washing.production" [colsMetaData]="this.colsMetaData">
+<byd-grid-container
+  gridId="washing"
+  model="washing.production"
+  [colsMetaData]="this.colsMetaData"
+  [preset]="this.preset"
+>
   <byd-grid-search gridId="washing" [outOfBox]="true"></byd-grid-search>
   <byd-grid-tags gridId="washing"></byd-grid-tags>
-  <byd-grid-control gridId="washing"></byd-grid-control>
+  <byd-grid-control
+    gridId="washing"
+    [show]="{
+      switchView: true,
+      filters: true,
+      preset: true,
+    }"
+  ></byd-grid-control>
   <byd-grid gridId="washing" [cardTemplate]="cardTemplate"></byd-grid>
 
   <byd-grid-form gridId="washing"></byd-grid-form>

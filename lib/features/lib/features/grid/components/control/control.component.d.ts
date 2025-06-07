@@ -1,18 +1,20 @@
 import { OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ViewType } from '../../models/types';
+import { Preset, ViewType } from '../../models/types';
 import { BydAbstractGridComponent } from '../abstract.component';
 import * as i0 from "@angular/core";
 export declare class BydGridControlComponent extends BydAbstractGridComponent<any> implements OnInit {
     show: {
         switchView?: boolean;
         filters?: boolean;
+        preset?: boolean;
     };
     readonly dialog: MatDialog;
     constructor();
     ngOnInit(): void;
     switchView(type: ViewType): void;
     openFilters(): void;
+    setPreset(preset: Preset): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydGridControlComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<BydGridControlComponent, "byd-grid-control", never, { "show": { "alias": "show"; "required": false; }; }, {}, never, never, true, never>;
 }

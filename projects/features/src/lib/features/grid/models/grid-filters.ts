@@ -1,11 +1,12 @@
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 
-import { ActiveFilter, Filter } from './types';
+import { ActiveFilter, Filter, Preset } from './types';
 
 export class BydGridFilters {
   constructor(
     public readonly scope: string,
-    public readonly table: Tabulator
+    public readonly table: Tabulator,
+    public readonly preset: Preset[] = []
   ) {}
 
   public get() {

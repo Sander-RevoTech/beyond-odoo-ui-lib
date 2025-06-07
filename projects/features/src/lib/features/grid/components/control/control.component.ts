@@ -2,10 +2,11 @@ import { AsyncPipe } from '@angular/common';
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { BydButtonComponent } from '@beyond/ui';
 
-import { ViewType } from '../../models/types';
+import { Preset, ViewType } from '../../models/types';
 import { BydAbstractGridComponent } from '../abstract.component';
 import { BydGridFormComponent } from '../form/form.component';
 
@@ -14,11 +15,15 @@ import { BydGridFormComponent } from '../form/form.component';
   templateUrl: './control.component.html',
   styleUrls: ['./control.component.scss'],
   standalone: true,
-  imports: [MatIcon, AsyncPipe],
+  imports: [MatIcon, AsyncPipe, MatMenuModule],
 })
 export class BydGridControlComponent extends BydAbstractGridComponent<any> implements OnInit {
   @Input()
-  show: { switchView?: boolean; filters?: boolean } = { switchView: true, filters: true };
+  show: { switchView?: boolean; filters?: boolean; preset?: boolean } = {
+    switchView: true,
+    filters: true,
+    preset: false,
+  };
 
   readonly dialog = inject(MatDialog);
 
@@ -41,6 +46,9 @@ export class BydGridControlComponent extends BydAbstractGridComponent<any> imple
     this.dialog.open<FiltersModal, FiltersModalData>(FiltersModal, {
       data: { gridId: this.gridId },
     });
+  }
+  public setPreset(preset: Preset) {
+    this.grid.filters?.apply(preset.filters);
   }
 }
 

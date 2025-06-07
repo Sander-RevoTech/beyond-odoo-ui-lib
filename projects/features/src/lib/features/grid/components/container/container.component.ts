@@ -1,9 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
-import { filter } from 'rxjs';
-
-import { ColMetaData } from '../../models/types';
+import { ColMetaData, Filter, Preset } from '../../models/types';
 import { BydGridSessionService } from '../../services/grid-session.services';
 import { BydGridViewService } from '../../services/grid-view.service';
 import { BydAbstractGridComponent } from '../abstract.component';
@@ -21,6 +18,9 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
   @Input()
   colsMetaData: ColMetaData[] = [];
 
+  @Input()
+  preset: Preset[] = [];
+
   @ViewChild('table', { static: true }) tableElement!: ElementRef;
 
   private _session = inject(BydGridSessionService);
@@ -33,6 +33,7 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
       elementRef: this.tableElement,
       colsMetaData: this.colsMetaData,
       initialFilter: raw ?? [],
+      preset: this.preset,
       services: {
         getData$: params =>
           this._service.getData$<any>(

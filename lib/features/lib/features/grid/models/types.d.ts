@@ -46,3 +46,7 @@ export type ajaxRequestFuncParams = {
     colsMetaData: ColMetaData[];
 };
 export type ViewType = 'grid' | 'card';
+export type Preset = {
+    name: string;
+    filters: Filter[];
+};

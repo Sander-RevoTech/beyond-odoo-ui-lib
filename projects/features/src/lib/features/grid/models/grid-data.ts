@@ -11,7 +11,7 @@ import { NumberCol } from './cols/number-col';
 import { RelationCol } from './cols/relation-col';
 import { StringCol } from './cols/string-col';
 import { BydGridFilters } from './grid-filters';
-import { ColMetaData, Filter, ParameterType, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
+import { ColMetaData, Filter, ParameterType, Preset, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
 import { groupBy } from './utils';
 
 export interface IDataService<T> {
@@ -50,6 +50,7 @@ export class BydGridData<T> {
     colsMetaData: ColMetaData[];
     services: IDataService<T>;
     initialFilter?: Filter[];
+    preset?: Preset[];
   }) {
     this.table = new Tabulator(params.elementRef.nativeElement, {
       height: '500px',
@@ -86,7 +87,7 @@ export class BydGridData<T> {
 
     this.table.on('tableBuilt', () => {
       this.tableHtml = params.elementRef;
-      this.filters = new BydGridFilters(this.scope, this.table!);
+      this.filters = new BydGridFilters(this.scope, this.table!, params.preset);
       this.isReady$.next(true);
     });
     this.table.on('rowClick', (_e, row) => {

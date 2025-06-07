@@ -10,8 +10,8 @@ import {
   ParameterType,
 } from '@beyond/features';
 import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
-import { map } from 'rxjs';
 
+import { Preset } from '../../projects/features/src/public-api';
 import { AppTranslationService } from './translations/translation.service';
 
 @Component({
@@ -90,6 +90,43 @@ export class AppComponent {
     //   name: 'scheduled_date',
     //   type: ParameterType.DateTime,
     // },
+  ];
+  readonly preset: Preset[] = [
+    {
+      name: 'draft',
+      filters: [
+        {
+          field: 'state',
+          type: '=',
+          value: 'draft',
+        },
+        {
+          field: 'name',
+          type: 'like',
+          value: 'panda',
+        },
+      ],
+    },
+    {
+      name: 'waiting',
+      filters: [
+        {
+          field: 'state',
+          type: '=',
+          value: 'waiting',
+        },
+      ],
+    },
+    {
+      name: 'confirmed',
+      filters: [
+        {
+          field: 'state',
+          type: '=',
+          value: 'confirmed',
+        },
+      ],
+    },
   ];
   constructor() {
     AppTranslationService.getInstance();

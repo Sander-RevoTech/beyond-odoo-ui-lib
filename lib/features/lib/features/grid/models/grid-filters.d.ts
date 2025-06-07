@@ -1,9 +1,10 @@
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
-import { ActiveFilter, Filter } from './types';
+import { ActiveFilter, Filter, Preset } from './types';
 export declare class BydGridFilters {
     readonly scope: string;
     readonly table: Tabulator;
-    constructor(scope: string, table: Tabulator);
+    readonly preset: Preset[];
+    constructor(scope: string, table: Tabulator, preset?: Preset[]);
     get(): ActiveFilter[];
     apply(filters: Filter[]): void;
     remove(filter: Filter): void;

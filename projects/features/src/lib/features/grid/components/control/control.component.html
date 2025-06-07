@@ -7,6 +7,20 @@
         </div>
       </div>
     }
+    @if (this.show.preset) {
+      <div class="grid-control-container ml-space-xs c-pointer">
+        <div [matMenuTriggerFor]="menu" class="trigger">
+          <mat-icon>visibility</mat-icon>
+        </div>
+      </div>
+      <mat-menu #menu="matMenu">
+        @for (preset of this.grid.filters?.preset; track preset.name) {
+          <button mat-menu-item (click)="this.setPreset(preset)">
+            <span>{{ preset.name }}</span>
+          </button>
+        }
+      </mat-menu>
+    }
     @if (this.show.switchView) {
       <div class="grid-control-container ml-space-xs c-pointer">
         <div (click)="this.switchView('grid')" class="trigger" [class.active]="this.displayType() === 'grid'">

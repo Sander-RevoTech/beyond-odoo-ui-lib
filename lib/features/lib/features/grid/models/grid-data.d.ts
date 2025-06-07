@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { BaseCol } from './cols/base-col';
 import { BydGridFilters } from './grid-filters';
-import { ColMetaData, Filter, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
+import { ColMetaData, Filter, Preset, ViewType, ajaxRequestFuncParams, ajaxResponse } from './types';
 export interface IDataService<T> {
     getData$: (params: ajaxRequestFuncParams) => Observable<ajaxResponse<T>>;
 }
@@ -33,6 +33,7 @@ export declare class BydGridData<T> {
         colsMetaData: ColMetaData[];
         services: IDataService<T>;
         initialFilter?: Filter[];
+        preset?: Preset[];
     }): void;
     destroy(): void;
     setGroupBy(field: string): void;

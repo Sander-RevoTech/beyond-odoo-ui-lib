@@ -41,3 +41,4 @@ export type ajaxRequestFuncParams = {
 };
 
 export type ViewType = 'grid' | 'card';
+export type Preset = { name: string; filters: Filter[] };
