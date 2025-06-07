@@ -36,7 +36,9 @@ export class WarehouseGuardComponent extends BydAbstractComponent {
             return;
           }
 
-          this.openDialog.open(WarehouseComponent);
+          this.openDialog.open(WarehouseComponent, {
+            disableClose: true,
+          });
         },
       })
     );
