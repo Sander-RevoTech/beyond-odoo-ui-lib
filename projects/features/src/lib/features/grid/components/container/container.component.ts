@@ -27,11 +27,9 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
   private _service = inject(BydGridViewService);
 
   ngAfterViewInit() {
-    const raw = this._session.getFilter(this.gridId);
     this._grid.init({
       elementRef: this.tableElement,
       colsMetaData: this.colsMetaData,
-      initialFilter: raw ?? [],
       services: {
         getData$: params =>
           this._service.getData$<any>(
@@ -42,7 +40,18 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
       },
     });
 
-    this._session.clearFilter(this.gridId);
+    this._registerSubscription(
+      this.isDataReady$.subscribe({
+        next: () => {
+          const raw = this._session.getFilter(this.gridId);
+
+          if (raw && raw.length > 0) {
+            this._grid.filters?.apply(raw);
+            this._session.clearFilter(this.gridId);
+          }
+        },
+      })
+    );
   }
 
   override ngOnDestroy() {
