@@ -28,7 +28,7 @@ export class BydGridSearchComponent extends BydAbstractGridComponent<any> {
   public valueChanged(value: string) {
     const filter: Filter[] = [
       {
-        field: 'search',
+        field: 'name',
         type: 'like',
         value,
       },
