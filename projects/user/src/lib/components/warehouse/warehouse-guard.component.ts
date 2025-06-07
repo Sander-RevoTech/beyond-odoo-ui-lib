@@ -15,7 +15,7 @@ import { WarehouseComponent } from './warehouse.component';
   imports: [BydButtonComponent],
   standalone: true,
 })
-export class GuardComponent extends BydAbstractComponent {
+export class WarehouseGuardComponent extends BydAbstractComponent {
   private readonly _usersServices = inject(BydUserService);
   private readonly _permissionsServices = inject(BydPermissionsServices);
 
