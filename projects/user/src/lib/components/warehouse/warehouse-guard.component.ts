@@ -9,7 +9,7 @@ import { BydUserService } from '../../services/user.service';
 import { WarehouseComponent } from './warehouse.component';
 
 @Component({
-  selector: 'byd-warehouse',
+  selector: 'byd-warehouse-guard',
   templateUrl: './warehouse.component.html',
   styleUrls: ['./warehouse.component.scss'],
   imports: [BydButtonComponent],
