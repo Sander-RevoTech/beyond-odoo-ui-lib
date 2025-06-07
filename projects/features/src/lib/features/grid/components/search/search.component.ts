@@ -5,6 +5,7 @@ import { InputTextBox } from '@beyond/form-model';
 
 import { Filter } from '../../models/types';
 import { BydGridSessionService } from '../../services/grid-session.services';
+import { gridSearchFieldsName } from '../../services/grid-view.service';
 import { BydAbstractGridComponent } from '../abstract.component';
 
 @Component({
@@ -28,7 +29,7 @@ export class BydGridSearchComponent extends BydAbstractGridComponent<any> {
   public valueChanged(value: string) {
     const filters: Filter[] = [
       {
-        field: 'name',
+        field: gridSearchFieldsName,
         type: 'like',
         value,
       },
