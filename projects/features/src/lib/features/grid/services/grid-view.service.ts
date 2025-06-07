@@ -6,6 +6,7 @@ import { Observable, filter, map, mergeMap, of } from 'rxjs';
 
 import { ParameterType, ajaxRequestFuncParams, ajaxResponse } from '../models/types';
 
+export const gridSearchFieldsName = 'search';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,7 +20,12 @@ export class BydGridViewService extends BydBaseOdooService {
     ajaxParam: ajaxRequestFuncParams,
     fields: (keyof T)[]
   ): Observable<ajaxResponse<T>> {
-    const filterParams = ajaxParam.filter.map(f => [f.field, f.type, f.value]) ?? [];
+    const filterParams =
+      ajaxParam.filter.map(f => {
+        const newField =
+          f.field === gridSearchFieldsName ? (ajaxParam.colsMetaData.find(c => c.isSearchField)?.name ?? '') : f.field;
+        return [newField, f.type, f.value];
+      }) ?? [];
     const orderParams = ajaxParam.sort.map(s => `${s.field} ${s.dir}`).join(',') ?? '';
     const groupBy = ajaxParam.groupBy;
 

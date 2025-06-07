@@ -11,6 +11,7 @@
 </ng-template>
 
 <byd-grid-container gridId="washing" model="washing.production" [colsMetaData]="this.colsMetaData">
+  <byd-grid-search gridId="washing" field="name" [outOfBox]="true"></byd-grid-search>
   <byd-grid-tags gridId="washing"></byd-grid-tags>
   <byd-grid-control gridId="washing"></byd-grid-control>
   <byd-grid gridId="washing" [cardTemplate]="cardTemplate"></byd-grid>

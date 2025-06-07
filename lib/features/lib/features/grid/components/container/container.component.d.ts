@@ -6,6 +6,7 @@ export declare class BydGridContainerComponent extends BydAbstractGridComponent<
     model: string;
     colsMetaData: ColMetaData[];
     tableElement: ElementRef;
+    private _session;
     private _service;
     ngAfterViewInit(): void;
     ngOnDestroy(): void;

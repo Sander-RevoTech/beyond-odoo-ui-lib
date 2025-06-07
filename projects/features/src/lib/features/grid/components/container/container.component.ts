@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { ColMetaData } from '../../models/types';
+import { BydGridSessionService } from '../../services/grid-session.services';
 import { BydGridViewService } from '../../services/grid-view.service';
 import { BydAbstractGridComponent } from '../abstract.component';
 
@@ -19,6 +21,7 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
 
   @ViewChild('table', { static: true }) tableElement!: ElementRef;
 
+  private _session = inject(BydGridSessionService);
   private _service = inject(BydGridViewService);
 
   ngAfterViewInit() {
@@ -34,6 +37,12 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
           ),
       },
     });
+    const raw = this._session.getFilter(this.gridId);
+
+    if (raw && raw.length > 0) {
+      this._grid.filters?.apply(raw);
+      this._session.clearFilter(this.gridId);
+    }
   }
 
   override ngOnDestroy() {

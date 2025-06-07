@@ -13,6 +13,7 @@ export declare enum ParameterType {
 export interface ColMetaData {
     name: string;
     type: ParameterType;
+    isSearchField?: boolean;
     multivalues?: boolean;
     enumValues?: string[];
     dataSearch$?: (search?: string) => Observable<InputChoicesOption[]>;

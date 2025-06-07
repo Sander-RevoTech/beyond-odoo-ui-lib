@@ -5,8 +5,8 @@ import {
   BydGridContainerComponent,
   BydGridControlComponent,
   BydGridFormComponent,
+  BydGridSearchComponent,
   BydGridTagsComponent,
-  ColMetaData,
   ParameterType,
 } from '@beyond/features';
 import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
@@ -23,6 +23,7 @@ import { AppTranslationService } from './translations/translation.service';
     BydGridContainerComponent,
     BydGridTagsComponent,
     BydGridControlComponent,
+    BydGridSearchComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -74,20 +75,21 @@ export class AppComponent {
     {
       name: 'name',
       type: ParameterType.String,
+      isSearchField: true,
     },
     {
       name: 'state',
       type: ParameterType.Enum,
       enumValues: ['draft', 'waiting', 'confirmed', 'assigned', 'done'],
     },
-    {
-      name: 'partner_id',
-      type: ParameterType.Relation,
-    },
-    {
-      name: 'scheduled_date',
-      type: ParameterType.DateTime,
-    },
+    // {
+    //   name: 'partner_id',
+    //   type: ParameterType.Relation,
+    // },
+    // {
+    //   name: 'scheduled_date',
+    //   type: ParameterType.DateTime,
+    // },
   ];
   constructor() {
     AppTranslationService.getInstance();
