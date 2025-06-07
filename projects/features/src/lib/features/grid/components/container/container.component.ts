@@ -19,7 +19,7 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
   colsMetaData: ColMetaData[] = [];
 
   @Input()
-  preset: Preset[] = [];
+  preset?: Preset[];
 
   @ViewChild('table', { static: true }) tableElement!: ElementRef;
 
