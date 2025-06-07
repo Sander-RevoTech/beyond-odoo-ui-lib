@@ -5,7 +5,7 @@ export declare class WarehouseComponent extends BydAbstractComponent {
     private readonly _usersServices;
     private readonly _warehouseServices;
     dialogRef: MatDialogRef<any, any>;
-    warehouses$: import("rxjs").Observable<import("../../../../../../lib/odoo/lib/services/warehouses/dto/warehouse").Warehouse[] | null>;
+    warehouses$: import("rxjs").Observable<import("@beyond/odoo").Warehouse[] | null>;
     constructor();
     select(id: number): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<WarehouseComponent, never>;

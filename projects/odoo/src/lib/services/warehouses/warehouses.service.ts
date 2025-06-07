@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { HandleSimpleRequest } from '@beyond/server';
 
@@ -11,17 +11,27 @@ import { Warehouse } from './dto/warehouse';
   providedIn: 'root',
 })
 export class BydWarehousesService extends BydBaseOdooService {
-  public warehouse = new HandleSimpleRequest<Warehouse[]>();
+  public warehouses = new HandleSimpleRequest<Warehouse[]>();
+  public warehouse = new HandleSimpleRequest<Warehouse>();
 
   constructor() {
     super();
   }
 
   public fetch$(ids: number[]) {
-    return this.warehouse.fetch(
+    return this.warehouses.fetch(
       this._odooService
         .searchRead$<Warehouse>('stock.warehouse', [['id', 'in', ids]], ['id', 'name'])
         .pipe(filter(data => !!data))
+    );
+  }
+
+  public get$(id: number) {
+    return this.warehouse.fetch(
+      this._odooService.searchRead$<Warehouse>('stock.warehouse', [['id', '=', id]], ['id', 'name']).pipe(
+        filter(data => !!data),
+        map(data => data[0])
+      )
     );
   }
 }

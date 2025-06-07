@@ -20,7 +20,7 @@ export class WarehouseComponent extends BydAbstractComponent {
   private readonly _warehouseServices = inject(BydWarehousesService);
 
   public dialogRef = inject(MatDialogRef);
-  public warehouses$ = this._warehouseServices.warehouse.get$();
+  public warehouses$ = this._warehouseServices.warehouses.get$();
 
   constructor() {
     super();
@@ -30,5 +30,6 @@ export class WarehouseComponent extends BydAbstractComponent {
   public select(id: number) {
     this._usersServices.permissionsServices.setWarehouse(id);
     this.dialogRef.close();
+    location.reload();
   }
 }
