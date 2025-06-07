@@ -28,13 +28,13 @@ export class BydUserService extends BydBaseOdooService {
         .searchRead$<Profile>(
           'res.users',
           [['id', '=', this.permissionsServices.uid]],
-          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id', 'company_id', 'company_ids']
+          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id', 'company_ids']
         )
         .pipe(
           filter(isNonNullable),
           map(result => result[0]),
           tap(profile => {
-            this.permissionsServices.setRole(profile.share ? 'shared' : 'interne');
+            this.permissionsServices.setRole(profile.share ? 'shared' : 'interne', profile.company_ids);
           })
         )
     );

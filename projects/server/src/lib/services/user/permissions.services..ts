@@ -21,6 +21,7 @@ export class BydPermissionsServices {
   public token: string | null = null;
   public guards: { [index: string]: string[] } = {};
   public roles: Role[] = [];
+  public compagnies: number[] = [];
 
   get isAuthenticated() {
     return !!this.uid;
@@ -56,7 +57,8 @@ export class BydPermissionsServices {
     this._updated$.next(Date.now());
   }
 
-  public setRole(role: Role) {
+  public setRole(role: Role, compagnies: number[] = []) {
+    this.compagnies = compagnies;
     this.roles = [role];
 
     if (role === 'admin') {
