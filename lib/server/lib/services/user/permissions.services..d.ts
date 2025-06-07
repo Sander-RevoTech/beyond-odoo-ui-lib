@@ -11,7 +11,7 @@ export declare class BydPermissionsServices {
         [index: string]: string[];
     };
     roles: Role[];
-    wharehouse: number | null;
+    warehouse: number | null;
     get isAuthenticated(): boolean;
     updated$: Observable<number | null>;
     private _sep;

@@ -21,7 +21,7 @@ export class BydPermissionsServices {
   public token: string | null = null;
   public guards: { [index: string]: string[] } = {};
   public roles: Role[] = [];
-  public wharehouse: number | null = null;
+  public warehouse: number | null = null;
 
   get isAuthenticated() {
     return !!this.uid;
@@ -43,8 +43,8 @@ export class BydPermissionsServices {
 
       this._updated$.next(Date.now());
     }
-    if (sessionStorage.getItem('wharehouse')) {
-      this.wharehouse = Number(sessionStorage.getItem('wharehouse'));
+    if (sessionStorage.getItem('warehouse')) {
+      this.warehouse = Number(sessionStorage.getItem('warehouse'));
     }
   }
 
@@ -61,8 +61,8 @@ export class BydPermissionsServices {
   }
 
   public setWarehouse(warehouse: number | null) {
-    this.wharehouse = warehouse;
-    sessionStorage.setItem('wharehouse', this.wharehouse?.toString() || '');
+    this.warehouse = warehouse;
+    sessionStorage.setItem('warehouse', this.warehouse?.toString() || '');
   }
   public setRole(role: Role) {
     this.roles = [role];
@@ -91,7 +91,7 @@ export class BydPermissionsServices {
   public reset() {
     this.uid = null;
     sessionStorage.removeItem('token');
-    sessionStorage.removeItem('wharehouse');
+    sessionStorage.removeItem('warehouse');
 
     this.guards = {};
 
