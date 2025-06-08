@@ -23,7 +23,7 @@ export class BydPrinterFormService {
     const printerlistInput = new InputDropdown({
       key: 'printer',
       showNothingOption: true,
-      class: 'col-5',
+      class: 'g-col-5',
       options: this._printerService.printers.get$().pipe(
         map(
           printers =>
@@ -41,17 +41,16 @@ export class BydPrinterFormService {
     return [
       new InputPanel({
         key: 'panel',
-        class: 'col-9',
+        class: 'g-col-9',
         children: [
           new InputPanel({
             key: 'panel',
             class: 'p-15',
-            contentClass: 'row align-items-center',
+            contentClass: 'grid align-items-center',
             children: [
               new InputLabel({
                 key: 'label',
                 label: 'Printer: ',
-                class: 'col-auto',
               }),
               printerlistInput,
             ],
@@ -104,7 +103,7 @@ export class BydPrinterFormService {
 
             return new InputPanel({
               key: 'panel',
-              contentClass: 'row align-items-center',
+              contentClass: 'grid align-items-center',
               children: [
                 new InputCheckBox({
                   key: 'line-' + line.id + '-check',
