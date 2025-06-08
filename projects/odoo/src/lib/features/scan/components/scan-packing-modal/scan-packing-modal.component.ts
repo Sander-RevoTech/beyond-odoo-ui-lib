@@ -18,7 +18,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 import { SearchItem, SearchResult } from '../../services/dto/search';
 import { BydScanPackingService } from '../../services/scan-packing.service';
-import { ScanningComponent } from '../scanning/scanning.component';
+import { BydScanningComponent } from '../scanning/scanning.component';
 
 export interface Scope {
   key: string;
@@ -44,7 +44,7 @@ export interface ScanPackingDialogData {
     TranslatePipe,
     MatIcon,
     CardCtaComponent,
-    ScanningComponent,
+    BydScanningComponent,
   ],
 })
 export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {

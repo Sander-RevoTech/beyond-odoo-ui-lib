@@ -10,7 +10,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
   templateUrl: './scanning.component.html',
   styleUrl: './scanning.component.scss',
 })
-export class ScanningComponent extends BydBaseComponent {
+export class BydScanningComponent extends BydBaseComponent {
   @Output()
   scanSuccess = new EventEmitter<string>();
 

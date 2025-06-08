@@ -24,12 +24,13 @@ export class BydPrinterFormService {
       key: 'printer',
       showNothingOption: true,
       class: 'col-5',
-      options: this._printerService.printers$.pipe(
-        map(printers =>
-          printers.map(printer => ({
-            id: printer.id.toString(),
-            name: printer.name,
-          }))
+      options: this._printerService.printers.get$().pipe(
+        map(
+          printers =>
+            printers?.map(printer => ({
+              id: printer.id.toString(),
+              name: printer.name,
+            })) ?? []
         )
       ),
     });
@@ -91,12 +92,13 @@ export class BydPrinterFormService {
               key: 'line-' + line.id + '-printer',
               class: 'col-3',
               showNothingOption: true,
-              options: this._printerService.printers$.pipe(
-                map(printers =>
-                  printers.map(printer => ({
-                    id: printer.id.toString(),
-                    name: printer.name,
-                  }))
+              options: this._printerService.printers.get$().pipe(
+                map(
+                  printers =>
+                    printers?.map(printer => ({
+                      id: printer.id.toString(),
+                      name: printer.name,
+                    })) ?? []
                 )
               ),
               value: getFirstNumber(line.printer_id)?.toString(),

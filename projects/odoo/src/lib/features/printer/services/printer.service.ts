@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { filter, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 
+import { HandleComplexRequest, HandleSimpleRequest } from '@beyond/server';
+import { isNonNullable } from '@beyond/utils';
 import { BehaviorSubject, Observable, Subject, forkJoin, of } from 'rxjs';
 
 import { BydBaseOdooService } from '../../../services/baseService';
@@ -15,20 +17,14 @@ import { Printer } from './dto/printer';
 export class BydPrinterService extends BydBaseOdooService {
   public askPrintingWizard$ = new Subject<{ id: number; model: string }>();
 
-  public printers$ = new BehaviorSubject<Printer[]>([]);
+  public printers = new HandleSimpleRequest<Printer[]>();
 
-  private _printWizard$ = new BehaviorSubject<{ [id: string]: PrintDirectWizard }>({});
+  public printWizard = new HandleComplexRequest<PrintDirectWizard>();
 
   constructor() {
     super();
   }
 
-  public getPrintWizard$(id: number) {
-    return this._printWizard$.pipe(
-      map(data => data[id]),
-      filter(myData => !!myData)
-    );
-  }
   public printWizard$(data: { id: number; model: string }) {
     const model: Observable<PrintDirectWizard[]> =
       data.model === 'print.direct.wizard'
@@ -45,37 +41,35 @@ export class BydPrinterService extends BydBaseOdooService {
             },
           ]);
 
-    return model.pipe(
-      filter(data => !!data),
-      map(data => data[0]),
-      mergeMap(entity =>
-        this._odooService
-          .searchRead$<PrintDirectWizardLine>(
-            'print.direct.wizard.line',
-            [['id', 'in', entity.print_lines]],
-            ['id', 'display_name', 'print_qty', 'printer_id']
-          )
-          .pipe(
-            map(lines => ({
-              ...entity,
-              ...{
-                lines,
-              },
-            }))
-          )
-      ),
-      tap(entity => {
-        const entities = this._printWizard$.getValue();
-        entities[entity.id] = entity;
-        this._printWizard$.next(entities);
-      })
+    return this.printWizard.fetch(
+      data.id,
+      model.pipe(
+        filter(data => !!data),
+        map(data => data[0]),
+        mergeMap(entity =>
+          this._odooService
+            .searchRead$<PrintDirectWizardLine>(
+              'print.direct.wizard.line',
+              [['id', 'in', entity.print_lines]],
+              ['id', 'display_name', 'print_qty', 'printer_id']
+            )
+            .pipe(
+              map(lines => ({
+                ...entity,
+                ...{
+                  lines,
+                },
+              }))
+            )
+        )
+      )
     );
   }
 
   public fetchPrinters$() {
-    return this._odooService
-      .searchRead$<Printer>('remote.printer.printer', [], ['id', 'name'])
-      .pipe(tap(list => this.printers$.next(list)));
+    return this.printers.fetch(
+      this._odooService.searchRead$<Printer>('remote.printer.printer', [], ['id', 'name']).pipe(filter(isNonNullable))
+    );
   }
 
   public print$(lines: PrintDirectWizardLinePost[]) {
