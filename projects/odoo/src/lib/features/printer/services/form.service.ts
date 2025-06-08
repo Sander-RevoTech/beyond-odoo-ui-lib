@@ -38,15 +38,6 @@ export class BydPrinterFormService {
       printerItemsInput.forEach(item => (item.value = value ? value : null));
     });
 
-    /* Qty */
-    // const qtyItemsInput: InputNumber[] = [];
-    // const qtylistInput = new InputNumber({
-    //   key: 'qty',
-    //   class: 'col-2',
-    // });
-    // qtylistInput.changeValue$.subscribe(value => {
-    //   qtyItemsInput.forEach(item => (value ? item.formControl.setValue(value) : null));
-    // });
     return [
       new InputPanel({
         key: 'panel',
@@ -67,22 +58,22 @@ export class BydPrinterFormService {
           }),
           new InputPanel({
             key: 'panel',
-            contentClass: 'row align-items-center fs-5',
+            contentClass: 'gird align-items-center fs-5',
             children: [
               new InputLabel({
                 key: 'label',
                 label: 'Label for',
-                class: 'col-7 ta-c',
+                class: 'g-col-7 ta-c',
               }),
               new InputLabel({
                 key: 'label',
                 label: 'Quantity',
-                class: 'col-2 ta-c',
+                class: 'g-col-2 ta-c',
               }),
               new InputLabel({
                 key: 'label',
                 label: 'Printer',
-                class: 'col-3 ta-c',
+                class: 'g-col-3 ta-c',
               }),
             ],
           }),
@@ -90,7 +81,7 @@ export class BydPrinterFormService {
             /** Print */
             const printerInput = new InputDropdown({
               key: 'line-' + line.id + '-printer',
-              class: 'col-3',
+              class: 'g-col-3',
               showNothingOption: true,
               options: this._printerService.printers.get$().pipe(
                 map(
@@ -107,10 +98,9 @@ export class BydPrinterFormService {
             /** qty */
             const qtyInput = new InputNumber({
               key: 'line-' + line.id + '-qty',
-              class: 'col-2',
+              class: 'g-col-2',
               value: line.print_qty.toString(),
             });
-            // qtyItemsInput.push(qtyInput);
 
             return new InputPanel({
               key: 'panel',
@@ -118,14 +108,14 @@ export class BydPrinterFormService {
               children: [
                 new InputCheckBox({
                   key: 'line-' + line.id + '-check',
-                  class: 'col-1',
+                  class: 'g-col-1',
                   toggle: true,
                   value: true,
                 }),
                 new InputLabel({
                   key: 'label-' + line.id,
                   label: line.display_name,
-                  class: 'col-6 fs-5',
+                  class: 'g-col-6 fs-5',
                   value: line.id,
                 }),
                 qtyInput,
