@@ -18,6 +18,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 import { SearchItem, SearchResult } from '../../services/dto/search';
 import { BydScanPackingService } from '../../services/scan-packing.service';
+import { ScanningComponent } from '../scanning/scanning.component';
 
 export interface Scope {
   key: string;
@@ -43,6 +44,7 @@ export interface ScanPackingDialogData {
     TranslatePipe,
     MatIcon,
     CardCtaComponent,
+    ScanningComponent,
   ],
 })
 export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
@@ -104,13 +106,6 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
         this.dialogRef.close();
       },
     });
-  }
-  public permissionResponse(repsonse: boolean) {
-    if (!repsonse) {
-      this._notificationService.addErrorNotification('Permission not granted');
-      this.dialogRef.close();
-      return;
-    }
   }
   public getDataByScope(scope: Scope) {
     if (!this.searchResult) {

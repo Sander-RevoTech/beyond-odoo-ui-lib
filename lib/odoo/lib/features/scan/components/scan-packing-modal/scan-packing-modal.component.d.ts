@@ -22,7 +22,6 @@ export declare class ScanPackingDialog extends BydBaseComponent implements OnDes
     get noData(): boolean;
     constructor(dialogRef: MatDialogRef<ScanPackingDialog>, data?: ScanPackingDialogData | undefined);
     scanSuccess(result: string): void;
-    permissionResponse(repsonse: boolean): void;
     getDataByScope(scope: Scope): SearchItem[];
     setScope(scope: Scope): void;
     navigateTo(scope: Scope | null, item: SearchItem): void;

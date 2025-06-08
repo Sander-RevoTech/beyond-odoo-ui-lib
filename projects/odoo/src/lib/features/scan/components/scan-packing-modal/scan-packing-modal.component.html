@@ -1,9 +1,6 @@
 <div class="p-space-md">
   @if (this.step() === 'scan') {
-    <zxing-scanner
-      (scanSuccess)="this.scanSuccess($event)"
-      (permissionResponse)="this.permissionResponse($event)"
-    ></zxing-scanner>
+    <byd-scanning (scanSuccess)="this.scanSuccess($event)" (error)="this.dialogRef.close()"></byd-scanning>
   } @else if (this.step() === 'search') {
     <byd-loader [isLoading]="this.requestState.isLoading()">
       <byd-error [message]="this.requestState.getErrorMessage()" [code]="this.requestState.getErrorStatus()">
