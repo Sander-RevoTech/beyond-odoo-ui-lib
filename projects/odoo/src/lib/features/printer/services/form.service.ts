@@ -58,7 +58,7 @@ export class BydPrinterFormService {
           }),
           new InputPanel({
             key: 'panel',
-            contentClass: 'gird align-items-center fs-5',
+            contentClass: 'grid align-items-center fs-5',
             children: [
               new InputLabel({
                 key: 'label',
