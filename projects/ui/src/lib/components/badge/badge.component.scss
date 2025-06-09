@@ -21,17 +21,17 @@
   background: common.get-var(semantic, purple-light);
 }
 .badge-danger {
-  color: common.get-var(text, alert);
+  color: common.get-var(text, primary);
   background: common.get-var(semantic-token, alert);
 }
 
 .badge-warning {
-  color: common.get-var(text, warning);
+  color: common.get-var(text, primary);
   background: common.get-var(semantic-token, warning);
 }
 
 .badge-success {
-  color: common.get-var(text, success);
+  color: common.get-var(text, primary);
   background: common.get-var(semantic-token, success);
 }
 
@@ -42,5 +42,5 @@
 
 .badge-secondary {
   color: common.get-var(surface, brand, secondary);
-  background: common.get-var(surface, invert);
+  background: common.get-var(surface, brand, secondary);
 }
