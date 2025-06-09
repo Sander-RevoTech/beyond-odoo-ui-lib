@@ -8,8 +8,9 @@
   left: 0;
   right: 0;
   z-index: 500;
+  padding: 5px;
 
-  padding: common.get-var(space, lg);
+  padding: common.get-var(space, md);
   @include fonts.fontSizeBody(md);
   background-color: common.get-var(surface, primary);
 
