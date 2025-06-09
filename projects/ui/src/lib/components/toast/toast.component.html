@@ -1,9 +1,9 @@
-@if (this.sticky) {
-  <div class="sticky" [ngClass]="this.getTypeClass(this.code)">
+@if (sticky) {
+  <div class="on-top" [ngClass]="getTypeClass(code)">
     <ng-content></ng-content>
   </div>
 } @else {
-  <div class="card" [ngClass]="this.getTypeClass(this.code)">
+  <div class="card" [ngClass]="getTypeClass(code)">
     <ng-content></ng-content>
   </div>
 }
