@@ -1,11 +1,9 @@
 <div>
   @if (this.onTop) {
-    <div class="card" [ngClass]="getTypeClass(code)">
-      <ng-content></ng-content>
-    </div>
+    <ng-content></ng-content>
   } @else {
-    <div class="card" [ngClass]="getTypeClass(code)">
-      <ng-content></ng-content>
+    <div class="card" [ngClass]="this.getTypeClass(code)">
+      <!-- <ng-content></ng-content> -->
     </div>
   }
 </div>

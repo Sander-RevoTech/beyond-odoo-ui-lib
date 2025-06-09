@@ -6,5 +6,5 @@ export declare class ToastComponent {
     onTop: boolean;
     readonly getTypeClass: (code: EToast) => "" | "danger" | "info" | "warning" | "success";
     static ɵfac: i0.ɵɵFactoryDeclaration<ToastComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<ToastComponent, "byd-toast", never, { "code": { "alias": "code"; "required": false; }; "onTop": { "alias": "onTop"; "required": false; }; }, {}, never, ["*", "*"], true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ToastComponent, "byd-toast", never, { "code": { "alias": "code"; "required": false; }; "onTop": { "alias": "onTop"; "required": false; }; }, {}, never, ["*"], true, never>;
 }
