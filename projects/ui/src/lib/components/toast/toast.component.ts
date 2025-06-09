@@ -17,7 +17,7 @@ export class ToastComponent {
   code: EToast = EToast.information;
 
   @Input()
-  sticky = false;
+  onTop = false;
 
   readonly getTypeClass = getTypeClass;
 }

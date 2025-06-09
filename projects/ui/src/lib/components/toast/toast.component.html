@@ -1,4 +1,4 @@
-@if (sticky) {
+@if (this.onTop) {
   <div class="on-top" [ngClass]="getTypeClass(code)">
     <ng-content></ng-content>
   </div>
