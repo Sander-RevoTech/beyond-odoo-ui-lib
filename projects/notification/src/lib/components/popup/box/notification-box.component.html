@@ -1,21 +1,22 @@
-<div class="notification-box_container flex-column g-space-sm">
-  <div *ngFor="let item of this.list">
-    <byd-toast [code]="this.getCode(item.code)">
-      <byd-notification-inline
-        [message]="item.message"
-        [code]="item.code"
-        [showClose]="false"
-      ></byd-notification-inline>
-    </byd-toast>
-  </div>
-</div>
-
-@let userNotif = this.userNotif();
-@if (userNotif) {
-  <byd-toast [code]="this.getCode(userNotif.code)" [sticky]="true">
-    <div class="space-between">
-      {{ userNotif.message }}
-      <mat-icon (click)="this.userNotif.set(null)">close</mat-icon>
+<div>
+  <div class="notification-box_container flex-column g-space-sm">
+    <div *ngFor="let item of this.list">
+      <byd-toast [code]="this.getCode(item.code)">
+        <byd-notification-inline
+          [message]="item.message"
+          [code]="item.code"
+          [showClose]="false"
+        ></byd-notification-inline>
+      </byd-toast>
     </div>
-  </byd-toast>
-}
+  </div>
+  @let userNotif = this.userNotif();
+  @if (userNotif) {
+    <byd-toast [code]="this.getCode(userNotif.code)" [sticky]="true">
+      <div class="space-between">
+        {{ userNotif.message }}
+        <mat-icon (click)="this.userNotif.set(null)">close</mat-icon>
+      </div>
+    </byd-toast>
+  }
+</div>
