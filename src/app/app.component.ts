@@ -9,11 +9,12 @@ import {
   BydGridTagsComponent,
   ParameterType,
 } from '@beyond/features';
+import { InputDatePicker } from '@beyond/form-model';
 import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
 
 import { Preset } from '../../projects/features/src/public-api';
+import { BydDatePickerComponent } from '../../projects/form/form-input/src/lib/components/input/date-picker/date-picker.component';
 import { BydButtonComponent } from '../../projects/ui/src/lib/components/button/button.component';
-import { BydNavigationDateDayComponent } from '../../projects/ui/src/lib/components/navigation/date/day/day.component';
 import { BydNavigationDateWeekComponent } from '../../projects/ui/src/lib/components/navigation/date/week/week.component';
 import { BydTitleComponent } from '../../projects/ui/src/lib/components/title/title.component';
 import { CardComponent } from '../../projects/ui/src/lib/features/card/card.component';
@@ -43,6 +44,7 @@ import { AppTranslationService } from './translations/translation.service';
     BydButtonComponent,
     BydTitleComponent,
     BydNavigationDateWeekComponent,
+    BydDatePickerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -50,6 +52,7 @@ import { AppTranslationService } from './translations/translation.service';
 export class AppComponent {
   title = 'beyond-odoo-ui-lib';
 
+  readonly input = new InputDatePicker({});
   readonly service = inject(BydEmployeeService);
   readonly partnersService = inject(BydPartnersService);
 
@@ -149,5 +152,7 @@ export class AppComponent {
   ];
   constructor() {
     AppTranslationService.getInstance();
+
+    this.input.createFormControl();
   }
 }
