@@ -10,7 +10,7 @@
     <div class="g-col-3">
       <div class="ta-c">
         <div>
-          <byd-button type="secondary" (action)="this.install()"> {{ 'core.pwa.install' | translate }} </byd-button>
+          <byd-button [type]="'secondary'" (action)="this.install()"> {{ 'core.pwa.install' | translate }} </byd-button>
         </div>
         <div class="mt-space-sm">
           <byd-link (click)="this.snooze()">
