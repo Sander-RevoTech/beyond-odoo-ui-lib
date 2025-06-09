@@ -27,7 +27,6 @@ export class BydUserService extends BydBaseOdooService {
       return of(null);
     }
 
-    return this._odooService.getSessionInfo$();
     return this.profile.fetch(
       this._odooService
         .searchRead$<Profile>(
