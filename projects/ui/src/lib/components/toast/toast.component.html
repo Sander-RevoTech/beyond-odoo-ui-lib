@@ -1,11 +1,14 @@
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>
 <div>
   @if (this.onTop) {
     <div class="on-top" [ngClass]="this.getTypeClass(code)">
-      <ng-content></ng-content>
+      <ng-container *ngTemplateOutlet="content"></ng-container>
     </div>
   } @else {
     <div class="card" [ngClass]="this.getTypeClass(code)">
-      <!-- <ng-content></ng-content> -->
+      <ng-container *ngTemplateOutlet="content"></ng-container>
     </div>
   }
 </div>

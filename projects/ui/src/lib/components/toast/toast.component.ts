@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgTemplateOutlet } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 import { EToast, getTypeClass } from './helpers';
@@ -10,7 +10,7 @@ export { EToast } from './helpers';
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, NgTemplateOutlet],
 })
 export class ToastComponent {
   @Input()
