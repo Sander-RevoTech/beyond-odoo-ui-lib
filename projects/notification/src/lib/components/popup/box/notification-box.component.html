@@ -14,7 +14,8 @@
 @if (userNotif) {
   <byd-toast [code]="this.getCode(userNotif.code)" [sticky]="true">
     <div class="space-between">
-      {{ userNotif.message }} <mat-icon (click)="this.userNotif.set(null)">close</mat-icon>
+      {{ userNotif.message }}
+      <mat-icon (click)="this.userNotif.set(null)">close</mat-icon>
     </div>
   </byd-toast>
 }
