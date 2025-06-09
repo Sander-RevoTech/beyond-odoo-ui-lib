@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIcon } from '@angular/material/icon';
 
 import { tap } from 'rxjs/operators';
 
@@ -17,12 +18,14 @@ import { NotificationInlineComponent } from '../inline/notification-inline.compo
   templateUrl: './notification-box.component.html',
   styleUrls: ['./notification-box.component.scss'],
   standalone: true,
-  imports: [NotificationInlineComponent, NgFor, ToastComponent],
+  imports: [NotificationInlineComponent, NgFor, ToastComponent, MatIcon],
 })
 export class NotificationBoxComponent extends BydBaseComponent {
   private readonly _notificationService = inject(BydNotificationService);
 
   public list: { message: string; code: ENotificationCode }[] = [];
+
+  public userNotif = signal<{ message: string; code: ENotificationCode } | null>(null);
 
   constructor(private _dialog: MatDialog) {
     super();
@@ -46,7 +49,19 @@ export class NotificationBoxComponent extends BydBaseComponent {
       this._notificationService.errorNotification$
         .pipe(
           tap(notification => {
-            this._dialog.open<ErrorDialog, ErrorParams>(ErrorDialog, { data: { message: notification.message } });
+            this._dialog.open<ErrorDialog, ErrorParams>(ErrorDialog, {
+              data: { message: notification.message, type: 'error' },
+            });
+          })
+        )
+        .subscribe()
+    );
+
+    this._registerSubscription(
+      this._notificationService.userNotification$
+        .pipe(
+          tap(notification => {
+            this.userNotif.set({ message: notification.message, code: ENotificationCode.error });
           })
         )
         .subscribe()

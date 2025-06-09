@@ -10,6 +10,10 @@ export declare class NotificationBoxComponent extends BydBaseComponent {
         message: string;
         code: ENotificationCode;
     }[];
+    userNotif: import("@angular/core").WritableSignal<{
+        message: string;
+        code: ENotificationCode;
+    } | null>;
     constructor(_dialog: MatDialog);
     getCode(code: ENotificationCode): EToast;
     static ɵfac: i0.ɵɵFactoryDeclaration<NotificationBoxComponent, never>;

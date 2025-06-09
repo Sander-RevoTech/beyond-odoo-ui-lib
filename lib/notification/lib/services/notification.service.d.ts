@@ -10,9 +10,13 @@ export declare class BydNotificationService {
     errorNotification$: Subject<{
         message: string;
     }>;
+    userNotification$: Subject<{
+        message: string;
+    }>;
     constructor();
     addNotification(message: string, code: ENotificationCode): void;
     addErrorNotification(message: string): void;
+    addUserNotification(message: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydNotificationService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<BydNotificationService>;
 }

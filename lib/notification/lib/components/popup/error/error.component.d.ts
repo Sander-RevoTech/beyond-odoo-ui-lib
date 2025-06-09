@@ -3,6 +3,7 @@ import { BydBaseComponent } from '@beyond/utils';
 import * as i0 from "@angular/core";
 export interface ErrorParams {
     message: string;
+    type: 'user' | 'error';
 }
 export declare class ErrorDialog extends BydBaseComponent {
     dialogRef: MatDialogRef<ErrorDialog>;

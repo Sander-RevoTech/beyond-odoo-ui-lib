@@ -1,3 +1,9 @@
-<div class="card" [ngClass]="this.getTypeClass(this.code)">
-  <ng-content></ng-content>
-</div>
+@if (this.sticky) {
+  <div class="sticky" [ngClass]="this.getTypeClass(this.code)">
+    <ng-content></ng-content>
+  </div>
+} @else {
+  <div class="card" [ngClass]="this.getTypeClass(this.code)">
+    <ng-content></ng-content>
+  </div>
+}

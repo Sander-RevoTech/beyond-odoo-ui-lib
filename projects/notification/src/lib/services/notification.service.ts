@@ -21,6 +21,10 @@ export class BydNotificationService {
     message: string;
   }>();
 
+  public userNotification$ = new Subject<{
+    message: string;
+  }>();
+
   constructor() {}
 
   public addNotification(message: string, code: ENotificationCode) {
@@ -29,5 +33,9 @@ export class BydNotificationService {
 
   public addErrorNotification(message: string) {
     this.errorNotification$.next({ message });
+  }
+
+  public addUserNotification(message: string) {
+    this.userNotification$.next({ message });
   }
 }

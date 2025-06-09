@@ -2,6 +2,15 @@
 @use 'beyond/utils/mixins/common';
 @use 'beyond/utils/mixins/fonts';
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: common.get-var(space, lg);
+  @include fonts.fontSizeBody(md);
+}
 .card {
   @include shadows.shadow-mixin(brand, md);
   border-radius: common.get-var(space, md);
@@ -12,17 +21,17 @@
   color: common.get-var(text, primary);
 
   @include fonts.fontSizeBody(md);
+}
 
-  &.success {
-    border: 1px solid common.get-var(semantic-token, success);
-  }
-  &.danger {
-    border: 1px solid common.get-var(semantic-token, alert);
-  }
-  &.warning {
-    border: 1px solid common.get-var(semantic-token, warning);
-  }
-  &.info {
-    border: 1px solid common.get-var(semantic-token, link);
-  }
+.success {
+  border: 1px solid common.get-var(semantic-token, success);
+}
+.danger {
+  border: 1px solid common.get-var(semantic-token, alert);
+}
+.warning {
+  border: 1px solid common.get-var(semantic-token, warning);
+}
+.info {
+  border: 1px solid common.get-var(semantic-token, link);
 }

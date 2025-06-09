@@ -10,6 +10,7 @@ import { BydNotificationService } from '../../../services/notification.service';
 
 export interface ErrorParams {
   message: string;
+  type: 'user' | 'error';
 }
 @Component({
   selector: '',
