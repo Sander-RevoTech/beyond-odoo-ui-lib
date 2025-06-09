@@ -20,7 +20,7 @@ export class BydPermissionsServices {
 
   public token: string | null = null;
   public guards: { [index: string]: string[] } = {};
-  public roles: Role[] = [];
+  public roles: Role[] = ['shared'];
   public warehouse: number | null = null;
 
   get isAuthenticated() {
