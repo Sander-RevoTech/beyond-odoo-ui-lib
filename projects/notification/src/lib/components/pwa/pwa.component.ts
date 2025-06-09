@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 
 import { TranslatePipe } from '@beyond/translation';
-import { BydButtonComponent, BydLinkComponent, BydTitleComponent } from '@beyond/ui';
+import { BydButtonComponent, BydLinkComponent, BydTitleComponent, LogoComponent } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
 
 import { BydPwaService } from '../../services/pwa.service';
@@ -10,7 +10,7 @@ import { BydPwaService } from '../../services/pwa.service';
   selector: 'app-pwa',
   templateUrl: './pwa.component.html',
   styleUrls: ['./pwa.component.scss'],
-  imports: [BydTitleComponent, BydButtonComponent, TranslatePipe, BydLinkComponent],
+  imports: [BydTitleComponent, BydButtonComponent, TranslatePipe, BydLinkComponent, LogoComponent],
 })
 export class PwaComponent extends BydBaseComponent {
   public show = false;
