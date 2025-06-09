@@ -183,21 +183,30 @@ export class OdooJsonConnector {
       throw new Error(response?.statusText || 'Connection Error');
     }
 
-    const body = <{ result: T; error: { data: { message: string } } }>await response.json();
+    const body = <{ result: T; error: { data: { message: string; name: string } } }>await response.json();
 
     if (body.error) {
-      this._handleErrorMessage(body.error.data.message);
+      this._handleErrorMessage(body.error.data);
       throw new Error(body.error.data.message);
     }
     return body.result;
   }
 
-  private _handleErrorMessage(message: any) {
-    const formattedMessage = message
+  private _handleErrorMessage(data: { message: any; name: string }) {
+    const formattedMessage = data.message
       .toString()
       .replace('Error: Invalid XML-RPC', '')
       .replace('Error: XML-RPC fault:', '');
-    this.notificationService.addErrorNotification(formattedMessage);
+
+    switch (data.name) {
+      case 'odoo.exceptions.ValidationError':
+      case 'odoo.exceptions.UserError':
+        this.notificationService.addUserNotification(formattedMessage);
+        break;
+
+      default:
+        this.notificationService.addErrorNotification(formattedMessage);
+    }
   }
 
   /**
