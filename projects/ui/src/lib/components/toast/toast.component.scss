@@ -8,12 +8,13 @@
   left: 0;
   right: 0;
   z-index: 500;
-  padding: 5px;
+  margin: 5px;
 
+  border-radius: common.get-var(space, md);
   padding: common.get-var(space, md);
   @include fonts.fontSizeBody(md);
   background-color: common.get-var(surface, primary);
-
+  @include shadows.shadow-mixin(brand, md);
   &.success {
     color: common.get-var(semantic-token, success);
   }
