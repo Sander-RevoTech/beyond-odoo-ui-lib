@@ -11,6 +11,7 @@
 </div>
 
 @let userNotif = this.userNotif();
+{{ userNotif }}
 @if (userNotif) {
   <byd-toast [code]="this.getCode(userNotif.code)" [sticky]="true">
     <div class="space-between">
