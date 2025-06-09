@@ -1,0 +1,23 @@
+@if (this.show) {
+  <div class="installer-container grid align-items-center">
+    <div class="g-col-9 ta-c">
+      <div>
+        <byd-logo></byd-logo>
+      </div>
+      <byd-title [level]="2" class="mt-space-sm">{{ 'core.pwa.title' | translate }} </byd-title>
+    </div>
+
+    <div class="g-col-3">
+      <div class="ta-c">
+        <div>
+          <byd-button [type]="'secondary'" (action)="this.install()"> {{ 'core.pwa.install' | translate }} </byd-button>
+        </div>
+        <div class="mt-space-sm">
+          <byd-link (click)="this.snooze()">
+            {{ 'core.pwa.cancel' | translate }}
+          </byd-link>
+        </div>
+      </div>
+    </div>
+  </div>
+}

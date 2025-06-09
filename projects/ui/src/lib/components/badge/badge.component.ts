@@ -2,6 +2,8 @@ import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
+import { BydSizes } from '@beyond/styles';
+
 @Component({
   selector: 'byd-badge',
   templateUrl: './badge.component.html',
@@ -10,20 +12,17 @@ import { MatIcon } from '@angular/material/icon';
   imports: [NgClass, MatIcon],
 })
 export class BydBadgeComponent {
-  /**
-   * Text to display in badge
-   */
   @Input()
   value!: string | null;
 
-  /**
-   * Style of badge
-   */
   @Input()
   type: 'info' | 'danger' | 'warning' | 'success' | 'primary' | 'secondary' = 'primary';
 
   @Input()
   icon?: string;
+
+  @Input()
+  size?: BydSizes = 'xs';
 
   @Output()
   clickAction = new EventEmitter();
@@ -31,6 +30,6 @@ export class BydBadgeComponent {
   constructor() {}
 
   public getClass(): string {
-    return `badge-${this.type}`;
+    return `badge-${this.type} badge-size-${this.size}`;
   }
 }

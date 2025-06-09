@@ -1,0 +1,19 @@
+@use 'beyond/utils/mixins/common';
+@use 'beyond/utils/mixins/shadows';
+
+.installer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 10px;
+  background-color: common.get-var(surface, brand, primary);
+  color: common.get-var(text, invert, primary);
+
+  @include shadows.shadow-mixin(black, sm);
+
+  img {
+    margin: auto;
+  }
+}
