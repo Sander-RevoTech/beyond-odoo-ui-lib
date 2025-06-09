@@ -17,13 +17,13 @@
     color: common.get-var(semantic-token, success);
   }
   &.danger {
-    border: common.get-var(semantic-token, alert);
+    color: common.get-var(semantic-token, alert);
   }
   &.warning {
-    border: common.get-var(semantic-token, warning);
+    color: common.get-var(semantic-token, warning);
   }
   &.info {
-    border: common.get-var(semantic-token, link);
+    color: common.get-var(semantic-token, link);
   }
 }
 .card {
