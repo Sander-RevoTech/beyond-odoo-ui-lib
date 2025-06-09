@@ -2,8 +2,6 @@ import { Inject, Injectable } from '@angular/core';
 
 import { BehaviorSubject } from 'rxjs';
 
-export const PWA_CONFIG_KEY = 'config_pwa';
-
 export interface IPwaConfig {
   active: boolean;
 }
@@ -16,16 +14,11 @@ export class BydPwaService {
 
   private _promptEvent!: any;
 
-  constructor(
-    @Inject(PWA_CONFIG_KEY)
-    private _config: IPwaConfig
-  ) {
-    //  if (this._config.active) {
+  constructor() {
     window.addEventListener('beforeinstallprompt', event => {
       this._promptEvent = event;
       this.isPWaCapability$.next(true);
     });
-    // }
   }
 
   public isPWaCapability() {
