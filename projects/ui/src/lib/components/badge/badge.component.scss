@@ -5,7 +5,6 @@
   display: flex;
   width: fit-content;
   padding: common.get-var(space, sm) common.get-var(space, xs);
-  @include fonts.fontSizeBody(xs, true);
 
   border-radius: 6px;
   mat-icon {
@@ -16,6 +15,18 @@
   }
 }
 
+.badge-size-xs {
+  @include fonts.fontSizeBody(xs, true);
+}
+.badge-size-sm {
+  @include fonts.fontSizeBody(sm, true);
+}
+.badge-size-md {
+  @include fonts.fontSizeBody(md, true);
+}
+.badge-size-xl {
+  @include fonts.fontSizeBody(xl, true);
+}
 .badge-info {
   color: common.get-var(semantic, purple-dark);
   background: common.get-var(semantic, purple-light);
