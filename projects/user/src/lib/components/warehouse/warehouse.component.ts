@@ -24,7 +24,7 @@ export class WarehouseComponent extends BydAbstractComponent {
 
   constructor() {
     super();
-    this._warehouseServices.fetch$(this._usersServices.warehouse$.get() ?? []).subscribe();
+    this._warehouseServices.fetch$(this._usersServices.warehouse.get() ?? []).subscribe();
   }
 
   public select(id: number) {

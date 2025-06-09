@@ -11,8 +11,8 @@ import { Profile } from './dto/profile';
   providedIn: 'root',
 })
 export class BydUserService extends BydBaseOdooService {
-  readonly profile$ = new HandleSimpleRequest<Profile>();
-  readonly warehouse$ = new HandleSimpleRequest<number[]>();
+  readonly profile = new HandleSimpleRequest<Profile>();
+  readonly warehouse = new HandleSimpleRequest<number[]>();
 
   readonly permissionsServices = inject(BydPermissionsServices);
   readonly employeesServices = inject(BydEmployeeService);
@@ -26,7 +26,9 @@ export class BydUserService extends BydBaseOdooService {
     if (!this.permissionsServices.uid) {
       return of(null);
     }
-    return this.profile$.fetch(
+
+    return this._odooService.getSessionInfo$();
+    return this.profile.fetch(
       this._odooService
         .searchRead$<Profile>(
           'res.users',
@@ -40,7 +42,7 @@ export class BydUserService extends BydBaseOdooService {
             this.permissionsServices.setRole(profile.share ? 'shared' : 'interne');
           }),
           switchMap((profile: Profile) => {
-            return this.warehouse$
+            return this.warehouse
               .fetch(
                 this.employeesServices
                   .getWarehouses$(getFirstNumber(profile.employee_id) ?? 0)

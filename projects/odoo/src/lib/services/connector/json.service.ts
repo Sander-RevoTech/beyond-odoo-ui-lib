@@ -54,6 +54,22 @@ export class OdooJsonConnector {
     );
   }
 
+  public getSessionInfo$() {
+    const endpoint = `${this.url}/web/session/get_session_info`;
+    const params = {
+      jsonrpc: '2.0',
+      method: 'call',
+      params: {
+        db: this.db,
+        uid: this.permissionsServices.uid,
+        password: this.permissionsServices.pass,
+      },
+      id: new Date().getTime(),
+    };
+
+    return this._call$<OdooAuthenticateResponse>(endpoint, params);
+  }
+
   // Connexion avec identifiants
   private _connectWithCredentials$(user: string, password: string) {
     const endpoint = `${this.url}/web/session/authenticate`;
@@ -77,15 +93,6 @@ export class OdooJsonConnector {
   }
   public searchRead$<T>(model: string, domain: any[], fields: Array<keyof T> = [], opts: Record<string, any> = {}) {
     console.info('Search & Read:', model);
-    // if (
-    //   this.permissionsServices.compagnies &&
-    //   this.permissionsServices.compagnies.length > 0 &&
-    //   fields &&
-    //   fields.length > 0 &&
-    //   fields.includes('company_id' as keyof T)
-    // ) {
-    //   domain.push(['company_id', 'in', this.permissionsServices.compagnies]);
-    // }
     return this._call_kw$<T[]>(model, 'search_read', [domain, fields], opts);
   }
   public searchReadAndGroup$<T>(

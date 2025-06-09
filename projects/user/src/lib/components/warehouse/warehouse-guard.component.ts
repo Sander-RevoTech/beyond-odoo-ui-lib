@@ -23,7 +23,7 @@ export class WarehouseGuardComponent extends BydAbstractComponent {
     super();
 
     this._registerSubscription(
-      this._usersServices.warehouse$.get$().subscribe({
+      this._usersServices.warehouse.get$().subscribe({
         next: warehouses => {
           if (!warehouses) {
             return;
