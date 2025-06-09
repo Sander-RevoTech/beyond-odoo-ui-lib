@@ -1,0 +1,23 @@
+@if (this.show) {
+  <div class="installer-container row align-items-center">
+    <div class="col-9 ta-c">
+      <div>
+        <img src="assets/skin/logo/logo.png" [attr.width]="80" />
+      </div>
+      <byd-title [level]="2" class="mT-5">{{ 'core.pwa.title' | translate }} </byd-title>
+    </div>
+
+    <div class="col-3">
+      <div class="ta-c">
+        <div>
+          <byd-button (action)="this.install()"> {{ 'core.pwa.install' | translate }} </byd-button>
+        </div>
+        <div class="mT-5">
+          <byd-link (click)="this.snooze()">
+            {{ 'core.pwa.cancel' | translate }}
+          </byd-link>
+        </div>
+      </div>
+    </div>
+  </div>
+}
