@@ -7,9 +7,24 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 500;
 
   padding: common.get-var(space, lg);
   @include fonts.fontSizeBody(md);
+  background-color: common.get-var(surface, primary);
+
+  &.success {
+    color: common.get-var(semantic-token, success);
+  }
+  &.danger {
+    border: common.get-var(semantic-token, alert);
+  }
+  &.warning {
+    border: common.get-var(semantic-token, warning);
+  }
+  &.info {
+    border: common.get-var(semantic-token, link);
+  }
 }
 .card {
   @include shadows.shadow-mixin(brand, md);
@@ -17,7 +32,7 @@
   overflow: hidden;
 
   padding: common.get-var(space, lg);
-  background-color: common.get-var(surface, primary);
+
   color: common.get-var(text, primary);
 
   @include fonts.fontSizeBody(md);
