@@ -6,11 +6,11 @@
     'full-height': this.fullHeight,
     'no-card-border': this.noContent,
   }"
+  [class]="this.type"
   [class.hover]="this.hasHandler"
   (click)="this.clickTrigger()"
   appStopPropagation
 >
-  <!-- <byd-new [visible]="this.isNew"></byd-new> -->
   <div class="responsive-content">
     <div class="img-container">
       <div class="card-img-container">

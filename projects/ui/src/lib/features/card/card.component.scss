@@ -35,6 +35,18 @@ $spacing: common.get-var(space, md);
     @include shadows.shadow-mixin(black, md);
   }
 
+  .success {
+    border: 1px solid common.get-var(semantic-token, success);
+  }
+  .danger {
+    border: 1px solid common.get-var(semantic-token, alert);
+  }
+  .warning {
+    border: 1px solid common.get-var(semantic-token, warning);
+  }
+  .info {
+    border: 1px solid common.get-var(semantic-token, link);
+  }
   .responsive-content {
     @include flex.flex-column();
     // @include media-breakpoint-up(tablette) {

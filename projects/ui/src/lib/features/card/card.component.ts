@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+import { BydState, ColorType } from '@beyond/styles';
 import { StopPropagationDirective } from '@beyond/utils';
 
 @Component({
@@ -25,6 +26,9 @@ export class CardComponent {
 
   @Input()
   isNew: boolean = false;
+
+  @Input()
+  type: ColorType = 'default';
 
   @Output()
   click: EventEmitter<any> = new EventEmitter<any>();
