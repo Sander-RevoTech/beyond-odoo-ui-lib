@@ -35,16 +35,16 @@ $spacing: common.get-var(space, md);
     @include shadows.shadow-mixin(black, md);
   }
 
-  .success {
+  &.success {
     border: 1px solid common.get-var(semantic-token, success);
   }
-  .danger {
+  &.danger {
     border: 1px solid common.get-var(semantic-token, alert);
   }
-  .warning {
+  &.warning {
     border: 1px solid common.get-var(semantic-token, warning);
   }
-  .info {
+  &.info {
     border: 1px solid common.get-var(semantic-token, link);
   }
   .responsive-content {
