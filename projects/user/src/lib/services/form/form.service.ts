@@ -1,7 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Validators } from '@angular/forms';
 
-import { InputBase, InputCheckBox, InputEmail, InputPanel, InputPassword, InputSwitch } from '@beyond/form-model';
+import {
+  InputBase,
+  InputCheckBox,
+  InputEmail,
+  InputPanel,
+  InputPassword,
+  InputSwitch,
+  InputTextBox,
+} from '@beyond/form-model';
 import { map, startWith } from 'rxjs';
 
 @Injectable({
@@ -25,7 +33,7 @@ export class AppUserFormService {
         class: 'col-sm-12',
         children: [
           asAdmin,
-          new InputEmail({
+          new InputTextBox({
             key: 'email',
             label: 'Email',
             validators: [Validators.required],
