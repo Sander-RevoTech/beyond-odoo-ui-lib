@@ -13,6 +13,12 @@
       [type]="'text'"
     />
 
+    @if (this.input.readonly) {
+      <mat-hint>
+        <small class="form-text text-muted"> Is Readonly field </small>
+      </mat-hint>
+    }
+
     <mat-hint>
       <small class="form-text text-muted">
         <div *ngFor="let validator of this.input.validators">

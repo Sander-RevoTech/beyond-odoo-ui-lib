@@ -39,6 +39,9 @@ export class BydInputChoicesComponent extends BydAbstractComponent {
   }
 
   public openBottomSheet() {
+    if (this.input.readonly) {
+      return;
+    }
     this._registerSubscription(
       this._bottomSheet
         .open<ChoicesBottomSheetComponent, ChoicesBottomSheetComponentData, ChoicesBottomSheetComponentResult>(
