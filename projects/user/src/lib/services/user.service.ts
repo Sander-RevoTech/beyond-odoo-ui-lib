@@ -1,10 +1,12 @@
 import { Injectable, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { BydBaseOdooService, BydEmployeeService } from '@beyond/odoo';
 import { BydPermissionsServices, HandleSimpleRequest } from '@beyond/server';
 import { getFirstNumber, isNonNullable } from '@beyond/utils';
-import { filter, map, mergeMap, of, switchMap, tap } from 'rxjs';
+import { debounceTime, filter, map, mergeMap, of, switchMap, tap } from 'rxjs';
 
+import { CompanyComponent } from '../components/company/company.component';
 import { Profile } from './dto/profile';
 
 @Injectable({
@@ -13,13 +15,21 @@ import { Profile } from './dto/profile';
 export class BydUserService extends BydBaseOdooService {
   readonly profile = new HandleSimpleRequest<Profile>();
   readonly warehouse = new HandleSimpleRequest<number[]>();
+  readonly company = new HandleSimpleRequest<number[]>();
 
   readonly permissionsServices = inject(BydPermissionsServices);
   readonly employeesServices = inject(BydEmployeeService);
 
+  public openDialog = inject(MatDialog);
+
   constructor() {
     super();
-    this.permissionsServices.updated$.pipe(mergeMap(() => this.fetchProfile$())).subscribe();
+    this.permissionsServices.updated$
+      .pipe(
+        debounceTime(500),
+        mergeMap(() => this.fetchProfile$())
+      )
+      .subscribe();
   }
 
   public fetchProfile$() {
@@ -32,13 +42,27 @@ export class BydUserService extends BydBaseOdooService {
         .searchRead$<Profile>(
           'res.users',
           [['id', '=', this.permissionsServices.uid]],
-          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id']
+          ['id', 'email', 'display_name', 'share', 'groups_id', 'employee_id', 'company_ids']
         )
         .pipe(
           filter(isNonNullable),
           map(result => result[0]),
           tap(profile => {
+            this.permissionsServices.setEmployee(getFirstNumber(profile.employee_id));
+
             this.permissionsServices.setRole(profile.share ? 'shared' : 'interne');
+            this.company.data$.next(profile.company_ids);
+          }),
+          switchMap(profile => {
+            if (this.permissionsServices.company) {
+              return of(profile);
+            }
+            return this.openDialog
+              .open(CompanyComponent, {
+                disableClose: true,
+              })
+              .afterClosed()
+              .pipe(map(() => profile));
           }),
           switchMap((profile: Profile) => {
             return this.warehouse

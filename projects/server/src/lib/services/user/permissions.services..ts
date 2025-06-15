@@ -22,6 +22,8 @@ export class BydPermissionsServices {
   public guards: { [index: string]: string[] } = {};
   public roles: Role[] = ['shared'];
   public warehouse: number | null = null;
+  public company: number | null = null;
+  public employee: number | null = null;
 
   get isAuthenticated() {
     return !!this.uid;
@@ -46,6 +48,9 @@ export class BydPermissionsServices {
     if (sessionStorage.getItem('warehouse')) {
       this.warehouse = Number(sessionStorage.getItem('warehouse'));
     }
+    if (sessionStorage.getItem('company')) {
+      this.company = Number(sessionStorage.getItem('company'));
+    }
   }
 
   public set(uid: number | null, pass: string) {
@@ -63,6 +68,13 @@ export class BydPermissionsServices {
   public setWarehouse(warehouse: number | null) {
     this.warehouse = warehouse;
     sessionStorage.setItem('warehouse', this.warehouse?.toString() || '');
+  }
+  public setCompany(company: number | null) {
+    this.company = company;
+    sessionStorage.setItem('company', this.company?.toString() || '');
+  }
+  public setEmployee(employee: number | null) {
+    this.employee = employee;
   }
   public setRole(role: Role) {
     this.roles = [role];
@@ -92,6 +104,7 @@ export class BydPermissionsServices {
     this.uid = null;
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('warehouse');
+    sessionStorage.removeItem('company');
 
     this.guards = {};
 

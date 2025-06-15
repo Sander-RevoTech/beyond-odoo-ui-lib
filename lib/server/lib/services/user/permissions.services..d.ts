@@ -12,6 +12,8 @@ export declare class BydPermissionsServices {
     };
     roles: Role[];
     warehouse: number | null;
+    company: number | null;
+    employee: number | null;
     get isAuthenticated(): boolean;
     updated$: Observable<number | null>;
     private _sep;
@@ -19,6 +21,8 @@ export declare class BydPermissionsServices {
     constructor();
     set(uid: number | null, pass: string): void;
     setWarehouse(warehouse: number | null): void;
+    setCompany(company: number | null): void;
+    setEmployee(employee: number | null): void;
     setRole(role: Role): void;
     reset(): void;
     hasRole(role: Role): boolean;

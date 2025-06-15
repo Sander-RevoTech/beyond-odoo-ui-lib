@@ -11,6 +11,7 @@ import {
 } from '@beyond/features';
 import { InputDatePicker } from '@beyond/form-model';
 import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
+import { BydUserService } from '@beyond/user';
 
 import { Preset } from '../../projects/features/src/public-api';
 import { BydDatePickerComponent } from '../../projects/form/form-input/src/lib/components/input/date-picker/date-picker.component';
@@ -23,6 +24,7 @@ import { CardCtaComponent } from '../../projects/ui/src/lib/features/card/cta/ca
 import { CardHeaderComponent } from '../../projects/ui/src/lib/features/card/header/card-header.component';
 import { CardSubtitleComponent } from '../../projects/ui/src/lib/features/card/subtitle/card-subtitle.component';
 import { CardTitleComponent } from '../../projects/ui/src/lib/features/card/title/card-title.component';
+import { LoginCardComponent } from '../../projects/user/src/lib/components/login/login-card.component';
 import { AppTranslationService } from './translations/translation.service';
 
 @Component({
@@ -45,6 +47,7 @@ import { AppTranslationService } from './translations/translation.service';
     BydTitleComponent,
     BydNavigationDateWeekComponent,
     BydDatePickerComponent,
+    LoginCardComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -88,6 +91,7 @@ export class AppComponent {
   //         .pipe(map(data => data.map(item => ({ id: item.id.toString(), name: item.name, data: item })))),
   //   },
   // ];
+  private readonly _userService = inject(BydUserService);
 
   readonly colsMetaData = [
     {
@@ -154,5 +158,6 @@ export class AppComponent {
     AppTranslationService.getInstance();
 
     this.input.createFormControl();
+    this._userService.company;
   }
 }

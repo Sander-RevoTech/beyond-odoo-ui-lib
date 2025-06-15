@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 
 import { BydFormComponent } from '@beyond/form-basic';
 import { BydNotificationService, ENotificationCode } from '@beyond/notification';
-import { BydAuthOdooService, BydBaseOdooService } from '@beyond/odoo';
+import { BydAuthOdooService } from '@beyond/odoo';
 import { LoaderComponent } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
 
@@ -49,7 +49,7 @@ export class LoginCardComponent extends BydBaseComponent {
 
   private _successMessage() {
     this._notificationService.addNotification('notification.success', ENotificationCode.success);
-    this._router.navigateByUrl('/');
+    // this._router.navigateByUrl('/');
   }
 
   private _errorMessage(message: string) {

@@ -19,3 +19,5 @@ export * from './lib/services/employee/employee.service';
 export * from './lib/services/partners/partners.service';
 export * from './lib/services/warehouses/warehouses.service';
 export * from './lib/services/warehouses/dto/warehouse';
+export * from './lib/services/companies/companies.service';
+export * from './lib/services/companies/dto/company';

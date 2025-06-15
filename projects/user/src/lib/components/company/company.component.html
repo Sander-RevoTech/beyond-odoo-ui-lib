@@ -1,0 +1,11 @@
+<div class="p-space-lg flex-column g-space-md">
+  @for (company of this.companies$ | async; track company.id) {
+    <byd-card (click)="this.select(company.id)">
+      <byd-card-header>
+        <byd-card-title>
+          <h3>{{ company.name }}</h3>
+        </byd-card-title>
+      </byd-card-header>
+    </byd-card>
+  }
+</div>

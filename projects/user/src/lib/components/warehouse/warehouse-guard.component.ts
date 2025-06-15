@@ -31,10 +31,6 @@ export class WarehouseGuardComponent extends BydAbstractComponent {
           if (this._permissionsServices.warehouse) {
             return;
           }
-          if (warehouses.length === 1) {
-            this._permissionsServices.setWarehouse(warehouses[0]);
-            return;
-          }
 
           this.openDialog.open(WarehouseComponent, {
             disableClose: true,

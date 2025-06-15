@@ -4,6 +4,7 @@ export interface Profile {
     email: string;
     display_name: string;
     share: boolean;
+    company_ids: number[];
     groups_id: ManyToOneType;
     employee_id: ManyToOneType;
 }
