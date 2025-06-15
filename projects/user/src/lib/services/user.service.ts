@@ -47,11 +47,19 @@ export class BydUserService extends BydBaseOdooService {
         .pipe(
           filter(isNonNullable),
           map(result => result[0]),
-          tap(profile => {
-            this.permissionsServices.setEmployee(getFirstNumber(profile.employee_id));
-
+          switchMap(profile => {
             this.permissionsServices.setRole(profile.share ? 'shared' : 'interne');
             this.company.data$.next(profile.company_ids);
+
+            if (!profile.share) {
+              this.permissionsServices.setEmployee(getFirstNumber(profile.employee_id));
+              return of(profile);
+            } else {
+              return this.employeesServices.getRelatedByUserId$(profile.id).pipe(
+                tap(employee => this.permissionsServices.setEmployee(employee.id)),
+                map(() => profile)
+              );
+            }
           }),
           switchMap(profile => {
             if (this.permissionsServices.company) {
