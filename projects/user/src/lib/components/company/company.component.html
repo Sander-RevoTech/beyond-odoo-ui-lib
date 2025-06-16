@@ -2,7 +2,7 @@
 
 <byd-loader [isLoading]="this.requestState.isLoading()">
   <div class="p-space-lg">
-    <byd-empty [isEmpty]="!companies || companies.length === 0">
+    <byd-empty [isEmpty]="!companies || companies.length === 0" text="No company are allow for your user">
       <div class="flex-column g-space-md">
         @for (company of companies; track company.id) {
           <byd-card (click)="this.select(company.id)">
