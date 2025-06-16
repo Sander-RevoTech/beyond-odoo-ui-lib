@@ -3,6 +3,7 @@ import { ENotificationCode } from '../enum';
 import * as i0 from "@angular/core";
 export declare class BydNotificationService {
     id: number;
+    readonly pendingBlockedRequest: import("@angular/core").WritableSignal<number>;
     newNotification$: Subject<{
         message: string;
         code: ENotificationCode;
@@ -14,6 +15,8 @@ export declare class BydNotificationService {
         message: string;
     }>;
     constructor();
+    incPendingBlockedRequest(): void;
+    decPendingBlockedRequest(): void;
     addNotification(message: string, code: ENotificationCode): void;
     addErrorNotification(message: string): void;
     addUserNotification(message: string): void;

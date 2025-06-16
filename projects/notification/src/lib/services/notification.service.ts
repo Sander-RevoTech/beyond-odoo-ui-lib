@@ -1,4 +1,4 @@
-import { Injectable, InjectionToken } from '@angular/core';
+import { Injectable, InjectionToken, signal } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
@@ -11,6 +11,8 @@ import { ENotificationCode } from '../enum';
 })
 export class BydNotificationService {
   public id = Math.random();
+
+  readonly pendingBlockedRequest = signal<number>(0);
 
   public newNotification$ = new Subject<{
     message: string;
@@ -27,6 +29,12 @@ export class BydNotificationService {
 
   constructor() {}
 
+  public incPendingBlockedRequest() {
+    this.pendingBlockedRequest.set(this.pendingBlockedRequest() + 1);
+  }
+  public decPendingBlockedRequest() {
+    this.pendingBlockedRequest.set(this.pendingBlockedRequest() - 1);
+  }
   public addNotification(message: string, code: ENotificationCode) {
     this.newNotification$.next({ message, code });
   }

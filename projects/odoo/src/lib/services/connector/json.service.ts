@@ -155,6 +155,7 @@ export class OdooJsonConnector {
 
   private _call$<T>(endpoint: string, params: any) {
     const subject$ = new Subject<T>();
+    this.notificationService.incPendingBlockedRequest();
     fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -166,11 +167,13 @@ export class OdooJsonConnector {
       this._extractResult<T>(response)
         .then(result => {
           console.log('response, ', result);
+          this.notificationService.decPendingBlockedRequest();
           subject$.next(result);
           subject$.complete();
           subject$.unsubscribe();
         })
         .catch(error => {
+          this.notificationService.decPendingBlockedRequest();
           subject$.error(error);
           subject$.complete();
           subject$.unsubscribe();

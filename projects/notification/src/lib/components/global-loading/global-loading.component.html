@@ -1,0 +1,5 @@
+@if (this.notificationService.pendingBlockedRequest() > 0) {
+  <div class="global-loading-container">
+    <byd-loader [isLoading]="true"></byd-loader>
+  </div>
+}
