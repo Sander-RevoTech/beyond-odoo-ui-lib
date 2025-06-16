@@ -1,17 +1,19 @@
 @let warehouses = this.warehouses$ | async;
 
 <byd-loader [isLoading]="this.requestState.isLoading()">
-  <div class="p-space-lg flex-column g-space-md">
+  <div class="p-space-lg">
     <byd-empty [isEmpty]="!warehouses || warehouses.length === 0">
-      @for (warehouse of warehouses; track warehouse.id) {
-        <byd-card (click)="this.select(warehouse.id)">
-          <byd-card-header>
-            <byd-card-title>
-              <h3>{{ warehouse.name }}</h3>
-            </byd-card-title>
-          </byd-card-header>
-        </byd-card>
-      }
+      <div class="flex-column g-space-md">
+        @for (warehouse of warehouses; track warehouse.id) {
+          <byd-card (click)="this.select(warehouse.id)">
+            <byd-card-header>
+              <byd-card-title>
+                <h3>{{ warehouse.name }}</h3>
+              </byd-card-title>
+            </byd-card-header>
+          </byd-card>
+        }
+      </div>
     </byd-empty>
   </div>
 </byd-loader>
