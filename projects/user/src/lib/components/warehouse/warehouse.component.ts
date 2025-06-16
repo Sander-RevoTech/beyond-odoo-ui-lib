@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 import { BydWarehousesService } from '@beyond/odoo';
-import { CardComponent, CardHeaderComponent, CardTitleComponent } from '@beyond/ui';
+import { CardComponent, CardHeaderComponent, CardTitleComponent, EmptyComponent, LoaderComponent } from '@beyond/ui';
 import { BydAbstractComponent } from '@beyond/utils';
 
 import { BydUserService } from '../../services/user.service';
@@ -12,7 +12,7 @@ import { BydUserService } from '../../services/user.service';
   selector: 'byd-warehouse',
   templateUrl: './warehouse.component.html',
   styleUrls: ['./warehouse.component.scss'],
-  imports: [AsyncPipe, CardComponent, CardHeaderComponent, CardTitleComponent],
+  imports: [AsyncPipe, CardComponent, CardHeaderComponent, CardTitleComponent, LoaderComponent, EmptyComponent],
   standalone: true,
 })
 export class WarehouseComponent extends BydAbstractComponent {
@@ -24,7 +24,11 @@ export class WarehouseComponent extends BydAbstractComponent {
 
   constructor() {
     super();
-    this._warehouseServices.fetch$(this._usersServices.warehouse.get() ?? []).subscribe();
+    this.requestState.asked();
+
+    this._warehouseServices
+      .fetch$(this._usersServices.warehouse.get() ?? [])
+      .subscribe({ complete: () => this.requestState.completed(), error: () => this.requestState.completed() });
   }
 
   public select(id: number) {
