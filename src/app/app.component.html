@@ -1,6 +1,6 @@
 <!-- <router-outlet /> -->
 <!-- <byd-notification-box></byd-notification-box> -->
-
+<byd-global-loading></byd-global-loading>
 <byd-layout-with-panel [open]="this.selected()" [width]="'50%'" (close)="this.selected.set(false)">
   <byd-layout-container>
     <byd-button (action)="this.selected.set(true)">action</byd-button>

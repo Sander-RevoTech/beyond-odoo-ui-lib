@@ -10,6 +10,7 @@ import {
   ParameterType,
 } from '@beyond/features';
 import { InputDatePicker } from '@beyond/form-model';
+import { BydGlobalLoadingComponent } from '@beyond/notification';
 import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
 import { BydUserService } from '@beyond/user';
 
@@ -54,6 +55,7 @@ import { AppTranslationService } from './translations/translation.service';
     BydLayoutWithPanelComponent,
     BydLayoutContainerComponent,
     BydLayoutPanelComponent,
+    BydGlobalLoadingComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

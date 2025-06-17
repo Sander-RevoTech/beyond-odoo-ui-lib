@@ -7,8 +7,9 @@
   left: 0;
   right: 0;
   background-color: common.get-var(surface, brand, primary);
-  opacity: 0.4;
+  opacity: 0.5;
   z-index: 600;
+  display: flex;
 
   byd-logo {
     display: flex;
