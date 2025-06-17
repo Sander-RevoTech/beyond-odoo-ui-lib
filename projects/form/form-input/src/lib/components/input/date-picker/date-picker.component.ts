@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -24,11 +24,7 @@ import { FormLabelComponent } from '../../label/label.component';
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  providers: [
-    MatNativeDateModule,
-    { provide: DateAdapter, useClass: NativeDateAdapter },
-    { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }, // ou 'en-US' selon ton besoin
-  ],
+  providers: [provideNativeDateAdapter(), { provide: MAT_DATE_LOCALE, useValue: 'fr-FR' }],
 })
 export class BydDatePickerComponent extends BydBaseComponent {
   @Input()
