@@ -1,11 +1,14 @@
 import { BydBaseComponent } from '@beyond/utils';
+import { BehaviorSubject } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class LoginCardComponent extends BydBaseComponent {
     private readonly _authService;
     private readonly _notificationService;
     private readonly _formService;
     readonly form: import("@angular/core").WritableSignal<import("@beyond/form-model").InputBase<any>[]>;
+    readonly askValidation$: BehaviorSubject<null>;
     constructor();
+    handleEnter(event: KeyboardEvent): void;
     login(data: any): void;
     private _successMessage;
     private _errorMessage;

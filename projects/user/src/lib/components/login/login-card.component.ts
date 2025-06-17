@@ -1,10 +1,11 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 
 import { BydFormComponent } from '@beyond/form-basic';
 import { BydNotificationService, ENotificationCode } from '@beyond/notification';
 import { BydAuthOdooService } from '@beyond/odoo';
 import { LoaderComponent } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
+import { BehaviorSubject } from 'rxjs';
 
 import { AppUserFormService } from '../../services/form/form.service';
 
@@ -21,9 +22,14 @@ export class LoginCardComponent extends BydBaseComponent {
   private readonly _formService = inject(AppUserFormService);
 
   public readonly form = signal(this._formService.getLoginForm());
-
+  readonly askValidation$ = new BehaviorSubject<null>(null);
   constructor() {
     super();
+  }
+
+  @HostListener('document:keydown.enter', ['$event'])
+  handleEnter(event: KeyboardEvent) {
+    this.askValidation$.next(null);
   }
 
   public login(data: any) {
