@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Output, inject } from '@angular/core';
 
 import { BydNotificationService } from '@beyond/notification';
+import { BydButtonComponent } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
-
-import { BydButtonComponent } from '../../../../../../../ui/src/lib/components/button/button.component';
 
 @Component({
   selector: 'byd-scanning',
