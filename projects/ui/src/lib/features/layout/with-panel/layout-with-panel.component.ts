@@ -72,7 +72,7 @@ export class BydLayoutWithPanelComponent extends BydBaseComponent implements OnC
           .subscribe(() => this.close.emit())
       );
     } else {
-      this.drawer?.close();
+      this.drawer?.open();
     }
   }
   public toClose() {
