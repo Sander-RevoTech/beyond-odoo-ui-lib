@@ -1,4 +1,7 @@
-<zxing-scanner
-  (scanSuccess)="this.scanSuccess.emit($event)"
-  (permissionResponse)="this.permissionResponse($event)"
-></zxing-scanner>
+<div class="flex-column g-space-md">
+  <zxing-scanner
+    (scanSuccess)="this.scanSuccess.emit($event)"
+    (permissionResponse)="this.permissionResponse($event)"
+  ></zxing-scanner>
+  <byd-button (action)="this.close.emit()"></byd-button>
+</div>

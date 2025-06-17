@@ -4,9 +4,11 @@ import { BydNotificationService } from '@beyond/notification';
 import { BydBaseComponent } from '@beyond/utils';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
+import { BydButtonComponent } from '../../../../../../../ui/src/lib/components/button/button.component';
+
 @Component({
   selector: 'byd-scanning',
-  imports: [ZXingScannerModule],
+  imports: [ZXingScannerModule, BydButtonComponent],
   templateUrl: './scanning.component.html',
   styleUrl: './scanning.component.scss',
 })
@@ -16,6 +18,9 @@ export class BydScanningComponent extends BydBaseComponent {
 
   @Output()
   error = new EventEmitter();
+
+  @Output()
+  close = new EventEmitter();
 
   private readonly _notificationService = inject(BydNotificationService);
 
