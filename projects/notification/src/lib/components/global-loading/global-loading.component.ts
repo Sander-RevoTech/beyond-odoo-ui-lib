@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 
-import { LoaderComponent } from '@beyond/ui';
+import { LoaderComponent, LogoComponent } from '@beyond/ui';
 
 import { BydNotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'byd-global-loading',
-  imports: [LoaderComponent],
+  imports: [LoaderComponent, LogoComponent],
   templateUrl: './global-loading.component.html',
   styleUrl: './global-loading.component.scss',
 })

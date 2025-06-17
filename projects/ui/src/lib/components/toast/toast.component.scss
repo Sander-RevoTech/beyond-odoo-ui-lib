@@ -36,6 +36,7 @@
   padding: common.get-var(space, lg);
 
   color: common.get-var(text, primary);
+  background-color: common.get-var(surface, primary);
 
   @include fonts.fontSizeBody(md);
 }

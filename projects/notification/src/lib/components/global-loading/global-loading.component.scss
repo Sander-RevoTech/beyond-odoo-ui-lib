@@ -1,10 +1,17 @@
+@use 'beyond/utils/mixins/common';
+
 .global-loading-container {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: red;
+  background-color: common.get-var(surface, brand, primary);
   opacity: 0.4;
   z-index: 600;
+
+  byd-logo {
+    display: flex;
+    margin: auto;
+  }
 }
