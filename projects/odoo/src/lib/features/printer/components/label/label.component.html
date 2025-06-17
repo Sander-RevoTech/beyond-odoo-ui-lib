@@ -3,7 +3,7 @@
 @if (wizard) {
   <div class="p-space-md">
     <div class="close-dialog" mat-button mat-dialog-close>
-      <mat-icon> close </mat-icon>
+      <mat-icon>close</mat-icon>
     </div>
     <byd-title [level]="2" [isBold]="true">{{ wizard.display_name }}</byd-title>
     <byd-loader [isLoading]="this.requestState.isLoading()">

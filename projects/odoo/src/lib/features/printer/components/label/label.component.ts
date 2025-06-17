@@ -1,7 +1,7 @@
 import { AsyncPipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, inject, signal } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 
 import { BydFormComponent } from '@beyond/form-basic';
@@ -24,7 +24,7 @@ export interface LabelModalData {
   templateUrl: './label.component.html',
   styleUrls: ['./label.component.scss'],
   standalone: true,
-  imports: [LoaderComponent, ErrorComponent, BydTitleComponent, BydFormComponent, MatIcon, AsyncPipe],
+  imports: [LoaderComponent, ErrorComponent, BydTitleComponent, BydFormComponent, MatIcon, AsyncPipe, MatDialogClose],
 })
 export class LabelModal extends BydBaseComponent {
   private readonly _notificationService = inject(BydNotificationService);

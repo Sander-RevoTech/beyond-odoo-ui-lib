@@ -1,14 +1,26 @@
-<mat-drawer-container hasBackdrop [ngClass]="{ isOpen: this.open }">
-  <mat-drawer #drawer [position]="'end'" class="drawer" [style.width]="this.width">
-    <div class="close-dialog" (click)="drawer.close()">
-      <mat-icon> close </mat-icon>
-    </div>
-    <div class="pT-35">
-      <ng-content select="byd-layout-panel"></ng-content>
-    </div>
-  </mat-drawer>
+@if (this.breakpoints.isMobileDevice$ | async) {
+  <ng-container *ngTemplateOutlet="layoutContent"></ng-container>
+} @else {
+  <mat-drawer-container hasBackdrop [ngClass]="{ isOpen: this.open }">
+    <mat-drawer #drawer [position]="'end'" class="drawer" [style.width]="this.width">
+      <ng-container *ngTemplateOutlet="layoutPanel"></ng-container>
+    </mat-drawer>
 
+    <ng-container *ngTemplateOutlet="layoutContent"></ng-container>
+  </mat-drawer-container>
+}
+
+<ng-template #layoutPanel>
+  <div class="close-dialog" mat-button mat-dialog-close (click)="this.toClose()">
+    <mat-icon>close</mat-icon>
+  </div>
+  <div class="p-space-sm">
+    <ng-content select="byd-layout-panel"></ng-content>
+  </div>
+</ng-template>
+
+<ng-template #layoutContent>
   <div class="app-layout-content-container">
     <ng-content select="byd-layout-container"></ng-content>
   </div>
-</mat-drawer-container>
+</ng-template>

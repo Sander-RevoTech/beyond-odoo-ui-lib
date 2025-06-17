@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 
 import {
   BydGridComponent,
@@ -24,6 +24,9 @@ import { CardCtaComponent } from '../../projects/ui/src/lib/features/card/cta/ca
 import { CardHeaderComponent } from '../../projects/ui/src/lib/features/card/header/card-header.component';
 import { CardSubtitleComponent } from '../../projects/ui/src/lib/features/card/subtitle/card-subtitle.component';
 import { CardTitleComponent } from '../../projects/ui/src/lib/features/card/title/card-title.component';
+import { BydLayoutContainerComponent } from '../../projects/ui/src/lib/features/layout/layout-container/layout-container.component';
+import { BydLayoutPanelComponent } from '../../projects/ui/src/lib/features/layout/layout-panel/layout-panel.component';
+import { BydLayoutWithPanelComponent } from '../../projects/ui/src/lib/features/layout/with-panel/layout-with-panel.component';
 import { LoginCardComponent } from '../../projects/user/src/lib/components/login/login-card.component';
 import { AppTranslationService } from './translations/translation.service';
 
@@ -48,6 +51,9 @@ import { AppTranslationService } from './translations/translation.service';
     BydNavigationDateWeekComponent,
     BydDatePickerComponent,
     LoginCardComponent,
+    BydLayoutWithPanelComponent,
+    BydLayoutContainerComponent,
+    BydLayoutPanelComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -59,6 +65,7 @@ export class AppComponent {
   readonly service = inject(BydEmployeeService);
   readonly partnersService = inject(BydPartnersService);
 
+  readonly selected = signal<boolean>(false);
   // readonly colsMetaData: ColMetaData[] = [
   //   {
   //     name: 'id',

@@ -121,8 +121,8 @@ $byd-theme: mat.define-theme(
 
 :root {
   @include mat.all-component-themes($byd-theme);
-  --mat-dialog-container-max-width: 90vw !important;
-  --mat-dialog-container-min-width: 90vh !important;
+  --mat-dialog-container-max-width: 100vw !important;
+  --mat-dialog-container-min-width: 90vw !important;
 }
 
 div {
@@ -174,22 +174,21 @@ mat-bottom-sheet-container {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.dynamic-modal {
-  width: 85vw !important;
-  margin: auto !important;
+.full-modal {
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  width: 100%;
+  height: 100%;
 }
-
-.full-screen-modal {
-  max-width: 100vw !important;
-  min-height: 50%;
-
-  &.with-bottom-sheet {
-    margin-bottom: 100px;
-  }
-
-  &.forced {
-    width: 95vw !important;
-  }
+.classic-modal,
+.classic-modal-width {
+  max-width: 80vw !important;
+  min-width: 50% !important;
+}
+.classic-modal,
+.classic-modal-height {
+  min-height: 400px;
 }
 
 mat-form-field label {

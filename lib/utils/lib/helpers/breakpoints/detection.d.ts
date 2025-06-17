@@ -1,4 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { Platform } from '@angular/cdk/platform';
+import { BehaviorSubject } from 'rxjs';
 export declare const Breakpoints: {
     XSmall: string;
     Small: string;
@@ -18,6 +20,7 @@ export declare const Breakpoints: {
 };
 export declare class BreakpointDetection {
     breakpointObserver: BreakpointObserver;
+    platform: Platform;
     isLessThanXS: boolean;
     isLessThanSM: boolean;
     isLessThanMD: boolean;
@@ -40,6 +43,8 @@ export declare class BreakpointDetection {
     isTablette$: import("rxjs").Observable<boolean>;
     isDesktop: boolean;
     isDesktop$: import("rxjs").Observable<boolean>;
+    isMobileDevice$: BehaviorSubject<boolean>;
+    isDesktopDevice$: import("rxjs").Observable<boolean>;
     constructor();
     private _isMatched$;
     private _isMatched;

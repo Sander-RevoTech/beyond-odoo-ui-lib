@@ -20,6 +20,13 @@ export abstract class BydAbstractComponent implements OnDestroy {
     return this.breakpoints.isDesktop;
   }
 
+  get isMobileDevice$() {
+    return this.breakpoints.isMobileDevice$;
+  }
+  get isDesktopDevice$() {
+    return this.breakpoints.isDesktopDevice$;
+  }
+
   protected _subscriberHandler = new SubscriberHandler();
 
   /* Routing */

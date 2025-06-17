@@ -11,6 +11,8 @@ export declare abstract class BydAbstractComponent implements OnDestroy {
     requestState: RequestState;
     get isMobile(): boolean;
     get isDesktop(): boolean;
+    get isMobileDevice$(): import("rxjs").BehaviorSubject<boolean>;
+    get isDesktopDevice$(): import("rxjs").Observable<boolean>;
     protected _subscriberHandler: SubscriberHandler;
     protected _route: ActivatedRoute;
     protected _router: Router;

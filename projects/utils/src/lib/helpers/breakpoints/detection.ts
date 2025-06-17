@@ -1,7 +1,10 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { Platform } from '@angular/cdk/platform';
 import { inject } from '@angular/core';
 
 import { map } from 'rxjs/operators';
+
+import { BehaviorSubject } from 'rxjs';
 
 const breakpoint_xxl = 1400;
 const breakpoint_xl = 1200;
@@ -37,6 +40,7 @@ export const Breakpoints = {
 
 export class BreakpointDetection {
   public breakpointObserver = inject(BreakpointObserver);
+  public platform = inject(Platform);
 
   public isLessThanXS = this._isMatched([Breakpoints.XSmall]);
   public isLessThanSM = this._isMatched([Breakpoints.XSmall, Breakpoints.Small]);
@@ -83,6 +87,9 @@ export class BreakpointDetection {
 
   public isDesktop = this.isMoreThanLG;
   public isDesktop$ = this.isMoreThanLG$;
+
+  public isMobileDevice$ = new BehaviorSubject<boolean>(this.platform.ANDROID || this.platform.IOS);
+  public isDesktopDevice$ = this.isMobileDevice$.pipe(map(value => !value));
 
   constructor() {}
 

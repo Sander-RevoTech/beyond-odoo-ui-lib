@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { AsyncPipe, NgClass, NgTemplateOutlet } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -7,8 +7,11 @@ import {
   OnChanges,
   Output,
   SimpleChanges,
+  TemplateRef,
   ViewChild,
+  inject,
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 import { MatDrawer, MatDrawerContainer } from '@angular/material/sidenav';
 
@@ -19,7 +22,7 @@ import { BydBaseComponent } from '@beyond/utils';
   templateUrl: './layout-with-panel.component.html',
   styleUrls: ['./layout-with-panel.component.scss'],
   standalone: true,
-  imports: [MatDrawer, MatDrawerContainer, MatIcon, NgClass],
+  imports: [MatDrawer, MatDrawerContainer, MatIcon, NgClass, NgTemplateOutlet, AsyncPipe],
 })
 export class BydLayoutWithPanelComponent extends BydBaseComponent implements OnChanges, AfterViewInit {
   @Input()
@@ -32,6 +35,9 @@ export class BydLayoutWithPanelComponent extends BydBaseComponent implements OnC
   close = new EventEmitter();
 
   @ViewChild('drawer') drawer: MatDrawer | null = null;
+  @ViewChild('layoutPanel') layoutPanel!: TemplateRef<any>;
+
+  readonly dialog = inject(MatDialog);
 
   constructor() {
     super();
@@ -49,7 +55,29 @@ export class BydLayoutWithPanelComponent extends BydBaseComponent implements OnC
 
   public manageDrawer() {
     if (this.open === true) {
-      this.drawer?.open();
+      this.toOpen();
+    } else {
+      this.toClose();
+    }
+  }
+
+  public toOpen() {
+    if (this.isMobileDevice$.getValue()) {
+      this._registerSubscription(
+        this.dialog
+          .open(this.layoutPanel, {
+            panelClass: 'full-modal',
+          })
+          .afterClosed()
+          .subscribe(() => this.close.emit())
+      );
+    } else {
+      this.drawer?.close();
+    }
+  }
+  public toClose() {
+    if (this.isMobileDevice$.getValue()) {
+      this.dialog.closeAll();
     } else {
       this.drawer?.close();
     }

@@ -1,27 +1,34 @@
 <!-- <router-outlet /> -->
 <!-- <byd-notification-box></byd-notification-box> -->
 
+<byd-layout-with-panel [open]="this.selected()" [width]="'50%'" (close)="this.selected.set(false)">
+  <byd-layout-container>
+    <byd-button (action)="this.selected.set(true)">action</byd-button>
+  </byd-layout-container>
+  <byd-layout-panel>
+    <byd-card>
+      <byd-card-header>
+        <byd-card-title>
+          <byd-title>Washing Production</byd-title>
+        </byd-card-title>
+        <byd-card-subtitle>Production overview</byd-card-subtitle>
+      </byd-card-header>
+      <byd-card-content>
+        <p>Washing production overview content goes here.</p>
+        <p>Use the grid below to manage washing production items.</p>
+      </byd-card-content>
+      <byd-card-cta>
+        <byd-button icon="plus">add</byd-button>
+        <byd-button icon="refresh">refresh</byd-button>
+      </byd-card-cta>
+    </byd-card>
+  </byd-layout-panel>
+</byd-layout-with-panel>
+
 <byd-login-card></byd-login-card>
 <byd-input-date-picker [input]="this.input"></byd-input-date-picker>
 <byd-navigation-date-week></byd-navigation-date-week>
-<div class="p-space-xxl">
-  <byd-card>
-    <byd-card-header>
-      <byd-card-title>
-        <byd-title>Washing Production</byd-title>
-      </byd-card-title>
-      <byd-card-subtitle>Production overview</byd-card-subtitle>
-    </byd-card-header>
-    <byd-card-content>
-      <p>Washing production overview content goes here.</p>
-      <p>Use the grid below to manage washing production items.</p>
-    </byd-card-content>
-    <byd-card-cta>
-      <byd-button icon="plus">add</byd-button>
-      <byd-button icon="refresh">refresh</byd-button>
-    </byd-card-cta>
-  </byd-card>
-</div>
+<div class="p-space-xxl"></div>
 
 <ng-template #cardTemplate let-items="items">
   @for (item of items; track item.id) {
