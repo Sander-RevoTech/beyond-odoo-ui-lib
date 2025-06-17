@@ -52,6 +52,6 @@
 }
 
 .badge-secondary {
-  color: common.get-var(surface, brand, secondary);
+  color: common.get-var(text, invert, primary);
   background: common.get-var(surface, brand, secondary);
 }
