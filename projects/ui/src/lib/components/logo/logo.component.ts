@@ -1,4 +1,3 @@
-import { NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -6,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './logo.component.html',
   styleUrls: ['./logo.component.scss'],
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [],
 })
 export class LogoComponent {
   /**
