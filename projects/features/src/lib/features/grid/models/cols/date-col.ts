@@ -24,7 +24,7 @@ export class DateCol extends BaseCol<Date> {
     return {
       field: this.key,
       type: 'like',
-      value: format(value, 'yyyy-MM-dd'),
+      value: format(value, 'yyyy-MM-dd') + '%',
     };
   }
 }
