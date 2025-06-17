@@ -1,6 +1,8 @@
 @if (this.notificationService.pendingBlockedRequest() > 0) {
   <div class="global-loading-container">
-    <byd-logo></byd-logo>
-    <byd-loader [isLoading]="true"></byd-loader>
+    <div class="m-a d-flex flex-column">
+      <byd-logo></byd-logo>
+      <byd-loader [isLoading]="true"></byd-loader>
+    </div>
   </div>
 }

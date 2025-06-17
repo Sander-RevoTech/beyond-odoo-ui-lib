@@ -28,7 +28,7 @@
   @include fonts.fontSizeBody(xl, true);
 }
 .badge-info {
-  color: common.get-var(semantic, purple-dark);
+  color: common.get-var(text, invert, primary);
   background: common.get-var(semantic, purple-light);
 }
 .badge-danger {
@@ -42,7 +42,7 @@
 }
 
 .badge-success {
-  color: common.get-var(text, primary);
+  color: common.get-var(text, invert, primary);
   background: common.get-var(semantic-token, success);
 }
 
