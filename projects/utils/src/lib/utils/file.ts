@@ -33,7 +33,7 @@ export const getBlobImage = async (base64: string) => {
 export const compressImage = async (blob: Blob): Promise<Blob> => {
   return new Promise((resolve, reject) => {
     new Compressor(blob, {
-      quality: 0.6,
+      quality: 0.2,
       success: (blob: Blob) => {
         resolve(blob);
       },
