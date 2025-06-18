@@ -23,6 +23,9 @@ export class BydScanningComponent extends BydBaseComponent {
 
   private readonly _notificationService = inject(BydNotificationService);
 
+  public scanError(error: { message?: unknown; cause?: unknown } | undefined) {
+    console.error('scanError: ', error);
+  }
   public permissionResponse(repsonse: boolean) {
     if (!repsonse) {
       this._notificationService.addErrorNotification('Permission not granted');

@@ -2,6 +2,8 @@
   <zxing-scanner
     [tryHarder]="true"
     (scanSuccess)="this.scanSuccess.emit($event)"
+    (scanFailure)="this.scanError($event)"
+    (scanError)="this.scanError($event)"
     (permissionResponse)="this.permissionResponse($event)"
   ></zxing-scanner>
   <byd-button (action)="this.close.emit()">Close scanner</byd-button>
