@@ -33,7 +33,7 @@ export const getBlobImage = async (base64: string) => {
 export const compressImage = async (blob: Blob): Promise<Blob> => {
   return new Promise((resolve, reject) => {
     new Compressor(blob, {
-      quality: 0.2,
+      quality: 0.1,
       success: (blob: Blob) => {
         resolve(blob);
       },
@@ -50,7 +50,7 @@ export const downloadFile = (url: string) => {
 
 export const takeImage = async () => {
   const image = await Camera.getPhoto({
-    quality: 60,
+    quality: 50,
     allowEditing: true,
     saveToGallery: true,
     resultType: CameraResultType.Uri,
@@ -69,7 +69,7 @@ export const takeImage = async () => {
 
 export const picImages = async () => {
   const gallery = await Camera.pickImages({
-    quality: 90,
+    quality: 50,
   });
 
   const pics = [];
