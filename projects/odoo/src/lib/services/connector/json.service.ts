@@ -143,7 +143,9 @@ export class OdooJsonConnector {
           args,
           {
             ...kwargs,
-            ...{ context: { company_id: this.permissionsServices.company, employee_id: this.permissionsServices.uid } },
+            ...{
+              context: { company_id: this.permissionsServices.company, employee_id: this.permissionsServices.employee },
+            },
           },
         ],
       },

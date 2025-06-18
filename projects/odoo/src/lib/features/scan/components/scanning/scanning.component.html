@@ -1,5 +1,6 @@
 <div class="flex-column g-space-md">
   <zxing-scanner
+    [tryHarder]="true"
     (scanSuccess)="this.scanSuccess.emit($event)"
     (permissionResponse)="this.permissionResponse($event)"
   ></zxing-scanner>
