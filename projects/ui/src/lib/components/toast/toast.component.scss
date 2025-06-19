@@ -11,7 +11,7 @@
   margin: 5px;
 
   border-radius: common.get-var(space, md);
-  padding: common.get-var(space, md);
+  padding: common.get-var(space, xl);
   @include fonts.fontSizeBody(md);
   background-color: common.get-var(surface, primary);
   @include shadows.shadow-mixin(brand, md);
