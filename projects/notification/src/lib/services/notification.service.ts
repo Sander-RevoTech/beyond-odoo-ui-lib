@@ -26,6 +26,7 @@ export class BydNotificationService {
   public userNotification$ = new Subject<{
     message: string;
   }>();
+  public clearUserNotification$ = new Subject();
 
   constructor() {}
 

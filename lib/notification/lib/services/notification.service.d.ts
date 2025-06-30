@@ -14,6 +14,7 @@ export declare class BydNotificationService {
     userNotification$: Subject<{
         message: string;
     }>;
+    clearUserNotification$: Subject<unknown>;
     constructor();
     incPendingBlockedRequest(): void;
     decPendingBlockedRequest(): void;

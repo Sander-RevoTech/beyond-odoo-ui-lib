@@ -66,6 +66,15 @@ export class NotificationBoxComponent extends BydBaseComponent {
         )
         .subscribe()
     );
+    this._registerSubscription(
+      this._notificationService.clearUserNotification$
+        .pipe(
+          tap(() => {
+            this.userNotif.set(null);
+          })
+        )
+        .subscribe()
+    );
   }
 
   public getCode(code: ENotificationCode): EToast {
