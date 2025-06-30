@@ -8,7 +8,6 @@ export class HandleComplexRequest<T> {
 
   public fetch(id: string | number, subscriber: Observable<T>) {
     return subscriber.pipe(
-      filter(data => !!data),
       tap(entity => {
         const entities = this.data$.getValue();
         entities[id] = entity;
