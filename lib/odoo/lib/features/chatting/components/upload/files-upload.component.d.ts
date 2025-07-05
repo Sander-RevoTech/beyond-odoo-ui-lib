@@ -1,4 +1,4 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, OnInit } from '@angular/core';
 import { BydBaseComponent, FileStructure } from '@beyond/utils';
 import { Observable } from 'rxjs';
 import * as i0 from "@angular/core";
@@ -8,7 +8,7 @@ export interface ActionButtonData {
     label: string;
 }
 export type Feature = 'take-pic' | 'upload-pic' | 'upload-file';
-export declare class BydUploadComponent extends BydBaseComponent {
+export declare class BydUploadComponent extends BydBaseComponent implements OnInit {
     features: Feature[];
     canSelectMultipleFiles: boolean;
     clear$: Observable<unknown> | null;
@@ -16,6 +16,7 @@ export declare class BydUploadComponent extends BydBaseComponent {
     tempImages: import("@angular/core").WritableSignal<FileStructure[]>;
     get addActions(): ActionButtonData[];
     constructor();
+    ngOnInit(): void;
     addImage(images: FileStructure[]): void;
     remove(pic: FileStructure): void;
     private _haveFeature;

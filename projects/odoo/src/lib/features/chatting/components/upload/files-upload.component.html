@@ -13,11 +13,13 @@
         <mat-icon>{{ this.addActions[0].icon | translate }}</mat-icon>
       </byd-button>
     } @else if (this.addActions.length > 1) {
-      @for (action of this.addActions; track action.label) {
-        <byd-button (action)="action.callback()">
-          <mat-icon>{{ action.icon }}</mat-icon>
-        </byd-button>
-      }
+      <div class="flex-start g-space-lg">
+        @for (action of this.addActions; track action.label) {
+          <byd-button (action)="action.callback()">
+            <mat-icon>{{ action.icon }}</mat-icon>
+          </byd-button>
+        }
+      </div>
     }
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, computed, effect, signal } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, computed, effect, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
 import { TranslatePipe } from '@beyond/translation';
@@ -20,7 +20,7 @@ export type Feature = 'take-pic' | 'upload-pic' | 'upload-file';
   standalone: true,
   imports: [BydButtonComponent, MatIcon, TranslatePipe],
 })
-export class BydUploadComponent extends BydBaseComponent {
+export class BydUploadComponent extends BydBaseComponent implements OnInit {
   @Input()
   features: Feature[] = [];
 
@@ -70,6 +70,9 @@ export class BydUploadComponent extends BydBaseComponent {
     effect(() => {
       this.filesPicked.emit(this.tempImages());
     });
+  }
+
+  ngOnInit() {
     if (this.clear$) {
       this._registerSubscription(
         this.clear$.subscribe(() => {
