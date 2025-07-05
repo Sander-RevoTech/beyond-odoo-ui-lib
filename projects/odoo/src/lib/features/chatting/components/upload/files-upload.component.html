@@ -1,12 +1,14 @@
-<div class="grid align-items-center mb-space-xs">
-  @for (pic of this.tempImages(); track pic.localUrl) {
-    <div class="temp-pic-container g-col-3">
-      <img [src]="pic.localUrl" width="100%" />
-      <div class="remove-cta" (click)="this.remove(pic)">
-        <mat-icon>close</mat-icon>
+<div class="mb-space-md">
+  <div class="grid align-items-center mb-space-xs">
+    @for (pic of this.tempImages(); track pic.localUrl) {
+      <div class="temp-pic-container g-col-3">
+        <img [src]="pic.localUrl" width="100%" />
+        <div class="remove-cta" (click)="this.remove(pic)">
+          <mat-icon>close</mat-icon>
+        </div>
       </div>
-    </div>
-  }
+    }
+  </div>
   <div>
     @if (this.addActions.length === 1) {
       <byd-button (action)="this.addActions[0].callback()">
