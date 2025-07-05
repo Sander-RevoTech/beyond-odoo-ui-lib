@@ -6,7 +6,11 @@
       </div>
 
       <div>
-        <byd-files-upload (filesPicked)="this.images.set($event)" [features]="['take-pic']"></byd-files-upload>
+        <byd-files-upload
+          (filesPicked)="this.images.set($event)"
+          [features]="['take-pic', 'upload-pic']"
+          [clear$]="this.clearImage$"
+        ></byd-files-upload>
       </div>
 
       <byd-button (action)="this.send()" [state]="this.disable ? 'disabled' : 'classic'">

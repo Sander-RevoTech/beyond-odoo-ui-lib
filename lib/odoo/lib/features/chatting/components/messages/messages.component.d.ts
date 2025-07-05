@@ -1,11 +1,13 @@
 import { OnInit } from '@angular/core';
 import { InputTextBox } from '@beyond/form-model';
 import { BydBaseComponent, FileStructure } from '@beyond/utils';
+import { Subject } from 'rxjs';
 import * as i0 from "@angular/core";
 export declare class BydMessagesComponent extends BydBaseComponent implements OnInit {
     id: number;
     model: string;
     readonly server: import("@beyond/odoo").IOdooServerConfig;
+    readonly clearImage$: Subject<unknown>;
     private readonly _messagesService;
     input: InputTextBox<string>;
     images: import("@angular/core").WritableSignal<FileStructure[]>;

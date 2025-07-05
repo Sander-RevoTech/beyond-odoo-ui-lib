@@ -3,7 +3,8 @@ import { MatIcon } from '@angular/material/icon';
 
 import { TranslatePipe } from '@beyond/translation';
 import { BydButtonComponent } from '@beyond/ui';
-import { FileStructure, picImages, takeImage } from '@beyond/utils';
+import { BydBaseComponent, FileStructure, picImages, takeImage } from '@beyond/utils';
+import { Observable } from 'rxjs';
 
 export interface ActionButtonData {
   callback: (data?: any) => void;
@@ -19,12 +20,15 @@ export type Feature = 'take-pic' | 'upload-pic' | 'upload-file';
   standalone: true,
   imports: [BydButtonComponent, MatIcon, TranslatePipe],
 })
-export class BydUploadComponent {
+export class BydUploadComponent extends BydBaseComponent {
   @Input()
   features: Feature[] = [];
 
   @Input()
   canSelectMultipleFiles: boolean = false;
+
+  @Input()
+  clear$: Observable<unknown> | null = null;
 
   @Output()
   filesPicked = new EventEmitter<FileStructure[]>();
@@ -62,9 +66,17 @@ export class BydUploadComponent {
   }
 
   constructor() {
+    super();
     effect(() => {
       this.filesPicked.emit(this.tempImages());
     });
+    if (this.clear$) {
+      this._registerSubscription(
+        this.clear$.subscribe(() => {
+          this.tempImages.set([]);
+        })
+      );
+    }
   }
 
   public addImage(images: FileStructure[]) {
