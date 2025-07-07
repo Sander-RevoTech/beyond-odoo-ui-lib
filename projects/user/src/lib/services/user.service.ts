@@ -57,7 +57,7 @@ export class BydUserService extends BydBaseOdooService {
             } else {
               return this.employeesServices.getRelatedByUserId$(profile.id).pipe(
                 tap(employee => this.permissionsServices.setEmployee(employee.id)),
-                map(() => profile)
+                map(employee => ({ ...profile, ...{ employee_id: [employee.id, employee.name] } }))
               );
             }
           }),
