@@ -51,13 +51,13 @@ export class BydGridViewService extends BydBaseOdooService {
             map(data => {
               const mapping = ajaxParam.colsMetaData
                 .filter(col => col.type === ParameterType.Relation)
-                .map(col => ({ from: col.name, to: col.name.split('_')[0] }));
+                .map(col => ({ from: col.name, to: (<String>col.name).split('_')[0] }));
 
               if (!mapping || mapping.length === 0) {
                 return data;
               }
               return data.map(entity =>
-                this._handleJoinData(entity, mapping as Array<{ from?: keyof T; to: keyof T }>)
+                this._handleJoinData(entity, mapping as unknown as Array<{ from?: keyof T; to: keyof T }>)
               );
             }),
             map(data => ({

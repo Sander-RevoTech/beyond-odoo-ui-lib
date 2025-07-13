@@ -15,7 +15,7 @@ export interface IBaseCol {
 export declare class BaseCol<T> {
     data: IBaseCol;
     model: BydGridData<any>;
-    get key(): string;
+    get key(): never;
     get inputLabel(): string;
     get filterValues(): T[];
     constructor(data: IBaseCol, model: BydGridData<any>);

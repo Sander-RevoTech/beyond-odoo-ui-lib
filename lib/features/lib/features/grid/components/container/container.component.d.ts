@@ -4,7 +4,7 @@ import { BydAbstractGridComponent } from '../abstract.component';
 import * as i0 from "@angular/core";
 export declare class BydGridContainerComponent extends BydAbstractGridComponent<unknown> implements AfterViewInit, OnDestroy {
     model: string;
-    colsMetaData: ColMetaData[];
+    colsMetaData: ColMetaData<unknown>[];
     preset?: Preset[];
     tableElement: ElementRef;
     private _session;

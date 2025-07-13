@@ -16,7 +16,7 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
   model!: string;
 
   @Input()
-  colsMetaData: ColMetaData[] = [];
+  colsMetaData: ColMetaData<unknown>[] = [];
 
   @Input()
   preset?: Preset[];

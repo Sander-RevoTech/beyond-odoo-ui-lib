@@ -12,8 +12,8 @@ export enum ParameterType {
   Relation,
 }
 
-export interface ColMetaData {
-  name: string;
+export interface ColMetaData<T = unknown> {
+  name: keyof T;
   type: ParameterType;
   isSearchField?: boolean;
   multivalues?: boolean;
