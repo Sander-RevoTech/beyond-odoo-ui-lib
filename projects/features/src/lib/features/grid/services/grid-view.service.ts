@@ -20,23 +20,30 @@ export class BydGridViewService extends BydBaseOdooService {
     ajaxParam: ajaxRequestFuncParams,
     fields: (keyof T)[]
   ): Observable<ajaxResponse<T>> {
-    const filterParams =
-      ajaxParam.filter.flatMap(f => {
-        if (f.field === gridSearchFieldsName) {
-          return this._buildOrDomain(
-            ajaxParam.colsMetaData.filter(c => c.isSearchField).map(f => f.name),
-            f.value
-          );
-        }
-        return [f.field, f.type, f.value];
-      }) ?? [];
+    const filterParams = () => {
+      const map = ajaxParam.filter.find(f => f.field === gridSearchFieldsName)
+        ? ajaxParam.filter.flatMap
+        : ajaxParam.filter.map;
+      return (
+        map(f => {
+          if (f.field === gridSearchFieldsName) {
+            return this._buildOrDomain(
+              ajaxParam.colsMetaData.filter(c => c.isSearchField).map(f => f.name),
+              f.value
+            );
+          }
+          return [f.field, f.type, f.value];
+        }) ?? []
+      );
+    };
+
     const orderParams = ajaxParam.sort.map(s => `${s.field} ${s.dir}`).join(',') ?? '';
     const groupBy = ajaxParam.groupBy;
 
-    return this._odooService.searchCount$(model, filterParams).pipe(
+    return this._odooService.searchCount$(model, filterParams()).pipe(
       mergeMap(count =>
         this._odooService
-          .searchRead$<T>(model, filterParams, fields, {
+          .searchRead$<T>(model, filterParams(), fields, {
             order: groupBy ? `${groupBy} asc ${orderParams ? ',' + orderParams : ''}` : orderParams,
             offset: (ajaxParam.page - 1) * ajaxParam.size,
             limit: ajaxParam.size,
