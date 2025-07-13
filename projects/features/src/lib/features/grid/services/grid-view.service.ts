@@ -22,9 +22,13 @@ export class BydGridViewService extends BydBaseOdooService {
   ): Observable<ajaxResponse<T>> {
     const filterParams =
       ajaxParam.filter.map(f => {
-        const newField =
-          f.field === gridSearchFieldsName ? (ajaxParam.colsMetaData.find(c => c.isSearchField)?.name ?? '') : f.field;
-        return [newField, f.type, f.value];
+        if (f.field === gridSearchFieldsName) {
+          return this._buildOrDomain(
+            ajaxParam.colsMetaData.filter(c => c.isSearchField).map(f => f.name),
+            f.value
+          );
+        }
+        return [f.field, f.type, f.value];
       }) ?? [];
     const orderParams = ajaxParam.sort.map(s => `${s.field} ${s.dir}`).join(',') ?? '';
     const groupBy = ajaxParam.groupBy;
@@ -59,5 +63,11 @@ export class BydGridViewService extends BydBaseOdooService {
           )
       )
     );
+  }
+
+  private _buildOrDomain(fields: string[], value: string) {
+    if (fields.length === 0) return [];
+
+    return ['|', ...fields.map(field => [field, 'ilike', value])];
   }
 }
