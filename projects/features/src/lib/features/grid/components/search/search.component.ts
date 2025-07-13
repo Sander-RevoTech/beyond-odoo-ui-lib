@@ -31,7 +31,7 @@ export class BydGridSearchComponent extends BydAbstractGridComponent<any> {
       {
         field: gridSearchFieldsName,
         type: 'like',
-        value,
+        value: value.trim(),
       },
     ];
     if (this.outOfBox) {

@@ -67,7 +67,7 @@ export class BaseCol<T> {
     return {
       field: this.key,
       type: '=',
-      value: value,
+      value: value.trim(),
     };
   }
 }
