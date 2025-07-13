@@ -21,20 +21,18 @@ export class BydGridViewService extends BydBaseOdooService {
     fields: (keyof T)[]
   ): Observable<ajaxResponse<T>> {
     const filterParams = () => {
-      const choosedMap = ajaxParam.filter.find(f => f.field === gridSearchFieldsName)
-        ? ajaxParam.filter.flatMap
-        : ajaxParam.filter.map;
-      return (
-        choosedMap(f => {
-          if (f.field === gridSearchFieldsName) {
-            return this._buildOrDomain(
-              ajaxParam.colsMetaData.filter(c => c.isSearchField).map(f => f.name),
-              f.value
-            );
-          }
-          return [f.field, f.type, f.value];
-        }) ?? []
-      );
+      const searchField = ajaxParam.filter.filter(f => f.field === gridSearchFieldsName);
+      const otherFields = ajaxParam.filter.filter(f => f.field !== gridSearchFieldsName);
+
+      return [
+        ...searchField.flatMap(f =>
+          this._buildOrDomain(
+            ajaxParam.colsMetaData.filter(c => c.isSearchField).map(f => f.name),
+            f.value
+          )
+        ),
+        ...otherFields.map(f => [f.field, f.type, f.value]),
+      ];
     };
 
     const orderParams = ajaxParam.sort.map(s => `${s.field} ${s.dir}`).join(',') ?? '';
