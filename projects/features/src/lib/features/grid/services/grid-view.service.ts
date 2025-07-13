@@ -21,7 +21,7 @@ export class BydGridViewService extends BydBaseOdooService {
     fields: (keyof T)[]
   ): Observable<ajaxResponse<T>> {
     const filterParams =
-      ajaxParam.filter.map(f => {
+      ajaxParam.filter.flatMap(f => {
         if (f.field === gridSearchFieldsName) {
           return this._buildOrDomain(
             ajaxParam.colsMetaData.filter(c => c.isSearchField).map(f => f.name),
