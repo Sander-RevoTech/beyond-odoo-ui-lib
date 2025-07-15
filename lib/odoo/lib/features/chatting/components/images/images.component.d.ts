@@ -6,7 +6,7 @@ import * as i0 from "@angular/core";
 export declare class BydImagesComponent extends BydBaseComponent implements OnInit {
     ids: number[];
     private readonly _attachementsService;
-    images: import("@angular/core").WritableSignal<Observable<Attachment[]> | null>;
+    readonly images: import("@angular/core").WritableSignal<Observable<Attachment[]> | null>;
     constructor();
     ngOnInit(): void;
     private _fetch;

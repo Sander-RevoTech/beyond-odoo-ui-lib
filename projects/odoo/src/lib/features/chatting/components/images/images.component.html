@@ -1,10 +1,12 @@
 <byd-loader [isLoading]="this.requestState.isLoading()">
   <byd-error [message]="this.requestState.getErrorMessage()" [code]="this.requestState.getErrorStatus()">
     <div class="grid">
-      @for (image of this.images() | async; track image.id) {
-        <div class="g-col-3">
-          <img [src]="image.datas" width="100%" />
-        </div>
+      @if (this.images()) {
+        @for (image of this.images() | async; track image.id) {
+          <div class="g-col-3">
+            <img [src]="'data:image/jpeg;base64,' + image.datas" width="100%" />
+          </div>
+        }
       }
     </div>
   </byd-error>

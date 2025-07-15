@@ -26,7 +26,7 @@ export class BydAttachementsService extends BydBaseOdooService {
   }
 
   public fetchByIds$(ids: number[]) {
-    return this.attachments.fetch(
+    return this.attachmentsByIds.fetch(
       this.keyByIds(ids),
       this._odooService
         .searchRead$<Attachment>('ir.attachment', [['id', 'in', ids]], ['id', 'datas'])

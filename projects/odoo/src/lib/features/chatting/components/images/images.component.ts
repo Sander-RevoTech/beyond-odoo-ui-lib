@@ -22,7 +22,7 @@ export class BydImagesComponent extends BydBaseComponent implements OnInit {
 
   private readonly _attachementsService = inject(BydAttachementsService);
 
-  public images = signal<Observable<Attachment[]> | null>(null);
+  readonly images = signal<Observable<Attachment[]> | null>(null);
 
   constructor() {
     super();
