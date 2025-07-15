@@ -11,16 +11,28 @@ import { Attachment } from './dto/attachment';
   providedIn: 'root',
 })
 export class BydAttachementsService extends BydBaseOdooService {
+  public readonly attachmentsByIds = new HandleComplexRequest<Attachment[]>();
   public readonly attachments = new HandleComplexRequest<Attachment[]>();
 
   constructor() {
     super();
   }
 
+  public keyByIds(ids: number[]) {
+    return ids.join('-');
+  }
   public key(id: number, model: string) {
     return `${id}-${model}`;
   }
 
+  public fetchByIds$(ids: number[]) {
+    return this.attachments.fetch(
+      this.keyByIds(ids),
+      this._odooService
+        .searchRead$<Attachment>('ir.attachment', [['id', 'in', ids]], ['id', 'datas'])
+        .pipe(filter(data => !!data))
+    );
+  }
   public fetch$(id: number, model: string) {
     return this.attachments.fetch(
       this.key(id, model),

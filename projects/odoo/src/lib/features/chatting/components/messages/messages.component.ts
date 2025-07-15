@@ -11,6 +11,7 @@ import { Subject } from 'rxjs';
 
 import { ODOO_SERVER_CONFIG_KEY } from '../../../../injectionToken';
 import { BydMessagesService } from '../../services/messages/messages.service';
+import { BydImagesComponent } from '../images/images.component';
 import { BydUploadComponent } from '../upload/files-upload.component';
 
 @Component({
@@ -28,6 +29,7 @@ import { BydUploadComponent } from '../upload/files-upload.component';
     NgIf,
     NgFor,
     AsyncPipe,
+    BydImagesComponent,
   ],
 })
 export class BydMessagesComponent extends BydBaseComponent implements OnInit {

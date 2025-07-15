@@ -21,11 +21,11 @@
         <div *ngFor="let message of this.data$ | async" class="item-message">
           <div [innerHTML]="message.body"></div>
           <hr *ngIf="(message.body && message.attachment_ids?.length) || 0 > 0" />
-          <div class="grid">
-            <div *ngFor="let picId of message.attachment_ids" class="g-col-3">
-              <img [src]="this.getPicUrl(picId)" width="100%" />
+          @if (message.attachment_ids?.length || 0 > 0) {
+            <div class="attachments">
+              <byd-images [ids]="message.attachment_ids ?? []"></byd-images>
             </div>
-          </div>
+          }
         </div>
       </div>
     </byd-error>

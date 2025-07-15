@@ -1,0 +1,8 @@
+@use 'beyond/utils/mixins/common';
+
+.item-message {
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid common.get-var(surface, brand, primary);
+  border-radius: 5px;
+}
