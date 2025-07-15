@@ -30,17 +30,25 @@ export const getBlobImage = async (base64: string) => {
   return await fetch(base64).then(res => res.blob());
 };
 
-export const compressImage = async (blob: Blob): Promise<Blob> => {
-  return new Promise((resolve, reject) => {
-    new Compressor(blob, {
-      quality: 0.1,
-      success: (blob: Blob) => {
-        resolve(blob);
-      },
-      error: (error: Error) => {
-        reject(error);
-      },
-    });
+export const compressImage = async (blob: Blob, maxSizeMB: number): Promise<Blob> => {
+  return new Promise(resolve => {
+    let quality = 0.9;
+
+    const tryCompress = () => {
+      new Compressor(blob, {
+        quality,
+        success(result) {
+          if (result.size / 1024 / 1024 <= maxSizeMB || quality < 0.1) {
+            resolve(result);
+          } else {
+            quality -= 0.1;
+            tryCompress();
+          }
+        },
+      });
+    };
+
+    tryCompress();
   });
 };
 
@@ -70,6 +78,7 @@ export const takeImage = async () => {
 export const picImages = async () => {
   const gallery = await Camera.pickImages({
     quality: 30,
+    limit: 10,
   });
 
   const pics = [];
@@ -92,7 +101,7 @@ export const pathToFile = async (pic: { webPath?: string; format: string }): Pro
   if (!pic.webPath) return null;
 
   const response = await fetch(pic.webPath);
-  const blob = await compressImage(await response.blob());
+  const blob = await compressImage(await response.blob(), 3); // TODO: add the max size in a config later
 
   return new File([blob], newGuid(), { type: pic.format });
 };
