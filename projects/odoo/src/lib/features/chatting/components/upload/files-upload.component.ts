@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, computed, effect, signa
 import { MatIcon } from '@angular/material/icon';
 
 import { TranslatePipe } from '@beyond/translation';
-import { BydButtonComponent } from '@beyond/ui';
+import { BydButtonComponent, LoaderComponent } from '@beyond/ui';
 import { BydBaseComponent, FileStructure, picImages, takeImage } from '@beyond/utils';
 import { Observable } from 'rxjs';
 
@@ -18,7 +18,7 @@ export type Feature = 'take-pic' | 'upload-pic' | 'upload-file';
   templateUrl: './files-upload.component.html',
   styleUrls: ['./files-upload.component.scss'],
   standalone: true,
-  imports: [BydButtonComponent, MatIcon, TranslatePipe],
+  imports: [BydButtonComponent, MatIcon, TranslatePipe, LoaderComponent],
 })
 export class BydUploadComponent extends BydBaseComponent implements OnInit {
   @Input()
@@ -94,16 +94,21 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
   }
 
   private async _takePic() {
+    this.requestState.asked();
     const file = await takeImage();
     if (!file) {
       return;
     }
     this.addImage([file]);
+    this.requestState.completed();
   }
 
   private async _uploadPic() {
+    this.requestState.asked();
+
     const pics = await picImages();
     this.addImage(pics);
+    this.requestState.completed();
   }
 
   // private async _uploadFile() {
