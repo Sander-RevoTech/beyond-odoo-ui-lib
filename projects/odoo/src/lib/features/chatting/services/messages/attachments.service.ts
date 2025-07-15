@@ -31,7 +31,7 @@ export class BydAttachementsService extends BydBaseOdooService {
             ['res_id', '=', id],
             ['res_model', '=', model],
           ],
-          ['id']
+          ['id', 'datas']
         )
         .pipe(filter(data => !!data))
     );

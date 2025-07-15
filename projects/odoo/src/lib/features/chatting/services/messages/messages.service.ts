@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
 import { FileStructure, getBase64FromFile } from '@beyond/utils';
 import { BehaviorSubject, filter, forkJoin, map, merge, mergeMap, of, tap } from 'rxjs';
 
 import { BydBaseOdooService } from '../../../../services/baseService';
+import { BydAttachementsService } from './attachments.service';
 import { Message } from './dto/message';
 
 @Injectable({
@@ -11,6 +12,8 @@ import { Message } from './dto/message';
 })
 export class BydMessagesService extends BydBaseOdooService {
   public messages$ = new BehaviorSubject<{ [id: number]: Message[] }>({});
+
+  private readonly _attachmentsService = inject(BydAttachementsService);
 
   constructor() {
     super();
@@ -52,15 +55,7 @@ export class BydMessagesService extends BydBaseOdooService {
       attachments.push({ name: 'attachments-by-app-' + id, datas: base64, res_model: message.model });
     }
 
-    return (
-      attachments.length > 0
-        ? forkJoin([
-            ...attachments.map(attachment =>
-              this._odooService.create$<number>('ir.attachment', { ...attachment, ...{ res_id: id } })
-            ),
-          ])
-        : of([])
-    ).pipe(
+    return (files.length > 0 ? await this._attachmentsService.post$(id, message.model, files) : of([])).pipe(
       mergeMap((ids: number[]) => {
         return this._odooService.create$<number>('mail.message', {
           ...message,

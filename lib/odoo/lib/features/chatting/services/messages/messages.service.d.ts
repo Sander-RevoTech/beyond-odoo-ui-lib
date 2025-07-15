@@ -7,6 +7,7 @@ export declare class BydMessagesService extends BydBaseOdooService {
     messages$: BehaviorSubject<{
         [id: number]: Message[];
     }>;
+    private readonly _attachmentsService;
     constructor();
     getMessages$(id: number): import("rxjs").Observable<Message[]>;
     fetchMessage$(data: {
