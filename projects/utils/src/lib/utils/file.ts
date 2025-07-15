@@ -58,7 +58,7 @@ export const downloadFile = (url: string) => {
 
 export const takeImage = async () => {
   const image = await Camera.getPhoto({
-    quality: 30,
+    quality: 60,
     allowEditing: true,
     saveToGallery: true,
     resultType: CameraResultType.Uri,
@@ -77,7 +77,7 @@ export const takeImage = async () => {
 
 export const picImages = async () => {
   const gallery = await Camera.pickImages({
-    quality: 30,
+    quality: 60,
     limit: 10,
   });
 
