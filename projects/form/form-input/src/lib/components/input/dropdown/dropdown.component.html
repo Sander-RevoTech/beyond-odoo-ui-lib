@@ -5,10 +5,11 @@
     <mat-select
       #box
       panelClass="dropdown-panel"
-      [disabled]="this.input.disabled"
+      [disabled]="this.input.disabled || this.input.readonly"
       [id]="this.input.key"
       [formControl]="$any(this.input.formControl)"
       [multiple]="this.input.multiple"
+      [ariaReadOnly]="this.input.readonly"
       (selectionChange)="this.onChange($event)"
     >
       <mat-option *ngIf="this.input.showNothingOption" [value]="null"></mat-option>
