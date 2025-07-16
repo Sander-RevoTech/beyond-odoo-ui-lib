@@ -1,16 +1,14 @@
 <ng-container *ngIf="this.input">
   <byd-form-label [input]="this.input"></byd-form-label>
 
-  <mat-form-field [floatLabel]="'auto'">
+  <mat-form-field [floatLabel]="'auto'" [classList]="">
     <mat-select
       #box
-      panelClass="dropdown-panel"
+      [panelClass]="'dropdown-panel' + (this.input.readonly ? ' pen' : '')"
       [disabled]="this.input.disabled || this.input.readonly"
       [id]="this.input.key"
       [formControl]="$any(this.input.formControl)"
       [multiple]="this.input.multiple"
-      [class.readonly]="this.input.readonly"
-      (click)="this.input.readonly && $event.stopPropagation()"
       (selectionChange)="this.onChange($event)"
     >
       <mat-option *ngIf="this.input.showNothingOption" [value]="null"></mat-option>
