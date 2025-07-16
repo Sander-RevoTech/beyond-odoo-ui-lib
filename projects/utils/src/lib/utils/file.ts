@@ -101,7 +101,7 @@ export const pathToFile = async (pic: { webPath?: string; format: string }): Pro
   if (!pic.webPath) return null;
 
   const response = await fetch(pic.webPath);
-  const blob = await compressImage(await response.blob(), 1); // TODO: add the max size in a config later
+  const blob = await compressImage(await response.blob(), 3); // TODO: add the max size in a config later
 
   return new File([blob], newGuid(), { type: pic.format });
 };
