@@ -1,10 +1,10 @@
-<ng-container *ngIf="this.input">
+<div *ngIf="this.input" [class.pen]="this.input.readonly">
   <byd-form-label [input]="this.input"></byd-form-label>
 
   <mat-form-field [floatLabel]="'auto'" [classList]="">
     <mat-select
       #box
-      [panelClass]="'dropdown-panel' + (this.input.readonly ? ' pen' : '')"
+      panelClass="dropdown-panel"
       [disabled]="this.input.disabled || this.input.readonly"
       [id]="this.input.key"
       [formControl]="$any(this.input.formControl)"
@@ -33,4 +33,4 @@
       </div>
     </mat-error>
   </mat-form-field>
-</ng-container>
+</div>
