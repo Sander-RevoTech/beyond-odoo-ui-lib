@@ -15,11 +15,7 @@ export class BydGridViewService extends BydBaseOdooService {
     super();
   }
 
-  public getData$<T>(
-    model: string,
-    ajaxParam: ajaxRequestFuncParams,
-    fields: (keyof T)[]
-  ): Observable<ajaxResponse<T>> {
+  public getData$<T>(model: string, ajaxParam: ajaxRequestFuncParams): Observable<ajaxResponse<T>> {
     const filterParams = () => {
       const searchField = ajaxParam.filter.filter(f => f.field === gridSearchFieldsName);
       const otherFields = ajaxParam.filter.filter(f => f.field !== gridSearchFieldsName);
@@ -41,11 +37,16 @@ export class BydGridViewService extends BydBaseOdooService {
     return this._odooService.searchCount$(model, filterParams()).pipe(
       mergeMap(count =>
         this._odooService
-          .searchRead$<T>(model, filterParams(), fields, {
-            order: groupBy ? `${groupBy} asc ${orderParams ? ',' + orderParams : ''}` : orderParams,
-            offset: (ajaxParam.page - 1) * ajaxParam.size,
-            limit: ajaxParam.size,
-          })
+          .searchRead$<T>(
+            model,
+            filterParams(),
+            ajaxParam.colsMetaData.filter(col => !col.notDisplayable).map(col => col.name),
+            {
+              order: groupBy ? `${groupBy} asc ${orderParams ? ',' + orderParams : ''}` : orderParams,
+              offset: (ajaxParam.page - 1) * ajaxParam.size,
+              limit: ajaxParam.size,
+            }
+          )
           .pipe(
             filter(isNonNullable),
             map(data => {

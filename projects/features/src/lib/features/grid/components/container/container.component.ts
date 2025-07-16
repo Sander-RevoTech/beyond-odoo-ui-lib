@@ -35,12 +35,7 @@ export class BydGridContainerComponent extends BydAbstractGridComponent<unknown>
       initialFilter: raw ?? [],
       preset: this.preset,
       services: {
-        getData$: params =>
-          this._service.getData$<any>(
-            this.model,
-            params,
-            this.colsMetaData.map(c => c.name)
-          ),
+        getData$: params => this._service.getData$<any>(this.model, params),
       },
     });
   }
