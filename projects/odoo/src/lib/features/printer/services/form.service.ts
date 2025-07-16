@@ -33,7 +33,7 @@ export class BydPrinterFormService {
             })) ?? []
         )
       ),
-      readonly: true,
+      disabled: true,
     });
     printerlistInput.changeValue$.subscribe(value => {
       printerItemsInput.forEach(item => (item.value = value ? value : null));
@@ -92,7 +92,7 @@ export class BydPrinterFormService {
                     })) ?? []
                 )
               ),
-              readonly: true,
+              disabled: true,
               value: getFirstNumber(line.printer_id)?.toString(),
             });
             printerItemsInput.push(printerInput);

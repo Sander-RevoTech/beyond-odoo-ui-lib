@@ -9,7 +9,6 @@
       [id]="this.input.key"
       [formControl]="$any(this.input.formControl)"
       [multiple]="this.input.multiple"
-      [disabled]="this.input.readonly"
       (selectionChange)="this.onChange($event)"
     >
       <mat-option *ngIf="this.input.showNothingOption" [value]="null"></mat-option>
