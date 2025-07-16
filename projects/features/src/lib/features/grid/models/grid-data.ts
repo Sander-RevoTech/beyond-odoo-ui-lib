@@ -74,7 +74,7 @@ export class BydGridData<T> {
           params.services.getData$({
             ...ajaxParams,
             groupBy: this.groupBy as string,
-            colsMetaData: params.colsMetaData,
+            colsMetaData: params.colsMetaData.filter(col => !col.notDisplayable),
           })
         );
       },
