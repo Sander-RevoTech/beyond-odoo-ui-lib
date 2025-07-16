@@ -71,9 +71,16 @@ export class BydGridViewService extends BydBaseOdooService {
     );
   }
 
-  private _buildOrDomain(fields: string[], value: string) {
+  private _buildOrDomain(fields: string[], value: string): any[] {
     if (fields.length === 0) return [];
+    if (fields.length === 1) return [[fields[0], 'ilike', value]];
 
-    return ['|', ...fields.map(field => [field, 'ilike', value])];
+    return fields.reduceRight<unknown[]>((acc, field) => {
+      if (acc.length === 0) {
+        return [field, 'ilike', value];
+      } else {
+        return ['|', [field, 'ilike', value], acc];
+      }
+    }, []);
   }
 }
