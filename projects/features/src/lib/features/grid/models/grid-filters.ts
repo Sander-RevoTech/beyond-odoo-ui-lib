@@ -3,6 +3,8 @@ import { TabulatorFull as Tabulator } from 'tabulator-tables';
 import { ActiveFilter, Filter, Preset } from './types';
 
 export class BydGridFilters {
+  private _debounceTimer: any = null;
+
   constructor(
     public readonly scope: string,
     public readonly table: Tabulator,
@@ -24,7 +26,13 @@ export class BydGridFilters {
     }, []);
   }
   public apply(filters: Filter[]) {
-    this.table?.setFilter(filters);
+    if (this._debounceTimer) {
+      clearTimeout(this._debounceTimer);
+    }
+
+    this._debounceTimer = setTimeout(() => {
+      this.table.setFilter(filters);
+    }, 500);
   }
 
   public remove(filter: Filter) {
