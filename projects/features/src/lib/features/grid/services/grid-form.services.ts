@@ -23,8 +23,18 @@ export class BydGridFormService<T> {
       new InputPanel({
         key: 'main-panel',
         class: 'p-space-sm',
-        contentClass: 'flex-start g-space-md',
-        children: keys.map(key => model.cols[key].getInputForm()).filter(isNonNullable),
+        contentClass: 'grid g-space-md',
+        children: keys
+          .map(key => model.cols[key].getInputForm())
+          .filter(isNonNullable)
+          .map(
+            input =>
+              new InputPanel({
+                key: 'panel',
+                class: 'g-col-3',
+                children: [input],
+              })
+          ),
       }),
     ];
   }
