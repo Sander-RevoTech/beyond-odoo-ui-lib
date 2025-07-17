@@ -56,7 +56,7 @@ export class BydAttachementsService extends BydBaseOdooService {
         continue;
       }
       const base64 = (await getBase64FromFile(file.file)).split(',')[1];
-      attachments.push({ name: 'attachments-by-app-' + id, datas: base64, res_model: model });
+      attachments.push({ name: 'attachments-by-app-' + id, datas: base64, res_model: model, source: 'operations_app' });
     }
 
     return attachments.length > 0
