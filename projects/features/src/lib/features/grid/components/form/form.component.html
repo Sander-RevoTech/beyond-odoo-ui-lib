@@ -4,9 +4,19 @@
 
 <div class="space-between">
   <div>
-    <byd-form [inputs]="this.filtersForm()" (valid)="this.applyFilters($event)" [askOnDestroy]="true"></byd-form>
+    <byd-form
+      [inputs]="this.filtersForm()"
+      (valid)="this.applyFilters($event)"
+      [askOnDestroy]="true"
+      [canDisplayButton]="false"
+    ></byd-form>
   </div>
   <div>
-    <byd-form [inputs]="this.groupForm()" (valid)="this.applyGroup($event)" [askOnDestroy]="true"></byd-form>
+    <byd-form
+      [inputs]="this.groupForm()"
+      (valid)="this.applyGroup($event)"
+      [askOnDestroy]="true"
+      [canDisplayButton]="false"
+    ></byd-form>
   </div>
 </div>
