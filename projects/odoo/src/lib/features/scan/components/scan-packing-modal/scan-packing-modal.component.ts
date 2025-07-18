@@ -15,6 +15,7 @@ import {
 } from '@beyond/ui';
 import { BydBaseComponent } from '@beyond/utils';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { Observable } from 'rxjs';
 
 import { SearchItem, SearchResult } from '../../services/dto/search';
 import { BydScanPackingService } from '../../services/scan-packing.service';
@@ -22,6 +23,7 @@ import { BydScanningComponent } from '../scanning/scanning.component';
 
 export interface Scope {
   key: string;
+  search?: (id: number) => Observable<SearchResult>;
   navigation: (id: SearchItem) => void;
 }
 
@@ -96,7 +98,13 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     }
 
     this.step.set('search');
-    this._scanPackingService.lookForPacking$(model, id).subscribe({
+
+    const getSearchScope = this.scopes.find(value => value.key === model);
+    const getSearch$ =
+      getSearchScope && getSearchScope.search
+        ? getSearchScope.search(id)
+        : this._scanPackingService.lookForPacking$(model, id);
+    getSearch$.subscribe({
       next: searchResult => {
         this._processSearchResult(searchResult);
 

@@ -1,10 +1,12 @@
 import { OnDestroy } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { BydBaseComponent } from '@beyond/utils';
+import { Observable } from 'rxjs';
 import { SearchItem, SearchResult } from '../../services/dto/search';
 import * as i0 from "@angular/core";
 export interface Scope {
     key: string;
+    search?: (id: number) => Observable<SearchResult>;
     navigation: (id: SearchItem) => void;
 }
 export interface ScanPackingDialogData {
