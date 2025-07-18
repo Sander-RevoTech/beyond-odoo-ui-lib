@@ -4,7 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { BydBaseComponent } from '@beyond/utils';
 
 import { BydScanPackingService } from '../services/scan-packing.service';
-import { ScanPackingDialog, ScanPackingDialogData, Scope } from './scan-packing-modal/scan-packing-modal.component';
+import {
+  ScanPackingDialog,
+  ScanPackingDialogData,
+  ScanningScope,
+} from './scan-packing-modal/scan-packing-modal.component';
 
 @Component({
   selector: 'byd-scan-packing',
@@ -12,7 +16,7 @@ import { ScanPackingDialog, ScanPackingDialogData, Scope } from './scan-packing-
 })
 export class BydScanPackingComponent extends BydBaseComponent {
   @Input()
-  scopes!: Scope[];
+  scopes!: ScanningScope[];
 
   private readonly _scanPacking = inject(BydScanPackingService);
   constructor(private _dialog: MatDialog) {

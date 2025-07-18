@@ -4,7 +4,7 @@ import { BydBaseComponent } from '@beyond/utils';
 import { Observable } from 'rxjs';
 import { SearchItem, SearchResult } from '../../services/dto/search';
 import * as i0 from "@angular/core";
-export interface Scope {
+export interface ScanningScope {
     key: string;
     search?: (data: {
         id?: number | string | null;
@@ -12,7 +12,7 @@ export interface Scope {
     navigation: (id: SearchItem) => void;
 }
 export interface ScanPackingDialogData {
-    scopes: Scope[];
+    scopes: ScanningScope[];
 }
 export declare class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     dialogRef: MatDialogRef<ScanPackingDialog>;
@@ -20,15 +20,15 @@ export declare class ScanPackingDialog extends BydBaseComponent implements OnDes
     private readonly _scanPackingService;
     private readonly _notificationService;
     step: import("@angular/core").WritableSignal<"scan" | "search">;
-    activeScope: Scope | null;
+    activeScope: ScanningScope | null;
     searchResult: SearchResult | null;
-    get scopes(): Scope[];
+    get scopes(): ScanningScope[];
     get noData(): boolean;
     constructor(dialogRef: MatDialogRef<ScanPackingDialog>, data?: ScanPackingDialogData | undefined);
     scanSuccess(result: string): void;
-    getDataByScope(scope: Scope): SearchItem[];
-    setScope(scope: Scope): void;
-    navigateTo(scope: Scope | null, item: SearchItem): void;
+    getDataByScope(scope: ScanningScope): SearchItem[];
+    setScope(scope: ScanningScope): void;
+    navigateTo(scope: ScanningScope | null, item: SearchItem): void;
     private _processSearchResult;
     private _getScopeByKey;
     private _extractNameFormUrl;

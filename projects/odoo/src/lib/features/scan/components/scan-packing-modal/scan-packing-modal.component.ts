@@ -21,14 +21,14 @@ import { SearchItem, SearchResult } from '../../services/dto/search';
 import { BydScanPackingService } from '../../services/scan-packing.service';
 import { BydScanningComponent } from '../scanning/scanning.component';
 
-export interface Scope {
+export interface ScanningScope {
   key: string;
   search?: (data: { id?: number | string | null }) => Observable<SearchResult>;
   navigation: (id: SearchItem) => void;
 }
 
 export interface ScanPackingDialogData {
-  scopes: Scope[];
+  scopes: ScanningScope[];
 }
 @Component({
   selector: '',
@@ -55,7 +55,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
 
   public step = signal<'scan' | 'search'>('scan');
 
-  public activeScope: Scope | null = null;
+  public activeScope: ScanningScope | null = null;
 
   public searchResult: SearchResult | null = null;
 
@@ -116,13 +116,13 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
       },
     });
   }
-  public getDataByScope(scope: Scope) {
+  public getDataByScope(scope: ScanningScope) {
     if (!this.searchResult) {
       return [];
     }
     return this.searchResult[scope.key] || [];
   }
-  public setScope(scope: Scope) {
+  public setScope(scope: ScanningScope) {
     this.activeScope = scope;
 
     const list = this.getDataByScope(scope);
@@ -131,7 +131,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     }
   }
 
-  public navigateTo(scope: Scope | null, item: SearchItem) {
+  public navigateTo(scope: ScanningScope | null, item: SearchItem) {
     if (!scope) {
       return;
     }
@@ -159,7 +159,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
       }
     }
   }
-  private _getScopeByKey(key: string): Scope | null {
+  private _getScopeByKey(key: string): ScanningScope | null {
     return this.scopes.find(scope => scope.key === key) || null;
   }
 
