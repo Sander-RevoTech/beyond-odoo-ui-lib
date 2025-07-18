@@ -62,10 +62,10 @@ export class BydGridFormService<T> {
             label: `grid.${model.scope}.groupBy`,
             options: of(
               Object.values(model.cols)
-                .filter(col => col.data.col.showOnSearch)
+                .filter(col => col.data.col.showOnSearch && !col.data.col.notDisplayable)
                 .map(group => ({
                   id: group.key,
-                  name: group.key,
+                  name: group.inputLabel,
                 }))
             ),
             value: model.groupBy,
