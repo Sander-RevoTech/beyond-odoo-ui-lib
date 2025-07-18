@@ -164,7 +164,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
   }
 
   private _extractNameFormUrl(url: string): string | null {
-    const match = url.match(/name=([a-zA-Z.]+)/);
+    const match = url.match(/name=([a-zA-Z0-9./]+)/);
 
     if (!match) {
       return null;
