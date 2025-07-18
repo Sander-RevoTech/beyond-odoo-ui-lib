@@ -15,6 +15,7 @@ export interface ColMetaData<T = unknown> {
     type: ParameterType;
     isSearchField?: boolean;
     notDisplayable?: boolean;
+    showOnSearch?: boolean;
     multivalues?: boolean;
     enumValues?: string[];
     dataSearch$?: (search?: string) => Observable<InputChoicesOption[]>;
