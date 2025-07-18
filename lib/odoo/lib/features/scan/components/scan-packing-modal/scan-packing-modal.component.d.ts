@@ -6,7 +6,10 @@ import { SearchItem, SearchResult } from '../../services/dto/search';
 import * as i0 from "@angular/core";
 export interface Scope {
     key: string;
-    search?: (id: number) => Observable<SearchResult>;
+    search?: (data: {
+        id?: number | string | null;
+        name?: string | null;
+    }) => Observable<SearchResult>;
     navigation: (id: SearchItem) => void;
 }
 export interface ScanPackingDialogData {
@@ -29,6 +32,7 @@ export declare class ScanPackingDialog extends BydBaseComponent implements OnDes
     navigateTo(scope: Scope | null, item: SearchItem): void;
     private _processSearchResult;
     private _getScopeByKey;
+    private _extractNameFormUrl;
     private _extractIdFormUrl;
     private _extractModelFormUrl;
     static ɵfac: i0.ɵɵFactoryDeclaration<ScanPackingDialog, never>;

@@ -23,7 +23,7 @@ import { BydScanningComponent } from '../scanning/scanning.component';
 
 export interface Scope {
   key: string;
-  search?: (id: number) => Observable<SearchResult>;
+  search?: (data: { id?: number | string | null; name?: string | null }) => Observable<SearchResult>;
   navigation: (id: SearchItem) => void;
 }
 
@@ -82,15 +82,16 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
       return;
     }
 
-    const id = this._extractIdFormUrl(result);
+    const name = this._extractNameFormUrl(result);
+    const id = this._extractIdFormUrl(result) ?? (name ? name : null);
 
-    if (!id || isNaN(id)) {
-      this._notificationService.addErrorNotification('QR core is not valid (id)');
+    if (!id) {
+      this._notificationService.addErrorNotification('QR core is not valid (id or name)');
       this.dialogRef.close();
       return;
     }
 
-    const model = this._extractModelFormUrl(result);
+    const model = this._extractModelFormUrl(result) ?? (name ? name : 'pallets');
     if (!model) {
       this._notificationService.addErrorNotification('QR core is not valid (model)');
       this.dialogRef.close();
@@ -102,7 +103,7 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     const getSearchScope = this.scopes.find(value => value.key === model);
     const getSearch$ =
       getSearchScope && getSearchScope.search
-        ? getSearchScope.search(id)
+        ? getSearchScope.search({ id })
         : this._scanPackingService.lookForPacking$(model, id);
     getSearch$.subscribe({
       next: searchResult => {
@@ -162,6 +163,15 @@ export class ScanPackingDialog extends BydBaseComponent implements OnDestroy {
     return this.scopes.find(scope => scope.key === key) || null;
   }
 
+  private _extractNameFormUrl(url: string): string | null {
+    const match = url.match(/name=([a-zA-Z.]+)/);
+
+    if (!match) {
+      return null;
+    }
+
+    return match[1];
+  }
   private _extractIdFormUrl(url: string): number | null {
     const match = url.match(/id=(\d+)/);
 

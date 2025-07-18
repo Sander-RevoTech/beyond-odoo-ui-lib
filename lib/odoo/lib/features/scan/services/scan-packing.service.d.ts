@@ -6,7 +6,7 @@ export declare class BydScanPackingService extends BydBaseOdooService {
     askScanning: Subject<unknown>;
     searchScanItem: SearchItem | null;
     constructor();
-    lookForPacking$(model: string, id: number): import("rxjs").Observable<SearchResult>;
+    lookForPacking$(model: string, id: number | string): import("rxjs").Observable<SearchResult>;
     setActiveScanItem(item: SearchItem): void;
     clearActiveScanItem(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydScanPackingService, never>;
