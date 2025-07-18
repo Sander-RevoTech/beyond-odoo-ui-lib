@@ -8,7 +8,6 @@ export interface Scope {
     key: string;
     search?: (data: {
         id?: number | string | null;
-        name?: string | null;
     }) => Observable<SearchResult>;
     navigation: (id: SearchItem) => void;
 }
