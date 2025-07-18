@@ -9,6 +9,9 @@ export declare class NotificationBoxComponent extends BydBaseComponent {
     list: {
         message: string;
         code: ENotificationCode;
+        options?: {
+            focused?: boolean;
+        };
     }[];
     userNotif: import("@angular/core").WritableSignal<{
         message: string;

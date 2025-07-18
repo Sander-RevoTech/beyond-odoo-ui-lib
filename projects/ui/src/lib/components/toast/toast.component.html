@@ -6,6 +6,10 @@
     <div class="on-top" [ngClass]="this.getTypeClass(code)">
       <ng-container *ngTemplateOutlet="content"></ng-container>
     </div>
+  } @else if (this.inMiddle) {
+    <div class="card in-middle" [ngClass]="this.getTypeClass(code)">
+      <ng-container *ngTemplateOutlet="content"></ng-container>
+    </div>
   } @else {
     <div class="card" [ngClass]="this.getTypeClass(code)">
       <ng-container *ngTemplateOutlet="content"></ng-container>

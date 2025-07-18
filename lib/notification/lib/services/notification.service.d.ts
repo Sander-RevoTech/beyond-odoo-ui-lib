@@ -7,6 +7,9 @@ export declare class BydNotificationService {
     newNotification$: Subject<{
         message: string;
         code: ENotificationCode;
+        options?: {
+            focused?: boolean;
+        };
     }>;
     errorNotification$: Subject<{
         message: string;
@@ -18,7 +21,9 @@ export declare class BydNotificationService {
     constructor();
     incPendingBlockedRequest(): void;
     decPendingBlockedRequest(): void;
-    addNotification(message: string, code: ENotificationCode): void;
+    addNotification(message: string, code: ENotificationCode, options?: {
+        focused?: boolean;
+    }): void;
     addErrorNotification(message: string): void;
     addUserNotification(message: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydNotificationService, never>;

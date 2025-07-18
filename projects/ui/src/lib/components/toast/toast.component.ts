@@ -19,5 +19,8 @@ export class ToastComponent {
   @Input()
   onTop = false;
 
+  @Input()
+  inMiddle = false;
+
   readonly getTypeClass = getTypeClass;
 }

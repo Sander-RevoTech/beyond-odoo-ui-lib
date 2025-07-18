@@ -28,6 +28,12 @@
     color: common.get-var(semantic-token, link);
   }
 }
+
+.in-middle {
+  position: fixed;
+  top: 40%;
+  z-index: 500;
+}
 .card {
   @include shadows.shadow-mixin(brand, md);
   border-radius: common.get-var(space, md);

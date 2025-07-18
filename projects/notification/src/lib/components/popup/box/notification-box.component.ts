@@ -23,7 +23,7 @@ import { NotificationInlineComponent } from '../inline/notification-inline.compo
 export class NotificationBoxComponent extends BydBaseComponent {
   private readonly _notificationService = inject(BydNotificationService);
 
-  public list: { message: string; code: ENotificationCode }[] = [];
+  public list: { message: string; code: ENotificationCode; options?: { focused?: boolean } }[] = [];
 
   public userNotif = signal<{ message: string; code: ENotificationCode } | null>(null);
 

@@ -17,6 +17,7 @@ export class BydNotificationService {
   public newNotification$ = new Subject<{
     message: string;
     code: ENotificationCode;
+    options?: { focused?: boolean };
   }>();
 
   public errorNotification$ = new Subject<{
@@ -36,8 +37,8 @@ export class BydNotificationService {
   public decPendingBlockedRequest() {
     this.pendingBlockedRequest.set(this.pendingBlockedRequest() - 1);
   }
-  public addNotification(message: string, code: ENotificationCode) {
-    this.newNotification$.next({ message, code });
+  public addNotification(message: string, code: ENotificationCode, options?: { focused?: boolean }) {
+    this.newNotification$.next({ message, code, options });
   }
 
   public addErrorNotification(message: string) {
