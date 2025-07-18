@@ -25,6 +25,7 @@ export class BydGridFormService<T> {
         class: 'p-space-sm',
         contentClass: 'grid g-space-md',
         children: keys
+          .filter(key => model.cols[key].data.col.showOnSearch)
           .map(key => model.cols[key].getInputForm())
           .filter(isNonNullable)
           .map(
