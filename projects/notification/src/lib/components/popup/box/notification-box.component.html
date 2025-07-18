@@ -1,6 +1,6 @@
 <div class="notification-box_container flex-column g-space-sm">
   <div *ngFor="let item of this.list">
-    <byd-toast [code]="this.getCode(item.code)" [inMiddle]="item.options?.focused ?? false">
+    <byd-toast [code]="this.getCode(item.code)" [onTop]="item.options?.focused ?? false">
       <byd-notification-inline
         [message]="item.message"
         [code]="item.code"
