@@ -32,7 +32,7 @@ export class BydGridFormService<T> {
             input =>
               new InputPanel({
                 key: 'panel',
-                class: 'g-col-3',
+                class: 'g-col-6',
                 children: [input],
               })
           ),
@@ -61,10 +61,12 @@ export class BydGridFormService<T> {
             key: 'group',
             label: `grid.${model.scope}.groupBy`,
             options: of(
-              Object.values(model.cols).map(group => ({
-                id: group.key,
-                name: group.key,
-              }))
+              Object.values(model.cols)
+                .filter(col => col.data.col.showOnSearch)
+                .map(group => ({
+                  id: group.key,
+                  name: group.key,
+                }))
             ),
             value: model.groupBy,
           }),
