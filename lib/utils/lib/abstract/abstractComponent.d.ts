@@ -19,6 +19,7 @@ export declare abstract class BydAbstractComponent implements OnDestroy {
     protected _location: Location;
     constructor();
     ngOnDestroy(): void;
+    redirectToWithReload(uri: string): void;
     protected _getSnapshotQueryParams(key: string): string | null;
     protected _registerSubscription(subscription: Subscription): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydAbstractComponent, never>;

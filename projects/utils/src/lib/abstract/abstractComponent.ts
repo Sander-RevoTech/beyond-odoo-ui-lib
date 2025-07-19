@@ -40,6 +40,12 @@ export abstract class BydAbstractComponent implements OnDestroy {
     this._subscriberHandler.destroy();
   }
 
+  public redirectToWithReload(uri: string) {
+    this._router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this._router.navigate([uri]);
+    });
+  }
+
   protected _getSnapshotQueryParams(key: string): string | null {
     return this._route.snapshot.queryParams[key] ?? null;
   }
