@@ -39,7 +39,7 @@ export class NotificationBoxComponent extends BydBaseComponent {
           tap(notification => {
             setTimeout(() => {
               this.list = this.list.filter(item => item !== notification);
-            }, 3000);
+            }, 10000);
           })
         )
         .subscribe()
