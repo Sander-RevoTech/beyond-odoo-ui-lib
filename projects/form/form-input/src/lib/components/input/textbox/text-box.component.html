@@ -18,11 +18,6 @@
       [type]="this.isPassword && !this.hide ? 'text' : this.input.type"
       (keyup)="this.onChange(box.value)"
     />
-    <span matSuffix mat-icon-button aria-label="Hide/Show" (click)="this.hide = !this.hide" *ngIf="this.isPassword">
-      <mat-icon>
-        {{ this.hide ? 'Visibility' : 'Visibility Off' }}
-      </mat-icon>
-    </span>
 
     <mat-hint>
       <small class="form-text text-muted">
