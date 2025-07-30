@@ -18,7 +18,7 @@
       [type]="this.isPassword && !this.hide ? 'text' : this.input.type"
       (keyup)="this.onChange(box.value)"
     />
-    <span matSuffix mat-icon-button aria-label="Lock/Unlock" (click)="this.hide = !this.hide" *ngIf="this.isPassword">
+    <span matSuffix mat-icon-button aria-label="Lock/Unlock" style="padding-right: 8px;" (click)="this.hide = !this.hide" *ngIf="this.isPassword">
         <mat-icon>
             {{ this.hide ? 'lock' : 'lock_open' }}
         </mat-icon>
