@@ -23,7 +23,7 @@ export class AppUserFormService {
       key: 'asAdmin',
       label: 'Login as admin',
       class: 'col-sm-12',
-      toggle: true,
+      toggle: false,
     });
 
     return [
