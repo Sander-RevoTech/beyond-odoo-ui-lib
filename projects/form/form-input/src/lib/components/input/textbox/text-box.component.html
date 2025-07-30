@@ -18,11 +18,11 @@
       [type]="this.isPassword && !this.hide ? 'text' : this.input.type"
       (keyup)="this.onChange(box.value)"
     />
-    <span matSuffix mat-icon-button aria-label="Hide/Show" (click)="this.hide = !this.hide" *ngIf="this.isPassword">
+    <!-- <span matSuffix mat-icon-button aria-label="Hide/Show" (click)="this.hide = !this.hide" *ngIf="this.isPassword">
       <mat-icon>
         {{ this.hide ? 'Visibility' : 'Visibility Off' }}
       </mat-icon>
-    </span>
+    </span> -->
 
     <mat-hint>
       <small class="form-text text-muted">
@@ -56,7 +56,7 @@
     <mat-error *ngIf="this.input.formControl?.hasError('required')">
       <small class="form-text text-danger">
         {{
-          'input.text-box.is-mandatoryzzzzzz'
+          'input.text-box.is-mandatory'
             | translate
               : {
                   field: (this.input.label | translate) || 'input.text-box.this-field' | translate,
