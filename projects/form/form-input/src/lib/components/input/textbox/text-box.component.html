@@ -1,7 +1,7 @@
 <byd-form-label [input]="this.input" class="text-input-label"></byd-form-label>
 
 <ng-container *ngIf="this.input.type === 'textarea'">
-  <byd-input-textarea [input]="$any(this.input)" [matcher]="this.matcher"></byd-input-textarea>
+  <byd-input-textarea [input]="$any(this.input)" [matcher]="this.matcher" style="padding-right: 10px;" ></byd-input-textarea>
 </ng-container>
 
 <div class="input-group" *ngIf="this.input.type !== 'textarea'">
