@@ -14,5 +14,5 @@ export declare class CardComponent {
     constructor();
     clickTrigger(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<CardComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CardComponent, "byd-card", never, { "highlight": { "alias": "highlight"; "required": false; }; "shadow": { "alias": "shadow"; "required": false; }; "fullHeight": { "alias": "fullHeight"; "required": false; }; "noContent": { "alias": "noContent"; "required": false; }; "isNew": { "alias": "isNew"; "required": false; }; "type": { "alias": "type"; "required": false; }; }, { "click": "click"; }, never, ["byd-card-image", "byd-card-header", "byd-card-content", "byd-card-cta"], true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CardComponent, "byd-card", never, { "highlight": { "alias": "highlight"; "required": false; }; "shadow": { "alias": "shadow"; "required": false; }; "fullHeight": { "alias": "fullHeight"; "required": false; }; "noContent": { "alias": "noContent"; "required": false; }; "isNew": { "alias": "isNew"; "required": false; }; "type": { "alias": "type"; "required": false; }; }, { "click": "click"; }, never, ["byd-card-image", "byd-card-header", "byd-card-cta"], true, never>;
 }
