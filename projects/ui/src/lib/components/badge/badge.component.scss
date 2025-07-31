@@ -22,7 +22,7 @@
   @include fonts.fontSizeBody(sm, true);
 }
 .badge-size-md {
-  @include fonts.fontSizeBody(md, true);
+  @include fonts.fontSizeBody(md, false);
 }
 .badge-size-xl {
   @include fonts.fontSizeBody(xl, true);
