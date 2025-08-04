@@ -12,6 +12,7 @@
           (action)="this.onSubmit()"
           [state]="!this.isValid() ? 'disabled' : 'classic'"
           icon="check-line"
+          class="login-submit-button"
         >
           {{ this.buttonTitle | translate }}
         </byd-button>
