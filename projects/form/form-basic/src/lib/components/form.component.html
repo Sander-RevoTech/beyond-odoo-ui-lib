@@ -5,14 +5,12 @@
         <byd-inputs [input]="input"></byd-inputs>
       </ng-container>
     </div>
-    <div>
+    <div class="login-submit-button">
       <byd-loader [isLoading]="this.loader">
         <byd-button
           *ngIf="this.canDisplayButton && this.buttonTitle"
           (action)="this.onSubmit()"
           [state]="!this.isValid() ? 'disabled' : 'classic'"
-          icon="check-line"
-          [options]="{ class: 'login-submit-button' }"
         >
           {{ this.buttonTitle | translate }}
         </byd-button>
