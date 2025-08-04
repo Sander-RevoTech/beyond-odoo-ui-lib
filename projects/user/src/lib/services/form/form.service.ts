@@ -39,6 +39,7 @@ export class AppUserFormService {
             key: 'email',
             label: 'Email',
             validators: [Validators.required],
+            class: 'password-input'
             /*
             visible$: asAdmin.changeValue$.pipe(
               startWith(false),
