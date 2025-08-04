@@ -9,7 +9,7 @@
 <ng-template #inputsTemplate let-input="input" let-matcher="matcher">
   <ng-container [ngSwitch]="input.controlType">
     <ng-container *ngSwitchCase="'textbox'">
-      <byd-input-textbox [input]="input" [matcher]="matcher" [space]="this.space"></byd-input-textbox>
+      <byd-input-textbox [input]="input" [matcher]="matcher" [space]="this.space" class="padding-top-20"></byd-input-textbox>
     </ng-container>
     <ng-container *ngSwitchCase="'textarea'">
       <byd-input-textarea [input]="input" [matcher]="matcher"></byd-input-textarea>
