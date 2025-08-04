@@ -1,8 +1,8 @@
 <div class="form-container">
   <form (ngSubmit)="onSubmit()" [formGroup]="this.form">
-    <div *ngFor="let input of this.inputs; trackBy: trackByKey" class="login-submit-button">
+    <div *ngFor="let input of this.inputs; trackBy: trackByKey">
       <ng-container *ngIf="input.visible$ | async">
-        <byd-inputs [input]="input"></byd-inputs>
+        <byd-inputs [input]="input" class="login-submit-button"></byd-inputs>
       </ng-container>
     </div>
     <div class="login-submit-button">
