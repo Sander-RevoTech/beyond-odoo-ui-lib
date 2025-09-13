@@ -28,9 +28,9 @@ export class WarehouseGuardComponent extends BydAbstractComponent {
           // if (!warehouses) {
           //   return;
           // }
-          // if (this._permissionsServices.warehouse) {
-          //   return;
-          // }
+          if (this._permissionsServices.warehouse) {
+            return;
+          }
 
           this.openDialog.open(WarehouseComponent, {
             disableClose: true,
