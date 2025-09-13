@@ -48,7 +48,6 @@ export class BydUserService extends BydBaseOdooService {
           filter(isNonNullable),
           map(result => result[0]),
           switchMap(profile => {
-            this.permissionsServices.setRole(profile.share ? 'shared' : 'interne');
             this.company.data$.next(profile.company_ids);
 
             if (!profile.share) {
@@ -80,7 +79,8 @@ export class BydUserService extends BydBaseOdooService {
                   .pipe(map(data => data ?? []))
               )
               .pipe(map(() => profile));
-          })
+          }),
+          tap(profile => this.permissionsServices.setRole(profile.share ? 'shared' : 'interne'))
         )
     );
   }
