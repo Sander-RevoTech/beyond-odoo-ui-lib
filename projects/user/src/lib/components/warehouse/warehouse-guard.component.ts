@@ -25,12 +25,12 @@ export class WarehouseGuardComponent extends BydAbstractComponent {
     this._registerSubscription(
       this._usersServices.warehouse.get$().subscribe({
         next: warehouses => {
-          if (!warehouses) {
-            return;
-          }
-          if (this._permissionsServices.warehouse) {
-            return;
-          }
+          // if (!warehouses) {
+          //   return;
+          // }
+          // if (this._permissionsServices.warehouse) {
+          //   return;
+          // }
 
           this.openDialog.open(WarehouseComponent, {
             disableClose: true,
