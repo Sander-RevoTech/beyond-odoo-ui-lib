@@ -77,7 +77,7 @@ export class BydUserService extends BydBaseOdooService {
               .fetch(
                 this.employeesServices
                   .getWarehouses$(getFirstNumber(profile.employee_id) ?? 0)
-                  .pipe(filter(isNonNullable))
+                  .pipe(map(data => data ?? []))
               )
               .pipe(map(() => profile));
           })
