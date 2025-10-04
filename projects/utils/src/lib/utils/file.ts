@@ -47,7 +47,9 @@ export const compressImage = async (blob: Blob, maxSizeMB: number): Promise<Blob
     // Exemple : qualité plus basse si l’image est très grande
     // (adaptable selon vos besoins)
     let quality = 0.9;
-    if (sizeMB > maxSizeMB * 4) {
+    if (sizeMB > maxSizeMB * 8) {
+      quality = 0.2;
+    } else if (sizeMB > maxSizeMB * 4) {
       quality = 0.4;
     } else if (sizeMB > maxSizeMB * 2) {
       quality = 0.6;
@@ -126,5 +128,8 @@ export const pathToFile = async (pic: { webPath?: string; format: string }): Pro
   if (!pic.webPath) return null;
 
   const response = await fetch(pic.webPath);
-  return await compressFile(new File([await response.blob()], newGuid(), { type: 'images/' + pic.format }), 1); // TODO: add the max size in a config later
+
+  const blob = await compressImage(await response.blob(), 1); // TODO: add the max size in a config later
+
+  return new File([blob], newGuid(), { type: 'images/' + pic.format });
 };
