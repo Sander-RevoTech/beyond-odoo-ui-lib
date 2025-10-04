@@ -31,9 +31,11 @@ export const getBlobImage = async (base64: string) => {
 };
 
 export const compressImage = async (blob: Blob, maxSizeMB: number): Promise<Blob> => {
+  console.log('Original Blob size:', blob.size / 1024 / 1024, 'MB');
   return new Promise(resolve => {
     // Calculer la taille du blob en Mo
     const sizeMB = blob.size / 1024 / 1024;
+    console.log('Blob size in MB:', sizeMB);
     // Déterminer une qualité de départ en fonction de la taille
     // Exemple : qualité plus basse si l’image est très grande
     // (adaptable selon vos besoins)
@@ -45,14 +47,18 @@ export const compressImage = async (blob: Blob, maxSizeMB: number): Promise<Blob
     } else if (sizeMB > maxSizeMB * 1.1) {
       quality = 0.8;
     }
+    console.log('Starting compression with quality:', quality);
 
     const tryCompress = () => {
+      console.log('Trying compression with quality:', quality);
       new Compressor(blob, {
         quality,
         success(result) {
           if (result.size / 1024 / 1024 <= maxSizeMB || quality < 0.1) {
+            console.log('Compressed Blob size:', result.size / 1024 / 1024, 'MB');
             resolve(result);
           } else {
+            console.log('Result too large, reducing quality and retrying...');
             quality -= 0.1;
             tryCompress();
           }
