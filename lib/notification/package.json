@@ -1,19 +1,19 @@
 {
-  "name": "@beyond/features",
-  "version": "0.0.1",
+  "name": "@beyond/notification",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "tabulator-tables": "^6.3.1",
-    "tslib": "^2.3.0",
+    "@beyond/translation": "^0.0.0",
+    "@beyond/utils": "^0.0.0",
     "@beyond/ui": "^0.0.0",
-    "@beyond/odoo": "^0.0.0",
-    "@beyond/form-basic": "^0.0.0"
+    "@beyond/styles": "^0.0.0",
+    "tslib": "^2.3.0"
   },
   "sideEffects": false,
-  "module": "fesm2022/beyond-features.mjs",
+  "module": "fesm2022/beyond-notification.mjs",
   "typings": "index.d.ts",
   "exports": {
     "./package.json": {
@@ -21,7 +21,7 @@
     },
     ".": {
       "types": "./index.d.ts",
-      "default": "./fesm2022/beyond-features.mjs"
+      "default": "./fesm2022/beyond-notification.mjs"
     }
   }
 }
