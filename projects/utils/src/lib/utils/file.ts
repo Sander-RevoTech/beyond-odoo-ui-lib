@@ -62,6 +62,9 @@ export const compressImage = async (blob: Blob, maxSizeMB: number): Promise<Blob
       console.log('Trying compression with quality:', quality);
       new Compressor(blob, {
         quality,
+        maxWidth: 1920,
+        maxHeight: 1920,
+        mimeType: 'image/jpeg',
         success(result) {
           if (result.size / 1024 / 1024 <= maxSizeMB || quality < 0.1) {
             console.log('Compressed Blob size:', result.size / 1024 / 1024, 'MB');
