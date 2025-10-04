@@ -1,4 +1,5 @@
 import { Camera, CameraResultType } from '@capacitor/camera';
+import imageCompression from 'browser-image-compression';
 import Compressor from 'compressorjs';
 
 import { newGuid } from './identifier';
@@ -30,6 +31,12 @@ export const getBlobImage = async (base64: string) => {
   return await fetch(base64).then(res => res.blob());
 };
 
+export const compressFile = async (file: File, maxSizeMB: number): Promise<File> => {
+  return await imageCompression(file, {
+    maxSizeMB,
+    useWebWorker: true,
+  });
+};
 export const compressImage = async (blob: Blob, maxSizeMB: number): Promise<Blob> => {
   console.log('Original Blob size:', blob.size / 1024 / 1024, 'MB');
   return new Promise(resolve => {
@@ -119,7 +126,5 @@ export const pathToFile = async (pic: { webPath?: string; format: string }): Pro
   if (!pic.webPath) return null;
 
   const response = await fetch(pic.webPath);
-  const blob = await compressImage(await response.blob(), 1); // TODO: add the max size in a config later
-
-  return new File([blob], newGuid(), { type: pic.format });
+  return await compressFile(new File([await response.blob()], newGuid(), { type: pic.format }), 1); // TODO: add the max size in a config later
 };

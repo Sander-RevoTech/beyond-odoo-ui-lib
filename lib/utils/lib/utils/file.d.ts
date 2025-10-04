@@ -1,6 +1,7 @@
 export declare const getBase64Image: (img: any) => string;
 export declare const getBase64FromFile: (file: File) => Promise<string>;
 export declare const getBlobImage: (base64: string) => Promise<Blob>;
+export declare const compressFile: (file: File, maxSizeMB: number) => Promise<File>;
 export declare const compressImage: (blob: Blob, maxSizeMB: number) => Promise<Blob>;
 export declare const downloadFile: (url: string) => void;
 export declare const takeImage: () => Promise<{
