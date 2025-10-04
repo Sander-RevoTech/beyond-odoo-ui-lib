@@ -108,6 +108,7 @@ export const picImages = async () => {
     limit: 10,
   });
 
+  console.log('gallery', gallery);
   const pics = [];
   for (let pic of gallery.photos) {
     const file = {
@@ -120,16 +121,19 @@ export const picImages = async () => {
     }
     pics.push(file);
   }
-
+  console.log('pics', pics);
   return pics;
 };
 
 export const pathToFile = async (pic: { webPath?: string; format: string }): Promise<File | null> => {
+  console.log('pathToFile', pic);
   if (!pic.webPath) return null;
 
+  console.log('fetching image');
   const response = await fetch(pic.webPath);
-
+  console.log('fetched image');
   const blob = await compressImage(await response.blob(), 1); // TODO: add the max size in a config later
+  console.log('compressed image');
 
-  return new File([blob], newGuid(), { type: 'images/' + pic.format });
+  return new File([blob], newGuid(), { type: pic.format });
 };
