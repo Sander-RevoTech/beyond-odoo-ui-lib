@@ -86,7 +86,6 @@ export const downloadFile = (url: string) => {
 export const takeImage = async () => {
   const image = await Camera.getPhoto({
     quality: 50,
-    allowEditing: true,
     saveToGallery: true,
     resultType: CameraResultType.Uri,
   });
@@ -109,18 +108,18 @@ export const picImages = async () => {
   });
 
   console.log('gallery', gallery);
-  const pics = [];
-  for (let pic of gallery.photos) {
-    const file = {
-      file: await pathToFile(pic),
+  
+  const filePromises = gallery.photos.map(async (pic) => {
+    const file = await pathToFile(pic);
+    return {
+      file,
       localUrl: pic.webPath,
     };
+  });
 
-    if (!file.file) {
-      continue;
-    }
-    pics.push(file);
-  }
+  const results = await Promise.all(filePromises);
+  const pics = results.filter(result => result.file !== null);
+  
   console.log('pics', pics);
   return pics;
 };
