@@ -1,0 +1,118 @@
+<div class="edit" #containerRef>
+  <div #tuiRef [style.height]="this.getHeight()" [style.width]="this.getWidth()" class="m-a image-container"></div>
+
+  <byd-loader [isLoading]="this.requestState.isLoading()">
+    <div class="control">
+      @if (this.showPanel()) {
+        <div class="panel">
+          @if (this.selection === 'line') {
+            <div class="flex-row g-space-sm">
+              <ng-template [ngTemplateOutlet]="Range"></ng-template>
+              <ng-template [ngTemplateOutlet]="Colors"></ng-template>
+            </div>
+          }
+          @if (this.selection === 'shape') {
+            <div class="space-between shape-selection">
+              <div (click)="this.changeShapeSelection('rect')">
+                <div class="item" [ngClass]="{ selected: this.shapeSelection === 'rect' }">
+                  <mat-icon>check_box_outline_blank</mat-icon>
+                </div>
+              </div>
+              <div (click)="this.changeShapeSelection('triangle')">
+                <div class="item" [ngClass]="{ selected: this.shapeSelection === 'triangle' }">
+                  <mat-icon>change_history</mat-icon>
+                </div>
+              </div>
+              <div (click)="this.changeShapeSelection('circle')">
+                <div class="item" [ngClass]="{ selected: this.shapeSelection === 'circle' }">
+                  <mat-icon>circle</mat-icon>
+                </div>
+              </div>
+              <div (click)="this.changeShapeSelection('line')">
+                <div class="item" [ngClass]="{ selected: this.shapeSelection === 'line' }">
+                  <mat-icon>straighten</mat-icon>
+                </div>
+              </div>
+            </div>
+            <div class="flex-row g-space-sm">
+              <ng-template [ngTemplateOutlet]="Range"></ng-template>
+              <ng-template [ngTemplateOutlet]="Colors"></ng-template>
+            </div>
+          }
+          @if (this.selection === 'text') {
+            <div class="flex-row g-space-sm">
+              <ng-template [ngTemplateOutlet]="Range"></ng-template>
+              <ng-template [ngTemplateOutlet]="Colors"></ng-template>
+            </div>
+          }
+        </div>
+      }
+
+      <div class="selection space-between">
+        <div (click)="this.changeSelection('')">
+          <div class="item" [ngClass]="{ selected: this.selection === '' }">
+            <mat-icon>pan_tool</mat-icon>
+          </div>
+        </div>
+        <div (click)="this.changeSelection('line')">
+          <div class="item" [ngClass]="{ selected: this.selection === 'line' }">
+            <mat-icon>draw</mat-icon>
+          </div>
+        </div>
+        <div (click)="this.changeSelection('shape')">
+          <div class="item" [ngClass]="{ selected: this.selection === 'shape' }">
+            <mat-icon>interests</mat-icon>
+          </div>
+        </div>
+        <div (click)="this.changeSelection('text')">
+          <div class="item" [ngClass]="{ selected: this.selection === 'text' }">
+            <mat-icon>text_fields</mat-icon>
+          </div>
+        </div>
+        <div (click)="this.clear()">
+          <div class="item" [ngClass]="{ disabled: !this.objectActivated }">
+            <mat-icon>delete</mat-icon>
+          </div>
+        </div>
+        <span class="separator"></span>
+        <div (click)="this.undo()">
+          <div class="item">
+            <mat-icon>undo</mat-icon>
+          </div>
+        </div>
+        <div (click)="this.redo()">
+          <div class="item">
+            <mat-icon>redo</mat-icon>
+          </div>
+        </div>
+        <span class="separator"></span>
+        <div (click)="this.validation()">
+          <div class="item color-success">
+            <mat-icon>check-line</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </byd-loader>
+</div>
+
+<ng-template #Colors>
+  <div class="colors">
+    <div class="space-between">
+      @for (color of this.colorList; track color) {
+        <div class="col" (click)="this.changeColor(color)">
+          <div class="color" [style.background-color]="color" [ngClass]="{ 'is-light': this.isLight(color) }">
+            @if (this.colorHexa === color) {
+              <mat-icon>done</mat-icon>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</ng-template>
+<ng-template #Range>
+  <div class="range">
+    <input type="range" min="0" max="100" onchange="this.changeBrushSize(event)" />
+  </div>
+</ng-template>

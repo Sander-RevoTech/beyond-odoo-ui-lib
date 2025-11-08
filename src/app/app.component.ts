@@ -9,6 +9,7 @@ import {
   BydGridTagsComponent,
   ParameterType,
 } from '@beyond/features';
+import { FilesAnnotationComponent } from '@beyond/files';
 import { InputDatePicker } from '@beyond/form-model';
 import { BydGlobalLoadingComponent } from '@beyond/notification';
 import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
@@ -56,6 +57,7 @@ import { AppTranslationService } from './translations/translation.service';
     BydLayoutContainerComponent,
     BydLayoutPanelComponent,
     BydGlobalLoadingComponent,
+    FilesAnnotationComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

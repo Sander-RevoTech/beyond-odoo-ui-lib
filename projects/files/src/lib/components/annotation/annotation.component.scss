@@ -1,0 +1,91 @@
+@use 'beyond/utils/mixins/common';
+@use 'beyond/utils/mixins/flex';
+@use 'beyond/utils/mixins/spaces';
+
+.edit {
+  position: relative;
+  height: 100%;
+
+  @include flex.flex-column;
+
+  padding-bottom: 70px;
+  background-color: common.get-var(neutral, main);
+
+  .image-container {
+    @include flex.flex-column;
+    @include flex.align-center;
+  }
+}
+
+.control {
+  border-top: 1px solid common.get-var(neutral, 400);
+  background-color: common.get-var(neutral, 100);
+  padding: common.get-var(space, md) common.get-var(space, lg);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .item {
+    border-radius: 50%;
+    padding: common.get-var(space, sm);
+
+    &.selected {
+      background-color: common.get-var(surface, brand, primary);
+      color: common.get-var(neutral, 100);
+    }
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .selection {
+    border: 1px solid common.get-var(neutral, 400);
+    margin: auto;
+    padding: common.get-var(space, xs);
+    border-radius: 30px;
+    text-align: center;
+
+    .separator {
+      border: 1px solid common.get-var(neutral, 400);
+      padding: 0;
+      width: 0;
+    }
+  }
+
+  .shape-selection {
+    margin: common.get-var(space, xs) spaces.spaceBase(12);
+  }
+
+  .panel {
+    margin-bottom: common.get-var(space, sm);
+  }
+}
+
+.range {
+  border: 1px solid common.get-var(neutral, 400);
+  border-radius: 20px;
+  padding: common.get-var(space, xs) common.get-var(space, sm);
+  margin-top: common.get-var(space, xs);
+}
+
+.colors {
+  text-align: center;
+  margin: auto;
+
+  .color {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: common.get-var(space, xs);
+    border: 1px solid common.get-var(neutral, 400);
+    color: common.get-var(neutral, 100);
+
+    &.is-light {
+      color: common.get-var(text, primary);
+    }
+  }
+}

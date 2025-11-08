@@ -38,7 +38,8 @@
       "@beyond/translation": ["./lib/translation"],
       "@beyond/eslint": ["./lib/eslint"],
       "@beyond/prettier": ["./lib/prettier"],
-      "@beyond/features": ["./lib/features"]
+      "@beyond/features": ["./lib/features"],
+      "@beyond/files": ["./dist/files"]
     }
   }
 }

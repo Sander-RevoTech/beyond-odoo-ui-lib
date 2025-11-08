@@ -140,3 +140,47 @@ export const pathToFile = async (pic: { webPath?: string; format: string }): Pro
 
   return new File([blob], newGuid(), { type: 'image/' + pic.format });
 };
+
+/**
+ * Calculates the proper height of an image with a custom width, preserving the original aspect ratio.
+ *
+ * @param originalHeight
+ * @param originalWidth
+ * @param newWidth
+ */
+export const determineNewHeight = (originalHeight: number, originalWidth: number, newWidth: number) => {
+  return (originalHeight / originalWidth) * newWidth;
+};
+
+/**
+ * Calculates the proper width of an image with a custom height, preserving the original aspect ratio.
+ *
+ * @param originalWidth
+ * @param originalHeight
+ * @param newWidth
+ */
+export const determineNewWidth = (originalWidth: number, originalHeight: number, newHeight: number) => {
+  return (originalWidth / originalHeight) * newHeight;
+};
+
+/**
+ * Calculates the proper height of an image with a custom width, preserving the original aspect ratio.
+ *
+ * @param originalHeight
+ * @param originalWidth
+ * @param newWidth
+ */
+export const determineNewSize = (
+  originalHeight: number,
+  originalWidth: number,
+  newWidth: number,
+  newHeight: number
+): { width: number; height: number } => {
+  if (newHeight < originalHeight || newWidth < originalWidth) {
+    var ratio = Math.min(newWidth / originalWidth, newHeight / originalHeight);
+
+    return { width: originalWidth * ratio, height: originalHeight * ratio };
+  }
+
+  return { width: originalWidth, height: originalHeight };
+};
