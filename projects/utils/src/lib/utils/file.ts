@@ -28,7 +28,7 @@ export const getBase64FromFile = (file: File): Promise<string> => {
 };
 
 export const getBlobImage = async (base64: string) => {
-  return await fetch(base64).then(res => res.blob());
+  return await fetch(base64).then(async res => await compressImage(await res.blob(), 1));
 };
 
 export const compressFile = async (file: File, maxSizeMB: number): Promise<File> => {
