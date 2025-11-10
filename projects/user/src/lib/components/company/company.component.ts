@@ -25,9 +25,15 @@ export class CompanyComponent extends BydAbstractComponent {
   constructor() {
     super();
     this.requestState.asked();
-    this._companiesServices
-      .fetch$(this._usersServices.company.get() ?? [])
-      .subscribe({ complete: () => this.requestState.completed(), error: () => this.requestState.completed() });
+    this._companiesServices.fetch$(this._usersServices.company.get() ?? []).subscribe({
+      next: list => {
+        if (list.length === 1) {
+          this.select(list[0].id);
+        }
+      },
+      complete: () => this.requestState.completed(),
+      error: () => this.requestState.completed(),
+    });
   }
 
   public select(id: number) {
