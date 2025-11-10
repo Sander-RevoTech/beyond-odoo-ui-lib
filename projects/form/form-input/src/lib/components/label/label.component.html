@@ -4,5 +4,8 @@
     <span *ngFor="let validator of this.input.validators">
       <span *ngIf="validator === validators.required"> * </span>
     </span>
+    @if (this.input.tooltip) {
+      <byd-tooltip [message]="this.input.tooltip"></byd-tooltip>
+    }
   </mat-label>
 </div>

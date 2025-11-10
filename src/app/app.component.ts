@@ -7,12 +7,14 @@ import {
   BydGridFormComponent,
   BydGridSearchComponent,
   BydGridTagsComponent,
+  ColMetaData,
   ParameterType,
 } from '@beyond/features';
 import { FilesAnnotationComponent } from '@beyond/files';
 import { InputDatePicker } from '@beyond/form-model';
 import { BydGlobalLoadingComponent } from '@beyond/notification';
 import { BydEmployeeService, BydPartnersService, BydUploadComponent } from '@beyond/odoo';
+import { BydTooltipComponent } from '@beyond/ui';
 import { BydUserService } from '@beyond/user';
 
 import { Preset } from '../../projects/features/src/public-api';
@@ -59,6 +61,7 @@ import { AppTranslationService } from './translations/translation.service';
     BydGlobalLoadingComponent,
     FilesAnnotationComponent,
     BydUploadComponent,
+    BydTooltipComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -71,7 +74,7 @@ export class AppComponent {
   readonly partnersService = inject(BydPartnersService);
 
   readonly selected = signal<boolean>(false);
-  // readonly colsMetaData: ColMetaData[] = [
+  // readonly colsMetaData: ColMetaData<any>[] = [
   //   {
   //     name: 'id',
   //     type: ParameterType.Number,

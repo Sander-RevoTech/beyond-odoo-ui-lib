@@ -11,6 +11,7 @@ export interface IInputBase<T> {
     value?: T;
     key?: string;
     label?: string;
+    tooltip?: string;
     type?: string;
     message?: string;
     controlType?: string;
@@ -25,6 +26,7 @@ export interface IInputBase<T> {
 export declare class InputBase<T> implements IInputBase<T> {
     key: string;
     label: string;
+    tooltip: string;
     type: string;
     message: string;
     controlType: string;

@@ -3,6 +3,7 @@ import * as i0 from "@angular/core";
 export declare class FormLabelComponent {
     input: {
         label: string;
+        tooltip: string;
         validators: ValidatorFn[];
     };
     readonly validators: typeof Validators;

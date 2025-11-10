@@ -16,6 +16,7 @@ export interface IInputBase<T> {
   value?: T;
   key?: string;
   label?: string;
+  tooltip?: string;
   type?: string;
   message?: string;
   controlType?: string;
@@ -31,6 +32,7 @@ export interface IInputBase<T> {
 export class InputBase<T> implements IInputBase<T> {
   key: string;
   label: string;
+  tooltip: string;
   type: string;
   message: string;
   controlType: string;
@@ -72,6 +74,7 @@ export class InputBase<T> implements IInputBase<T> {
     this._value = options.value === undefined ? null : options.value;
     this.key = options.key || Math.random().toString();
     this.label = options.label || '';
+    this.tooltip = options.tooltip || '';
     this.type = options.type || '';
     this.message = options.message || '';
     this.controlType = options.controlType || '';
