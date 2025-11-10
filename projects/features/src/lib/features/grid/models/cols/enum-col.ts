@@ -12,6 +12,7 @@ export class EnumCol extends BaseCol<string> {
         new InputDropdown({
           key: this.key,
           label: this.inputLabel,
+          tooltip: this.key,
           options: of(
             this.data.col.enumValues?.map(value => ({
               id: value,

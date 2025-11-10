@@ -9,6 +9,7 @@ export class DateCol extends BaseCol<Date> {
     return new InputDatePicker({
       key: this.key,
       label: this.inputLabel,
+      tooltip: this.key,
       rangeEnabled: true,
       value: this.filterValues[0] ? { start: this.filterValues[0] } : undefined,
     });

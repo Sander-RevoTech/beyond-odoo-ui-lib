@@ -11,6 +11,7 @@ export class NumberCol extends BaseCol<Number> {
       children: [
         new InputNumber({
           key: this.key,
+          tooltip: this.key,
           label: this.inputLabel,
           value: this.filterValues[0]?.toString(),
         }),

@@ -9,6 +9,7 @@ export class RelationCol extends BaseCol<string> {
       return new InputChoices({
         key: this.key,
         label: this.inputLabel,
+        tooltip: this.key,
         class: 'pb-2',
         advancedSearch$: this.data.col.dataSearch$,
         value: this.filterValues[0],

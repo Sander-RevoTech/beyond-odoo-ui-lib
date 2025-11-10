@@ -10,6 +10,7 @@ export class StringCol extends BaseCol<string> {
     return new InputTextBox({
       key: this.key,
       label: this.inputLabel,
+      tooltip: this.key,
       class: 'pb-2',
       value: this.filterValues[0],
     });
