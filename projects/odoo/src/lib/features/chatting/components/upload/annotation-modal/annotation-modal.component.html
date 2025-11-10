@@ -1,0 +1,11 @@
+<div class="close-dialog" mat-button mat-dialog-close>
+  <mat-icon>close</mat-icon>
+</div>
+@if (this.data.localUrl) {
+  <byd-files-annotation
+    [imagePath]="this.data.localUrl!"
+    [style.height.%]="100"
+    [style.width.%]="100"
+    (savedImage)="this.savedImage($event)"
+  ></byd-files-annotation>
+}

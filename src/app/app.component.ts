@@ -12,7 +12,7 @@ import {
 import { FilesAnnotationComponent } from '@beyond/files';
 import { InputDatePicker } from '@beyond/form-model';
 import { BydGlobalLoadingComponent } from '@beyond/notification';
-import { BydEmployeeService, BydPartnersService } from '@beyond/odoo';
+import { BydEmployeeService, BydPartnersService, BydUploadComponent } from '@beyond/odoo';
 import { BydUserService } from '@beyond/user';
 
 import { Preset } from '../../projects/features/src/public-api';
@@ -58,6 +58,7 @@ import { AppTranslationService } from './translations/translation.service';
     BydLayoutPanelComponent,
     BydGlobalLoadingComponent,
     FilesAnnotationComponent,
+    BydUploadComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

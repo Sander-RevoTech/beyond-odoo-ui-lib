@@ -39,7 +39,9 @@
   }
 </ng-template> -->
 
-<byd-files-annotation imagePath="https://placehold.co/600x400"></byd-files-annotation>
+<!-- <byd-files-annotation imagePath="https://placehold.co/600x400"></byd-files-annotation> -->
+<byd-files-upload [features]="['take-pic', 'upload-pic']" [enableEdit]="true"></byd-files-upload>
+
 <!-- <byd-grid-container
   gridId="washing"
   model="washing.production"

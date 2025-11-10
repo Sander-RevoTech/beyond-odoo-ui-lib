@@ -1,10 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output, computed, effect, signal } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, computed, effect, inject, signal } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
 
 import { TranslatePipe } from '@beyond/translation';
 import { BydButtonComponent, LoaderComponent } from '@beyond/ui';
 import { BydBaseComponent, FileStructure, picImages, takeImage } from '@beyond/utils';
 import { Observable } from 'rxjs';
+
+import { BydUploadAnnotationDialog } from './annotation-modal/annotation-modal.component';
 
 export interface ActionButtonData {
   callback: (data?: any) => void;
@@ -30,10 +33,15 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
   @Input()
   clear$: Observable<unknown> | null = null;
 
+  @Input()
+  enableEdit = false;
+
   @Output()
   filesPicked = new EventEmitter<FileStructure[]>();
 
   public tempImages = signal<FileStructure[]>([]);
+
+  private _dialog = inject(MatDialog);
 
   get addActions(): ActionButtonData[] {
     const actionsAvailable: ActionButtonData[] = [];
@@ -87,6 +95,24 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
   }
   public remove(pic: FileStructure) {
     this.tempImages.set(this.tempImages().filter(item => item.localUrl !== pic.localUrl));
+  }
+  public replaceImage(pic: FileStructure, newFile: FileStructure) {
+    const currentImages = this.tempImages();
+    const index = currentImages.findIndex(item => item.localUrl === pic.localUrl);
+    if (index !== -1) {
+      const updatedImages = [...currentImages];
+      updatedImages[index] = newFile;
+      this.tempImages.set(updatedImages);
+    }
+  }
+
+  public openAnnotation(pic: FileStructure) {
+    this._dialog
+      .open<BydUploadAnnotationDialog>(BydUploadAnnotationDialog, {
+        data: pic,
+      })
+      .afterClosed()
+      .subscribe(data => this.replaceImage(pic, data.file));
   }
 
   private _haveFeature(feature: Feature) {

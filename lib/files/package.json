@@ -1,20 +1,18 @@
 {
-  "name": "@beyond/form-input",
+  "name": "@beyond/files",
   "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^19.2.0",
     "@angular/core": "^19.2.0"
   },
   "dependencies": {
-    "@beyond/form-model": "^0.0.0",
-    "@beyond/ui": "^0.0.0",
-    "@beyond/translation": "^0.0.0",
-    "@beyond/utils": "^0.0.0",
-    "@beyond/styles": "^0.0.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "tui-image-editor": "3.15.3",
+    "@beyond/ui": "0.0.0",
+    "@beyond/utils": "0.0.0"
   },
   "sideEffects": false,
-  "module": "fesm2022/beyond-form-input.mjs",
+  "module": "fesm2022/beyond-files.mjs",
   "typings": "index.d.ts",
   "exports": {
     "./package.json": {
@@ -22,7 +20,7 @@
     },
     ".": {
       "types": "./index.d.ts",
-      "default": "./fesm2022/beyond-form-input.mjs"
+      "default": "./fesm2022/beyond-files.mjs"
     }
   }
 }

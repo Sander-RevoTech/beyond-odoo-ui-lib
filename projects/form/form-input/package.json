@@ -11,6 +11,9 @@
   "dependencies": {
     "@beyond/form-model": "^0.0.0",
     "@beyond/ui": "^0.0.0",
+    "@beyond/translation": "^0.0.0",
+    "@beyond/utils": "^0.0.0",
+    "@beyond/styles": "^0.0.0",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

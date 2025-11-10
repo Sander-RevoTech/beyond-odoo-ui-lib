@@ -39,7 +39,7 @@
       "@beyond/eslint": ["./lib/eslint"],
       "@beyond/prettier": ["./lib/prettier"],
       "@beyond/features": ["./lib/features"],
-      "@beyond/files": ["./dist/files"]
+      "@beyond/files": ["./lib/files"]
     }
   }
 }

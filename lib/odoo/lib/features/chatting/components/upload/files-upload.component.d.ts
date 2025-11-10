@@ -12,16 +12,20 @@ export declare class BydUploadComponent extends BydBaseComponent implements OnIn
     features: Feature[];
     canSelectMultipleFiles: boolean;
     clear$: Observable<unknown> | null;
+    enableEdit: boolean;
     filesPicked: EventEmitter<FileStructure[]>;
     tempImages: import("@angular/core").WritableSignal<FileStructure[]>;
+    private _dialog;
     get addActions(): ActionButtonData[];
     constructor();
     ngOnInit(): void;
     addImage(images: FileStructure[]): void;
     remove(pic: FileStructure): void;
+    replaceImage(pic: FileStructure, newFile: FileStructure): void;
+    openAnnotation(pic: FileStructure): void;
     private _haveFeature;
     private _takePic;
     private _uploadPic;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydUploadComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<BydUploadComponent, "byd-files-upload", never, { "features": { "alias": "features"; "required": false; }; "canSelectMultipleFiles": { "alias": "canSelectMultipleFiles"; "required": false; }; "clear$": { "alias": "clear$"; "required": false; }; }, { "filesPicked": "filesPicked"; }, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<BydUploadComponent, "byd-files-upload", never, { "features": { "alias": "features"; "required": false; }; "canSelectMultipleFiles": { "alias": "canSelectMultipleFiles"; "required": false; }; "clear$": { "alias": "clear$"; "required": false; }; "enableEdit": { "alias": "enableEdit"; "required": false; }; }, { "filesPicked": "filesPicked"; }, never, never, true, never>;
 }

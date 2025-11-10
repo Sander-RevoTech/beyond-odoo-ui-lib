@@ -14,6 +14,8 @@
     "@beyond/menu": "0.0.0",
     "@beyond/form-model": "0.0.0",
     "@beyond/form-basic": "0.0.0",
+    "@beyond/server": "0.0.0",
+    "@beyond/utils": "0.0.0",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

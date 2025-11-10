@@ -4,7 +4,7 @@
 
 .edit {
   position: relative;
-  height: 100%;
+  height: calc(100% - 80px);
 
   @include flex.flex-column;
 
