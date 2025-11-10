@@ -2,7 +2,7 @@
   <div class="list-tag flex-start g-space-sm">
     <div class="group-tag flex-start g-space-xs align-center">
       @if (this.group) {
-        {{ 'grid.' + this.gridId + '.core.groupBy' | translate }}:
+        {{ 'grid.core.groupBy' | translate }}:
         <byd-badge [value]="this.group" type="primary" icon="close" (clickAction)="this.removeGroup()"></byd-badge>
       }
     </div>

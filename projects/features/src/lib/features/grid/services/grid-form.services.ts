@@ -59,7 +59,7 @@ export class BydGridFormService<T> {
         children: [
           new InputDropdown({
             key: 'group',
-            label: `grid.${model.scope}.groupBy`,
+            label: 'grid.core.groupBy',
             options: of(
               Object.values(model.cols)
                 .filter(col => col.data.col.showOnSearch && !col.data.col.notDisplayable)
