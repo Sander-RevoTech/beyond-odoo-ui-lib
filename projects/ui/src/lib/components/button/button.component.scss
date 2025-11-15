@@ -20,7 +20,7 @@
 
   &.small {
     @include fonts.fontSizeBody(sm);
-    padding: common.get-var(space, sm) spaces.spaceBase(2);
+    padding: common.get-var(space, sm);
   }
   &.large {
     padding: common.get-var(space, md) common.get-var(space, lg);
