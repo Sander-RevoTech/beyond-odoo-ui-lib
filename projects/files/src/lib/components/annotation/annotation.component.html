@@ -112,7 +112,8 @@
   </div>
 </ng-template>
 <ng-template #Range>
-  <div class="range">
-    <input type="range" min="0" max="100" onchange="this.changeBrushSize(event)" />
+  <div class="range flex-row g-space-md">
+    <input #rangeinput type="range" min="0" max="100" (change)="this.changeBrushSize(rangeinput.value)" />
+    <div class="value">{{ this.brushSize }}</div>
   </div>
 </ng-template>

@@ -186,8 +186,8 @@ export class FilesAnnotationComponent extends BydBaseComponent implements OnInit
     this.colorHexa = color;
     this._reflow();
   }
-  public changeBrushSize(size: number) {
-    this.brushSize = size;
+  public changeBrushSize(size: string) {
+    this.brushSize = Number(size);
     this._reflow();
   }
 

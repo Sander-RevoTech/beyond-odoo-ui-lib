@@ -37,7 +37,7 @@ export declare class FilesAnnotationComponent extends BydBaseComponent implement
     drawing(type: 'LINE_DRAWING' | 'FREE_DRAWING'): void;
     text(): void;
     changeColor(color: string): void;
-    changeBrushSize(size: number): void;
+    changeBrushSize(size: string): void;
     clear(): void;
     validation(): void;
     onSaveClick: () => Promise<void>;
