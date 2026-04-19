@@ -38,18 +38,18 @@ export class BydPermissionsServices {
   }
 
   constructor() {
-    if (sessionStorage.getItem('token')) {
-      const token = (<string>sessionStorage.getItem('token')).split(this._sep);
+    if (localStorage.getItem('token')) {
+      const token = (<string>localStorage.getItem('token')).split(this._sep);
       this.uid = Number(token[0]);
       this.pass = token[1];
 
       this._updated$.next(Date.now());
     }
-    if (sessionStorage.getItem('warehouse')) {
-      this.warehouse = Number(sessionStorage.getItem('warehouse'));
+    if (localStorage.getItem('warehouse')) {
+      this.warehouse = Number(localStorage.getItem('warehouse'));
     }
-    if (sessionStorage.getItem('company')) {
-      this.company = Number(sessionStorage.getItem('company'));
+    if (localStorage.getItem('company')) {
+      this.company = Number(localStorage.getItem('company'));
     }
   }
 
@@ -58,7 +58,7 @@ export class BydPermissionsServices {
 
     this.uid = uid;
     this.pass = pass;
-    sessionStorage.setItem('token', [this.uid, this.pass].join(this._sep));
+    localStorage.setItem('token', [this.uid, this.pass].join(this._sep));
 
     this.guards = {};
 
@@ -67,11 +67,11 @@ export class BydPermissionsServices {
 
   public setWarehouse(warehouse: number | null) {
     this.warehouse = warehouse;
-    sessionStorage.setItem('warehouse', this.warehouse?.toString() || '');
+    localStorage.setItem('warehouse', this.warehouse?.toString() || '');
   }
   public setCompany(company: number | null) {
     this.company = company;
-    sessionStorage.setItem('company', this.company?.toString() || '');
+    localStorage.setItem('company', this.company?.toString() || '');
   }
   public setEmployee(employee: number | null) {
     this.employee = employee;
@@ -102,9 +102,9 @@ export class BydPermissionsServices {
 
   public reset() {
     this.uid = null;
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('warehouse');
-    sessionStorage.removeItem('company');
+    localStorage.removeItem('token');
+    localStorage.removeItem('warehouse');
+    localStorage.removeItem('company');
 
     this.guards = {};
 
