@@ -75,13 +75,21 @@ export const picImages = async () => {
     limit: 10,
   });
 
-  const filePromises = gallery.photos.map(async pic => {
-    const picCopy = { ...pic };
-    const file = await pathToFile(picCopy);
-    return { file, localUrl: picCopy.webPath };
-  });
+  const BATCH_SIZE = 8;
+  const results: { file: File | null; localUrl: string | undefined }[] = [];
 
-  const results = await Promise.all(filePromises);
+  for (let i = 0; i < gallery.photos.length; i += BATCH_SIZE) {
+    const batch = gallery.photos.slice(i, i + BATCH_SIZE);
+    const batchResults = await Promise.all(
+      batch.map(async pic => {
+        const picCopy = { ...pic };
+        const file = await pathToFile(picCopy);
+        return { file, localUrl: picCopy.webPath };
+      })
+    );
+    results.push(...batchResults);
+  }
+
   return results.filter(result => result.file !== null);
 };
 
