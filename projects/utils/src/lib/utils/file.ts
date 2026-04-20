@@ -2,6 +2,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 import imageCompression from 'browser-image-compression';
 
 import { newGuid } from './identifier';
+import { FileStructure } from '../types/files/temporary-files';
 
 export const getBase64Image = (img: any) => {
   const canvas = document.createElement('canvas');
@@ -51,32 +52,29 @@ export const downloadFile = (url: string) => {
   window.open('https://docs.google.com/a/google.com/viewer?url=' + url + '&embedded=false');
 };
 
-export const takeImage = async () => {
+export const takeImage = async (): Promise<FileStructure | undefined> => {
   const image = await Camera.getPhoto({
     quality: 50,
     saveToGallery: true,
     resultType: CameraResultType.Uri,
   });
 
-  const file = {
-    file: await pathToFile(image),
-    localUrl: image.webPath || null,
-  };
-  if (!file.file) {
+  const fileObj = await pathToFile(image);
+  if (!fileObj) {
     return;
   }
 
-  return file;
+  return { file: fileObj, localUrl: image.webPath || null };
 };
 
-export const picImages = async () => {
+export const picImages = async (): Promise<FileStructure[]> => {
   const gallery = await Camera.pickImages({
     quality: 50,
     limit: 10,
   });
 
   const BATCH_SIZE = 8;
-  const results: { file: File | null; localUrl: string | undefined }[] = [];
+  const results: FileStructure[] = [];
 
   for (let i = 0; i < gallery.photos.length; i += BATCH_SIZE) {
     const batch = gallery.photos.slice(i, i + BATCH_SIZE);
@@ -84,7 +82,7 @@ export const picImages = async () => {
       batch.map(async pic => {
         const picCopy = { ...pic };
         const file = await pathToFile(picCopy);
-        return { file, localUrl: picCopy.webPath };
+        return { file, localUrl: picCopy.webPath || null };
       })
     );
     results.push(...batchResults);
