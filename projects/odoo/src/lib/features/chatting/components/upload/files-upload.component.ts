@@ -75,9 +75,6 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
 
   constructor() {
     super();
-    effect(() => {
-      this.filesPicked.emit(this.tempImages());
-    });
   }
 
   ngOnInit() {
@@ -127,6 +124,7 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
     }
     this.addImage([file]);
     this.requestState.completed();
+    this.filesPicked.emit(this.tempImages());
   }
 
   private async _uploadPic() {
@@ -135,7 +133,9 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
     for await (const batch of picImages()) {
       this.addImage(batch);
     }
+
     this.requestState.completed();
+    this.filesPicked.emit(this.tempImages());
   }
 
   // private async _uploadFile() {

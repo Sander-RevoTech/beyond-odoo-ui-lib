@@ -1,21 +1,20 @@
 <div class="mb-space-md">
-  <byd-loader [isLoading]="this.requestState.isLoading()">
-    <div class="grid align-items-center mb-space-xs">
-      @for (pic of this.tempImages(); track pic) {
-        <div class="temp-pic-container g-col-3">
-          <img [src]="pic.localUrl" width="100%" />
-          <div class="remove-cta" (click)="this.remove(pic)">
-            <mat-icon>close</mat-icon>
-          </div>
-          @if (this.enableEdit) {
-            <div>
-              <byd-button (action)="this.openAnnotation(pic)"> Edit </byd-button>
-            </div>
-          }
+  <div class="grid align-items-center mb-space-xs">
+    @for (pic of this.tempImages(); track pic) {
+      <div class="temp-pic-container g-col-3">
+        <img [src]="pic.localUrl" width="100%" />
+        <div class="remove-cta" (click)="this.remove(pic)">
+          <mat-icon>close</mat-icon>
         </div>
-      }
-    </div>
-  </byd-loader>
+        @if (this.enableEdit) {
+          <div>
+            <byd-button (action)="this.openAnnotation(pic)"> Edit </byd-button>
+          </div>
+        }
+      </div>
+    }
+  </div>
+  <byd-loader [isLoading]="this.requestState.isLoading()"> </byd-loader>
   <div>
     @if (this.addActions.length === 1) {
       <byd-button (action)="this.addActions[0].callback()">
