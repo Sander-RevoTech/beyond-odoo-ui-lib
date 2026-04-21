@@ -1,8 +1,8 @@
 import { Camera, CameraResultType } from '@capacitor/camera';
 import imageCompression from 'browser-image-compression';
 
-import { newGuid } from './identifier';
 import { FileStructure } from '../types/files/temporary-files';
+import { newGuid } from './identifier';
 
 export const getBase64Image = (img: any) => {
   const canvas = document.createElement('canvas');
@@ -67,14 +67,12 @@ export const takeImage = async (): Promise<FileStructure | undefined> => {
   return { file: fileObj, localUrl: image.webPath || null };
 };
 
-export const picImages = async (): Promise<FileStructure[]> => {
+export async function* picImages(): AsyncGenerator<FileStructure[]> {
   const gallery = await Camera.pickImages({
     quality: 50,
-    limit: 10,
   });
 
-  const BATCH_SIZE = 8;
-  const results: FileStructure[] = [];
+  const BATCH_SIZE = 2;
 
   for (let i = 0; i < gallery.photos.length; i += BATCH_SIZE) {
     const batch = gallery.photos.slice(i, i + BATCH_SIZE);
@@ -85,11 +83,9 @@ export const picImages = async (): Promise<FileStructure[]> => {
         return { file, localUrl: picCopy.webPath || null };
       })
     );
-    results.push(...batchResults);
+    yield batchResults.filter(result => result.file !== null);
   }
-
-  return results.filter(result => result.file !== null);
-};
+}
 
 export const pathToFile = async (pic: { webPath?: string; format: string }): Promise<File | null> => {
   if (!pic.webPath) return null;

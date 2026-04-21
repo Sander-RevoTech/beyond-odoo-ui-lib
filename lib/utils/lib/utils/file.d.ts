@@ -6,7 +6,7 @@ export declare const compressFile: (file: File, maxSizeMB: number) => Promise<Fi
 export declare const compressImage: (blob: Blob, maxSizeMB: number) => Promise<Blob>;
 export declare const downloadFile: (url: string) => void;
 export declare const takeImage: () => Promise<FileStructure | undefined>;
-export declare const picImages: () => Promise<FileStructure[]>;
+export declare function picImages(): AsyncGenerator<FileStructure[]>;
 export declare const pathToFile: (pic: {
     webPath?: string;
     format: string;

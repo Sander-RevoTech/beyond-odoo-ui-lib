@@ -132,8 +132,9 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
   private async _uploadPic() {
     this.requestState.asked();
 
-    const pics = await picImages();
-    this.addImage(pics);
+    for await (const batch of picImages()) {
+      this.addImage(batch);
+    }
     this.requestState.completed();
   }
 
