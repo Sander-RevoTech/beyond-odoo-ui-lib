@@ -15,11 +15,15 @@ export declare class ChoicesBottomSheetComponent extends BydBadgeComponent {
     data: ChoicesBottomSheetComponentData;
     readonly searchValue: Subject<string>;
     readonly options: Subject<InputChoicesOption[]>;
+    currentSearch: string;
     constructor(_bottomSheetRef: MatBottomSheetRef<ChoicesBottomSheetComponent, ChoicesBottomSheetComponentResult>, data: ChoicesBottomSheetComponentData);
     choice(data: {
         id: string;
         name: string;
     }): void;
+    isSelected: (option: {
+        id: string;
+    }) => boolean;
     searchValuechanged(value: string): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<ChoicesBottomSheetComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<ChoicesBottomSheetComponent, "ng-component", never, {}, {}, never, never, true, never>;

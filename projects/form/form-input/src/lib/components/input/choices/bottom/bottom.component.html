@@ -1,10 +1,46 @@
-<div class="textbox-container">
-  <input #box matInput class="form-control" [type]="'text'" (keyup)="this.searchValuechanged(box.value)" />
+<div class="search-container">
+  <mat-form-field class="search-field" appearance="outline" subscriptSizing="dynamic">
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      #box
+      matInput
+      [type]="'text'"
+      (keyup)="this.searchValuechanged(box.value)"
+    />
+  </mat-form-field>
 </div>
-<div class="flex-column g-space-sm">
-  <byd-card *ngFor="let item of this.options | async" (click)="this.choice(item)">
-    <byd-card-content>
-      {{ item.name }}
-    </byd-card-content>
-  </byd-card>
+<div class="options-list flex-column g-space-sm">
+  @if (!this.data.input.choiceTemplate) {
+    <byd-card *ngFor="let item of this.options | async" (click)="this.choice(item)">
+      <byd-card-content>
+        {{ item.name }}
+      </byd-card-content>
+    </byd-card>
+  } @else if (this.data.input.choiceTemplate.one) {
+    <byd-card
+      *ngFor="let item of this.options | async"
+      [class.is-selected]="this.isSelected(item)"
+      (click)="this.choice(item)"
+    >
+      <byd-card-content>
+        <ng-template
+          [ngTemplateOutlet]="this.data.input.choiceTemplate.one"
+          [ngTemplateOutletContext]="{ item: item.data }"
+        ></ng-template>
+      </byd-card-content>
+    </byd-card>
+  } @else if (this.data.input.choiceTemplate.list) {
+    <ng-template
+      [ngTemplateOutlet]="this.data.input.choiceTemplate.list"
+      [ngTemplateOutletContext]="{
+        data: {
+          items: this.options | async,
+          isselected: this.isSelected,
+          select: this.choice,
+          search: this.currentSearch,
+          values: this.data.input.value,
+        }
+      }"
+    ></ng-template>
+  }
 </div>

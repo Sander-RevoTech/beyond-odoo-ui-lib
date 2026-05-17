@@ -1,0 +1,14 @@
+@use 'beyond/utils/mixins/common';
+
+.search-container {
+  padding: common.get-var(space, sm) common.get-var(space, md) 0;
+
+  .search-field {
+    width: 100%;
+  }
+}
+
+.options-list {
+  padding: common.get-var(space, sm) common.get-var(space, md);
+  padding-bottom: max(common.get-var(space, xl), env(safe-area-inset-bottom));
+}

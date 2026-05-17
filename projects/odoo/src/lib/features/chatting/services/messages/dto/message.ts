@@ -4,6 +4,7 @@ export interface Message {
   res_id: number;
   model: string;
   message_type: string;
-
   attachment_ids?: number[];
+  author_id?: [number, string];
+  date?: string;
 }

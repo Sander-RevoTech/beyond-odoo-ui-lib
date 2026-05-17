@@ -32,7 +32,7 @@ export class BydMessagesService extends BydBaseOdooService {
           ['model', 'like', data.model],
           ['message_type', 'like', data.message_type],
         ],
-        ['body', 'attachment_ids']
+        ['body', 'attachment_ids', 'author_id', 'date']
       )
       .pipe(
         filter(data => !!data),

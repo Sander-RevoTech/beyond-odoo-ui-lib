@@ -5,4 +5,6 @@ export interface Message {
     model: string;
     message_type: string;
     attachment_ids?: number[];
+    author_id?: [number, string];
+    date?: string;
 }
