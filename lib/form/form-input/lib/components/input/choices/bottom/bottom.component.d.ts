@@ -17,10 +17,10 @@ export declare class ChoicesBottomSheetComponent extends BydBadgeComponent {
     readonly options: Subject<InputChoicesOption[]>;
     currentSearch: string;
     constructor(_bottomSheetRef: MatBottomSheetRef<ChoicesBottomSheetComponent, ChoicesBottomSheetComponentResult>, data: ChoicesBottomSheetComponentData);
-    choice(data: {
+    choice: (data: {
         id: string;
         name: string;
-    }): void;
+    }) => void;
     isSelected: (option: {
         id: string;
     }) => boolean;

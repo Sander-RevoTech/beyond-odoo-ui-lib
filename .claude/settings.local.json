@@ -5,7 +5,9 @@
       "Bash(npx nx *)",
       "Bash(bash *)",
       "Skill(techatome-claude-plugin:form-input)",
-      "Bash(npx ng *)"
+      "Bash(npx ng *)",
+      "Read(//c/Techatome/revotech/reuz-operations-app/**)",
+      "Bash(npx tsc *)"
     ]
   }
 }
