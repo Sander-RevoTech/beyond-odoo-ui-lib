@@ -50,9 +50,9 @@ export class ChoicesBottomSheetComponent extends BydBadgeComponent {
     this.searchValuechanged('');
   }
 
-  public choice(data: { id: string; name: string }) {
+  public choice = (data: { id: string; name: string }) => {
     this._bottomSheetRef.dismiss(data);
-  }
+  };
 
   public isSelected = (option: { id: string }): boolean => {
     const value = this.data.input.value;
