@@ -13,8 +13,20 @@ import { Observable } from 'rxjs';
 export class AuthGuard {
   private readonly _permissionsServices = inject(BydPermissionsServices);
 
-  constructor(private router: Router) {}
+  private _router = inject(Router);
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
+    if (!this._permissionsServices.received) {
+      return this._permissionsServices.updated$.pipe(
+        map(() => {
+          if (this._permissionsServices.isAuthenticated) {
+            return true;
+          } else {
+            this.setRedirect();
+            return false;
+          }
+        })
+      );
+    }
     if (this._permissionsServices.isAuthenticated === false) {
       this.setRedirect();
       return false;
@@ -23,6 +35,6 @@ export class AuthGuard {
   }
 
   public setRedirect(): void {
-    this.router.navigateByUrl(BydRoutes.getLogin());
+    this._router.navigateByUrl(BydRoutes.getLogin());
   }
 }
