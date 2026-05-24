@@ -38,13 +38,9 @@ export class BydEmployeeService extends BydBaseOdooService {
   }
 
   public getWorkcenters$(id: number) {
-    return this.permissionsServices.updated$.pipe(
-      switchMap(() =>
-        this._odooService.searchRead$<Employee>('hr.employee', [['id', '=', id]], ['id', 'workcenter_ids']).pipe(
-          filter(data => !!data),
-          map(data => data[0]?.workcenter_ids || [])
-        )
-      )
+    return this._odooService.searchRead$<Employee>('hr.employee', [['id', '=', id]], ['id', 'workcenter_ids']).pipe(
+      filter(data => !!data),
+      map(data => data[0]?.workcenter_ids || [])
     );
   }
 }
