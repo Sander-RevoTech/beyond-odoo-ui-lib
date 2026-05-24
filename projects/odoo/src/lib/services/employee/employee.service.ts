@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 
-import { filter, map } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
+
+import { BydPermissionsServices } from '@beyond/server';
 
 import { BydBaseOdooService } from '../baseService';
 import { Employee } from './dto/employee';
@@ -9,6 +11,8 @@ import { Employee } from './dto/employee';
   providedIn: 'root',
 })
 export class BydEmployeeService extends BydBaseOdooService {
+  readonly permissionsServices = inject(BydPermissionsServices);
+
   constructor() {
     super();
   }
@@ -34,9 +38,13 @@ export class BydEmployeeService extends BydBaseOdooService {
   }
 
   public getWorkcenters$(id: number) {
-    return this._odooService.searchRead$<Employee>('hr.employee', [['id', '=', id]], ['id', 'workcenter_ids']).pipe(
-      filter(data => !!data),
-      map(data => data[0]?.workcenter_ids || [])
+    return this.permissionsServices.updated$.pipe(
+      switchMap(() =>
+        this._odooService.searchRead$<Employee>('hr.employee', [['id', '=', id]], ['id', 'workcenter_ids']).pipe(
+          filter(data => !!data),
+          map(data => data[0]?.workcenter_ids || [])
+        )
+      )
     );
   }
 }

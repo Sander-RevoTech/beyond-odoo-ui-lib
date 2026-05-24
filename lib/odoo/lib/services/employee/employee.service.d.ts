@@ -1,7 +1,9 @@
+import { BydPermissionsServices } from '@beyond/server';
 import { BydBaseOdooService } from '../baseService';
 import { Employee } from './dto/employee';
 import * as i0 from "@angular/core";
 export declare class BydEmployeeService extends BydBaseOdooService {
+    readonly permissionsServices: BydPermissionsServices;
     constructor();
     searchByName$(name: string): import("rxjs").Observable<Employee[]>;
     getRelatedByUserId$(userId: number): import("rxjs").Observable<Employee>;
