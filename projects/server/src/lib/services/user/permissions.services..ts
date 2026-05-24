@@ -51,6 +51,9 @@ export class BydPermissionsServices {
     if (localStorage.getItem('company')) {
       this.company = Number(localStorage.getItem('company'));
     }
+    if (localStorage.getItem('employee')) {
+      this.employee = Number(localStorage.getItem('employee'));
+    }
   }
 
   public set(uid: number | null, pass: string) {
@@ -75,6 +78,7 @@ export class BydPermissionsServices {
   }
   public setEmployee(employee: number | null) {
     this.employee = employee;
+    localStorage.setItem('employee', this.employee?.toString() || '');
   }
   public setRole(role: Role) {
     this.roles = [role];
@@ -105,6 +109,7 @@ export class BydPermissionsServices {
     localStorage.removeItem('token');
     localStorage.removeItem('warehouse');
     localStorage.removeItem('company');
+    localStorage.removeItem('employee');
 
     this.guards = {};
 
