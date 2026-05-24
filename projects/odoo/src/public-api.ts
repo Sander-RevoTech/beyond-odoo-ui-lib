@@ -21,3 +21,5 @@ export * from './lib/services/warehouses/warehouses.service';
 export * from './lib/services/warehouses/dto/warehouse';
 export * from './lib/services/companies/companies.service';
 export * from './lib/services/companies/dto/company';
+export * from './lib/services/workcenters/workcenters.service';
+export * from './lib/services/workcenters/dto/workcenter';

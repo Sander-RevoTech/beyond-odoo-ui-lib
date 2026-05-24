@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { BydBaseOdooService, BydEmployeeService } from '@beyond/odoo';
+import { BydBaseOdooService, BydEmployeeService, BydWorkcentersService } from '@beyond/odoo';
 import { BydPermissionsServices, HandleSimpleRequest } from '@beyond/server';
 import { getFirstNumber, isNonNullable } from '@beyond/utils';
 import { debounceTime, filter, map, mergeMap, of, switchMap, tap } from 'rxjs';
@@ -16,9 +16,11 @@ export class BydUserService extends BydBaseOdooService {
   readonly profile = new HandleSimpleRequest<Profile>();
   readonly warehouse = new HandleSimpleRequest<number[]>();
   readonly company = new HandleSimpleRequest<number[]>();
+  readonly workcenter = new HandleSimpleRequest<number[]>();
 
   readonly permissionsServices = inject(BydPermissionsServices);
   readonly employeesServices = inject(BydEmployeeService);
+  readonly workcentersServices = inject(BydWorkcentersService);
 
   public openDialog = inject(MatDialog);
 
@@ -76,6 +78,15 @@ export class BydUserService extends BydBaseOdooService {
               .fetch(
                 this.employeesServices
                   .getWarehouses$(getFirstNumber(profile.employee_id) ?? 0)
+                  .pipe(map(data => data ?? []))
+              )
+              .pipe(map(() => profile));
+          }),
+          switchMap((profile: Profile) => {
+            return this.workcenter
+              .fetch(
+                this.employeesServices
+                  .getWorkcenters$(getFirstNumber(profile.employee_id) ?? 0)
                   .pipe(map(data => data ?? []))
               )
               .pipe(map(() => profile));

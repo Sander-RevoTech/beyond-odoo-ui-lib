@@ -7,7 +7,8 @@
       "Skill(techatome-claude-plugin:form-input)",
       "Bash(npx ng *)",
       "Read(//c/Techatome/revotech/reuz-operations-app/**)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(Remove-Item *)"
     ]
   }
 }
