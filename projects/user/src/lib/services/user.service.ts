@@ -28,7 +28,7 @@ export class BydUserService extends BydBaseOdooService {
     super();
     this.permissionsServices.updated$
       .pipe(
-        debounceTime(500),
+        debounceTime(50),
         mergeMap(() => this.fetchProfile$())
       )
       .subscribe();
@@ -78,15 +78,6 @@ export class BydUserService extends BydBaseOdooService {
               .fetch(
                 this.employeesServices
                   .getWarehouses$(getFirstNumber(profile.employee_id) ?? 0)
-                  .pipe(map(data => data ?? []))
-              )
-              .pipe(map(() => profile));
-          }),
-          switchMap((profile: Profile) => {
-            return this.workcenter
-              .fetch(
-                this.employeesServices
-                  .getWorkcenters$(getFirstNumber(profile.employee_id) ?? 0)
                   .pipe(map(data => data ?? []))
               )
               .pipe(map(() => profile));
