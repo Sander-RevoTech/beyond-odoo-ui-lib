@@ -6,6 +6,7 @@ export declare class BydEmployeeService extends BydBaseOdooService {
     searchByName$(name: string): import("rxjs").Observable<Employee[]>;
     getRelatedByUserId$(userId: number): import("rxjs").Observable<Employee>;
     getWarehouses$(id: number): import("rxjs").Observable<number[]>;
+    getWorkcenters$(id: number): import("rxjs").Observable<number[]>;
     static ɵfac: i0.ɵɵFactoryDeclaration<BydEmployeeService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<BydEmployeeService>;
 }
