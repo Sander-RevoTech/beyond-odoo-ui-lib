@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ErrorStateMatcher } from '@angular/material/core';
@@ -9,6 +9,8 @@ import { MatInputModule } from '@angular/material/input';
 import { InputChoices } from '@beyond/form-model';
 import { TranslatePipe } from '@beyond/translation';
 import { BydAbstractComponent } from '@beyond/utils';
+
+import { filter, take } from 'rxjs';
 
 import {
   ChoicesBottomSheetComponent,
@@ -23,7 +25,7 @@ import {
   standalone: true,
   imports: [MatFormField, MatLabel, MatHint, MatError, TranslatePipe, MatInputModule, NgFor, NgIf],
 })
-export class BydInputChoicesComponent extends BydAbstractComponent {
+export class BydInputChoicesComponent extends BydAbstractComponent implements OnInit {
   @Input()
   input!: InputChoices;
 
@@ -36,6 +38,28 @@ export class BydInputChoicesComponent extends BydAbstractComponent {
 
   constructor(private _bottomSheet: MatBottomSheet) {
     super();
+  }
+
+  ngOnInit() {
+    if (!this.input.value) return;
+
+    const source$ = this.input.advancedSearch$
+      ? this.input.advancedSearch$(undefined)
+      : this.input.options;
+
+    this._registerSubscription(
+      source$
+        .pipe(
+          filter(options => options.length > 0),
+          take(1)
+        )
+        .subscribe(options => {
+          const match = options.find(o => o.id === this.input.value);
+          if (match) {
+            this.option = match;
+          }
+        })
+    );
   }
 
   public openBottomSheet() {
