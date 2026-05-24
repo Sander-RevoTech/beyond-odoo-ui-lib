@@ -9,8 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { InputChoices } from '@beyond/form-model';
 import { TranslatePipe } from '@beyond/translation';
 import { BydAbstractComponent } from '@beyond/utils';
-
-import { filter, take } from 'rxjs';
+import { take } from 'rxjs';
 
 import {
   ChoicesBottomSheetComponent,
@@ -43,22 +42,14 @@ export class BydInputChoicesComponent extends BydAbstractComponent implements On
   ngOnInit() {
     if (!this.input.value) return;
 
-    const source$ = this.input.advancedSearch$
-      ? this.input.advancedSearch$(undefined)
-      : this.input.options;
+    const source$ = this.input.advancedSearch$ ? this.input.advancedSearch$(undefined) : this.input.options;
+    if (!source$) return;
 
     this._registerSubscription(
-      source$
-        .pipe(
-          filter(options => options.length > 0),
-          take(1)
-        )
-        .subscribe(options => {
-          const match = options.find(o => o.id === this.input.value);
-          if (match) {
-            this.option = match;
-          }
-        })
+      source$.pipe(take(1)).subscribe(options => {
+        const match = options.find(opt => opt.id === this.input.value?.toString());
+        if (match) this.option = match;
+      })
     );
   }
 
