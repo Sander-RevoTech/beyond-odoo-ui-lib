@@ -32,4 +32,11 @@ export class BydEmployeeService extends BydBaseOdooService {
       map(data => data[0]?.warehouse_ids || null)
     );
   }
+
+  public getWorkcenters$(id: number) {
+    return this._odooService.searchRead$<Employee>('hr.employee', [['id', '=', id]], ['id', 'workcenter_ids']).pipe(
+      filter(data => !!data),
+      map(data => data[0]?.workcenter_ids || [])
+    );
+  }
 }
