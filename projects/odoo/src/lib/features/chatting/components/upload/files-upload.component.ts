@@ -92,6 +92,7 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
   }
   public remove(pic: FileStructure) {
     this.tempImages.set(this.tempImages().filter(item => item.localUrl !== pic.localUrl));
+    this.filesPicked.emit(this.tempImages());
   }
   public replaceImage(pic: FileStructure, newFile: FileStructure) {
     const currentImages = this.tempImages();
@@ -100,6 +101,7 @@ export class BydUploadComponent extends BydBaseComponent implements OnInit {
       const updatedImages = [...currentImages];
       updatedImages[index] = newFile;
       this.tempImages.set(updatedImages);
+      this.filesPicked.emit(this.tempImages());
     }
   }
 

@@ -45,3 +45,6 @@ Thumbs.db
 # Superpowers
 .superpowers/
 docs/
+
+# Claude
+.claude/settings.local.json
