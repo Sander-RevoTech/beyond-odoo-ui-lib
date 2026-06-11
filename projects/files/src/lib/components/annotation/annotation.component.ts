@@ -72,6 +72,12 @@ export class FilesAnnotationComponent extends BydBaseComponent implements OnInit
     width: 0,
     height: 0,
   };
+  // Size of the loaded image: the internal canvas keeps this resolution,
+  // resizeCanvasDimension only scales the CSS display size.
+  private _imageSize: { width: number; height: number } = {
+    width: 0,
+    height: 0,
+  };
 
   private _intoDrawing = false;
 
@@ -203,9 +209,14 @@ export class FilesAnnotationComponent extends BydBaseComponent implements OnInit
   public onSaveClick = async () => {
     this.requestState.asked();
 
+    // The downstream pipeline (compressImage) resizes to 1200px jpeg anyway:
+    // exporting the full-resolution canvas as png freezes the UI for seconds.
+    const maxExportDimension = 1200;
+    const largestSide = Math.max(this._imageSize.width, this._imageSize.height);
     const data = this.tuiImageEditor.toDataURL({
-      format: 'png',
-      quality: 0.4,
+      format: 'jpeg',
+      quality: 0.8,
+      multiplier: largestSide > maxExportDimension ? maxExportDimension / largestSide : 1,
     });
 
     const blob = await getBlobImage(data);
@@ -218,6 +229,7 @@ export class FilesAnnotationComponent extends BydBaseComponent implements OnInit
       usageStatistics: false,
     });
     const crop = await this.tuiImageEditor.loadImageFromURL(this.imagePath, 'default');
+    this._imageSize = { width: crop.newWidth, height: crop.newHeight };
     this._canvasSize = determineNewSize(
       crop.newHeight,
       crop.newWidth,

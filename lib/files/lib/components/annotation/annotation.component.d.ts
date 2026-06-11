@@ -20,6 +20,7 @@ export declare class FilesAnnotationComponent extends BydBaseComponent implement
     private _containerRef;
     private _tuiRef;
     private _canvasSize;
+    private _imageSize;
     private _intoDrawing;
     constructor();
     ngOnInit(): void;
